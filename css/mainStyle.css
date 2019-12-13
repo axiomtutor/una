@@ -56,26 +56,16 @@
 /* NAVBAR */
 /**********/
 
-.treeNavUL {
-  list-style-type: none;
-}
+.treeNavUL {list-style-type: none;}
 #treeNavContainer > ul {float: left;}
-#treeNavContainer li {
-  background: red;
-}
-#treeNavContainer a {
-  display: block;
-}
+#treeNavContainer li {background: red;}
+#treeNavContainer a {display: block;}
 #treeNavContainer > ul > li {
   float: left;
   position: relative;
 }
-#treeNavContainer > ul > li > ul {
-  display: none;
-}
-#treeNavContainer li:hover ul {
-  display: block;
-}
+#treeNavContainer > ul > li > ul {display: none;}
+#treeNavContainer li:hover ul {display: block;}
 
 .treeNavLI {padding-right: 0.5em;}
 
@@ -83,10 +73,6 @@
 /* ZOOMS */
 /*********/
 
-button {
-	cursor: pointer;
-}
+button {cursor: pointer;}
 
-.zoomContent-trigger {
-	display: block;
-}
+.zoomContent-trigger {display: block;}
