@@ -40,7 +40,9 @@
   overflow: auto;
 }
 
-.treeNavUL {list-style-type: none;}
+.treeNavUL {
+  list-style-type: none;
+}
 #treeNavContainer > ul {float: left;}
 #treeNavContainer li {
   background: red;
@@ -58,3 +60,5 @@
 #treeNavContainer li:hover ul {
   display: block;
 }
+
+.treeNavLI {padding-right: 0.5em;}
