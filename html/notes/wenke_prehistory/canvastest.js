@@ -1,3 +1,10 @@
+
+// Some useful basic functions.
+// fillRect
+// lineTo
+// arc
+// quadraticCurveTo
+// bezierCurveTo
 function draw() {
   const canvas = document.getElementById('canvas');
   const ctx = canvas.getContext('2d');
@@ -43,6 +50,8 @@ function draw() {
   ctx.stroke();
 }
 
+// Use of Path2D and a text example.  Text measurement will be useful for
+// typesetting.
 function draw2() {
   var canvas = document.getElementById('canvas2');
   var ctx = canvas.getContext('2d');
@@ -55,8 +64,15 @@ function draw2() {
   circ.arc(100,100,50,0,Math.PI,true);
 
   ctx.stroke(rect); ctx.stroke(circ);
+
+  ctx.font = '48px serif';
+  ctx.fillText("Hello", 100,200);
+  var textMeasures = ctx.measureText("Hello");
+  var height = textMeasures.fontBoundingBoxAscent;
+  ctx.fillText(height, 100, 200+height);
 }
 
+// An animation example.
 function draw3(cg, ctx, can) {
   ctx.clearRect(0,0,can.width,can.height);
   ctx.stroke(cg);
@@ -75,4 +91,42 @@ function draw3main() {
   var guysList = [coolGuy, coolGuy2];
 
   march(0, guysList, ctx, canvas);
+}
+
+// A save and restore example.
+function draw4() {
+  var ctx = document.getElementById('canvas4').getContext('2d');
+
+  ctx.fillRect(0, 0, 150, 150);   // Draw a rectangle with default settings
+  ctx.save();                  // Save the default state (color, alpha)
+
+  ctx.fillStyle = '#09F';      // Make changes to the settings
+  ctx.fillRect(15, 15, 120, 120); // Draw a rectangle with new settings
+
+  ctx.save();                  // Save the current state
+  ctx.fillStyle = '#FFF';      // Make changes to the settings
+  ctx.globalAlpha = 0.5;
+  ctx.fillRect(30, 30, 90, 90);   // Draw a rectangle with new settings
+
+  ctx.restore();               // Restore previous state
+  ctx.fillRect(45, 45, 60, 60);   // Draw a rectangle with restored settings
+
+  ctx.restore();               // Restore original state
+  ctx.fillRect(60, 60, 30, 30);   // Draw a rectangle with restored settings
+}
+
+// The translate function translates the drawing origin.
+// A similar example applies to rotate and scale. A negative scale can reflect!
+// More generally you can specify any 2-d transform matrix!!!!!!!!!!!!!!!!!
+function draw5() {
+  var ctx = document.getElementById('canvas5').getContext('2d');
+  for (var i = 0; i < 3; i++) {
+    for (var j = 0; j < 3; j++) {
+      ctx.save();
+      ctx.fillStyle = 'rgb(' + (51 * i) + ', ' + (255 - 51 * i) + ', 255)';
+      ctx.translate(10 + j * 50, 10 + i * 50);
+      ctx.fillRect(0, 0, 25, 25);
+      ctx.restore();
+    }
+  }
 }
