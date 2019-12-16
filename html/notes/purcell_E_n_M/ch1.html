@@ -5,6 +5,7 @@
     <title>Notes - Purcell Ch1</title>
     <script id="MathJax-script" async src="../../../../MathJax/es5/tex-chtml.js">
     </script>
+    <link rel="stylesheet" href="../notes.css">
   </head>
   <body>
     <h1>1.0 Electrostatics: charges and fields</h1>
@@ -12,9 +13,129 @@
 
     <h2>1.1 Electric charge</h2>
 
-    <br>
-
     <h2>1.2 Conservation of charge</h2>
+
+    <h2>1.3 Quantization of charge</h2>
+
+    <h2>1.4 Coulomb's Law</h2>
+    <p>
+      $$\vec{F}_2 = k\frac{q_1q_2\hat{r}_{21}}{r^2}$$
+
+      where
+
+      <ul>
+        <li>\(\vec{F}_2\) is the force acting on charge 2</li>
+        <li>\(\hat{r}_{21}\) is the unit vector from 1 to 2</li>
+        <li>\(r\) is the distance from 1 to 2</li>
+      </ul>
+    </p>
+
+    <p>
+      We also call \(\epsilon_0\) the <i>permitivity of free space</i> and $$k=\frac{1}{4\pi\epsilon_0}$$
+    </p>
+
+    In the SI unit system <i>k</i> has units \(Nm^2C^{-2}\). The <i>N</i> is the symbol for a Newton of force, <i>m</i> for meter.  <br><br>
+
+    <div class="note">
+      <p>
+        Note that we can infer nothing about the Coulomb unit from just this.  By dimensional analysis of Coulomb's law
+
+        $$[N]=[Nm^2C\ ^{-2}][C\ ^2m^{-2}]$$
+
+      which simplifies to a trivial equality.  The units of <i>k</i> are simply a re-statement of what dimensional analysis would tell us is required given the quantities involved.
+      </p>
+    </div>
+
+    <p>
+      The <i>Gaussian</i> system is one of several that uses cgs (centimeters, grams, seconds).  In it <i>k</i> is exactly 1, dimensionless, where \(\vec{F}\) measured in <i>dynes</i> and <i>q</i> in <i>esu</i>.
+    </p>
+    <div class="note">
+      <p>
+        Note that we can already relate dynes to Newtons.
+
+        $$N = \frac{kg\cdot m}{s^2} = \frac{10^3g\cdot 100cm}{s^2}$$
+        $$=\ 10^5dyne$$
+      </p>
+    </div>
+
+    <div class="example">
+      <p>
+        <b>Example (relate Coulombs and esu)</b>
+      </p>
+      <p>
+        What is the relationship between Coulombs and <i>esu</i>s?  A good start is to pick some simple numbers using each unit.  If you have two 1 <i>C</i> charges 1 <i>m</i> apart Coulomb's law implies the force magnitude is
+
+        $$F[N] = kN \approx 9 \times 10^9N$$
+        $$=9\times 10^{14}dyne$$
+      </p>
+
+      <p>
+        To do it again in the Gaussian system
+
+        $$F[dyne] = q_1[esu]q_2[esu]/(100cm)^2 = q^2esu^2/(10^4cm^2)$$
+      </p>
+      <p>
+        Since we are taking \( q[esu] = 1C\) then effectively <i>q</i> is the coefficient of proportionality, and therefore the thing we want to solve for.
+      </p>
+      <p>
+        Since we already know the force measure in dynes we can say
+
+        $$9\times 10^{14} dyne = q^2esu^2/(10^4cm^2)$$
+
+        and since the units must cancel, we focus on the numbers which tell us
+
+        $$q^2 = 9\times 10^{18} \Rightarrow q = 3\times 10^9$$
+      </p>
+    </div>
+    <p>
+      Forces are additive which we call the principle of <i>superposition</i>.
+    </p>
+    <div class="question">
+      <p>
+        The book makes mention of some experiements and inferences, but these aren't clear to me.  Should I concern myself with them?
+      </p>
+    </div>
+    <h2>1.5 Energy of a system of charges</h2>
+    <p>
+      We can define work by
+
+      $$W = \int (applied force)\cdot(displacement)
+    </p>
+    <div class="example">
+      <b>Example (bring together particles)</b> <br><br>
+      <p>
+        Suppose we bring charges \(q_1,q_2\) within a distance <i>r</i> of each other.  Then the work done is
+
+        $$\int_\infty^r (-kq_1q_2/r^2)dr$$
+      </p>
+    </div>
+
+    <p>
+      This is the work done to assemble the arrangement and it is also the <i>potential energy</i> stored in the system.
+    </p>
+    <h2>1.6 Electrical energy in a crystal lattice</h2>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   </body>
 </html>
