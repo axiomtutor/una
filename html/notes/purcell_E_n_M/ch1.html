@@ -111,10 +111,64 @@
     </div>
 
     <p>
-      This is the work done to assemble the arrangement and it is also the <i>potential energy</i> stored in the system.
+      This is the work done to assemble the arrangement and it is also the <i>potential energy</i> stored in the system.  The potential energy of a system can be shown to be
+
+      $$U = \frac{1}{2}\sum\sum_{i\ne j} k\frac{q_iq_j}{r_{ij}}$$
+
+      where it is worth emphasizing the lack of a minus, or a square on the distance.
     </p>
     <h2>1.6 Electrical energy in a crystal lattice</h2>
-    
+    <p>
+      Salt crystals are lattices of Na<sup>+</sup> and Cl<sup>-</sup>.  We want to know the potential energy per unit volume or mass.  We may start with a single positive ion, consider the energy required to bring in all the others around just it, then simply repeat taking each other particle as the center.  Since every pair is double-counted in the process, we divide by 2.  Since the calculation per ion will be identical, we may instead multiply by <i>N</i>.  An expression for the total potential energy is
+
+      $$U = \frac{N}{2}\sum_{k=2}^N kq_1q_k/r_{1k}$$
+    </p>
+    <p>
+      We can group elements by equal radii.  If we diagram the point particles by <br>
+
+      <canvas id="crystal" width="150" height="150"></canvas> <br>
+
+      then the faces of the cube contain the nearest points.  Say they are of radius <i>r</i>, of which there are six equivalent particles.  The corners of the cube contain eight equivalent points of radius \(\sqrt{3}r\).  As we expand out, the <i>i</i>th shell will be a distance of \(\sqrt{i+1}r\) away from the center.  We can infer that the potential energy is
+
+      $$\frac{Nk}{2}\left(\frac{-6e^2}{r} + \frac{8e^2}{\sqrt{2}r} - \frac{6e^2}{\sqrt{3}r}+...\right)$$
+    </p>
+    <p>
+      The exact value of this is not easy to obtain, but the only important feature is that it's negative.  This indicates that work must be <i>done</i> to disassemble the arrangement, i.e. it's sticky.  Contrast this with bringing positive particles together:  The potential energy is positive and merely releasing them will send them apart.
+    </p>
+    <p>
+      But since objects seek low-energy states, this would imply that the particles would collapse into each other to reduce <i>r</i> and thereby send <i>U</i> to \(-\infty\).  Quantum physics gives the answer to why this doesn't happy, but even without it this computed quantity of <i>U</i> is meaningful.
+    </p>
+
+    <h2>1.7 The electric field</h2>
+
+    <p>
+      We may generalize Coulomb's law into an expression for the force exerted by a system at each point in space, were a "test charge" placed at the point.  If we call this test charge <i>q</i> then it is a factor of every term in the superposition expression and can be factored out.  From this we define the electric field \( \vec{E}(p) \) at a point <i>p</i> in space by
+
+      $$\vec{F}(p) = q\vec{E}(p)$$
+    </p>
+    <p>
+      By dimensional analysis we can say that the units of the electric field are N/C.
+    </p>
+    <h2>1.8 Charge distributions</h2>
+    <p>
+      We can also generalize to charge distributions, \( \rho(p) \) and then
+
+      $$\vec{E}(p) = k\int \frac{\rho(p)\hat{r}}{r^2}dV$$
+    </p>
+    <div class="example">
+      <b>Example (Field due to a hemisphere)</b>
+      <p>
+        Suppose a solid hemisphere has radius <i>R</i> and uniform charge density \(\rho\).  What is the electric field at the center?
+      </p>
+      <p>
+        The radius is the constant <i>R</i>, and the charge density \(\rho\) is constant, so
+
+        $$ E(p) = \frac{k\rho}{R^2}\iint_S \hat{r} \cdot dS $$
+      </p>
+      <p>
+        To integrate over the surface we need to parameterize it, so we can use cylindrical coordinates and reason that for any point <i>y</i> on the vertical axis there corresponds a disc made by a slice through <i>y</i> perpendicular to the vertical axis.  
+      </p>
+    </div>
 
 
 
@@ -128,14 +182,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
+    <script type="text/javascript" src="ch1.js"></script>
   </body>
 </html>
