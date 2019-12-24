@@ -10,7 +10,7 @@ The curious of all ages and backgrounds.  For now, restricted to those who speak
 
 1) Demonstrate what science really is by walking through the process of **doing** science.
 
-2) Teach the content of university degree programs in Math, Physics, Statistics, Chemistry, Biology, and Logic.
+2) Teach the content of university degree programs in Math, Physics, Statistics, Chemistry, Biology, Computer Science, and Logic.
 
 3) Learn some world history while yer at it!
 
