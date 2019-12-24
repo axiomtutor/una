@@ -136,13 +136,13 @@
       The exact value of this is not easy to obtain, but the only important feature is that it's negative.  This indicates that work must be <i>done</i> to disassemble the arrangement, i.e. it's sticky.  Contrast this with bringing positive particles together:  The potential energy is positive.  Merely letting go of them after arranging them, will send them apart.
     </p>
     <p>
-      But since objects seek low-energy states, this would imply that the particles would collapse into each other to reduce <i>r</i> and thereby send <i>U</i> to \(-\infty\).  Quantum physics gives the answer to why this doesn't happen, but even without it this computed quantity of <i>U</i> is meaningful.
+      But since objects seek low-energy states, this would imply that the particles would collapse into each other to reduce <i>r</i> and thereby send <i>U</i> to \(-\infty\).  Quantum physics gives the answer to why this doesn't happen.  Even without quantum physics, this computed quantity of <i>U</i> is meaningful, which we will see later.
     </p>
 
     <h2>1.7 The electric field</h2>
 
     <p>
-      We may generalize Coulomb's law into an expression for the force exerted by a system at each point in space, were a "test charge" placed at the point.  If we call this test charge <i>q</i> then it is a factor of every term in the superposition expression and can be factored out.  From this we define the electric field \( \vec{E}(p) \) at a point <i>p</i> in space by
+      We may generalize Coulomb's law into an expression for the force exerted by a system at each point in space, were a "test charge" placed at the point.  If we call this test charge <i>q</i> then it is a factor of each. term in the superposition expression.  <i>q</i> can therefore be factored out.  From this we define the electric field \( \vec{E}(p) \) at a point <i>p</i> in space by
 
       $$\vec{F}(p) = q\vec{E}(p)$$
     </p>
@@ -188,13 +188,19 @@
         where we choose <i>r</i> for the variable radius because \(\rho\) and <i>R</i> are already reserved for density and the fixed radius.
         The outer integral encodes a full rotation, the middle integral starts at the angle \(\pi\) rather than 0 because it is a hemisphere.  The radius parameter ranges out to the radius of the hemisphere.
       </p>
-      <p>
-        
-      </p>
-      
     </div>
-
-
+    <h2>1.9 Flux</h2>
+    <p>
+      In the previous section we imagined that we knew the charges and infered the electric field from it.  Suppose now that we already know the electric field <i>E(p)</i> and wish to learn about the charges which generate the field.  To do so we consider a closed surface in space.  Any point on this surface, because it is in the electric field, has a force vector pointing in some direction.  The component of that vector pointing normal to the surface is the amount of force exerted on the surface element.  If we aggregate all of these values, we define the quantity as <i>flux</i>.
+      
+      $$ \text{flux} = \Phi = \int_S \vec{E}\cdot d\vec{A}$$
+    </p>
+    <p class="note">
+      Note that flux can be defined for any vector field.  Not only does it generalize from electricity to other forces, but it also generalizes to vector fields that do not model force at all.  For instance we could take the velocity vector field for a stream of water, and the flux would measure the rate at which water flows through a membrane.  
+    </p>
+    <p>
+      
+    </p>
 
 
 
