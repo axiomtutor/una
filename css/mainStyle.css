@@ -56,21 +56,27 @@
 /* NAVBAR */
 /**********/
 
-.treeNavUL {list-style-type: none;}
-#treeNavContainer > ul {float: left;}
-#treeNavContainer li {background: red;}
-#treeNavContainer a {display: block;}
+.treeNavUL { list-style-type: none; }
+#treeNavContainer > ul { float: left; }
+#treeNavContainer li { background: mediumturquoise; }
+#treeNavContainer a { display: block; }
 #treeNavContainer > ul > li {
   float: left;
   position: relative;
 }
-#treeNavContainer > ul > li > ul {display: none;}
-#treeNavContainer li:hover ul {display: block;}
+#treeNavContainer > ul > li > ul { display: none; }
+#treeNavContainer li:hover ul { display: block; }
 
-.treeNavLI {padding-right: 0.5em;}
+.treeNavLI { padding-right: 0.5em; }
 
 /*********/
 /* ZOOMS */
 /*********/
 
-button {cursor: pointer;}
+button { cursor: pointer; }
+
+/*********************/
+/* KNICKS AND KNACKS */
+/*********************/
+
+hr { border: 1px solid black; }
