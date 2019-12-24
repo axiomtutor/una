@@ -155,20 +155,80 @@
 
       $$\vec{E}(p) = k\int \frac{\rho(p)\hat{r}}{r^2}dV$$
     </p>
-    <div class="example">
+    <div class="question">
       <b>Example (Field due to a hemisphere)</b>
+      <p>How do I do this integral and complete this example?</p>
       <p>
         Suppose a solid hemisphere has radius <i>R</i> and uniform charge density \(\rho\).  What is the electric field at the center?
       </p>
       <p>
         The radius is the constant <i>R</i>, and the charge density \(\rho\) is constant, so
 
-        $$ E(p) = \frac{k\rho}{R^2}\iint_S \hat{r} \cdot dS $$
+        $$ E(p) = k\rho\iiint_V \frac{\hat{r}}{r^2} \cdot dV $$
       </p>
       <p>
-        To integrate over the surface we need to parameterize it, so we can use cylindrical coordinates and reason that for any point <i>y</i> on the vertical axis there corresponds a disc made by a slice through <i>y</i> perpendicular to the vertical axis.  
+        To integrate over the region we need to parameterize it.  The most natural parameterization is spherical.  First let's agree on a coordinate system, using that which you find in mathematics.  Here <i>x, y, z</i> are used for rectangular coordinates.  Physics does the same but the labels are on different axes.  In Math, <i>x</i> controls the forward-backward axis (the "perspective axis"). <i>y</i> controls the left-right axis.  <i>z</i> controls the up-down axis.  
+        
+        <canvas id="coordinates" width=150 height=150></canvas>
       </p>
+      <p>
+        In the diagram the text labels are on the positive end of the axis.  So the positive <i>y</i> values are to the right, the positive <i>z</i> values are up.  Importantly, the positive <i>x</i> direction is toward the viewer, which is labeled on the lower-left-hand portion of the diagram. This choice satisfies the so-called "right-hand rule" whereby you use your right hand to do the following:  Point your index finger toward the positive <i>x</i> axis.  Now stick your middle finger out at a 90-degree angle from your palm.  Now point that middle finger toward the positive <i>y</i> direction.  Now point your thumb up.  Your thumb should point straight up in the direction of the positive <i>z</i> axis.  We could have re-labeled the axes but whatever the re-labeling is, it must satisfy the right-hand rule.  So although there are \(6\cdot 4\cdot 2\) possible axis labelings, only half of these satisfy the right-hand rule and are permissible.  Physicists use <i>x</i> to control the left-right, <i>y</i> to control the up-down, and <i>z</i> controls the perspective axis with the positive direction toward the viewer.  This system also satisfies the right-hand rule.
+      </p>
+      <p>
+        In mathematics we use \(\rho,\theta,\phi \) to specify a point in the space spherically.  The physicist's use of \(\theta\) and \(\phi\) is the reverse of their roles for mathematicians, and the physicist uses \(\rho\) for density and therefore uses something else like <i>r</i> or some other not-yet-reserved symbol for radius.  For mathematicians \(\theta\) controls the rotation through the the <i>x-y</i> plane.  Note that we only need the angles between 0 and \(2\pi\); more values are possible but redundant.  \(\phi\) controls a rotation which starts at the top of the <i>z</i> axis and rotates down.  Note that to uniquely identify a point anywhere in space, we only need the angles between 0 and \(\pi\).  Allowing values between 0 and \(2\pi\) is already redundant because points beyond \(\pi\) could be captured by moving \(\theta\) by a half-rotation around its axis.
+      </p>
+      <p>
+        We should note that to integerate in spherical coordinates, we need a special expression for a volume element.  Rather than \(dx\ dy\ dz\) representing an infinitesimal volume element in rectangular coordinates, we use \( \rho^2\sin\phi\ d\rho\ d\phi\ d\theta\).  As you can see this involves multiplying by values, \(\rho^2\sin\phi\), due to the transformation of coordinates.  
+      </p>
+      <p>
+        Now to get back to the problem, we integrate 
+        
+        $$E(p) = k\rho\int_0^{2\pi}\int_{\pi/2}^\pi\int_0^R \frac{\hat{r}}{r^2}r^2\sin\phi\ dr\ d\phi\ d\theta$$
+        
+        where we choose <i>r</i> for the variable radius because \(\rho\) and <i>R</i> are already reserved for density and the fixed radius.
+        The outer integral encodes a full rotation, the middle integral starts at the angle \(\pi\) rather than 0 because it is a hemisphere.  The radius parameter ranges out to the radius of the hemisphere.
+      </p>
+      <p>
+        
+      </p>
+      
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
