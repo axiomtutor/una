@@ -24,4 +24,7 @@ The curious of all ages and backgrounds.  For now, restricted to those who speak
  2) Text and video available for download.
  3) Stackoverflow style user-question-user-answer communities.
  4) Heavily moderated discussion forums, to ensure constructive community.
- 5) 
+
+# About Me:
+
+I'm a math and science tutor for high school and college subjects in NYC.  You can find out more about my paid services here:  www.axiomtutor.com
