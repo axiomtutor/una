@@ -7,15 +7,22 @@ listening for clicks. */
 function makeButtonActive(zb) {
 	// While making the buttons we can also set everything to hidden.
 	var div_for_button = document.getElementById(
-		zb.getAttribute('aria-controls'));
+	zb.getAttribute('aria-controls'));
+	
 	div_for_button.setAttribute('hidden', '');
 
 	/* The event listener to attach to zoomContents. */
 	function zb_event_listener(event) {
-		var target = event.target;
-
+		var target_path = event.composedPath();
+		var target = null;
+		for (var i=0; i<4; i++) {
+			if (target_path[i].classList.contains("zoomButton")) { 
+				target = target_path[i];
+			}
+		}
+		
 		/* If the event target has already been zoomed, collapse. */
-		if (target.classList.contains('zoomButton')) {
+		if (target != null) {
 			var isExpanded = target.getAttribute('aria-expanded') == 'true';
 			if (isExpanded) {
 				target.setAttribute('aria-expanded', 'false');

@@ -73,7 +73,10 @@
 /* ZOOMS */
 /*********/
 
-button { cursor: pointer; }
+button { 
+  cursor: pointer; 
+  width: auto;
+}
 
 /*********************/
 /* KNICKS AND KNACKS */
