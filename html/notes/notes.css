@@ -1,3 +1,6 @@
 .note { background-color: lightgreen; }
 .example { background-color: lightgray; }
 .question { background-color: pink; }
+.theorem { background-color: mediumturquoise; }
+.def { background-color: azure; }
+.proof { background-color: aliceblue; }

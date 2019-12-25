@@ -3,10 +3,45 @@
   <head>
     <meta charset="utf-8">
     <title>Notes - Axler LADR Ch6</title>
+    <link rel="stylesheet" href="../notes.css">
     <script id="MathJax-script" async src="../../../MathJax-master/es5/tex-chtml.js"></script>
   </head>
   <body>
+    <p>Throughout this chapter we will assume that the field of scalars is the real or complex numbers.</p>
     <h1>6.1 Inner product spaces</h1>
-    
+    <p class="def">The <b>dot-product</b> is the sum over coordinate-wise products. An inner-product is a generalization of this, with the properties: <i>positivity, definiteness, left additivity, left homogeneity, and conjugate symmetry</i>.  Examples include the Euclidean inner product, an arbitrary coordinate-wise positive weighting of the dot-product, the definite integral on an interval over the product, and something like the Laplace transform.</p>
+    <p class="def">An <b>inner-product space</b> is a vector space with an inner-product.</p>
+    <p class="theorem">
+      <b>Theorem: </b> An inner-product satisfies the properties <br><br>
+      (a) For a fixed <i>u</i> the function of <i>v</i> defined by \(\langle v,u\rangle \) is a linear functional.  <br><br>
+      (b) \( \langle 0,u\rangle =0 \) <br>
+      (c) \( \langle u,0 \rangle=0\) <br>
+      (d) right-additivity <br>
+      (e) "twisty" right-homogeneity 
+    </p>
+    <p class="def">
+      The <b>norm</b> of any vector is \(\| \vec{v} \|^2 = \vec{v}\cdot\vec{v} \).  
+    </p>
+    <p class="theorem">
+      <b>Theorem: </b> A norm always satisfies <br> 
+      (a) \( \|\vec{v}\| = 0\)  <br>
+      (b) \( \|\lambda\vec{v}\| = |\lambda|\|\vec{v}\| \)
+    </p>
+    <p class="def">Vectors are <b>orthogonal</b> if their product is 0.</p>
+    <p class="theorem"><b>Theorem: </b> The Pythagorean Theorem for vectors.</p>
+    <p class="proof">
+      <b>Proof: </b> We want to show \( \|\vec{u}\|^2+\|\vec{v}\|^2 = \|\vec{u}+\vec{v}\|^2\) if \(\langle\vec{u},\vec{v}\rangle=0\).  This is the same as 
+      
+      $$\langle\vec{u},\vec{u}\rangle\ +\ \langle\vec{v},\vec{v}\rangle = \langle\vec{u}+\vec{v},\ \vec{u}+\vec{v}\rangle$$
+      
+      which clearly is equivalent to the claim that 
+      
+      $$0=\langle \vec{u},\vec{v}\rangle+\langle \vec{v},\vec{u}\rangle$$
+      
+      and by the assumption of orthogonality, each term on the right is 0.
+    </p>
+    <p class="def">
+      We now build up the Gram-Schmidt procedure starting with two vectors in <i>F<sup>n</sup></i> with <i>n</i>>1.  This is just the <b>orthogonal projection</b> of one vector onto another, which we can generalize to projection of a vector onto a space, which gives an algorithm for generating an ortho-normal basis.
+    </p>
   </body>
 </html>

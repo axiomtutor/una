@@ -58,7 +58,7 @@
 
 .treeNavUL { list-style-type: none; }
 #treeNavContainer > ul { float: left; }
-#treeNavContainer li { background: mediumturquoise; }
+#treeNavContainer li { background: rgba(200,220,255, 1); }
 #treeNavContainer a { display: block; }
 #treeNavContainer > ul > li {
   float: left;
@@ -83,3 +83,5 @@ button {
 /*********************/
 
 hr { border: 1px solid black; }
+a { color: black; }
+a:visited { color: rgba(50,50,50,1); }
