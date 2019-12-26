@@ -8,7 +8,7 @@
   </head>
   <body>
     <p>Throughout this chapter we will assume that the field of scalars is the real or complex numbers.</p>
-    <h1>6.1 Inner product spaces</h1>
+    <h1>6.A Inner product spaces</h1>
     <p class="def">The <b>dot-product</b> is the sum over coordinate-wise products. An inner-product is a generalization of this, with the properties: <i>positivity, definiteness, left additivity, left homogeneity, and conjugate symmetry</i>.  Examples include the Euclidean inner product, an arbitrary coordinate-wise positive weighting of the dot-product, the definite integral on an interval over the product, and something like the Laplace transform.</p>
     <p class="def">An <b>inner-product space</b> is a vector space with an inner-product.</p>
     <p class="theorem">
@@ -85,11 +85,87 @@
     <p class="theorem">
       <b>Theorem: </b> The Cauchy-Schwartz Inequality $$|\langle \vec{u},\vec{v}\rangle|\leq \|\vec{u}\|\|\vec{v}\|$$
     </p>
-    <p class="def">
-      <b>Proof: </b> If \(\vec{v}=\vec{0}\) the theorem is trivial.  Otherwise get 
-      
-      $$ \vec{u} = \vec{u}^{\|}+\vec{u}^\bot = proj_{\vec{v}_1}(\vec{u}) + (\vec{u}-proj_{\vec{v}_1}(\vec{u}))$$
+    <div class="proof">
+      <p>
+        <b>Proof: </b> This is an application of the Pythagorean Theorem. 
+      </p>
+      <p>
+        If \(\vec{v}=\vec{0}\) the theorem is trivial.  Otherwise get 
+        
+        $$ \vec{u} = \vec{u}^{\|}+\vec{u}^\bot = proj_{\vec{v}_1}(\vec{u}) + (\vec{u}-proj_{\vec{v}_1}(\vec{u}))$$
+        
+        and consider squared magnitudes <i>a la</i> the Pythagorean Theorem
+        
+        $$ \|\vec{u}\|^2 = \|\vec{u}^\|\|^2 + \|\vec{u}^\bot\|^2 $$
+        
+        which delivers the intuitively obvious fact that the projection is never larger than the original vector:
+        
+        $$ \|\vec{u}\|^2 \geq \|\vec{u}^\|\|^2 $$
+        
+        Expanding definitions and light rearrangement yields the <i>coup de gras</i>.
+      </p>
+    </div>
+    <p class="theorem">
+      <b>Theorem: </b> The Triangle Inequality 
+      $$ \|\vec{u}+\vec{v}\|\leq \|\vec{u}\|+\|\vec{v}\|$$
     </p>
+    <div class="proof">
+      <p>
+        <b>Proof: </b> Prove the squared version of this, using Cauchy-Schwartz.
+      </p>
+      <p>
+        To do so, expand the left in terms of inner-products.  Group terms in the obvious way and use \(\langle \vec{u},\vec{v}\rangle + \overline{\langle\vec{u},\vec{v}\rangle} = 2\Re\{\langle\vec{u},\vec{v}\rangle\}\).  Then use the fact that any real number is at least as big as its absolute value, then apply the result from earlier.
+      </p>
+    </div>
+    <p class="theorem">
+      <b>Theorem: </b> The Parallelogram Equality
+      $$\|\vec{u}+\vec{v}\|^2 + \|\vec{u}-\vec{v}\|^2 = 2(\|\vec{u}\|^2+\|\vec{v}\|^2)$$
+    </p>
+    <div class="proof">
+      <p>
+        <b>Proof: </b> This falls right out of definitions of inner-products.
+      </p>
+    </div>
+    <h1>6.B Orthonormal Bases</h1>
+    <p>By doing things out of the book's order I've already described what an orthonormal basis is and how to get it.  The value of orthonormal bases are in the following theorems.</p>
+    <p class="theorem">
+      <b>Theorem: </b> Magnitudes in orthonormal bases obey the Pythagorean Theorem.
+      $$ \left\|\sum a_i\vec{e}_i\right\|^2 = \sum |a_i|^2 $$
+    </p>
+    <p class="proof">
+      Repeated application of the Pythagorean Theorem.
+    </p>
+    <p>The above makes it easy to prove that orthogonal vectors are independent.</p>
+    <p class="theorem"><b>Theorem: </b> Orthogonal vectors are independent.</p>
+    <div class="proof">
+      <p>
+        $$a_1\vec{v}_1+...+a_n\vec{v}_n = \vec{0}$$
+        implies that the magnitude on the left is 0.  We have for orthogonal vectors that this magnitude squared (also 0) is the same as 
+        $$\sum \|a_i\vec{v}_i\|^2$$
+      </p>
+      <p>If these vectors are non-zero then the coefficients must all be 0.</p>
+    </div>
+    <p>Therefore orthogonal spanning vectors form an orthogonal basis.</p>
+    <p class="theorem">
+      <b>Theorem:</b> The magnitude of any vector in an orthonormal basis is 
+      
+      $$\|\vec{v}\|^2 = \sum |\langle \vec{v},\vec{e}_i\rangle|^2$$
+    </p>
+    <p class="proof"><b>Proof: </b> This says essentially the same thing as the magnitude being determined by the Pythagorean Theorem since the coordinates of \(\vec{v}\) just are the \(\langle \vec{v},\vec{e}_i\rangle\)</p>
+    <p class="theorem"><b>Theorem: </b> If a transformation is triangulable then it is triangulable w.r.t. some orthonormal basis.</p>
+    <div class="proof">
+      <b>Proof:</b> Suppose <i>T</i> is triangular in basis \(\vec{v}_1,...,\vec{v}_n\).  
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
