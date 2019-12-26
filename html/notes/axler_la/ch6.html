@@ -53,12 +53,43 @@
     <p>
       If we next have three vectors, call them \(\vec{v}_1, \vec{v}_2,\vec{v}_3\in F^n\), suppose we state a new goal but one that is related to the previous goal:  We would like to have three vectors orthogonal to each other and spans the same space that \(\vec{v}_1, \vec{v}_2,\vec{v}_3\) spans.  We assume now that <i>n</i>>2 so that such a goal is possible.  
     </p>
-    <p>We can proceed in steps:  If we take \(\vec{v}_1\) to start it is trivially orthogonal to all other vectors because there are no other vectors.  If we add \(\vec{v}_2\) then the set is no longer orthogonal but we may get the orthogonal projection \(\vec{w}\) as above and then add \(\vec{v}_2-\vec{w}\) to the set.  If we call this \(proj_{\vec{v}_1}(\vec{v}_2)\)
+    <p>We can proceed in steps:  If we take \(\vec{v}_1\) to start it is trivially orthogonal to all other vectors because there are no other vectors.  If we add \(\vec{v}_2\) then the set is no longer orthogonal but we may get the orthogonal projection \(\vec{w}\) as above and then add \(\vec{v}_2-\vec{w}\) to the set.  If we call this \(proj_{\vec{v}_1}(\vec{v}_2)\) then the set \(\{v_1,proj_{\vec{v_1}}(\vec{v_2})\}\) will be orthogonal and span the same space as \(\{\vec{v_1},\vec{v_2}\}\).  
     </p>
-    
-    
-    
-    
+    <p>
+      Next we want to follow a similar procedure for \(\vec{v}_3\).  That means we want to find the projection of \(\vec{v}_3\) onto the space spanned by the first two vectors. This will then allow us to compute the difference between the projection and the original vector to get an orthogonal vector spanning the same space.  The logic of projecting a vector onto a space is similar to that of projecting onto a single vector.  We want \(\vec{w}\) such that (a) we have \(\vec{w}\) is a linear combination of \(\vec{v}_1,\vec{v}_2\) and (b) we have \(\vec{v}_3-\vec{w}\) is orthogonal to both \(\vec{v}_1,\vec{v}_2\). This implies solving a system of two equations, 
+      
+      $$ \langle \vec{v}_3-(a\vec{v}_1+b\vec{v}_2), v_i \rangle= 0, \quad i = 1,2$$
+      
+      for <i>a,b</i>.  
+    </p>
+    <p>
+      The solution you should get is
+      
+      $$\vec{w} = \frac{\langle \vec{v}_1, \vec{v}_3\rangle}{\|\vec{v}_1\|^2}\vec{v}_1 + \frac{\langle \vec{v}_2, \vec{v}_3\rangle}{\|\vec{v}_2\|^2}\vec{v}_2 $$
+    </p>
+    <p class="def">
+      The pattern generalizes to more vectors.  An <b>orthonormal basis</b> is a basis such that every two vectors are orthogonal and unit length.  Given any basis, we can use this procedure to find an orthonormal basis, and we call this procedure the <b>Gram-Schmidt procdure</b>.  If the original basis is \(\{\vec{v}_1, ..., \vec{v}_n\}\) then we start with \(\vec{u}_1=\frac{\vec{v}_1}{\|\vec{v}_1\|}\).  Then for each <i>i=</i>2,...,<i>n</i> we can choose a projection vector 
+      
+      $$\vec{w}_i = \langle \vec{u}_1,\vec{v}_i\rangle \vec{v}_1 + ... + \langle \vec{u}_{i-1},\vec{v}_i\rangle \vec{u}_{i-1}$$
+      
+      From the projection vector we define 
+      
+      $$\vec{v}_i^{\bot} = \vec{v}_i - \vec{w}_i$$
+      
+      and upon making it unit length 
+      
+      $$\vec{u}_i = \frac{\vec{v}_i^\bot}{\|\vec{v}_i^\bot\|}$$
+      
+      Then the collection \(\{\vec{u}_1, ..., \vec{u}_n\}\) is orthonomal and spans the same space as the original vectors.  
+    </p>
+    <p class="theorem">
+      <b>Theorem: </b> The Cauchy-Schwartz Inequality $$|\langle \vec{u},\vec{v}\rangle|\leq \|\vec{u}\|\|\vec{v}\|$$
+    </p>
+    <p class="def">
+      <b>Proof: </b> If \(\vec{v}=\vec{0}\) the theorem is trivial.  Otherwise get 
+      
+      $$ \vec{u} = \vec{u}^{\|}+\vec{u}^\bot = proj_{\vec{v}_1}(\vec{u}) + (\vec{u}-proj_{\vec{v}_1}(\vec{u}))$$
+    </p>
     
     
     
