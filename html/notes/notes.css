@@ -2,5 +2,6 @@
 .example { background-color: lightgray; }
 .question { background-color: pink; }
 .theorem { background-color: mediumturquoise; }
-.def { background-color: azure; }
+.def { background-color: rgba(100,240,200,1); }
 .proof { background-color: aliceblue; }
+.sol { border: 1px solid black; }

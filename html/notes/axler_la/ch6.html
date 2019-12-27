@@ -154,16 +154,77 @@
     <p class="proof"><b>Proof: </b> This says essentially the same thing as the magnitude being determined by the Pythagorean Theorem since the coordinates of \(\vec{v}\) just are the \(\langle \vec{v},\vec{e}_i\rangle\)</p>
     <p class="theorem"><b>Theorem: </b> If a transformation is triangulable then it is triangulable w.r.t. some orthonormal basis.</p>
     <div class="proof">
-      <b>Proof:</b> Suppose <i>T</i> is triangular in basis \(\vec{v}_1,...,\vec{v}_n\).  
+      <b>Proof:</b> Suppose <i>T</i> is upper triangular in basis \(\vec{v}_1,...,\vec{v}_n\) and therefore by 5.26 the span is invariant under <i>T</i>.  Let \(\vec{e}_1, ..., \vec{e}_n\) be the product of Gram-Schmidt.  They span the same space and therefore the span of the orthonormal span is invariant under <i>T</i> and therefore the matrix of <i>T</i> is upper triangular in it.
     </div>
+    <p class="def">A <b>linear functional</b> which we denote \(\varphi\) is any function $$\varphi : V \rightarrow F$$ where <i>F</i> is the underlying field.</p>
+    <p class="theorem">
+      <b>Theorem:</b> Riesz Representation Theorem <br><br>
+      Every linear function acts like the inner-product with an appropriate choice of fixed vector.
+    </p>
+    <div class="proof">
+      <p><b>Proof:</b> If (varphi) is any linear functional, first let (vec{e}_1,...,vec{e}_n) be an orthonormal basis for <i>V</i>.  If (vin V) then by expanding in its coordinates as inner-products with the basis, and then factoring, it is easy to show 
+        
+        $$ \varphi(\vec{v}) = \langle \vec{v}, \overline{\sum \varphi(\vec{e}_i)\vec{e}_i}\rangle $$</p>
+      </p>
+      <p>Note that expansion of a vector's coordinates in terms of inner products with the bases is not so simple when the basis is not orthonormal.</p>
+    
+      <p>Now to prove uniqueness, we hope to show that if \(\varphi(\vec{v}) = \langle \vec{v}, \vec{u}_1\rangle = \langle \vec{v},\vec{u}_2\rangle \) for every choice of \(\vec{v}\), then \(\vec{u}_1 = \vec{u}_2\). If the assumption holds then 
+      $$\langle \vec{v},\vec{u}_1-\vec{u}_2\rangle = 0$$
+      
+      Since this holds for all \(\vec{v}\) then choose \(\vec{u}_1-\vec{u}_2\) so that we get the norm.  And so on.
+      </p>
+    </div>
+    <h2>Exercises 6.B</h2>
+    <ol>
+      <li>
+        <ol type="a">
+          <li> Easy. </li>
+          <li> 
+            Show that every orthonormal basis for \(\mathbb{R}^2\)is of the form \(\left\{\begin{bmatrix}\cos\theta\\ \sin\theta\end{bmatrix},
+            \begin{bmatrix}-\sin\theta\\ \cos\theta\end{bmatrix}\right\}\) or its swap.
+            <div class="sol">
+              <p>
+                <b>Solution:</b> 
+                Certainly any unit vector must have the form \( \begin{bmatrix}\cos\theta\\ \sin\theta\end{bmatrix}\) (proof shouldn't be too hard).  Then we seek a second vector \( \begin{bmatrix}a\\ b\end{bmatrix}\) satisfying 
+                
+                $$a^2+b^2=1 $$$$ a\cos\theta + b\sin\theta = 0$$
+                
+                For all but a few cases, this implies 
+                
+                $$a = -b\tan\theta$$
+                
+                so 
+                
+                $$(-b\tan\theta)^2+b^2 = 1 \quad \Rightarrow $$
+                
+                $$b^2 = \frac{1}{\tan^2\theta+1} = \cos^2\theta$$
+                
+                From here the rest is straight-forward.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </li>
+      <li>
+        If \(\vec{e}_1,...,\vec{e}_m\) is an orthonormal collection, \(\vec{v}\in V\), then prove:
+        
+        $$\|\vec{v}\|^2 = \sum |\langle\vec{v},e_i\rangle|^2$$
+        
+        iff \(\vec{v}\in span(\vec{e}_i)\).
+        
+        <div class="sol">
+          <p>
+            <b>Solution: </b> 
+            Suppose \(\vec{v}\in span(\vec{e}_1,...,\vec{e}_m)\) then it is easy to show \(\vec{v} = \sum a_i\vec{e}_i\) where \(a_i=\langle \vec{v},\vec{e}_i\rangle\) and the result follows quickly.  
+          </p>
+        </div>
+      </li>
+    </ol>
     
     
     
     
-    
-    
-    
-    
+  
     
     
     
