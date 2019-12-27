@@ -283,7 +283,15 @@ vectors that is not linearly independent?</h3>
           <p class="question">
             Question: Should we try to do this for infinite-dimensional spaces? <br><br>
             
-            Let \( \vec{b}_1,...,\vec{b}_n\) be a basis.  
+            Let \( \vec{b}_1,...,\vec{b}_n\) be an orthonormal basis w.r.t. the first inner-product.  It is immediately an orthogonal basis w.r.t. the second inner-product.
+            
+            $$ \langle \vec{b}_i,\vec{b}_i\rangle_1 = \|\vec{b}_i\|^2_1 = 1$$
+            $$ \langle \vec{b}_i,\vec{b}_i\rangle_2 = \|\vec{b}_i\|^2_2 = c_i \ne 0$$
+            
+            If \(\vec{v}=\sum a_i\vec{b}_i\) then 
+            $$\langle \vec{b}_i,\vec{v}\rangle_1 = a_i$$
+            $$\langle \vec{b}_i,\vec{v}\rangle_2 = c_ia_i$$
+            
           </p>
         </div>
       </li>
