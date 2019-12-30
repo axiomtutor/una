@@ -200,11 +200,17 @@
       <p>
         So the integral becomes 
         
-        $$ k\rho\int_0^{2\pi} \int_{\pi/2}^\pi \int_0^R -\langle \sin\varphi\cos\theta, \sin\varphi\sin\theta, \cos\varphi\rangle\ dr\ d\varphi\ d\theta$$
+        $$ k\rho\int_0^{2\pi} \int_{\pi/2}^\pi \int_0^R -\langle \sin\varphi\cos\theta, \sin\varphi\sin\theta, \cos\varphi\rangle\sin\varphi \ dr\ d\varphi\ d\theta$$
         
-        $$=\quad -k\rho R \langle 0, 0, 2\pi \left[\sin\varphi\right]_{\pi/2}^\pi\rangle$$
+        $$=\quad -k\rho R \left\langle 0, 0, 2\pi \int_{\pi/2}^\pi \cos\varphi\sin\varphi \ d\varphi \right\rangle$$
         
-        $$=2\pi k\rho R\langle 0,0, 1\rangle$$
+        $$=\quad -k\rho R \left\langle 0, 0, 2\pi \int_{\pi/2}^\pi \frac{1}{2}\sin(2\varphi) \ d\varphi \right\rangle$$
+        
+        $$=-\frac{k\rho R\pi}{2}\left\langle 0,0, \left[-\cos(2\varphi)\right]_{\pi/2}^\pi\right\rangle$$
+        
+        $$= \frac{k\rho R\pi}{2}\left\langle 0,0, 1-(-1) \right\rangle$$
+        
+        $$=k\rho R \pi \langle 0,0,1\rangle$$
       </p>
     </div>
     <h2>1.9 Flux</h2>
@@ -223,7 +229,7 @@
       where \(\Phi\) is the flux through a sphere caused by a single point charge at the center.  <i>E</i> is the strength of the field at the surface, which is of course constant in this setting.  <i>A</i> is the area of the sphere.
     </p>
     <p>
-      One can moreover demonstrate that the shape and size of the enclosing surface does not change the flux.  Therefore any enclosing surface may be chosen.  This gives us Gauss's law, that if <i>S</i> is any surface enclosing any charge with density <i>\rho</i>, 
+      One can moreover demonstrate that the shape and size of the enclosing surface does not change the flux.  Therefore any enclosing surface may be chosen.  This gives us Gauss's law, that if <i>S</i> is any surface enclosing any charge with density \(\rho\), 
       
       $$\Phi = 4\pi q = \frac{1}{\epsilon_0}\iiint_R \rho\ dV$$
       
@@ -234,18 +240,39 @@
       Let's investigate how a point charge differs from the charge inside of a sphere.  Suppose we want to find the field due to a spherically symmetric distribution of charge, i.e. \(\rho\) is only a function of the radius from the center of the charge distribution.  We consider any point outside the charge distribution, <i>p</i>.  Using Coulomb's law we could integrate over the charge distribution.  
     </p>
     <p>
-      But we can wrangle Gauss's law into the picture.  By symmetry we can infer that the field at any point is already parallel to the vector from the center to <i>p</i>.  We can also say that on any sphere enclosing the charge and centered on it, the field is equipotent.  If we take the sphere passing through <i>p</i> then the strength of the field at any point on it is what we're interested in.  The flux through the surface is, by direct integration, \(4\pi r^2E\).  By Gauss's law we can then say 
+      But we can wrangle Gauss's law into the picture.  If we choose any sphere enclosing the charge, merely from symmetry we can say that each point on the sphere must have equal force from the electric field.  That means the integral is just the area of the sphere times the strength of the field.
       
-      $$E = \frac{q}{4\pi\epsilon_0r^2}$$
+      $$\Phi = 4\pi r^2 E$$
       
-      where <i>q</i> is the net charge inside the surface.  But this is just the same as it would be if the charge were a point charge.  
+      But also from Gauss's law we can reason that the flux is the net charge over the permitivity of free space
+      
+      $$\Phi = \frac{\text{net charge}}{\epsilon_0}$$
+      
+      which implies 
+      
+      $$E = \frac{\text{net charge}}{4\pi\epsilon_0 r^2}$$
+      
+      which is just the expression you would get for a point charge.  
+    </p>
+    <div class="example">
+      <p>
+        <b>Example (uniform sphere): </b> <br>
+        If the charge distribution in a sphere is uniform we can easily show with the techniques from before that, for a point outside the distribution, the field strength satisfies 
+        
+        $$E(r)=\frac{\rho\cdot4\pi R^3/3}{4\pi\epsilon_0 r^2}$$
+        
+        and if the point is inisde the distribution 
+        
+        $$E(r)=\frac{\rho r}{3\epsilon_0}$$
+      </p>
+    </div>
+    <h1>1.12 Field of a line charge</h1>
+    <p>
+      This section is an extended example to find the field due to a "long, thin" wire (read: infinitely long, infinitesimally thin).  We let \(\lambda\) be the linear charge density.  We will directly use Coulomb's law and integrate over the field.  
     </p>
     <p>
-      Not only have we learned that a reasonably shaped charge distribution acts the same as a point-charge, but we would get the same result if <i>p</i> were inside the charge distribution.  
+      We certainly want to parameterize the curve merely using <i>x</i> ranging linearly so that \(-\infty < x < \infty\).  We can also choose axes such that the point is located on the <i>y</i>-axis and in the <i>x-y</i>-plane so that the point has the form (<i>0, y_0, 0</i>).  
     </p>
-
-
-
 
 
 
