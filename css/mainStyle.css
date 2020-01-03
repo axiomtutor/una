@@ -8,6 +8,10 @@
   margin: 0;
   border: 0;
 }
+p {
+  padding: 3px;
+  text-indent: 20px;
+}
 
 /**********/
 /* HEADER */
@@ -51,6 +55,14 @@
   background: white;
   overflow: auto;
 }
+#mainContent div ul {
+  list-style-type: circle;
+  padding-left: 15px;
+  padding-top: 10px;
+}
+#mainContent div ul li {
+  padding-top: 10px;
+}
 
 /**********/
 /* NAVBAR */
@@ -76,6 +88,15 @@
 button { 
   cursor: pointer; 
   width: auto;
+  font-size: x-large;
+  font-family: Georgia, serif;
+  padding: 10px;
+}
+
+div.zoomContent {
+  padding: 5px;
+  font-size: normal;
+  font-family: "Courier New", Courier, monospace;
 }
 
 /*********************/
