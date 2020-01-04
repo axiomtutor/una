@@ -336,7 +336,7 @@
       
       so that 
       
-      $$\epsilon_0 \ dE = \rho \dx$$ 
+      $$\epsilon_0 \ dE = \rho \ dx$$ 
       
       and then we can change variables in the equation 
       
@@ -403,16 +403,39 @@
     </p>
     <h2>1.3 Force from a cone.</h2>
     <p>
-      <b>(a)</b> Using Coulomb's law, the problem is simplest if we locate the center of our coordinates at the point and then use spherical coordinates.  This is simplified since \(\theta'=\pi-\theta\) is constant, using \(\theta'\) for the physicist's vertical parameter and \(\theta\) for the angle of the cone.  And \(0<\varphi < 2 \pi \).  And of course <i> 0 < r < L</i>.
+      <b>(a)</b> We approach this with Coulomb's law.  If we locate our axes at the tip of the cone, we can parameterize the surface with <i>r</i> for the radial parameter, and a parameter \(\varphi\) which determines the rotation through the <i>x-y</i> axes.
+    </p>  
+    <p>
+      But because in spherical coordinates we are keeping the azimuthal angle at \(\pi-\theta\) then an area element is not just \(dr\ d\varphi\).  We can imagine a point at \((r,\varphi)\) is on a 2-dimensional right triangle with one edge on the <i>z</i>-axis, the other parallel to the <i>x-y</i> plane.  The edge parallel to the <i>x-y</i> plane is what's rotated by \(\varphi\), so we need to know the length of this arm of rotation so we may multiply by \(d\varphi\).  Looking at the right triangle, it is easy to see that this length is \(r\sin\theta\).  So we conclude that an area element is \(r\sin\theta\ dr\ d\varphi\).  
     </p>
     <p>
-      
+      As further preparation for computing the integral we find a vector in the direction of the force and take its vertical component (the rest will cancel by symmetry).  The vertical component of the position vector is familiar from spherical coordinates, \(r\cos(\pi-\theta) = -r\cos\theta\).  Since the force is directed exactly in the opposite direction from the direction vector, the vertical component of the vector parallel to force is \(r\cos\theta\).  We would then divide by <i>r</i> to get the unit vector so that we have only \(\cos\theta\).  
     </p>
-
-
-
-
-
+    <p>
+      Putting all this together in Coulomb's law, 
+      
+      $$\vec{E}(p)=\left\langle 0,0,\int_0^{2\pi}\int_0^L \frac{\sigma r\sin\theta\cos\theta\ dr\ d\varphi}{r^2}\right\rangle$$
+      $$=\left\langle 0,0,2\pi\sigma\cos\theta\sin\theta \int_0^L\frac{dr}{r}\right\rangle$$
+    </p>
+    <p>
+      The integral diverges because the lower bound of the integral would involve \(\lim_{a\rightarrow 0^+}\ln a\).
+    </p>
+    <p>
+      <b>(b)</b> Now because we integrate from <i>L/2</i> and the same process as above applies, yielding 
+      
+      $$2\pi\sigma\cos\theta\sin\theta\langle 0,0,\ln(L)-\ln(L/2)\rangle = 2\pi\sigma\cos\theta\sin\theta\langle 0,0,\ln 2\rangle$$
+    </p>
+    <h2>1.20 Thundercloud</h2>
+    <p class="question">
+      <b>(a)</b> We model this as an infinite sheet of charge and therefore the equation \(E=\frac{\sigma}{2\epsilon_0}\).  Setting this equal to the chance in charge we derive the value of \(\sigma\).  
+    </p>
+    <p>
+      <b>(b)</b> Each drop has the same surface density as found above.  Multiply by surface area.  
+    </p>
+    <h2>1.22 Field from a spherical shell, right and wrong</h2> 
+    <div class="question">
+      <p>Is the issue fundamentally that the calculation of distance from an element on the ring to the point is an approximation that is not good near the point?</p>
+    </div>
 
 
 
