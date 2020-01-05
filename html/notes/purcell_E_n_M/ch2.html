@@ -25,16 +25,26 @@
     <div class="example">
       <b>Example: Potential from a given field</b>
       <p>
-        For \(\vec{E}=K\langle y,x,0\rangle\) with <i>K</i> a constant, we want to find the potential.  We fix some point, and the choice of <i>P<sub>1</sub></i> can be arbitrary so we pick the origin for convenience.  We then evaluate \(-\int \vec{E}\cdot d\vec{s}\) to some point <i>P<sub>2</sub></i> at (<i>x,y,0</i>).  
+        For \(\vec{E}=K\langle y,x,0\rangle\) with <i>K</i> a constant, we want to find the potential.  We fix some point, and the choice of <i>P<sub>1</sub></i> can be arbitrary so we pick the origin for convenience.  We then evaluate \(-\int \vec{E}\cdot d\vec{s}\) to some point <i>P<sub>2</sub></i> at (<i>x<sub>2</sub>,y<sub>2</sub>,0</i>).  
       </p>
       <p>
         I'll parameterize the straight line from the origin to the point:
         
-        $$\langle tx, ty\rangle \quad 0 \leq t \leq 1$$
+        $$\langle tx_2, ty_2, 0\rangle \quad 0 \leq t \leq 1$$
         
         It follows that 
         
-        $$d\vec{s}=\langle x\ dt, y\ dt \rangle$$
+        $$d\vec{s}=\langle x_2\ dt, y_2\ dt, 0 \rangle$$
+        
+        and then 
+        
+        $$\vec{E}\cdot d\vec{s} = K\langle ty_2, tx_2, 0\rangle\cdot 
+        \langle x_2\ dt, y_2\ dt, 0\rangle$$
+        $$=K(tx_2y_2\ dt + tx_2y_2\ dt) = 2Ktx_2y_2\ dt$$ 
+        
+        and then 
+        
+        $$\phi_{21}=-\int_0^1(2Kx_2y_2t\ dt) = -Kx_2y_2[t^2]_0^1 = -Kx_2y_2$$
       </p>
     </div>
 
