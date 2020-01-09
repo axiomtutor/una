@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Notes - Purcell Ch1</title>
+    <script id="MathJax-script" async src="../../../MathJax-master/es5/tex-chtml.js">
+    </script>
+    <link rel="stylesheet" href="../notes.css">
+  </head>
+  <body>
+    <h1>1.0 Vector Analysis</h1>
+    <h2>1.1 Vector Algebra</h2>
+    <h3>1.1.1 Vector Operations</h3>
+    <h3>1.1.2 Components</h3>
+    <h3>1.1.3 Triple Products</h3>
+    <h3>1.1.4 Position, Displacement, Separation</h3>
+    <h3>1.1.5 Transformations</h3>
+    <div class="question">
+      A rotation matrix has the form 
+      
+      $$\begin{pmatrix} R_{xx} & R_{xy} & R_{xz} \\
+      R_{yx} & R_{yy} & R_{yz} \\
+      R_{zx} & R_{zy} & R_{zz} \end{pmatrix}$$
+      
+      where you can figure out what these are.  A <b>tensor</b> is a quantity with 9 components which transform with two factors of a matrix <i>R</i>
+      
+      $$\overline{T}_{ij} = \sum_k^3\sum_\ell^3R_{ik}R_{j\ell}T_{k\ell}$$
+      
+      What is this?
+    </div>
+    <h2>1.2 Differential Calculus</h2>
+    <h3>1.2.1 Ordinary Derivatives</h3>
+    <h3>1.2.2 Gradient</h3>
+      $$\nabla r = \frac{\partial r}{\partial x}\hat{x}+\frac{\partial r}{\partial y}\hat{y}+\frac{\partial r}{\partial z}\hat{z}$$
+    <h3>1.2.3 The Del Operator</h3>
+      $$\nabla = \hat{x}\frac{\partial}{\partial x}+\hat{y}\frac{\partial}{\partial y}+\hat{z}\frac{\partial}{\partial z}$$
+      The gradient is nabla scalar-product.
+    <h3>1.2.4 The Divergence</h3>
+      Divergence is nabla dot-product.
+    <h3>1.2.5 The Curl</h3>
+      Curl is nabla cross-product.
+    <h3>1.2.6 Product Rules</h3>
+      The generalized derivatives above satisfy many of the familiar derivative rules.  Some which are not completely familiar are: <br>
+      <b>Gradient of dot</b>
+      
+      $$\nabla(\vec{A}\cdot\vec{B}) = \vec{A}\times (\nabla \times \vec{B}) + \vec{B}\times (\nabla\times \vec{A}) + $$
+      $$(\vec{A}\cdot\nabla)\vec{B}+(\vec{B}\cdot\nabla)\vec{A}$$
+      
+      <b>Div of function</b>
+      $$\nabla \cdot(f\vec{A}) = f(\nabla\cdot\vec{A})+\vec{A}\cdot(\nabla f)$$
+      <b>Div of cross</b>
+      $$\vec{B}\cdot(\nabla\times \vec{A})-\vec{A}\cdot(\nabla\times\vec{B})$$
+      <b>Curl of function</b>
+      $$\nabla\times(f\vec{A})=f(\nabla\times\vec{A})-\vec{A}\times(\nabla f)$$
+      <b>Curl of cross</b>
+      $$\nabla\times\vec{A}\times\vec{B} = (\vec{B}\cdot\nabla)\vec{A}-(\vec{A}\cdot\nabla)\vec{B}+\vec{A}(\nabla\cdot\vec{B}-\vec{B}(\nabla\cdot\vec{A}))$$
+    <h3>1.2.7 Second Derivatives</h3>
+      <p>
+        The <b>Laplacian</b> is the div of grad. It is also sometimes defined as the negative second term in 
+        $$\nabla\times(\nabla\times \vec{v}) = \nabla(\nabla\cdot\vec{v})-\nabla^2\vec{v}$$
+      </p>
+      <p>
+        The curl of a grad, and the div of a curl, are always 0.
+      </p>
+    <h2>1.3 Integral Calculus</h2>
+    <h3>1.3.1 Line, Surface, and Volume Integrals</h3>
+      <p>
+        We write line integrals as 
+        $$\int_\vec{a}^\vec{b}\vec{v}\cdot d\vec{\ell}$$
+        in general and over a closed path 
+        $$\cint\vec{v}\cdot d\vec{\ell}$$
+      </p>
+    <h3></h3>
+    <h3></h3>
+    <h3></h3>
+    <h3></h3>
+    <h3></h3>
+    <h3></h3>
+  </body>
+</html>
