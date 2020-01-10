@@ -426,23 +426,36 @@
       $$2\pi\sigma\cos\theta\sin\theta\langle 0,0,\ln(L)-\ln(L/2)\rangle = 2\pi\sigma\cos\theta\sin\theta\langle 0,0,\ln 2\rangle$$
     </p>
     <h2>1.20 Thundercloud</h2>
-    <p class="question">
+    <p>
       <b>(a)</b> We model this as an infinite sheet of charge and therefore the equation \(E=\frac{\sigma}{2\epsilon_0}\).  Setting this equal to the chance in charge we derive the value of \(\sigma\).  
     </p>
     <p>
       <b>(b)</b> Each drop has the same surface density as found above.  Multiply by surface area.  
     </p>
     <h2>1.22 Field from a spherical shell, right and wrong</h2> 
-    <div class="question">
+    <div>
       <p>Is the issue fundamentally that the calculation of distance from an element on the ring to the point is an approximation that is not good near the point?</p>
     </div>
     <h2>1.24 Potential Energy of a cylinder</h2>
-    <div class="question">
+    <div>
       <p>
-        We first consider a hollow pipe of outer radius <i>R</i> and inner radius <i>a</i>, infinite in length, with uniform density \(\rho\).  Consider a slice of thickness <i>dx</i> taken at a right angle to the axis of the pipe.  We want to find the work needed to distribute the charge over the disc of radius <i>a</i>.  
+        Imagine that we have a cylindrical surface of radius <i>R>a</i> containing all the charge that will ultimately displace onto the solid cylinder.  We focus only on a unit-length segment of these distributions, so that <i>L=1</i>.  We also imagine taking a "differential portion" of the charge, <i>dq</i>.  This portion of the surface is, just like the surface itself, distributed about the cylindrical surface of radius <i>R</i>.  We will move this surface down to a radius <i>r</i> and then do likewise from <i>0 < r < a </i>.  
       </p>
       <p>
-        Outside the radius <i>R</i> the field is unchanged.  For a radial point <i>a < r < R</i> 
+        To prepare for the integration first observe that the total charge in the solid cylinder is \(\rho \pi a^2 L = \rho\pi a^2\).  Likewise if we have already constructed the solid cylinder of radius <i>r</i> and need to bring down a new differential element, the cylinder has charge \(\rho \pi r^2\).  As the hint indicates, this cylinder acts like a line charge for the purposes of the surface we'll bring down.  What is the density of this line charge?  The total charge on the line must equal the total charge in the cylinder so \(\lambda_r L = \rho \pi r^2L\) which implies \(\lambda_r = \rho\pi r^2\).  
+      </p>
+      <p>
+        Then the field strength is given by \(E_r = \frac{\lambda_r}{2\pi\epsilon_0 r'}\) where <i>r'</i> is a given distance from the line.  We move <i>dq</i> through this field and the work needed to do so is given by 
+        $$ dW = -\int_R^r \frac{\rho\pi r^2\ dq\ dr'}{2\pi \epsilon_0 r'} = $$
+        $$ -\frac{\rho r^2\ dq}{2\epsilon_0} \ln(r/R) = \frac{\rho r^2\ dq}{2\epsilon_0}\ln(R/r) $$
+      </p>
+      <p>
+        To integrate of all <i>dq</i> we must relate this to <i>dr</i>.  If we imagine a cylindrical annulus of width <i>dr</i> its charge is \(dq = \rho 2\pi r \ dr\ L\).  Then the work is 
+        $$ W = \int dW = \frac{\rho}{2\epsilon_0}\int_0^a r^2 \ln(R/r) dq = $$
+        $$\frac{\rho}{2\epsilon_0} \int_0^a r^2\ln(R/r) 2\pi \rho r\ dr= \frac{\pi\rho^2}{\epsilon_0}\int_0^a r^3\ln(R/r)\ dr$$
+      </p>
+      <p>
+        From here we can expand the logarithm and use integration by parts.  But this is math, and not really our interest.
       </p>
     </div>
     <h2>1.27 Uniform field in a cavity</h2>
