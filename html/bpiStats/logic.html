@@ -101,6 +101,20 @@
     <p>And then we show how negation acts on each possibility with a table like below:</p>
     $$\begin{array}{|c|c|}\hline P & \text{not-}P\\\hline T & F\\\hline F & T\\\hline\end{array}$$
     <p>The column on the left is there just to establish when we're considering <i>P</i> to be true or false.  The first row is for when <i>P</i> is true and the second row is for when <i>P</i> is false.  The column on the right is calculated from the column on the left by flipping the truth-values of <i>P</i>, row-by-row.  In this particular case it's very obvious how that works, but as we add more logical operations, the table will help us to manage how complex these calculations get.</p>
+    <h3>Test your understanding</h3>
+    <p>What is the truth-table for a "double-negated" sentence?  That is to say, what is the truth-table for <i>not-not-P</i>?</p>
+    <h3>Answer</h3>
+    <p>It's easy enough to reason that the double-negation should have the same truth-table as just plain <i>P</i>.  After all, if you flip the truth-values and then flip again, you're right back where you started.  In table form we can write this like so.</p>
+    
+    $$ \begin{array}{|c|c c|} \hline
+      P & \text{not-} & \text{not-P} \\\hline
+      T & \color{red} T & F \\\hline
+      F & \color{red} F & T \\\hline
+      \end{array}
+    $$
+    
+    <p>On the far right I've just copied the truth-table that we already saw for <i>not-P</i>.  Just left of that is the negation of it.  Since that is the the actual answer--it is the actual truth-table of the double-negation--I've highlighted it in red.</p>
+    
     <h2>Conjunction</h2>
     <p>We often put propositions together using "and".  For example "Russia is large and corrupt." This is really two propositions in one.  It is the conjunction of "Russia is large" and "Russia is corrupt".  To display the logic as much as possible, we separate out these sentences and write their conjunction as "Russia is large and Russia is corrupt."</p>
     <p>But now the question is, what is the truth-table for conjunction?  One thing is obvious: The table can't be as simple as before, because now we have TWO sentences, not just one.  So let's call the first sentence <i>P</i> and the second one <i>Q</i>.  It should be clear that if both <i>P</i> and <i>Q</i> are true then the conjunction "<i>P-and-Q</i>" should also be true.  This tells us how to treat one row of the truth-table.  But this is only for the possiblility where both <i>P</i> and <i>Q</i> are true.  What are the other possibilities?</p>
@@ -193,5 +207,59 @@
         F&T & T \\\hline 
         F&F& T\\\hline \end{array}$$</li>
     </ol>
+    <h2>Conditionals</h2>
+    <p>So far we've looked at operations that have a kind of symmetry to them.  For instance, it's probably clear that <i>P-and-Q</i> is basically the same as <i>Q-and-P</i>.  Same for "or" propositions.  It makes the middle two rows redundant.  But there is a very important operation which does not have this symmetry.  It is made from sentences that are constructed with the "if ... then ..." construction.  For example "If the circle has radius 1 then its area is \(\pi\)."  This is a true proposition, which we can symbolize as <i>if-P-then-Q</i>. Think of the various possibilities that come with this sentence:  You might be faced with a circle that has radius 1.  If you are, then when you measure its area you'll find that it's \(\pi\).  This establishes that the first row of the truth-table should contain <i>T</i>, since whenever the two sentences are true the "if-then" is also true.</p>
+    <p>Let's jump down to the last row real quick: What if you don't have a radius 1 circle, maybe you have a radius 2 circle?  When you measure the area you won't get \(\pi\).  Is the sentence still true?  Yep, it is!  Because the sentence didn't try to give any pronouncement about radius 2 circles.  The sentence didn't say anything about what to believe when <i>P</i> is false, so nothing like that can count against the truth of the "if-then".  We have just justified placing an <i>F</i> on that row.  So far the table we've built up is </p>
+    
+    $$\begin{array}{|c|c|c|}\hline P & Q& \text{if-}P\text{-then-}Q \\\hline 
+      T & T& T\\\hline 
+      T & F& ?\\\hline 
+      F&T & ? \\\hline 
+      F&F& T \\\hline \end{array}$$
+      
+    <p>NOTE: Most people eventually get confused about this.  When computing truth-tables involving "if-then" constructions, they often feel like if the two sentences are false, the if-then should come out false.  Just remember the example to recall why we got this slightly strange-seeming result.  When <i>P</i> is false, the "if-then" sentence hasn't made any claim about the truth of <i>Q</i>.  So it can't be wrong in these cases. </p>
+    <p>The same sort of logic justifies putting a <i>T</i> on the third row.  I won't go into details, but it is basically down to the fact that since <i>P</i> is false therefore the if-then cannot come out wrong. </p>
+    <p>And then there's the second row.  What to do when <i>P</i> is true and <i>Q</i> is false?  Let's think of the example "If you go right, you will find the grocery store."  And suppose that you do in fact go right.  But you don't find the grocery store.  Well I guess the person telling you directions just lied to you.  Put an <i>F</i> there.  Now we have the full table.</p>
+    
+    $$\begin{array}{|c|c|c|}\hline P & Q& \text{if-}P\text{-then-}Q \\\hline 
+      T & T& T\\\hline 
+      T & F& F\\\hline 
+      F&T & T \\\hline 
+      F&F& T \\\hline \end{array}$$
+    
+    <h3>Test your understanding</h3>
+    <p><ol>
+      <li>Build the truth-table for <i>if-Q-then-P</i> and compare it with the truth-table for <i>if-P-then-Q.</i> </li>
+      
+      <li>Build the truth-table for <i>if-(not-P)-then-(not-Q)</i>.  Does it look like any other truth-table you've seen? </li>
+    </ol></p>
+    <h3>Answers</h3>
+    <p>
+      <ol>
+        <li>I'll break this one down, again highlighting the final answer in red.  I'll explain how I got the second row since this might help understand how everything else was computed:  First, on the second row, <i>Q</i> is false and <i>P</i> is true.  Now since <i>Q</i> is on the left and <i>P</i> on the right, that means I use the rule for the if-then table where there's false on the left and true on the right.  That means I'm using the third row of that table above to look up what this should be.  Apparently that comes out to <i>T</i>, and that's why I have <i>T</i> on the second row below.</li>
+        
+        $$\begin{array}{|c|c|c c c|}\hline P & Q& \text{if-} Q & \text{-then-} & P \\\hline 
+          T & T & T & \color{red}T & T\\\hline 
+          T & F & F & \color{red}T & T\\\hline 
+          F & T & T & \color{red}F & F\\\hline 
+          F & F & F & \color{red}T & F\\\hline 
+          \end{array}$$
+          
+          <p>The important point about this is that it's NOT the same as the table for <i>if-P-then-Q</i>.  This illustrates that "and" and "or" had this kind of symmetry, where you could reverse it.  But "if" does not have the symmetry.</p>
+        <li>
+        $$\begin{array}{|c|c|c c c|}\hline P & Q& \text{if-not-}P  & \text{-then-} & \text{not-}Q \\\hline 
+          T & T & F & \color{red}T & F\\\hline 
+          T & F & F & \color{red}T & T\\\hline 
+          F & T & T & \color{red}F & F\\\hline 
+          F & F & T & \color{red}T & T\\\hline 
+          \end{array}$$</li>
+          <p>I won't explain here how I got these values.  But it is important to remark on the result.  The table for <i>if-Q-then-P</i> is exactly the same as the table for <i>if-(not-P)-then-(not-Q)</i>!</p>
+      </ol>
+    </p>
+    <h2>Equivalence</h2>
+    <p>What does it mean when two truth-tables come out the same?  We've seen this twice now, once for double-negation and once for the two sentences in the exercise above.  When the tables come out the same, we call the propositions <b>equivalent</b>.  Therefore <i>P</i> is equivalent to <i>not-not-P</i>.</p>
+    <p>Ok, but what does it mean?  It means that the two propositions are <i>said</i> differently but really communicate the <i>same</i> proposition.  It's like calling someone Bill versus William: Two names for the same thing.</p>
+    <p>Especially for conditionals, it's important to get VERY familiar with these equivalences, because these will come up when we start doing hypothesis testing in statistics.  Because it's so important, we have a bunch of vocabulary for all this.  First, there is vocabulary to help us with the parts of an if-then proposition.  For the proposition <i>if-P-then-Q</i> we call <i>P</i> the <b>antecedent</b> and we call <i>Q</i> the <b>consequent</b>.  This helps us keep track of which one is the "if" part and which is the "then" part.</p>
+    <p>Already this introduces some complexity though, because some English sentences don't put the "if" and "then" parts in the order I've been placing them.  Take the example proposition ""</p>
   </body>
 </html>
