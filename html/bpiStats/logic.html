@@ -259,7 +259,54 @@
     <h2>Equivalence</h2>
     <p>What does it mean when two truth-tables come out the same?  We've seen this twice now, once for double-negation and once for the two sentences in the exercise above.  When the tables come out the same, we call the propositions <b>equivalent</b>.  Therefore <i>P</i> is equivalent to <i>not-not-P</i>.</p>
     <p>Ok, but what does it mean?  It means that the two propositions are <i>said</i> differently but really communicate the <i>same</i> proposition.  It's like calling someone Bill versus William: Two names for the same thing.</p>
+    <h3> Test your understanding</h3>
+    <p>Show that <i>not-(P-and-Q)</i> is equivalent to <i>(not-P)-or-(not-Q)</i>.</p>
+    <h3>Answer</h3>
+    <p>I won't show the intermediate steps but if you draw a truth-table for <i>(not-P)-and-(not-Q)</i> you should find that it's 
+    
+      
+      $$\begin{array}{|c|c|c|}\hline P & Q & (\text{not-}P)\text{-or-}(\text{not-}Q)\\\hline 
+        T & T& F\\\hline 
+        T & F& T\\\hline 
+        F&T & T \\\hline 
+        F&F& T\\\hline \end{array}$$
+    
+    Since this is exactly the flip of the truth-table for <i>P-and-Q</i> then <i>not-(P-and-Q)</i> also has this truth-table.  Since they have the same truth-tables they are equivalent.
+    </p>
+    <h2>Conditional components</h2>
     <p>Especially for conditionals, it's important to get VERY familiar with these equivalences, because these will come up when we start doing hypothesis testing in statistics.  Because it's so important, we have a bunch of vocabulary for all this.  First, there is vocabulary to help us with the parts of an if-then proposition.  For the proposition <i>if-P-then-Q</i> we call <i>P</i> the <b>antecedent</b> and we call <i>Q</i> the <b>consequent</b>.  This helps us keep track of which one is the "if" part and which is the "then" part.</p>
-    <p>Already this introduces some complexity though, because some English sentences don't put the "if" and "then" parts in the order I've been placing them.  Take the example proposition ""</p>
+    <p>Already this introduces some complexity though, because some English sentences don't put the "if" and "then" parts in the order I've been placing them.  Take the example proposition "The area is \(\pi\) if the radius is 1." Even though the sentence clauses are swapped around, this still says the same thing as "If the radius is 1 the area is \(\pi\)."  The lesson here is that, when reading the English, what tells you the antecedent or the consequent isn't which is on the left or right.  It's related to which one comes after the "if" and which comes after the "then".</p>
+    <p>AND YET even this isn't fully true.  This whole system gets messed up when we consider conditionals with the word "only" in them.  Consider the sentence "You can go outside and play only if you clean your room."  Does this mean "If you clean your room then you can go outside and play"?  No, actually it doesn't.  It means "If you can go outside and play it's only allowed because you cleaned your room." So it might happen that your mom told you this, and after you cleaned your room she says "You still can't go out, you also need to feed the dog."</p>
+    <p>In effect what this shows is that the word "only" reverses the position of the antecedent and the consequent.  <i>P-only-if-Q</i> is equivalent to <i>if-P-then-Q</i>.  Similarly <i>only-if-P-then-Q</i> is equivalent to <i>if-Q-then-P</i>.</p>
+    <h3>Test your understanding</h3>
+    <p>In each of these sentences, determine which is the antecedent and which is the consequent.
+    <ol>
+      <li>If Socrates is a man then Socrates is mortal.</li>
+      <li>Only if Socrartes is a man then Socrates is mortal.</li>
+      <li>Socrates is mortal if Socrates is a man.</li>
+      <li>Socrates is mortal only if Socrates is a man.</li>
+    </ol>
+    </p>
+    
+    <h3>Answers</h3>
+    <p>
+      <ol>
+        <li>Antecedent: "Socrates is a man", Consequent: "Socrates is mortal"</li>
+        <li>Antecedent: "Socrates is mortal", Consequent: "Socrates is a man"</li>
+        <li>Antecedent: "Socrates is a man", Consequent: "Socrates is mortal"</li>
+        <li>Antecedent: "Socrates is mortal", Consequent: "Socrates is a man"</li>
+      </ol>
+    </p>
+    <h2>Conditional variations</h2>
+    <p>Now that we have the vocabulary to talk about the components of conditionals, we can talk about the important related conditionals.  If we have a sentence <i>if-P-then-Q</i> then the sentence <i>if-Q-then-P</i> is called its <b>converse</b>.  The sentence <i>if-(not-P)-then-(not-Q)</i> is called its <b>inverse</b>.  The sentence <i>if-(not-Q)-then-(not-P)</i> is called its <b>contrapositive</b>.</p>
+    <p>That is to say, the converse is the sentence where the antecedent and consequent are swapped.  The inverse is where the antecedent and consequent are negated.  The contrapositive are where the antecedent and consequent are negated and swapped.</p>
+    <h3>Test your understanding</h3>
+    <p>Consider the sentence "If it's raining then the sidewalk is wet."  Write its converse, inverse, and contrapositive.</p>
+    <h3>Answers</h3>
+    <p>The converse is "If the sidewalk is wet then it's raining."</p>
+    <p>The inverse is "If the sidewalk isn't wet then it isn't raining."</p>
+    <p>The contrapositive is "If it isn't raining then the sidewalk isn't wet."</p>
+    <h2>Conditional Equivalences</h2>
+    <p>We have already seen that, for a conditional <i>if-P-then-Q</i> the inverse is equivalent to the converse.  That is to say, although the inverse looks different from the converse, they actually say the same thing.  What about the contrapositive?  If you write out the truth-table for <i>if-(not-Q)-then-(not-P)</i> then you should find that it has the same truth-table as the original sentence <i>if-P-then-Q</i>.  You should test your understanding by demonstrating this to yourself.  </p>
   </body>
 </html>
