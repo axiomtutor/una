@@ -119,6 +119,77 @@
           1\phantom{00}
          \end{array}
        $$
+       
+       next carry a digit from the 12625
+       
+       $$
+         \require{enclose}
+         \begin{array}{rll}
+           1\phantom{00}&& \\[-3pt]
+          125 \enclose{longdiv}{12625}\kern-.2ex \\[-3pt]
+          \underline{-125\phantom{00}} && \\
+          12\phantom{20}
+         \end{array}
+       $$
+       
+       Since this "goes in" 0 times, we record the 0 and bring down another digit.
+       
+       $$
+         \require{enclose}
+         \begin{array}{rll}
+           10\phantom{0}&& \\[-3pt]
+          125 \enclose{longdiv}{12625}\kern-.2ex \\[-3pt]
+          \underline{-125\phantom{00}} && \\
+          125
+         \end{array}
+       $$
+       
+       This goes in 1 time so we record it
+       
+       $$
+         \require{enclose}
+         \begin{array}{rll}
+           101&& \\[-3pt]
+          125 \enclose{longdiv}{12625}\kern-.2ex \\[-3pt]
+          \underline{-125\phantom{00}} && \\
+          125
+         \end{array}
+       $$
+       
+       multiply 125*1 and subtract.
+       
+       $$
+         \require{enclose}
+         \begin{array}{rll}
+           101&& \\[-3pt]
+          125 \enclose{longdiv}{12625}\kern-.2ex \\[-3pt]
+          \underline{-125\phantom{00}} && \\
+          125 && \\
+          \underline{-125} && \\
+          0 &&
+         \end{array}
+       $$
+       
+       And since we've ended with a 0 the division is done.  What this shows is that $$12625/125 = 101$$  
+       Of course equivalent to this fact is the fact that 
+       $$12625 = 125\times 101$$
+       which is the same thing we saw in the section on multiplication.
+     </p>
+     <p>Division of decimals is like multiplication with decimals: Do it without the decimals and add them back in.  The only difference is that you add back in the decimals that were in the <i>numerator</i>.  You subtract out decimals that were in the <i>denominator.</i>  So if you had to divide 126.25/12.5 the result would be 101 if we ignore the decimals.  Then we add in the two decimals from the numerator to get 1.01.  But we move the decimal in the other direction because of the one decimal in 12.5.  That means we end with 10.1.</p>
+     <h3>Test your understanding</h3>
+     <p>What is 0.002/200?</p>
+     <h3>Answer</h3>
+     <p>
+       If you ignore the decimal we're basically calculating 2/200.  If you compute this like we did above, you should get 
+     
+       $$\require{enclose}
+       \begin{array}{rll}
+        0.01 && \\
+        200 \enclose{longdiv}{2.00}
+       \end{array}
+       $$
+       
+       This is telling us that 2/200 is 0.01.  But because of the three decimals that the original numerator had, we move the decimal left three times.  That gives us 0.00001.
      </p>
   </body>
 </html>
