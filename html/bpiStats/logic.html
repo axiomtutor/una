@@ -74,7 +74,7 @@
     <p>Now here's an argument that contains true premises but doesn't use them well.</p>
     <p>"All triangles have a perimeter.  Therefore the perimeter of a triangle is \(\pi\)."</p>
     <p>The premise is true but it got the conclusion wrong because the premise has nothing (or very little) to do with the conclusion.</p>
-    <p>An argument that has false premises is said to be <b>unsound</b> and an argument that draws conclusions which aren't justified by the premises is called <b>invalid</b>.  A good argument then must be both sound and valid.</p>
+    <p>An argument that has false premises is said to be <b>unsound</b> and an argument that draws conclusions which aren't justified is called <b>invalid</b>.  A good argument then must be both sound and valid.</p>
     <h3>Test your understanding</h3>
     <p>For each of the following, say whether it's sound and whether it's valid. Hint: Arguments can be sound and valid, unsound and valid, sound and invalid, or unsound and invalid.  I give one example of each possibility.  Second hint: An argument can have a true conclusion and still be invalid!  To be invalid just means that the conclusion isn't justified by the premises.
       <ol>
@@ -166,7 +166,7 @@
       T & F& T\\\hline 
       F&T & T \\\hline 
       F&F& F\\\hline \end{array}$$
-    <p>What about the first row?  What happens if you have two true sentences?  In the prize example that would be very weird because it sounds like there's only one prize.  But if there are two prizes, one behind door one, and one behind door two, then is the sentence "The prize is behind door one or door two." a true sentence?  I would suggest it is, even if it seems a little funny to say it like that.  So we put <i>T</i> in that row.  Therefore the full table is </p>
+    <p>What about the first row?  What happens if you have two true sentences?  In the prize example that would be very weird because it sounds like there's only one prize.  But if there are two prizes, one behind door one, and one behind door two, then is the sentence "The prize is behind door one or door two." a true sentence?  I would suggest that technically, it is, even if it seems a little funny to say it like that.  So we put <i>T</i> in that row.  Therefore the full table is </p>
     $$\begin{array}{|c|c|c|}\hline P & Q& P\text{-or-}Q\\\hline 
       T & T& T\\\hline 
       T & F& T\\\hline 
@@ -178,9 +178,20 @@
       <li>Find the truth-table for <i>(not-P)-or-Q</i></li>
     </ol>
     <h3>Answers</h3>
+    <p>Since you've seen it once before, I won't break the steps down again.  Instead I'll just show the final answer.</p>
     <ol>
-      <li></li>
-      <li></li>
+      <li>
+      $$\begin{array}{|c|c|c|}\hline P & Q& \text{not-}(P\text{-or-}Q)\\\hline 
+        T & T& F\\\hline 
+        T & F& F\\\hline 
+        F&T & F \\\hline 
+        F&F& T\\\hline \end{array}$$</li>
+      <li>
+      $$\begin{array}{|c|c|c|}\hline P & Q& (\text{not-}P)\text{-or-}Q\\\hline 
+        T & T& T\\\hline 
+        T & F& F\\\hline 
+        F&T & T \\\hline 
+        F&F& T\\\hline \end{array}$$</li>
     </ol>
   </body>
 </html>
