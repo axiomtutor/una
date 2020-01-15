@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="../notes.css">
   </head>
   <body>
+    <div class="note">
+      <p>
+        The brief story of this chapter is: There's Coulomb's law which tells you how to find the field from the charge distributions.  Commit the formula to memory.  With this you can find the self-energy, which is the work required to assumble the system by brining in points from infinity.  The formula is an easy consequence of definitions of work and Coulomb's law--you should be able to reconstruct it quickly as needed.  The electric field is the force per unit charge at any point in space due to electric forces, and is given by 
+        $$k\frac{\rho\hat{r}\ dx'\ dy'\ dz'}{r^2}$$ where the integral is taken over all of space and we require \(\rho\) to be non-zero only in a bounded region.  The variables on the left-hand side (not variables of integration) are present in \(\hat{r}/r^2\).  The flux is defined as the surface vector integral.  Gauss's law states that the flux through any closed surface is the amount of charge enclosed over \(\epsilon_0\).  Gauss's law allows us to easily derive the field strength at a distance <i>r</i> from a sphere:
+        $$E_{sphere}= kQ/r^2$$
+        from  a line 
+      </p>
+    </div>
     <h1>1.0 Electrostatics: charges and fields</h1>
     Two important features of charges are <i>conservation</i> and <i>quantization</i>.  The electric force between two charges is given by <i>Coulomb's law</i>, which tells us the force is proportionate to \(1/r^2\).  The force law is conservative in the sense of path independence, so we can talk about potential energy.  A useful concept is the <i>electric field</i> which is <i>force per unit charge at each point in space.</i> The <i>flux</i> of the field through a surface is defined in this chapter, and leads to <i>Gauss's law</i>. Finally we discuss <i>energy density</i>.
 
@@ -434,7 +442,7 @@
     </p>
     <h2>1.22 Field from a spherical shell, right and wrong</h2> 
     <div>
-      <p>Is the issue fundamentally that the calculation of distance from an element on the ring to the point is an approximation that is not good near the point?</p>
+      <p>The issue is the approximation used for the distance of a ringe element to the point, which becomes poor as the ring is taken near the point.</p>
     </div>
     <h2>1.24 Potential Energy of a cylinder</h2>
     <div>
@@ -459,9 +467,16 @@
       </p>
     </div>
     <h2>1.27 Uniform field in a cavity</h2>
-    <div class="question">
+    <div>
       <p>
-        Let's just do everything here and after in the problems section, and all three-star exercises.
+        Earlier in the chapter we found that the field due to a charged sphere obeys \(E = \frac{\rho r}{3\epsilon_0}\).  Since we have a spherical cavity, we may regard the cavity as the superposition of the larger sphere of density \(\rho\) together with a smaller sphere of density \(-\rho\) and then the smaller sphere obeys the same law as before.  The two spheres acting together is then determined by superpositions of forces.
+      </p>
+      <p>
+        If \(\vec{r}\) is any point inside the cavity then we may first draw displacement vectors from the centers of the larger and smaller spheres, which are parallel to the respective force vectors.  Call these displacement vectors \(\vec{r}_1,\vec{r}_2\) and then the corresponding force vectors are \(\frac{\rho}{3\epsilon_0}\vec{r}_1, \frac{-\rho}{3\epsilon_0}\vec{r}_2\).  Then the force acting on the point is 
+        
+        $$\frac{\rho}{3\epsilon_0}(\vec{r}_1-\vec{r}_2)$$
+        
+        This will be a constant vector if for any point in the cavity \(\vec{r}_1-\vec{r}_2\) is constant, where again \(\vec{r}_1\) is the displacement vector from the center of the larger sphere and \(\vec{r}_2\) is from the center of the smaller.  Vector geometry shows that \(\vec{r}_1-\vec{r}_2\) is just the displacement vector from the center of the larger sphere to the center of the smaller, so it must be constant.
       </p>
     </div>
     <h2></h2>
