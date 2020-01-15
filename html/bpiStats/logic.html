@@ -71,5 +71,116 @@
       "If the streets are wet then it must have rained recently.  The streets are wet.  Therefore it has rained recently.""
     </p>
     <p>The first sentence is not true because the streets could be wet from lawn sprinklers or other causes.  Because a premise is not true, the argument may reach a false concluion.</p>
+    <p>Now here's an argument that contains true premises but doesn't use them well.</p>
+    <p>"All triangles have a perimeter.  Therefore the perimeter of a triangle is \(\pi\)."</p>
+    <p>The premise is true but it got the conclusion wrong because the premise has nothing (or very little) to do with the conclusion.</p>
+    <p>An argument that has false premises is said to be <b>unsound</b> and an argument that draws conclusions which aren't justified by the premises is called <b>invalid</b>.  A good argument then must be both sound and valid.</p>
+    <h3>Test your understanding</h3>
+    <p>For each of the following, say whether it's sound and whether it's valid. Hint: Arguments can be sound and valid, unsound and valid, sound and invalid, or unsound and invalid.  I give one example of each possibility.  Second hint: An argument can have a true conclusion and still be invalid!  To be invalid just means that the conclusion isn't justified by the premises.
+      <ol>
+        <li>All cups are green.  Socrates is a cup.  Therefore Socrates is green.</li>
+        <li>All men are mortal.  Socrates is a man.  Therefore Socrates is mortal.</li>
+        <li>All cups can hold water.  Therefore Socrates is mortal.</li>
+        <li>All cups are green.  Therefore Socrates is immortal.</li>
+      </ol>
+    </p>
+    <h3>Answers</h3>
+    <p>
+      <ol>
+        <li>Unsound, valid.  The premise "all cups are green" is false and that makes the argument unsound.  But if we accepted this like it's true, and we accept "Socrates is a cup", then it would logically follow that Socrates must be green.  That makes the argument valid.</li>
+        <li>Sound, valid.</li>
+        <li>Sound, invalid.</li>
+        <li>Unsound, invalid.</li>
+      </ol>
+    </p>
+    <h2>Negation</h2>
+    <p>Propositions are often built using words like "not", "or", "and" and "if" which change the truth-value.  For instance you can start from a true sentence "Russia is large" and use negation to get a false sentence "Russia is not large".  You likewise can negate a false sentence to get a true one, so negation flips the truth-value of a sentence. </p>
+    <p>In order to study how these operations work on propositions, we write a proposition with a symbol like <i>P</i>, so that whenever I'm talking about <i>P</i> I'm talking about the proposition that it stands for.  That proposition could be anything, like "The high today is 80-degrees." or "Nixon went to China." Often I actually don't care which sentence it is, what I really want to do is study how something like negation acts on <i>any</i> sentence.  That's because what I'm really trying to do is study how sentences in general work.  So just know that when I use the symbol <i>P</i> I mean some proposition, but I may not have any specific proposition in mind.  And what I say about <i>P</i> should be true for every proposition that you might want to analyze.</p>
+    <p>But since we don't know which proposition we're dealing with, it could be true or false.  We diagram these possibilities like you see below.</p>
+    $$\begin{array}{|c|}\hline P \\\hline T \\\hline F \\\hline\end{array}$$
+    <p>And then we show how negation acts on each possibility with a table like below:</p>
+    $$\begin{array}{|c|c|}\hline P & \text{not-}P\\\hline T & F\\\hline F & T\\\hline\end{array}$$
+    <p>The column on the left is there just to establish when we're considering <i>P</i> to be true or false.  The first row is for when <i>P</i> is true and the second row is for when <i>P</i> is false.  The column on the right is calculated from the column on the left by flipping the truth-values of <i>P</i>, row-by-row.  In this particular case it's very obvious how that works, but as we add more logical operations, the table will help us to manage how complex these calculations get.</p>
+    <h2>Conjunction</h2>
+    <p>We often put propositions together using "and".  For example "Russia is large and corrupt." This is really two propositions in one.  It is the conjunction of "Russia is large" and "Russia is corrupt".  To display the logic as much as possible, we separate out these sentences and write their conjunction as "Russia is large and Russia is corrupt."</p>
+    <p>But now the question is, what is the truth-table for conjunction?  One thing is obvious: The table can't be as simple as before, because now we have TWO sentences, not just one.  So let's call the first sentence <i>P</i> and the second one <i>Q</i>.  It should be clear that if both <i>P</i> and <i>Q</i> are true then the conjunction "<i>P-and-Q</i>" should also be true.  This tells us how to treat one row of the truth-table.  But this is only for the possiblility where both <i>P</i> and <i>Q</i> are true.  What are the other possibilities?</p>
+    <p>In total, there are four possibilities:  <i>P</i> and <i>Q</i> are true, <i>P</i> is true and <i>Q</i> is false, <i>P</i> is false and <i>Q</i> is true, and <i>P</i> and <i>Q</i> are both false.  We diagram these possibilities in a table like this:</p>
+    $$\begin{array}{|c|c|}\hline P & Q\\\hline T & T\\\hline T & F\\\hline F&T \\\hline F&F\\\hline \end{array}$$
+    <p>Now we want to include in this table the values for "<i>P-and-Q</i>".  We already said what goes on the first row:</p>
+    $$\begin{array}{|c|c|c|}\hline P & Q& P\text{-and-}Q\\\hline 
+      T & T&T\\\hline 
+      T & F& ?\\\hline 
+      F&T & ? \\\hline 
+      F&F& ?\\\hline \end{array}$$
+    <p>We still need the other rows.  What if I said "Russia is large and south of Egypt"?  Would that sentence be true?  It seems half-true, but in logic, we just say that the sentence is false.  And the order doesn't matter, so if I said "Russia is south of Egypt and large." that would still be false.  So apparently we are putting false values in those rows.</p>
+    $$\begin{array}{|c|c|c|}\hline P & Q& P\text{-and-}Q\\\hline 
+      T & T&T\\\hline 
+      T & F& F\\\hline 
+      F&T & F \\\hline 
+      F&F& ?\\\hline \end{array}$$
+    <p>Finally, if both sentences are false then the conjunction is a very false sentence and we definitely want a false in that row.  So the full table is </p>
+    $$\begin{array}{|c|c|c|}\hline P & Q& P\text{-and-}Q\\\hline 
+      T & T&T\\\hline 
+      T & F& F\\\hline 
+      F&T & F \\\hline 
+      F&F& F\\\hline \end{array}$$
+    <h3>Test your understanding</h3>
+    <ol>
+      <li>
+      <p>Build the truth-table for the sentence "<i>not-(P-and-Q)</i>".  Although we haven't talked about how to join these operators together, the result should be exactly the same as the truth-table for "and" but with the values flipped.</p></li>
+      <li><p>
+        Build the truth-table for the sentence "<i>(not-P)-and-Q</i>".  This time you cannot just negate the values of the conjunction.  Instead, first, you flip the values of <i>P</i> and <i>then</i> you use the conjunction rules for these flipped values together with the values under <i>Q</i>.  
+      </p></li>
+    </ol>
+    <h3>Answers</h3>
+    <p>The way I like to display these kinds of table calculations is to write a column of truth-values underneath each operation.  In this case that means a column under the "and" and a column under the "not".  The column under the "and" comes from the conjunction rules that were specified earlier.  The column under the "not" is the flip of those values.  But really, only the column under the not is the "answer" to this question, so I've highlighted that in red.</p>
+    <ol>
+      <li>
+      $$\begin{array}{|c|c|c c|}\hline P & Q& \text{not-} & (P\text{-and-}Q)\\\hline 
+        T & T& \color{red}F & T\\\hline 
+        T & F& \color{red}T & F \\\hline 
+        F&T & \color{red}T & F \\\hline 
+        F&F& \color{red}T & F \\\hline \end{array}$$</li>
+      <li>
+        I do this similar to the above, except this time we start by flipping the truth-values of <i>P</i>.  Since those values originally went TTFF now they become FFTT.  AFTER I compute that column, I then compute the "and" column.  The values that go into the "and" calculations come from the <i>not-P</i> and from the <i>Q</i>.  So for instance, in the first row, <i>not-P</i> takes the value <i>F</i> and <i>Q</i> takes the value <i>T</i>.  So we need to compute "and" with an <i>F</i> on the left and a <i>T</i> on the right.  You can look at the finished conjunction table to see that this produces an <i>F</i>.  That explains what you see on the first row of this answer.
+        $$\begin{array}{|c|c|c c c|}\hline P & Q& (\text{not-}P) & \text{-and-} & Q\\\hline 
+          T & T & F & \color{red}F & T \\\hline 
+          T & F & F & \color{red}F & F \\\hline 
+          F & T & T & \color{red}T & T \\\hline 
+          F & F & T & \color{red}F & F \\\hline \end{array}$$
+          
+        <p>Notice that the answer for the first question, FTTT, is not the same as the answer for this question, which is FFTF!  This shows you that the order in which you do these calculations matters!</p>
+      </li>
+    </ol>
+    <h2>Disjunction</h2>
+    <p>Next we talk about the operation that we use when sentences are joined together with "or".  Take for example "The prize is behind door one or two."  Again we can display the logic by writing this as two propositions "The prize is behind door one or the prize is behind door two."  We symbolize this as "<i>P-or-Q</i>".  If the "or" proposition is true then one of the sentences is true, but we don't know which one.  This already tells us two rows of the truth-table.</p>
+    $$\begin{array}{|c|c|c|}\hline P & Q& P\text{-or-}Q\\\hline 
+      T & T& ?\\\hline 
+      T & F& T\\\hline 
+      F&T & T \\\hline 
+      F&F& ?\\\hline \end{array}$$
+      
+    <p>And it's pretty easy to believe that the third row should be <i>F</i>.  Why?  Imagine that you open door one and there's no prize.  Bummer.  But then just to check, you open door two and there's no prize behind <i>that one either!</i>  Now you're pissed.  The or-sentence was false! We can fill in the last row:</p>
+    $$\begin{array}{|c|c|c|}\hline P & Q& P\text{-or-}Q\\\hline 
+      T & T& ?\\\hline 
+      T & F& T\\\hline 
+      F&T & T \\\hline 
+      F&F& F\\\hline \end{array}$$
+    <p>What about the first row?  What happens if you have two true sentences?  In the prize example that would be very weird because it sounds like there's only one prize.  But if there are two prizes, one behind door one, and one behind door two, then is the sentence "The prize is behind door one or door two." a true sentence?  I would suggest it is, even if it seems a little funny to say it like that.  So we put <i>T</i> in that row.  Therefore the full table is </p>
+    $$\begin{array}{|c|c|c|}\hline P & Q& P\text{-or-}Q\\\hline 
+      T & T& T\\\hline 
+      T & F& T\\\hline 
+      F&T & T \\\hline 
+      F&F& F\\\hline \end{array}$$
+    <h3>Test your understanding</h3>
+    <ol>
+      <li>Find the truth-table for <i>not-(P-or-Q)</i>. </li>
+      <li>Find the truth-table for <i>(not-P)-or-Q</i></li>
+    </ol>
+    <h3>Answers</h3>
+    <ol>
+      <li></li>
+      <li></li>
+    </ol>
   </body>
 </html>
