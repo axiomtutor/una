@@ -5,6 +5,7 @@
     <title>Arithmetic - BPISTATS</title>
     <script id="MathJax-script" async src="../../MathJax-master/es5/tex-chtml.js">
     </script>
+    <link rel="stylesheet" href="bpi.css">
   </head>
   <body>
     <h1>Arithmetic</h1>
@@ -215,7 +216,7 @@
      <h2>Exponents, roots, logs</h2>
      <p>Just like multiplication means repeated addition, exponentiation means repeated multiplication.  So 3*4 means 3+3+3+3 which is 12.  Or does it mean 4+4+4?  Well since that's also 12 it doesn't matter.</p>
      <p>Anyway, 3<sup>4</sup> means 3*3*3*3 which is 81.  Or is it 4*4*4 which is 64?  This time they're different so we better make sure we get it right.  3<sup>4</sup> is in fact the first one, so it's 81.</p>
-     <p>Now every operation we've seen so far has an "inverse".  For addition the inverse is subtraction.  For multiplication the inverse is division.  What's the inverse for exponentiation?  Well we have to get clear about what exactly an inverse even means.  With addition an inverse looks like this
+     <p>Now every operation we've seen so far has an <b>inverse</b>.  For addition the inverse is subtraction.  For multiplication the inverse is division.  What's the inverse for exponentiation?  Well we have to get clear about what exactly an inverse even means.  With addition an inverse looks like this
       $$
       3+4-4 = 3
       $$ 
@@ -226,7 +227,7 @@
       (In fact this is basically why you can't divide by 0. It's related to the fact that ANY number times 0 is 0.)  Notice that because + and &div; have a symmetry to them, it doesn't matter what order we do it in.  
       $$4+3-4 = 3$$
       $$4\times 3\div 4 = 3$$
-      But that's not true with exponents.  We already saw that the order matters.  What that means is that there are TWO kinds of inverses for exponents.  The first one is what we call the "root".  It cancels the exponent and leaves the base.  The most famous root is the square root, which cancels a square.
+      But that's not true with exponents.  We already saw that the order matters.  What that means is that there are TWO kinds of inverses for exponents.  The first one is what we call the <b>root</b>.  It cancels the exponent and leaves the base.  The most famous root is the square root, which cancels a square.
       $$\sqrt{4^2} = 4$$
       In effect this shows you that \(\sqrt{16}=4\).  
      </p>
@@ -238,5 +239,177 @@
      </p>
      <p>Now getting back to the lesson, is should be clear that \(\sqrt{1}=1\) and \(\sqrt{0}=0\) which are often useful to know because they're so easy to calculate. </p>
      <p>But the square root isn't the only root.  There's also the cube-root which cancels cubes.  Since \(\sqrt[3]{2^3} = 2\) this shows us that \(\sqrt[3]{8}=2\). </p>
+     <p>
+       But I promised you something else too.  I promised there was a second way to cancel exponential expressions and this one <i>cancels the base and leaves the exponent</i>.  This is called the <b>logarithm</b>.  For example
+       $$
+       \log_3(3^4) = 4
+       $$
+       This tells us that 
+       $$
+       \log_3(81) = 4
+       $$
+     </p>
+     <h3>Test your understanding</h3>
+     <p>
+       <ol>
+         <li>Find log<sub>3</sub>(9).</li>
+         <li>Find log<sub>3</sub>(3).</li>
+         <li>Find log<sub>3</sub>(1).</li>
+         <li>Find log<sub>2</sub>(16).</li>
+       </ol>
+     </p>
+     <h3>Answers</h3>
+     <p>
+       <ol>
+         <li>2 because 3<sup>2</sup>=9. That tells us log<sub>3</sub>(9) = log<sub>3</sub>(3<sup>2</sup>) = 2.</li>
+         <li>1 because 3<sup>1</sup>=3.</li>
+         <li>0 because 3<sup>0</sup>=1.</li>
+         <li>4</li>
+       </ol>
+     </p>
+     <h1>Percents</h1>
+     <h2>The basic idea</h2>
+     <p>The idea of percents and calculating with percents will be very important throughout this class.  And they often confuse people, so let's spend some quality time on this.</p>
+     <p>Take a group of college students with different majors.  If 40% are public health majors then you would expect that in a random sample of 100 students, 40 will be public health majors.  This makes the percentage seem like a rate.  "For every 100 students you get 40 public health majors."  If you double the number of students to 200 you get 80 public health majors.  </p>
+     <p>If the numbers are easy to relate to 100 there isn't much challenge. How many public health majors are in a typical random sample of 50 students?  20. But what about the typical number of public health majors in a selection of 13 students?</p>
+     <p>The answer is 13*40%.  To compute this you just do 13*40/100 or if you prefer, it's the same thing as 13*0.4.  Either way you get 5.2.  Notice how this method agrees with what we saw earlier.  To get the number of public health majors in 100 students you could compute 100*40%.  This computes to 40.  The number in 200 students is 200*40% which is 80.</p>
+     <h3>Test your understanding</h3>
+     <p>Find 21% of 111.</p>
+     <h3>Answer</h3>
+     <p>(21%)*111 = 21*111/100 = (111+2220)/100 = 2331/100 = 23.31</p>
+     <p>Another way to think about percent is that it is the "part over whole".  For example if you have 100 people and 40 of them are public health majors, the percentage of public health majors is 40/100 which is the same as 40%.  If there are 6 friends and 4 are women, what is the percentage of women?  4/6 which is part over whole.  We can then re-express 4/6 as 0.66 (approximately).  Since percentages are written as "over 100" we can take 0.66 * 100 / 100. And this tells us it's 66/100 and that's 66%.  Now that it's in true percentage form we're done.   </p>
+     <h3>Test your understanding</h3>
+     <p>If 10 cars on a parking lot are green and there are 68 cars, what is the percent of green cars?  What is the percent of cars that aren't green?</p>
+     <h3>Answers</h3>
+     <p>10/68 of the cars are green, and that's about 0.15.  Converting to percentage form as above you get 15%.  Notice that converting to a percent is always just moving the decimal right by two.</p>
+     <p>Also it should be intuitive that percentages of all groups add up to 100%.  If you have toys of colors red, green, blue, and white, then the percentages can't be 50%, 20%, 30%, and 10%.  In fact if you find the first three percentages that should be enough information to figure out the last percentage.</p>
+     <h3>Test your understanding</h3>
+     <p>If toys come in red, green, blue, and white, and the percentage of red is 50%, green is 20%, blue is 30%, what is the percentage of white?  If there is a total of 1000 toys, how many are of each color?</p>
+     <h3>Answer</h3>
+     <p>Red, gree, and blue together already make up 100%, so the percentage of white must be 0%.  That is the same as there being 0 white toys.  The amounts of the other toys must be 500, 200, and 300.</p>
+     <h2>Parts of parts</h2>
+     <p>Suppose you have college majors, some of them are public health majors, some not; some of them are men and some not.  We can describe them on a two-way table (can be called a "contingency table").</p>
+     <table>
+       <tr>
+         <th> </th><th>Male</th><th>Female</th>
+       </tr>
+       <tr>
+         <th>PH</th>
+         <td>10</td>
+         <td>20</td>
+       </tr>
+       <tr>
+         <th>Other</th>
+         <td>40</td>
+         <td>30</td>
+       </tr>
+     </table>
+     <p>This expresses, for example, there are 10 male public health majors, and there are 30 female students who are not public health majors.  We can compute the percent of the group that's male; that's 50/100 or 50%.  Clearly the percent that are female is the same.  The percent that are public health majors is 40/100 or 40%.  Notice that there are two ways to get the percent of non-public health majors: You could compute 100%-40% or you could just count up the "Other" row and get 60/100.</p>
+     <p>These percentages are often called <b>marginal percents</b> because they can be computed by putting totals on the margins of the table.</p>
+     <table>
+       <tr>
+         <th> </th><th>Male</th><th>Female</th><th>TOTALS</th>
+       </tr>
+       <tr>
+         <th>PH</th>
+         <td>10</td>
+         <td>20</td>
+         <td>30</td>
+       </tr>
+       <tr>
+         <th>Other</th>
+         <td>40</td>
+         <td>30</td>
+         <td>70</td>
+       </tr>
+       <tr>
+         <th>TOTALS</th>
+         <td>50</td>
+         <td>50</td>
+         <td>100</td>
+       </tr>
+     </table>
+     <p>But not only that, we can also compute <b>joint percents</b>.  For instance the percent of students who are both male and public health majors is 10/100 or 10%.  You can get similar joint percentages for every other cell of the table.</p>
+     <p>Finally there's another kind of percent you can calculate, the <b>conditional percent</b>.  What is the percent OF MALES who are public health majors?  10/50 = 20%.</p>
+     <h3>Test your understanding</h3>
+     <p>
+       In the following two-way table, toys are categorized by color along one axis and by age-bracket along another. 
+       <ol>
+         <li>Find the marginal percent of red toys.</li>
+         <li>Find the joint percent of red toys for ages 10-14.</li>
+         <li>Find the conditional percent of red toys out of the toys for ages 10-14.</li>
+       </ol>
+       <table>
+         <tr>
+           <th> </th><th>Red</th><th>White</th><th>White</th><th>TOTALS</th>
+         </tr>
+         <tr>
+           <th>Ages 3-6</th>
+           <td>100</td>
+           <td>250</td>
+           <td>200</td>
+           <td>550</td>
+         </tr>
+         <tr>
+           <th>Ages 6-10</th>
+           <td>50</td>
+           <td>150</td>
+           <td>300</td>
+           <td>500</td>
+         </tr>
+         <tr>
+           <th>Ages 10-13</th>
+           <td>100</td>
+           <td>200</td>
+           <td>100</td>
+           <td>400</td>
+         </tr>
+         <tr>
+           <th>TOTALS</th>
+           <td>100</td>
+           <td>200</td>
+           <td>100</td>
+           <td></td>
+         </tr>
+       </table>
+     </p>
+     <p>An interesting question, though, is what if I told you that a group of students is 40% male and of the males 10% are public heatlh majors?  Can we say the number of male public health majors?</p>
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
   </body>
 </html>
