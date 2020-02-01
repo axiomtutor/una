@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../notes.css">
   </head>
   <body>
-    <h1>1.0 Vector Analysis</h1>
+    <h1>1. Vector Analysis</h1>
     <h2>1.1 Vector Algebra</h2>
     <h3>1.1.1 Vector Operations</h3>
     <h3>1.1.2 Components</h3>
@@ -99,7 +99,42 @@
       </p>
       <p>
         For a change in \(\hat r\) there is a one-to-one corresponding change in \(d \vec\ell\).  
-        
+        $$d\ell_r = dr$$
+        but for a change in \(\theta\) the change scales with <i>r</i>,
+        $$d\ell_\theta = r\ d\theta$$
+        and for a fixed \(r, \theta\) the change in \(\ell\) corresponding to a change in \(\varphi\) is 
+        $$d\ell_\phi = r\sin\theta d\phi$$
       </p>
+      <p>
+        From this we have 
+        $$d\vec{\ell} = d\hat{r} + r\ d\hat{\theta} + r\sin\phi\ d\hat{\phi}$$
+        We can also analyze derivative-like calculations in spherical coordinates.  Without proof or explanation we use 
+        
+        $$\nabla T = \frac{\partial T}{\partial r}\hat{r}+\frac{1}{r}\frac{\partial T}{\partial \theta}\hat{\theta} + \frac{1}{r\sin\theta}\frac{\partial T}{\partial \phi}\hat\phi$$
+        $$\nabla\cdot\vec{v} = \frac{1}{r^2}\frac{\partial}{\partial r}(r^2 v_r) + \frac{1}{r\sin\theta}\frac{\partial}{\partial \theta}(\sin \theta v_\theta) + \frac{1}{r\sin\theta}\frac{\partial v_\phi}{\partial \phi}$$
+        $$\nabla\times\vec{v} =
+        \frac{1}{r\sin\theta}\left[\frac{\partial}{\partial \theta}\left(\sin \theta v_\phi-\frac{\partial v_\theta}{\partial \phi}\right)\right]\hat{r} + 
+        \frac{1}{r}\left[\frac{1}{\sin\theta}\frac{\partial v_r}{\partial \phi}-\frac{\partial}{\partial r}(r v_\phi)\right]\hat \theta +
+        \frac 1 r \left[\frac\partial{\partial r}(rv_\theta) - \frac{\partial v_r}{\partial \theta}\right]\hat\phi$$
+      </p>
+    <h3>1.4.2 Cylindrical Coordinates</h3>
+    <p>
+      There are a bunch of other formulae you can reference for cylindrical coordinates.
+    </p>
+    <h2>1.5 The Dirac Delta Function</h2>
+    <h3>1.5.1 The Divergence of \(\hat{r}/r^2\)</h3>
+    <p>
+      The book tries to motivate the development of the delta function from the divergence of \(\hat r/r^2\) with dubious success.  
+    </p>
+    <h3>1.5.2 The Dirac Delta</h3>
+    <p>
+      By hook or by crook, we learn about the Dirac delta function which is really a generalized function.  In some sense it is the limit of the following family of functions which has area 1:
+      
+      $$ \delta_n(x) = 
+      \begin{cases}
+        0 && \text{ if } |x|>\frac{1}{2n}\\
+        n && \text{ otherwise }
+      \end{cases}$$
+    </p>
   </body>
 </html>
