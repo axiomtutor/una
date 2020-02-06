@@ -14,6 +14,9 @@
     <h3>1.1.2 Components</h3>
     <h3>1.1.3 Triple Products</h3>
     <h3>1.1.4 Position, Displacement, Separation</h3>
+    <p>
+      The <b>separation vector</b> relative to some <b>source point</b> \(\vec r '\) is defined as \( \vec{\mathcal{R}} = \vec r - \vec r' \).  That is to say it points in the directly from the source to the given point determined by \(\vec r\).
+    </p>
     <h3>1.1.5 Transformations</h3>
     <div class="question">
       A rotation matrix has the form 
@@ -135,6 +138,72 @@
         0 && \text{ if } |x|>\frac{1}{2n}\\
         n && \text{ otherwise }
       \end{cases}$$
+      
+      The limit of this sequence, were it a function, could be understood as representing an instantaneous leap.  For instance if some object experienced a collision, its force over time graph would sharply spike at the monent of collision.  Importantly, the integral of this function is 1 on any interval containing 0 and is 0 on any other interval.  This corresponds to the object which received the bang, now having acquired some speed (1 unit).  
     </p>
+    <p>
+      The formalism surrounding the integral of the delta function takes a little getting used to.  The important properties are, for any nice function, 
+      
+      $$ \int_D \delta(x)f(x)\ dx = f(0), \quad 0\in D $$
+      
+      and is 0 on any domain not containing 0.  With analogous constraints 
+      
+      $$ \int_D \delta(x-a)f(x)\ dx = f(a) $$
+    </p>
+    <h3>1.5.3 Three-D Dirac Delta</h3>
+    <p>
+      In the 3-D case the delta function is defined to give infinity at the origin and 0 elsewhere, or more precisely
+      
+      $$ \delta^3(\vec{v}) = \delta(x)\delta(y)\delta(z) $$
+      
+      and so 
+      
+      $$ \int_D f(\vec{v})\delta^3(\vec{v}-\vec{a})\ d\tau $$
+    </p>
+    <p>
+      Importantly 
+      $$ \nabla \cdot \left(\frac{\hat{\mathcal{R}}}{\mathcal{R}^2}\right) = 4\pi\delta^3(\vec{\mathcal{R}}) $$
+      and
+      $$ \nabla \cdot \left(\frac{1}{\mathcal{R}}\right) = - \frac{\hat{\mathcal{R}}}{\mathcal{R}^2} $$
+      and 
+      $$ \nabla^2 \frac{1}{\mathcal{R}} = -4\pi\delta^3(\vec{\mathcal{R}}) $$
+    </p>
+    
+    <h2>1.6 The Theory of Vector Fields</h2>
+    <h3>1.6.1 The Helmholtz Theorem</h3>
+    <h3>1.6.2 Potentials</h3>
+    <p>We state without proof a few theorems that may be useful. (I omit them them until I see the need to include them here.)</p>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
   </body>
 </html>
