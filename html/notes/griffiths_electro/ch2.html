@@ -2,10 +2,28 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notes - Purcell Ch2</title>
-    <script id="MathJax-script" async src="../../../MathJax-master/es5/tex-chtml.js">
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
     </script>
     <link rel="stylesheet" href="../notes.css">
+    <script type="module">
+    import latexjs from "https://cdn.jsdelivr.net/npm/latex.js/dist/latex.component.esm.js"
+    customElements.define('latex-js', latexjs)
+    </script>
+
+    <style>
+      latex-js {
+        display: inline-block;
+        width: 10cm;
+        border: 1px solid red;
+        margin-right: 2em;
+      }
+    </style>
   </head>
   <body>
     <h1>2. Electrostatics</h1>
@@ -157,6 +175,29 @@
     <p>
       We have in the previous sections seen how we can find any of \(\rho, V, \vec{E}\) from any one of the others.  
     </p>
+    <latex-js baseURL="https://cdn.jsdelivr.net/npm/latex.js@0.11.1/dist/">
+      \documentclass{article}
+
+      \begin{document}
+      
+      \frame{\setlength{\unitlength}{1mm}
+      
+      
+        \begin{picture}(100, 100)
+        
+          \put(6,10){\circle{10}}
+          \put(0,20){$\rho$}
+          \put(80,10){\circle{10}}
+          \put(80,20){$\vec{E}$}
+          \put(40,50){\circle{10}}
+          \put(36,60){$V$}
+          
+          \put(10, 10){\vector(80,80){1}}
+        
+        \end{picture}
+      }
+      \end{document}
+    </latex-js>
     
     
     

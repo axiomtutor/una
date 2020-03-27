@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta http-equiv="content-language" content="en">
+  <script id="MathJax-script" async src="../../../MathJax-master/es5/tex-chtml.js">
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script type="module">
+  import latexjs from "https://cdn.jsdelivr.net/npm/latex.js/dist/latex.component.esm.js"
+  customElements.define('latex-js', latexjs)
+  </script>
+
+  <style>
+    latex-js {
+      display: inline-block;
+      width: 40%;
+      border: 1px solid red;
+      margin-right: 2em;
+    }
+  </style>
+
+  <title>LaTeX.js Web Component Test</title>
+</head>
+
+<body>
+  <h1>Compiling LaTeX</h1>
+
+  <latex-js baseURL="https://cdn.jsdelivr.net/npm/latex.js@0.11.1/dist/">
+    \documentclass{article}
+
+    \begin{document}
+    Hello World.
+    
+    \[ \forall x e^{i\pi} \]
+    
+    \begin{picture}(60, 50)
+  \put(20,30){\circle{1}}
+  \put(20,30){\circle{2}}
+  \put(20,30){\circle{4}}
+  \put(20,30){\circle{8}}
+  \put(20,30){\circle{16}}
+  \put(20,30){\circle{32}}
+  \put(40,30){\circle{1}}
+  \put(40,30){\circle{2}}
+  \put(40,30){\circle{3}}
+  \put(40,30){\circle{4}}
+  \put(40,30){\circle{5}}
+  \put(40,30){\circle{6}}
+  \put(40,30){\circle{7}}
+  \put(40,30){\circle{8}}
+  \put(40,30){\circle{9}}
+  \put(40,30){\circle{10}}
+  \put(40,30){\circle{11}}
+  \put(40,30){\circle{12}}
+  \put(40,30){\circle{13}}
+  \put(40,30){\circle{14}}
+  \put(15,10){\circle*{1}}
+  \put(20,10){\circle*{2}}
+  \put(25,10){\circle*{3}}
+  \put(30,10){\circle*{4}}
+  \put(35,10){\circle*{5}}
+\end{picture}
+    \end{document}
+  </latex-js>
+
+
+  <latex-js hyphenate="false">
+    Another.
+    
+    \[ \cos(n\pi) \]
+  </latex-js>
+
+</body>
+
+</html>
