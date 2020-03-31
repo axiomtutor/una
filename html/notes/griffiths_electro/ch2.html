@@ -6,24 +6,11 @@
     <meta http-equiv="content-language" content="en">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notes - Purcell Ch2</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
     <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_SVG">
 </script>
-    </script>
     <link rel="stylesheet" href="../notes.css">
-    <script type="module">
-    import latexjs from "https://cdn.jsdelivr.net/npm/latex.js/dist/latex.component.esm.js"
-    customElements.define('latex-js', latexjs)
-    </script>
-
-    <style>
-      latex-js {
-        display: inline-block;
-        width: 10cm;
-        border: 1px solid red;
-        margin-right: 2em;
-      }
-    </style>
   </head>
   <body>
     <h1>2. Electrostatics</h1>
@@ -166,38 +153,21 @@
       
       $$ V(\vec r) = k\int\frac{\rho(\vec{r}')}{\mathcal{R}} d\tau' $$
       
-      This can be viewed as the solution of Poisson's equation.
-    </p>
-    <p class="question">
-      Does Griffiths ever talk about the self-energy of a system?  It seems like all of this is the potential associated within points due to a field.
+      This scan be viewed as the solution of Poisson's equation.
     </p>
     <h3>2.3.5 Boundary Conditions</h3>
     <p>
       We have in the previous sections seen how we can find any of \(\rho, V, \vec{E}\) from any one of the others.  
     </p>
-    <latex-js baseURL="https://cdn.jsdelivr.net/npm/latex.js@0.11.1/dist/">
-      \documentclass{article}
-
-      \begin{document}
+    <div id="triad"></div>
+    <p>
+      The above really seems to have nothing to do with boundary conditions and is such a significant point, I don't know why it isn't contained in its own dedicated section.  It doesn't seem to have all that much to do with boundary conditions.
+    </p>
+    <p>
+      But to now talk about boundary conditions, we can argue that for any surface sheet of charge of density \(\sigma\) there is a discontinuity at the sheet and the field is significantly different below the sheet than it is above.  To analyze this we consider a pillbox thin and wide enough to approximate the flux through the sides as zero.  But the flux is by Gauss's law \(Q/\epsilon_0=\sigma A /\epsilon_0\).  If the field only has components perpendicular to the sheet then 
       
-      \frame{\setlength{\unitlength}{1mm}
-      
-      
-        \begin{picture}(100, 100)
-        
-          \put(6,10){\circle{10}}
-          \put(0,20){$\rho$}
-          \put(80,10){\circle{10}}
-          \put(80,20){$\vec{E}$}
-          \put(40,50){\circle{10}}
-          \put(36,60){$V$}
-          
-          \put(10, 10){\vector(80,80){1}}
-        
-        \end{picture}
-      }
-      \end{document}
-    </latex-js>
+      $$ \vec{E}^{\perp}_{above}-\vec{E}^{\perp}_{below} = \sigma/\epsilon_0 $$
+    </p>
     
     
     
@@ -224,6 +194,6 @@
     
     
     
-    
+    <script type="module" src="../../../js/notes/griffiths_electro/ch2.js"></script>
   </body>
 </html>
