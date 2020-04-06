@@ -1,14 +1,27 @@
-import { drawLabeledNode } from '../../../js/d3abstractions.js';
+import * as d3a from '../../../js/d3abstractions.js';
 
 (function() {
   var svg = d3
     .select("#triad")
     .append("svg")
-    .attr("width", 200)
-    .attr("height", 200);
-    
-  drawLabeledNode({svg: svg, label: "lab", loc: {x:50,y:50}, above: "above", below: "below", left: "left", right: "right"});
-
+    .attr("width", 500)
+    .attr("height", 500);
+  
+  var nodes = ["$\\rho$", "$\\vec{E}$", "$V$"];
+  var edges = [ {start: "$\\rho$", end: "$\\vec{E}$", 
+                 label: "$\\int k \\frac{\\mathcal{\\hat{R}}}\
+                         {\\mathcal{R}^2} \\rho \\ d\\tau$"},
+                {start: "$\\vec{E}$", end: "$V$", 
+                 label: "$-\\int \\vec{E}\\cdot d\\ell$"},
+                {start: "$V$", end: "$\\rho$", 
+                 label: "$\\nabla^2 V = -\\rho/\\epsilon _0$"},
+                {start: "$\\rho$", end: "$V$", label: "$V=k\\int \\frac{\\rho}{\\mathcal{R}} \\ d\\tau$"},
+                {start: "$V$", end: "$\\vec{E}$", label: "$\\vec{E}=-\\nabla V$"},
+                {start: "$\\vec{E}$", end: "$\\rho$", label: "$\\nabla  \\vec{E} = \\rho/\\epsilon_0$"}
+  ];
+  
+  d3a.drawGraph({svg: svg, nodes: nodes, edges: edges});
+  /*
   svg
     .append("circle")
     .attr("cx", 100)
@@ -39,6 +52,8 @@ import { drawLabeledNode } from '../../../js/d3abstractions.js';
       .append("text")
       .text("${\\int}$");
   
+  */
+  
   setTimeout(() => {
     MathJax.Hub.Config({
       tex2jax: {
@@ -52,17 +67,17 @@ import { drawLabeledNode } from '../../../js/d3abstractions.js';
 
     MathJax.Hub.Register.StartupHook("End", function() {
       setTimeout(() => {
-        svg.selectAll(".tick").each(function() {
+        svg.selectAll(".latex").each(function() {
           var self = d3.select(this),
-            g = self.select("text>span>svg");
+              g = self.select("svg");
           g.remove();
           self.append(function() {
             return g.node();
           });
         });
-      }, 5);
+      }, 20);
     });
 
     MathJax.Hub.Queue(["Typeset", MathJax.Hub, svg.node()]);
-  }, 5);
+  }, 20);
 })();
