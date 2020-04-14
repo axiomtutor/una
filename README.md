@@ -4,7 +4,7 @@ This is a website in the very early stages of construction.  It will eventually 
 
 ## Target audience:
 
-The curious of all ages and backgrounds.  For now, restricted to those who speak English and have access to computers and the internet.  
+The curious of all ages and backgrounds.  For now, restricted to those who speak English and have access to computers and the internet.  It will strive to be agnostic about the audience's educational background.
 
 ## The agenda:
 
@@ -24,6 +24,7 @@ The curious of all ages and backgrounds.  For now, restricted to those who speak
  2) Text and video available for download.
  3) Stackoverflow style user-question-user-answer communities.
  4) Heavily moderated discussion forums, to ensure constructive community.
+ 5) Progress milestones.
 
 # About Me:
 
