@@ -21,38 +21,36 @@ import * as d3a from '../../../js/d3abstractions.js';
   ];
   
   d3a.drawGraph({svg: svg, nodes: nodes, edges: edges});
-  /*
-  svg
-    .append("circle")
-    .attr("cx", 100)
-    .attr("cy", 100)
-    .attr("r", 50)
-    .attr("stroke", "black")
-    .attr("fill", "#ffff");
-
-  svg
-    .append("g")
-    .attr("class", "tick")
-    .attr("transform", `translate(${90}, ${90})`)
-    .append("text")
-    .text("${2\\pi}$");
+  
+  /////////////////////////////////////////////////////////////////////////////
+  
+  var svg2 = d3
+              .select("#fig2_41")
+              .append("svg")
+              .attr("width", 400)
+              .attr("height", 400);
     
-    svg.append("line")
-  .attr("x1", 100)
-  .attr("y1", 100)
-  .attr("x2", 200)
-  .attr("y2", 100)          
-  .attr("stroke-width", 1)
-  .attr("stroke", "black");
+  nodes = ["1", "2", "3", "4"];
+  edges = [ {start: "1", end: "2"}, 
+            {start: "2", end: "3"}, 
+            {start: "3", end: "4"}, 
+            {start: "4", end: "1"}, 
+            {start: "1", end: "4"}, 
+            {start: "2", end: "1"}, 
+            {start: "3", end: "2"}, 
+            {start: "4", end: "3"}
+  ];
   
-    svg
-      .append("g")
-      .attr("class", "tick")
-      .attr("transform", `translate(${120}, ${150})`)
-      .append("text")
-      .text("${\\int}$");
+  d3a.drawGraph({svg: svg2, nodes: nodes, edges: edges});
   
-  */
+  d3a.drawText(svg2, "-q", {x:350, y:170});
+  d3a.drawText(svg2, "-q", {x:20, y:170});
+  d3a.drawText(svg2, "+q", {x:160, y:20});
+  
+  d3a.drawText(svg2, "a", {x:100,y:100});
+  d3a.drawText(svg2, "a", {x:300,y:100});
+  d3a.drawText(svg2, "a", {x:100,y:300});
+  d3a.drawText(svg2, "a", {x:300,y:300});
   
   setTimeout(() => {
     MathJax.Hub.Config({
