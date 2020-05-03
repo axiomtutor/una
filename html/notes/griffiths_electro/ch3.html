@@ -7,15 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notes - Purcell Ch2</title>
     <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_SVG">
-</script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="stylesheet" href="../notes.css">
   </head>
   <body>
     <h1>3. Potentials</h1>
     <h2>3.1. Laplace's Equation</h2>
-    <p>I <i>think</i> the main result of this section is that the potential difference satisfies a wave PDE and implies the existence and uniqueness of solutions of the equation.  Since I don't want to get into PDEs then I'm skipping this for now.</p>
+    <p>I <i>think</i> the main result of this section is that the potential difference satisfies a wave PDE and implies the existence and uniqueness of solutions of the equation.  In particular we focus on Poisson's equation which we've already seen, \(\nabla^2 V = -\rho/\epsilon_0\).  Laplace's equation is where \(\rho=0\).  Since the solution of PDEs is better treated on its own in a PDE course, we'll skip the details here.</p>
     <h2>3.2. The Method of Images</h2>
     <h3>3.2.1. The Classic Image Problem</h3>
     <p>
@@ -51,6 +50,24 @@
     <p>Here we find a half-assed physicist's solution of PDEs.</p>
     <h2>3.4. Multipole Expansion</h2>
     <h3>3.4.1. Approximations at Large Distances</h3>
+    <p>
+      A <b>dipole</b> is just two equal magnitude, <i>q</i>, opposite point charges separated by a distance, call it <i>d</i>.  The question is what the potential difference is at any point, and along the line running through the two points, the question is not hard.  But off of that line, it's more complicated.  
+    </p>
+    <p>
+      Let's fix the origin at the midpoint of the line segment separating the points, putting the positive charge at (0,0,<i>d</i>) and the negative at (0,0,<i>-d</i>).  Any point in space is the end of a vector \(\vec r\) emanating from the midpoint of this line segment.  But the vector connecting the positive charge to this point, \(\vec{\mathcal{R}}_+\), is not exactly the same, and likewise for \(\vec{\mathcal{R}}_-\).  
+    </p>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
