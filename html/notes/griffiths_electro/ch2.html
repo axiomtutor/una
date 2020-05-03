@@ -315,7 +315,7 @@ Find the work per particle required to assemble this system.</p>
       </p>
       <h3>5.3 Surface Charge and the Force on a Conductor</h3>
       <p>
-        Consider a general, not necessarily flat, surface charge.  Some part of the surface may exert a significant force on some other part.  Our usual trick of zooming way into a particular point implies that the field just above a small patch, due to that small patch, is \(\frac{\sigma}{2\epsilon_0}\hat n\).  But with some other field present, that is no longer the entirety of the field, just one component.
+        Consider a general, not necessarily flat, surface charge.  Some part of the surface may exert a significant force on some other part.  The main question we want to ask here is what the force on this small patch is.  Our usual trick of zooming way into a particular point implies that the field just above a small patch, due to that small patch, is \(\frac{\sigma}{2\epsilon_0}\hat n\).  But with some other field present, that is no longer the entirety of the field, just one component.
       </p>
       <p>
         That's simple enough to figure out what the field just above and below the patch is, because the external field is not discontinuous.
@@ -329,13 +329,38 @@ Find the work per particle required to assemble this system.</p>
         $$ \vec{E}_{ext} = \frac{\vec{E}_{above}+\vec{E}_{below}}{2} $$
       </p>
       <p>
-        If the sheet is perfectly flat and there's no external field then this result is of course consistent withour previous knowledge.  But there's another interesting application, a conductor.  Here we know that the field internal is \(\vec{0}\) and the field above is \(\frac{\sigma}{2\epsilon_0}\hat n\).  
+        If the sheet is perfectly flat and there's no external field then this result is of course consistent withour previous knowledge.  But there's another interesting application, a conductor.  Here we know that the field internal is \(\vec{0}\) and the field above is \(\frac{\sigma}{\epsilon_0}\hat n\).  This external field at the point is then \(\frac{\sigma}{2\epsilon_0}\hat n\).
       </p>
-      
-      
-      
-      
-      
+      <p>
+        But that's the field.  The force \(\vec{f}=\sigma\vec{E}\) is therefore 
+        
+        $$ \frac{\sigma^2}{2\epsilon_0} \hat n $$
+      </p>
+      <h3>2.5.4 Capacitors</h3>
+      <p>A <b>capacitor</b> is two masses of opposite charge and equal magnitude.  Since conductor surfaces are equipotential we can consider the potential difference going from any point on one surface to any point on the other. 
+      $$ V = V_+-V_- = -\int_{(-)}^{(+)}\vec E \cdot d\vec \ell $$ </p>
+      <p>
+        We rarely compute this explicitly.  Complex shapes generating complex fields would be a nightmare.  We will later see a proof that charge is proportional to the field but for now we take it as strongly suggested by Coulomb's law.  The constant of proportionality, <i>C</i>, we call <b>capacitance</b>.  <i>C = Q/V</i>.  Capacitance is measured in <b>farads</b> and more often in applications, microfarads.
+      </p>
+      <p class="example">
+        For <b>parallel plates</b> one of charge <i>Q</i> and the other implicitly of charge <i>-Q</i>, separated by distance <i>d</i>, each of area <i>A</i> the density is \(\sigma=Q/A\).  Where the idealization of infinite plates is appropriate (very close together, very large area) \(\vec E = \frac{\sigma}{\epsilon_0}\hat n = \frac{Q}{A\epsilon_0}\hat n\) and then we can explicitly calculate the integral above, \(V = \frac{Qd}{A\epsilon_0}\).  Then 
+        
+        $$ C = \frac{A\epsilon_0}{d} $$ 
+      </p>
+      <p class="example">
+        For <b>two spherical shells one inside the other</b>, say the outer sphere has radius <i>b</i> and the inner <i>a</i>.  Between these shells we can again compute the integral explicitly and obtain \(V = kQ(1/a - 1/b)\) so 
+        
+        $$ C = \frac{1}{k(1/a-1/b)} = \frac{ab}{k(b-a)}$$
+      </p>
+      <p>
+        As a final note in this chapter about capacitance, we consider the energy needed to charge a capacitor.  At any stage as you push electrons from the positive to the negative plate, you push a small charge <i>dq</i> over.  We saw before that the work we do against a field is the charge times the potential difference.  And we have the potential difference in terms of the capacitance.  So 
+        
+        $$ dW = \frac{q}{C}dq $$ 
+        
+        where <i>q</i> is the amount already on the positive plate.  Integrating from 0 to <i>Q</i>
+        
+        $$W = \frac{Q^2}{2C} = CV^2/2$$
+      </p>
       
       
       

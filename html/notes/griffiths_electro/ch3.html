@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - Purcell Ch2</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_SVG">
+</script>
+    <link rel="stylesheet" href="../notes.css">
+  </head>
+  <body>
+    <h1>3. Potentials</h1>
+    <h2>3.1. Laplace's Equation</h2>
+    <p>I <i>think</i> the main result of this section is that the potential difference satisfies a wave PDE and implies the existence and uniqueness of solutions of the equation.  Since I don't want to get into PDEs then I'm skipping this for now.</p>
+    <h2>3.2. The Method of Images</h2>
+    <h3>3.2.1. The Classic Image Problem</h3>
+    <p>
+      Suppose you have an infinite flat conductor and hold a point charge near it.  It will attract some amount of charge and repel like charge until it reaches equilibrium.  One imagines most of the collected opposite charge at the point nearest on the plane.  What is the field or potential difference?
+    </p>
+    <p>
+      Approaching the question directly is hard but the uniqueness theorem says that if we have the same boundary conditions we have the same solution for the potential.  Before doing so we should establish what the differential equation is, and what the boundary conditions are.  From Poisson's equation we have \(\nabla^2 V = -\rho/\epsilon_0\) and we are particularly considering the region above the plane.  Since the region is <i>strictly</i> above the plane there is only the point charge. Therefore \( \rho = q\delta^3(\vec r) \) where \(\vec r\) is the vector pointing to the point charge.  Great.  Now what's the boundary?
+    </p>
+    <p>
+      The boundary is tne infinite plane, nothing about it being infinite violates any assumptions of any of our theorems (see: math).  I argue that on this infinite plane, the potential energy is 0.  A fairly simple argument suffices: we define the point at infinity to have zero potential, and the plane is a conductor therefore an equipotential surface.
+    </p>
+    <p>
+      At least for me it was confusing to realize that the potential was zero even though the charge distribution on the plane is non-constant.  In light of Poisson's equation that seems like it shouldn't be so--as the charge distribution varies, the Laplacian of potential varies.  Even more intuitively, if the charge is different throughout spae and the field is correspondingly varying, the potential is very much related to the field so it should also vary.  
+    </p>
+    <p>
+      But here's the thing, keep in mind how the potential is defined.  It is the work you'd have to do <i>against the field</i> to bring in a point from infinity.  Since the point is intuitively pointing straight up, perpendicular to the surface because it's a conductor, then bringing a point in along the plane always runs orthogonal to the field and requires no work.
+    </p>
+    <p>
+      In any case, at least one of these arguments should be convincing that the potential along the plane is 0, and this constitutes our boundary condition.  So to exploit the uniqueness theorem, if we can conjure any other system which satisfies the same differential equation above the plane and the same boundary condition, the rest of the universe can be whatever we choose it to be.
+    </p>
+    <p>
+      Let's choose the universe with a mirror image point of opposite charge.  Since the point charges cancel each other in horizontal directions, the same orthogonality argument as before applies now.  The potential through the plane is 0.  However, now the system can be easily analyzed, since <i>V</i> at any point is just the sum of the potentials due to the two point charges.
+    </p>
+    <h3>3.2.2 Induced Surface Charge</h3>
+    <p>
+      Here we solve for the potential and use Poisson's equation to find the charge distribution.  I personally feel like this is just math; the problem was cracked above.
+    </p>
+    <h3>3.2.3. Force and Energy</h3>
+    <p>In the scenario above we can also compute force and energy.  Here we need to not use the image problem, and must go back to the original problem.</p>
+    <h3>3.2.4. Other Image Problems</h3>
+    <p> The technique generalizes.  </p>
+    <h2>3.3. Separation of variables</h2>
+    <p>Here we find a half-assed physicist's solution of PDEs.</p>
+    <h2>3.4. Multipole Expansion</h2>
+    <h3>3.4.1. Approximations at Large Distances</h3>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script type="module" src="../../../js/notes/griffiths_electro/ch2.js"></script>
+  </body>
+</html>
