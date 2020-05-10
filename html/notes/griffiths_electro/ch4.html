@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - Purcell Ch2</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="../notes.css">
+  </head>
+  <body>
+    <h1>4. Electric Fields in Matter </h1>
+    <h2>4.1. Polarization </h2>
+    <h3>4.1.1. Diaelectrics</h3>
+    <p>
+      <b>Dialectrics</b> are insulators, matter with charges fixed to them.  Still the fields they generate can be distorted: stretching and rotating.
+    </p>
+    <h3>4.1.2. Induced Dipoles</h3>
+    <p>
+      One way to cause stretching is to put a charge near an electrically neutral atom.  This will push the positive protons in one direction and the electrons in the other, creating a dipole.  For reasonable strengths of the field acting on the dipole, the effect is proportionate to the strength of the field, i.e. 
+      
+      $$ \vec p = \alpha\vec E $$
+      
+      We call \(\alpha\) the <b>atomic polarizability</b> and it depends on the structure of the atom in question.  
+    </p>
+    <p class="question">
+      The picture complicates when we discuss molecules because their structure can be quite complex.  In particular they can polarize more readily in one direction than another.  We may apply a field in each direction, <i>x, y, z</i> and measure the resulting polarizability.  In general any field \(\vec E = \langle E_x,E_y,E_z\rangle\) results in a polarization in any of the different directions \(p_x,p_y,p_z\).  This is summarized in a <b>polarizability tensor</b> related to the system of equations
+      
+      $$ p_x = \alpha_{xx}E_x + \alpha_{xy}E_y + \alpha_{xz}E_z $$
+      $$ p_y = \alpha_{yz}E_x + \alpha_{yy}E_y + \alpha_{yz}E_z $$
+      $$ p_z = \alpha_{zx}E_x + \alpha_{zy}E_y + \alpha_{zz}E_z $$
+    </p>
+    <h3>4.1.3. Alignment of Polar Molecules</h3>
+    <p>
+      Some molecules, like water, have a built-in permanent dipole.  When in the presence of a constant electric field the net force is zero since the force on the positive charge balances that one the negative.  However there is a torque force 
+      
+      $$ \vec N = \vec r_+\times \vec F_+ + \vec r_- \times \vec F_- $$
+    </p>
+    <p>
+      The center of the dipole moment will be the "lever arm" and so using \(\vec d/2\) and \(-\vec d/2\) as the the lever arms in the torque equation and exchanging \(\vec F = q\vec E\), we get
+      
+      $$ \vec N = q\vec d\times \vec E = \vec p\times \vec E $$
+    </p>
+    <h3>4.1.4. Polarization</h3>
+    <p>
+      From the previous discussions we can now summarize that, in a dialectric, if the atoms are neutral then we can induce a charge and the induced dipoles line up with the field.  If the atoms form a natural dipole they still line up with the field.  
+    </p>
+    <p>
+      In any large body that is polarized we can define \(\vec P\) the dipole moment per unit volume.  
+    </p>
+    <p>
+      In the next several sections we will now forget the field that caused polarization.  Instead we will consider the field that now results from the polarized body.
+    </p>
+    <h2>4.2. The Field of a Polarized Object</h2>
+    <h3>4.2.1. Bound Charges</h3>
+    <p>
+      The obvious trick in light of defining \(\vec P\) is to find the field caused by a polarized body by integrating a bunch of small dipoles. Potential has the simplest form in terms of a dipole, so we use that.
+      
+      $$ V(\vec r) = k\int_V\frac{\vec{P}(\vec r')\cdot \hat{ \mathcal{R}}}{\mathcal{R}^2} \ d\tau'$$
+      
+      But using some obscure vector analysis integration by parts, we end up with the result that: <b>the potential and the field of a polarized object is the same as what would be produced by a volume charge density defined by </b>
+      
+      $$\rho_b = -\nabla\cdot\vec P$$
+      
+      <b>plus a surface charge density defined by </b>
+      
+      $$\sigma_b = \vec P\cdot \hat n$$
+      
+      We call these the <b>bound charges</b>.
+    </p>
+    <h3>4.2.2. Physical Interpretation of Bound Charges</h3>
+    <p>
+      The surface charge part of the above makes sense: If you line up charges, the interiour ones cancel but the ends leave a positive and negative charge.  If you consider all these tubes of charge in total you can understand how the aggregate comes out like a surface charge.
+    </p>
+    <p>
+      For the volumetric part, if the polarization is non-uniform then charges accumulate inside the mass.  
+    </p>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script type="module" src="../../../js/notes/griffiths_electro/ch2.js"></script>
+  </body>
+</html>
