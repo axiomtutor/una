@@ -121,8 +121,7 @@
     <p>
       Although the garbage collection is visually appealing, we must remember that the dipole moment depends on the geometry and density of the charge distribution.
     </p>
-    <p class="question">
-      Is the following accurate? <br><br>
+    <p>
       
       From here we can define a dipole moment for a point charge or collection of point charges.  To do so, we can either 1) work by analogy from the continuous case, or 2) consider \(\rho\) to be defined in tersm of a Dirac-delta function, or 3) look back at the previous section where we discussed the potential of a point-charge 
       
@@ -164,7 +163,7 @@
       <p>
         Suppose a pure dipole <i>p</i> is at the origin pointing in the <i>z</i> direction.  
       </p>
-      <p class="question">
+      <p>
         Are all of the following solved correctly?
         
         (a) What is the force on a point charge <i>q</i> at (<i>a</i>, 0, 0)?
@@ -177,7 +176,17 @@
       </p>
     </div>
     <div class="sol">
-      <p>(a) We could approach this directly by Coulomb's law.  Pretty quickly we realize that the equal distance opposite charges imply that the force in the <i>x-</i>, <i>y</i>-, and <i>z</i>-directions either cancel or are 0.  Thus the force is 0. </p>
+      <p>(a) We could approach this directly by Coulomb's law.  Pretty quickly we realize that the equal distance opposite charges imply that the force in the <i>x-</i> and <i>y</i>-directions cancel or are 0.  But in the <i>z</i>-direction they don't.  Better than Coulomb's law, especially because the question to come about work, would be to compute the potential. </p>
+      <p>
+        Since the net charge is 0 we can use the dipole term and the potential is \( (kp\cos\theta)/r^2 \) which is of course in spherical coordinates.  To get the field we need the negative gradient, and looking up the formula we have 
+        
+        $$ \nabla V = \frac{\parital V}{\partial r}\hat r +
+                      \frac{1}{r}\frac{\partial V}{\partial \theta}\hat\theta +
+                      0\hat\phi 
+        $$
+        
+        where the \(0\hat\phi\) term comes from laziness in writing out a term that will turn into 0 anyway.  
+      </p>
     </div>
     <div class="sol">
       <p>
