@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - Purcell Ch2</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="../notes.css">
+  </head>
+  <body>
+    <h1>4. Electric Fields in Matter </h1>
+    <h2>4.1. Polarization </h2>
+    <h3>4.1.1. Diaelectrics</h3>
+    <p>
+      <b>Dialectrics</b> are insulators, matter with charges fixed to them.  Still the fields they generate can be distorted: stretching and rotating.
+    </p>
+    <h3>4.1.2. Induced Dipoles</h3>
+    <p>
+      One way to cause stretching is to put a charge near an electrically neutral atom.  This will push the positive protons in one direction and the electrons in the other, creating a dipole.  For reasonable strengths of the field acting on the dipole, the effect is proportionate to the strength of the field, i.e. 
+      
+      $$ \vec p = \alpha\vec E $$
+      
+      We call \(\alpha\) the <b>atomic polarizability</b> and it depends on the structure of the atom in question.  
+    </p>
+    <p>      
+      The picture complicates when we discuss molecules because their structure can be quite complex.  In particular they can polarize more readily in one direction than another.  We may apply a field in each direction, <i>x, y, z</i> and measure the resulting polarizability.  In general any field \(\vec E = \langle E_x,E_y,E_z\rangle\) results in a polarization in any of the different directions \(p_x,p_y,p_z\).  This is summarized in a <b>polarizability tensor</b> related to the system of equations
+      
+      $$ p_x = \alpha_{xx}E_x + \alpha_{xy}E_y + \alpha_{xz}E_z $$
+      $$ p_y = \alpha_{yz}E_x + \alpha_{yy}E_y + \alpha_{yz}E_z $$
+      $$ p_z = \alpha_{zx}E_x + \alpha_{zy}E_y + \alpha_{zz}E_z $$
+    </p>
+    <h3>Problem 4.1</h3>
+    <p>
+      A hydrogen atom (with the Bohr radius of half an angstrom) is situated
+between two metal plates 1 mm apart, which are connected to opposite terminals of
+a 500 V battery. What fraction of the atomic radius does the separation distance <i>d</i>
+amount to, roughly? Estimate the voltage you would need with this apparatus to
+ionize the atom. [Use the value of α in Table 4.1. Moral: The displacements we’re
+talking about are minute, even on an atomic scale.]
+    </p>
+    <div class="sol">
+      <p>        
+        An angstrom is \(10^{-10}m\) so the fraction is \(0.5\times 10^{-10}/10^{-3} = 5\times 10^{-6} m\).
+      </p>
+      <p>
+        From the table earlier in the chapter \(\alpha = 0.667\).  Now we also want to decide what "ionize" means, and in this setting that might just mean offsetting the center of the eletron cloud half an angstrom relative to the proton.  It's somewhat arbitrary, but whatever amount of separation we want we can achieve by following the logic below.  When it is in this configuration the field and the restoring forces between the charges should be in equilibrium.  So the field magnitude is equal to the force that the electron exerts on the proton.
+      </p>
+      <p>
+        So let's calculate the force of the electron on the proton at a distance of half an angstrom.  From the above \((0.667)E = p = qd\).  If we use that <i>q</i> is the elementary charge and <i>d</i> is half an angstrom, solve for <i>E</i>.
+      </p>
+    </div>
+    <h3>Problem 2</h3>
+    <p>
+      According to quantum mechanics, the electron cloud for a hydrogen
+atom in the ground state has a charge density
+$$ \rho(r) = \frac{qe^{-2r/a}}{\pi a^3} $$
+where <i>q</i> is the charge of the electron and <i>a</i> is the Bohr radius. Find the atomic
+polarizability of such an atom. [Hint: First calculate the electric field of the electron
+cloud, \(E_e(r)\); then expand the exponential, assuming \( r \ll a\)].
+    </p>
+    <div class="sol question">
+      <p>
+        For the field of the charge, we integrate over all the spherical surface charges from 0 up to any point <i>r</i>. 
+        
+        $$ E_e(r) = k\int_0^r \frac{\rho(r')4\pi r'^2}{r'^2} dr' = 4\pi k\int \frac{q}{\pi a^3}e^{-2r'/a} \ dr' $$
+        
+        $$ = \frac{4kq}{a^3} \left[ \frac{e^{-2r'/a}}{-2/a}\right]_0^r = -\frac{2kq}{a^2}(e^{-2r/a}-1) $$
+        
+        $$ = \frac{2kq}{a^2}\left(1-\left[1+\left( -\frac{2r}{a}\right) + \frac 1 2 \left(-\frac{2r}{a}\right)^2 + ... \right]\right) \approx \frac{2kq}{a^2}(2r/a) $$
+        
+        $$ = \frac{4kqr}{a^3} $$
+      </p>
+      <p>
+        Now if we're in equilibrium and the distance between the center of the positive and negative distributions is <i>d</i> then 
+        
+        $$ qd = \alpha \frac{4kqd}{a^3} $$
+        
+        implies \(\alpha = \frac{a^3}{4k} \).
+      </p>
+    </div>
+    <h3>Problem 3</h3>
+    <p>
+      The induced dipole moment of an atom is, as we said, pro-
+portional to the external field. This is a “rule of thumb,” not a fundamental law,
+and it is easy to concoct exceptions--in theory. Suppose, for example, the charge
+density of the electron cloud were proportional to the distance from the center, out
+to a radius <i>R</i>. To what power of <i>E</i> would <i>p</i> be proportional in that case? Find the
+condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field limit.
+    </p>
+    <div class="sol question">
+      <p>
+        We assume the density is proportionate to <i>r</i>, 
+        
+        $$ \rho(r) = cr, \quad r < R $$
+        
+        This might require explicit calculation of the field and dipole moment.  Since we're still talking about a dipole in equilibrium the field must balance with the restoring force.  So the field we want is equal the field generated by the electron at the point of the proton.  The easiest calculation of this field given the charge distribution is with Gauss's law, where we fit a sphere centered at the center of the electron and passing through the proton.  We will need the charge within that sphere.
+      </p>
+      <p>
+        To get <i>Q</i> we integrate over spherical shells each of volume approximately \(4\pi r'^2\ dr'\) so that the net charge is 
+        
+        $$ \int_0^r \rho(r') 4\pi r'^2 \ dr' = 4\pi\int_0^r cr' \cdot r'^2\ dr' $$
+        $$ = 4c\pi [r'^4/4]_0^r = c\pi r^4 $$
+      </p>
+      <p>
+        Gauss's law tells us \((4\pi r^2 )E = Q/\epsilon_0\) so 
+        
+        $$ E = \frac{cr^2}{4} $$
+        
+        And this shows <i>p</i> is proportionate to the square-root of <i>E</i>.
+      </p>
+    </div>
+    <h3>Problem 4</h3>
+    <p>
+      A point charge <i>q</i> is situated a large distance <i>r</i> from a neutral atom of polarizability \(\alpha\).  Find the force of attraction between them.
+    </p>
+    <div class="sol question">
+      <p>
+        First we imagine that the charge <i>q</i> creates a dipole in the atom.  Once that dipole exists, we imagine it exerts a force on the charge <i>q</i>.  To know the moment of the dipole that the charge creates, we first consider the field generated by the charge, \(E = kq/r^2\).  Then use \(\vec p = \alpha \vec E\).  
+      </p>
+      <p>
+        Now that we know the dipole moment we want to know the strength of the field it generates on the point charge <i>q</i>.  Since one can be sure the dipole axis is on the line between the charge and the atom, we only need \(E_r = \frac{2kp\cos\theta}{r^3}\).
+      </p>
+    </div>
+    <h3>4.1.3. Alignment of Polar Molecules</h3>
+    <p>
+      Some molecules, like water, have a built-in permanent dipole.  When in the presence of a constant electric field the net force is zero since the force on the positive charge balances that one the negative.  However there is a torque force 
+      
+      $$ \vec N = \vec r_+\times \vec F_+ + \vec r_- \times \vec F_- $$
+    </p>
+    <p>
+      The center of the dipole moment will be the "lever arm" and so using \(\vec d/2\) and \(-\vec d/2\) as the the lever arms in the torque equation and exchanging \(\vec F = q\vec E\), we get
+      
+      $$ \vec N = q\vec d\times \vec E = \vec p\times \vec E $$
+    </p>
+    <h3>Problem 5</h3>
+    <p>
+      \(\vec p_1, \vec p_2\) are perfect dipoles a distance <i>r</i> apart, directed orthogonally.  \(\vec p_2\) is directed away from \(\vec p_1\)  What is the torque on \(\vec p_2\) due to \(\vec p_1\)? (More precisely, the torque on one about its own center.) 
+    </p>
+    <div class="sol question">
+      <p>
+        We just find the field due to \(\vec p_1\) and use \(\vec N = \vec p_2\times \vec E\).
+      </p>
+    </div>
+    <h3>Problem 6</h3>
+    <p>
+      A perfect dipole is situated a distance <i>z</i> above an infinite grounded conducting plane, making an angle \(\theta\).  Find the torque on the dipole.  If the dipole is free to rotate, in what orientation will it come to rest?
+    </p>
+    <div class="sol question">
+      <p>
+        This problem is similar enough to the infinite conducting plane near a point charge, in which we used the method of imagines because the direct approach was too difficult.  But this time there's an assymmetry.  The head of the dipole indicates a direction associated with the positive charge and so on that side, attracts negative charge on the plane; vice versa for the tail.  
+      </p>
+      <p>
+        To try to imagine an image which satisfies the same boundary conditions, you could imagine the reflection of the given dipole across the plane.  But since we need positive charges near the tail, like in the plane, we need to flip the orientation of the dipole.  Let's confirm that in fact the boundary conditions are the same, which is to say that the potential through the plane is the same.
+      </p>
+      <p>
+        By the argument from last time, we again know that the potential is 0 through the plane in the conductor.  So we need it to be 0 again in the case of images.  In this case, at any point on the plane we can compute the field due to the dipoles, sum them, and we will see that the field points vertically, i.e. orthogonal to the plane.  Thus if we brought a point charge in from infinity, along the plane, the potential would be 0 throughout its path.  They indeed satify the same boundary conditions.
+      </p>
+      <p>
+        So now we need to find the force exerted on the dipole by the image dipole.  This is as in the previous section, and can be found by taking the gradient of \(-V_{dip} = -(kp\cos\theta)/r^2\).  Then use \(\vec N = \vec p \times \vec E\).  
+      </p>
+    </div>
+    <h3>Problem 7</h3>
+    <p>
+      Show that the energy of an ideal dipole is \(U = -\vec p\cdot \vec E\).  
+    </p>
+    <div class="sol question">
+      <p>
+        Compute the potential by bringing a negative charge into the positive charge from infinity, compute the dot-product, see tha they're equal.
+      </p>
+    </div>
+    <h3>Problem 8</h3>
+    <p>Show that the interaction energy of two dipoles separated by \(\vec r\) is 
+    
+    $$ U = k\cdot\frac 1 {r^3} [\vec p_1 \cdot \vec p_2 - 3(\vec p_1\cdot \hat r)(\vec p_2\cdot \hat r)] $$</p>
+    <div class="sol question">
+      <p>
+        
+      </p>
+    </div>
+    <h3>4.1.4. Polarization</h3>
+    <p>
+      From the previous discussions we can now summarize that, in a dialectric, if the atoms are neutral then we can induce a charge and the induced dipoles line up with the field.  If the atoms form a natural dipole they still line up with the field.  
+    </p>
+    <p>
+      In any large body that is polarized we can define \(\vec P\) the dipole moment per unit volume.  
+    </p>
+    <p>
+      In the next several sections we will now forget the field that caused polarization.  Instead we will consider the field that now results from the polarized body.
+    </p>
+    <h2>4.2. The Field of a Polarized Object</h2>
+    <h3>4.2.1. Bound Charges</h3>
+    <p>
+      The obvious trick in light of defining \(\vec P\) is to find the field caused by a polarized body by integrating a bunch of small dipoles. Potential has the simplest form in terms of a dipole, so we use that.
+      
+      $$ V(\vec r) = k\int_V\frac{\vec{P}(\vec r')\cdot \hat{ \mathcal{R}}}{\mathcal{R}^2} \ d\tau'$$
+      
+      But using some obscure vector analysis integration by parts, we end up with the result that: <b>the potential and the field of a polarized object is the same as what would be produced by a volume charge density defined by </b>
+      
+      $$\rho_b = -\nabla\cdot\vec P$$
+      
+      <b>plus a surface charge density defined by </b>
+      
+      $$\sigma_b = \vec P\cdot \hat n$$
+      
+      We call these the <b>bound charges</b>.
+    </p>
+    <h3>4.2.2. Physical Interpretation of Bound Charges</h3>
+    <p>
+      The surface charge part of the above makes sense: If you line up charges, the interiour ones cancel but the ends leave a positive and negative charge.  If you consider all these tubes of charge in total you can understand how the aggregate comes out like a surface charge.
+    </p>
+    <p>
+      For the volumetric part, if the polarization is non-uniform then charges accumulate inside the mass.  
+    </p>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script type="module" src="../../../js/notes/griffiths_electro/ch2.js"></script>
+  </body>
+</html>
