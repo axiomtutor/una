@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta http-equiv="content-language" content="en">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notes - Purcell Ch2</title>
+    <title>Notes - Griffiths Ch4</title>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -20,17 +20,17 @@
     </p>
     <h3>4.1.2. Induced Dipoles</h3>
     <p>
-      One way to cause stretching is to put a charge near an electrically neutral atom.  This will push the positive protons in one direction and the electrons in the other, creating a dipole.  For reasonable strengths of the field acting on the dipole, the effect is proportionate to the strength of the field, i.e. 
-      
+      One way to cause stretching is to put a charge near an electrically neutral atom.  This will push the positive protons in one direction and the electrons in the other, creating a dipole.  For reasonable strengths of the field acting on the dipole, the effect is proportionate to the strength of the field, i.e.
+
       $$ \vec p = \alpha\vec E $$
-      
-      We call \(\alpha\) the <b>atomic polarizability</b> and it depends on the structure of the atom in question.  
+
+      We call \(\alpha\) the <b>atomic polarizability</b> and it depends on the structure of the atom in question.
     </p>
     <p class="question">
       Is this an accurate depiction and generation of the equations? <br><br>
-      
+
       The picture complicates when we discuss molecules because their structure can be quite complex.  In particular they can polarize more readily in one direction than another.  We may apply a field in each direction, <i>x, y, z</i> and measure the resulting polarizability.  In general any field \(\vec E = \langle E_x,E_y,E_z\rangle\) results in a polarization in any of the different directions \(p_x,p_y,p_z\).  This is summarized in a <b>polarizability tensor</b> related to the system of equations
-      
+
       $$ p_x = \alpha_{xx}E_x + \alpha_{xy}E_y + \alpha_{xz}E_z $$
       $$ p_y = \alpha_{yz}E_x + \alpha_{yy}E_y + \alpha_{yz}E_z $$
       $$ p_z = \alpha_{zx}E_x + \alpha_{zy}E_y + \alpha_{zz}E_z $$
@@ -47,13 +47,13 @@ talking about are minute, even on an atomic scale.]
     <div class="sol">
       <p class="question">
         Are these solutions correct? <br><br>
-        
+
         An angstrom is \(10^{-10}m\) so the fraction is \(0.5\times 10^{-10}/10^{-3} = 5\times 10^{-6} m\).  <br><br>
-        
+
         From the table earlier in the chapter \(\alpha = 0.667\).  To ionize the atom we want to move the electron entirely away from the proton, so that we want \(p = ed\).  Since \(\vec E\) is constant \(\int_0^{1mm}E\ dx = 1mm(E)\) is the potential.  Or \(E=V/1mm\) (here <i>V</i> is a variable not the unit).
-        
+
         $$ p = e(1mm) = (0.667)(V/1mm) $$
-        
+
         So \(V = e(1mm)^2/0.667\) which is an infinitesimal number.
       </p>
     </div>
@@ -68,21 +68,21 @@ cloud, \(E_e(r)\); then expand the exponential, assuming \( r \ll a\)].
     </p>
     <div class="sol">
       <p>
-        For the field of the charge, we integrate over all the spherical surface charges from 0 up to any point <i>r</i>. 
-        
+        For the field of the charge, we integrate over all the spherical surface charges from 0 up to any point <i>r</i>.
+
         $$ E_e(r) = k\int_0^r \frac{\rho(r')4\pi r'^2}{r'^2} dr' = 4\pi k\int \frac{q}{\pi a^3}e^{-2r'/a} \ dr' $$
-        
+
         $$ = \frac{4kq}{a^3} \left[ \frac{e^{-2r'/a}}{-2/a}\right]_0^r = -\frac{2kq}{a^2}(e^{-2r/a}-1) $$
-        
+
         $$ = \frac{2kq}{a^2}\left(1-\left[1+\left( -\frac{2r}{a}\right) + \frac 1 2 \left(-\frac{2r}{a}\right)^2 + ... \right]\right) \approx \frac{2kq}{a^2}(2r/a) $$
-        
+
         $$ = \frac{4kqr}{a^3} $$
       </p>
       <p>
-        Now if we're in equilibrium and the distance between the center of the positive and negative distributions is <i>d</i> then 
-        
+        Now if we're in equilibrium and the distance between the center of the positive and negative distributions is <i>d</i> then
+
         $$ qd = \alpha \frac{4kqd}{a^3} $$
-        
+
         implies \(\alpha = \frac{a^3}{4k} \).
       </p>
     </div>
@@ -97,39 +97,39 @@ condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field 
     </p>
     <div class="sol">
       <p>
-        We assume the density is proportionate to <i>r</i>, 
-        
+        We assume the density is proportionate to <i>r</i>,
+
         $$ \rho(r) = cr, \quad r < R $$
-        
+
         This might require explicit calculation of the field and dipole moment.  For the field, if \(r < R\) then the field can be obtained by integrating all spherical shells until those of radius <i>r</i>.  Everything outside will contribute 0.
-        
+
         $$ E(\vec r) = k\int_0^r \frac{(cr')4\pi r'^2}{r'^2}\ dr' $$
-        
+
         $$ = kc\left[ \frac{r'^2}{2} \right]_0^{r} = \frac{kcr^2}{2}$$
       </p>
       <p>
-        For the dipole moment 
-        
+        For the dipole moment
+
         $$ \vec p = \iiint_V \vec r' \rho(\vec r')\ d\tau' = \int_0^{2\pi}\int_0^\pi\int_0^R $$
       </p>
     </div>
     <h3>4.1.3. Alignment of Polar Molecules</h3>
     <p>
-      Some molecules, like water, have a built-in permanent dipole.  When in the presence of a constant electric field the net force is zero since the force on the positive charge balances that one the negative.  However there is a torque force 
-      
+      Some molecules, like water, have a built-in permanent dipole.  When in the presence of a constant electric field the net force is zero since the force on the positive charge balances that one the negative.  However there is a torque force
+
       $$ \vec N = \vec r_+\times \vec F_+ + \vec r_- \times \vec F_- $$
     </p>
     <p>
       The center of the dipole moment will be the "lever arm" and so using \(\vec d/2\) and \(-\vec d/2\) as the the lever arms in the torque equation and exchanging \(\vec F = q\vec E\), we get
-      
+
       $$ \vec N = q\vec d\times \vec E = \vec p\times \vec E $$
     </p>
     <h3>4.1.4. Polarization</h3>
     <p>
-      From the previous discussions we can now summarize that, in a dialectric, if the atoms are neutral then we can induce a charge and the induced dipoles line up with the field.  If the atoms form a natural dipole they still line up with the field.  
+      From the previous discussions we can now summarize that, in a dialectric, if the atoms are neutral then we can induce a charge and the induced dipoles line up with the field.  If the atoms form a natural dipole they still line up with the field.
     </p>
     <p>
-      In any large body that is polarized we can define \(\vec P\) the dipole moment per unit volume.  
+      In any large body that is polarized we can define \(\vec P\) the dipole moment per unit volume.
     </p>
     <p>
       In the next several sections we will now forget the field that caused polarization.  Instead we will consider the field that now results from the polarized body.
@@ -138,17 +138,17 @@ condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field 
     <h3>4.2.1. Bound Charges</h3>
     <p>
       The obvious trick in light of defining \(\vec P\) is to find the field caused by a polarized body by integrating a bunch of small dipoles. Potential has the simplest form in terms of a dipole, so we use that.
-      
+
       $$ V(\vec r) = k\int_V\frac{\vec{P}(\vec r')\cdot \hat{ \mathcal{R}}}{\mathcal{R}^2} \ d\tau'$$
-      
+
       But using some obscure vector analysis integration by parts, we end up with the result that: <b>the potential and the field of a polarized object is the same as what would be produced by a volume charge density defined by </b>
-      
+
       $$\rho_b = -\nabla\cdot\vec P$$
-      
+
       <b>plus a surface charge density defined by </b>
-      
+
       $$\sigma_b = \vec P\cdot \hat n$$
-      
+
       We call these the <b>bound charges</b>.
     </p>
     <h3>4.2.2. Physical Interpretation of Bound Charges</h3>
@@ -156,41 +156,41 @@ condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field 
       The surface charge part of the above makes sense: If you line up charges, the interiour ones cancel but the ends leave a positive and negative charge.  If you consider all these tubes of charge in total you can understand how the aggregate comes out like a surface charge.
     </p>
     <p>
-      For the volumetric part, if the polarization is non-uniform then charges accumulate inside the mass.  
+      For the volumetric part, if the polarization is non-uniform then charges accumulate inside the mass.
     </p>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <script type="module" src="../../../js/notes/griffiths_electro/ch2.js"></script>
   </body>
 </html>
