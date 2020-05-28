@@ -202,7 +202,7 @@ condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field 
     <p>
       Calculate the bound charges if \(\vec P(\vec r) = c\vec r\) in a sphere of radius <i>R</i>.  Find the field inside and out.
     </p>
-    <div class="sol question">
+    <div class="sol">
       <p>
         This time there is no preferred orientation of the axes since the dipole density is spherically symmetric.  From the geometry one would expect that there would be a relative weakness of negative tails in the center and strength of positive charges at the surface.  You might then guess that this acts as a spherically symmetric charge distribution at every shell, growing in strength outward.
       </p>
@@ -218,7 +218,7 @@ condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field 
         where \(\vec v = \vec r = v_r \hat r + v_\theta \hat \theta + v_\phi \hat \phi\) and so \(v_r = r\) whereas all other component functions are 0. So \(\rho_b = -c\frac{1}{r^2}\frac{\partial}{\partial r}(r^2(r)) = -3c\).
       </p>
       <p>
-        Outside the sphere the surface charge density is like a point charge with magnitude \(c\cdot 4\pi R^2\).  \(\rho_b\) also acts like a point charge with magnitude \(-3c\cdot \frac 4 3 \pi R^3\).
+        Outside the sphere the surface charge density is like a point charge with magnitude \(cR\cdot 4\pi R^2\).  \(\rho_b\) also acts like a point charge with magnitude \(-3c\cdot \frac 4 3 \pi R^3\).
       </p>
     </div>
     <h3>4.2.2. Physical Interpretation of Bound Charges</h3>
@@ -234,14 +234,40 @@ condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field 
 
       $$ \frac{a^2}{2\epsilon_0 s^2}[2(\vec P\cdot \hat s)\hat s - \vec P] $$
     </p>
-    <div class="sol question">
+    <div class="sol">
       <p>
-        Because the unit polarization is uniform we know that the volumetric bound charge is 0, as it's the negative gradient of polarization.  The surface charge is the same as if there were two copies of the cylinder, one positive and the other negative, shifted by \(\vec d\) where \(\vec p = \pi a^2\Delta x \vec P \).
+        Because the unit polarization is uniform we know that the volumetric bound charge is 0, as it's the negative gradient of polarization.  The surface charge is the same as if there were two copies of the cylinder, one positive and the other negative, shifted by some small \(\vec d\).  We can use Gauss's law to get the field at any point in the interior due first to the positive and then the negative.  
+      </p>
+      <p>
+        These two fields are each parameterized by vectors eminating from the centers of the two cylinders.  Some moderate vector calculus shows that the sum of the two fields, involving a difference of the relative displacements, is equivalent to \(\vec d\) and you get a very simple solution in terms of the polarization.  
+      </p>
+      <p>
+        For a point outside the cylinder, you can regard the two imagined cylinders as lines of charge to derive the given formula.
       </p>
     </div>
-
-
-
+    <h3>4.2.3 The Field Inside a Dialetric</h3>
+    <p>
+      This section contains some comments on the field very close to a dipole.  I think it's skip-able so I'm skipping.
+    </p>
+    <h2>4.3 The Electric Displacement</h2>
+    <h3>4.3.1 Gauss's Law in Dielectrics</h3>
+    <p class="question">
+      We now know how a charge can induce a dipole in a dielectric, and it produces what we call the bound charge \(\rho_b\).  <b>Why do we ignore the surface charge density?</b>  If we regard every other charge as the "free charge" \(\rho_f\) then using \(\epsilon_0\nabla \cdot \vec E = \rho = \rho_b+\rho_f = -\nabla\cdot \vec P + \rho_f\) we can solve for 
+      
+      $$\rho_f = \nabla\cdot(\epsilon_0\vec E + \vec P) $$  
+      
+      The stuff in parentheses we denote by \(\vec D\) and call it the <b>electric displacement</b>.
+    </p>
+    <div class="ex">
+      <p>
+        Suppose a wire of charge runs through a rubber tube.  Find the free charge.  
+      </p>
+      <div class="sol question">
+        <p>
+          We first fit a Gaussian surface which is a cylinder passing through any point inside the rubber.  <b>How do we know that \(\vec D\) is constant throughout this Gaussian surface?  I can't see what we know about \(\vec D\) at this stage since it's due in part to \(\vec E\) and I'm not fully sure what that is, and it's due to the bound charge which seems unknown at this point.</b>
+        </p>
+      </div>
+    </div>
 
 
 
