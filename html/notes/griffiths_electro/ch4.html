@@ -271,7 +271,7 @@ condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field 
     <h3>Problem 4.15</h3>
     <div>
       <p>
-        If a spherical shell of inner radius <i>a</i> and outer radius <i>b</i> has polarization defined by \(\vec P = \frac k r \hat r \).  Find the electric field in the three regions by two methoods.  
+        If a spherical shell of inner radius <i>a</i> and outer radius <i>b</i> has polarization defined by \(\vec P = \frac k r \hat r \).  Find the electric field in the three regions by two methods.  
       </p>
       <p>
         a) Locate all the bound charge and use Gauss's law.
@@ -293,8 +293,22 @@ condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field 
       <p>
         To confirm that this makes sense let's see that the total charge is 0.  On the outer surface the net charge is \(4\pi b^2 k/b\) and on the inner surface \(-4\pi a^2k/a \).  And throughout the material \( \int_a^b (-k/r^2) (4\pi r^2) \ dr = -4\pi k (b-a) \).  Since this sums to zero we may be on the right track.  
       </p>
+      <p>
+        From here we now just have a system of charges and can solve this using the techniques of before.  To address part (b) we use the equation \(\oint \vec D \cdot d\vec a = Q_{f_{enc}} \) but the charge here is the free charge ... and in this problem there is none.  So the integral over \(\vec D\) is zero entailing \(\vec D = \vec 0\).  So from \(\vec D = \epsilon_0 \vec D + \vec P\) we infer \(\vec D = -\frac {\vec P}{\epsilon_0} \).
+      </p>
     </div>
-
+    <h3>Problem 4.4.16</h3>
+    <p>Suppose the field inside a large piece of dielectric is \(\vec E_0\) so that \(\vec D = \epsilon_0\vec E_0+\vec P\).</p>
+    
+    <p>(a) A small spherical cavity is hollowed out of the material.  Find the field at the center in terms \(\vec E_0, \vec P\).  Also find the displacement at the center in terms of \(\vec D_0, \vec P\).  Assume the cavities described below are small enough that the fields involved are uniform.  <i>Hint:</i> Carving out a cavity is the same as super-imposing an object of opposite polarization.</p>
+    
+    <p>
+      (b) Do the same for a long needle-shaped cavity running parallel to \(\vec P\).
+    </p>
+    
+    <p>
+      (c) Do likewise for a thin wafer-shaped cavity perpendicular to \(\vec P\).
+    </p>
 
 
 
