@@ -336,7 +336,7 @@ condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field 
     <h3>Boundary Conditions</h3>
     <div class="question">
       <p>
-        <b>How does the integral equation tell us about boundaries?</b>
+        
         The equation 
         
         $$\int D\cdot d\vec a = Q_f$$
@@ -344,10 +344,103 @@ condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field 
          
          $$D^{\perp}_{above} - D^{\perp}_{below} = \sigma_f$$
       </p>
+      <p>
+        The argument for the above goes exactly the same as it did for the electric field, using a thin Gaussian pillbox.  On the other hand, the previous argument for the parallel component no longer applies.  For the electric field we argued that the parallel component must be zero otherwise our system would not be in equilibrium.  Here charges are not free to flow and that no longer is convincing.
+      </p>
+      <p>
+        But because we know the field will still have no parallel component, we can say that the difference in the displacement is the difference in the polarization.
+        
+        $$ \vec D_{above}^{||} - \vec D_{below}^{||} = \vec P_{above}^{||}-\vec P_{below}^{||} $$
+      </p>
     </div>
-
-
-
+    <h2>4.4 Linear Dielectrics</h2>
+    <h3>4.4.1 Susceptibility, Permitivity, Dielectric Constant</h3>
+    <div>
+      <p>
+        For many substances 
+        
+        $$ \vec P = \epsilon_0\chi_e \vec E $$
+        
+        where \(\chi_e\) is the <b>electric susceptibility</b> of the medium and is dimensionless (the dimensions are accounted for in the permitivity of free space).  When this approximation is valid we call the material a <b>linear dielectric</b>.
+      </p>
+      <p>
+        From this definition we gain an obvious simplification of the displacement 
+        
+        $$ \vec D = \epsilon_0(1+\chi_e)\vec E = \epsilon\vec E $$
+        
+        where we call \(\epsilon\) the <b>permitivity</b> of the material.  We also call the following the <b>relative permitivity</b>:
+        
+        $$ \epsilon_r = \frac \epsilon {\epsilon_0} = 1+\chi_e $$
+      </p>
+    </div>
+    <h3>Example 4.5</h3>
+    <div>
+      <p>
+        A metal sphere of radius <i>a</i> carries charge <i>Q</i>.  It is surrounded, out to radius <i>b</i>, by linear dialectric material of permativity \(\epsilon\).  Find the potential at the center.
+      </p>
+    </div>
+    <div class="sol question">
+      <p>
+        Traditionally to get the potential we want the field.  Here to get the field, we would perhaps want to find the bound charge of the dielectric as we have in the past.  But the polarization is first due to \(\vec E\).  
+      </p>
+      <p>
+        Nonetheless we can calculate \(\vec D\) using the free charge.  We fit a Gaussian surface around it and use the diplacement Gauss's law.
+        
+        $$ \vec D = \frac Q {4\pi r^2}\hat r\ \ \ \ \text{ for \(r>a\)} $$
+        
+        And of course inside a metal sphere the field is zero.  
+      </p>
+      <p>
+        Now \(\vec E = \vec D/\epsilon\) in the material and \(\vec E = \vec D/\epsilon_0\) in free space.  With this we can next find the potential by bringing a particle in from infinity to the center.  Naturally we divide the path into those parts outside the dielectric, the part inside, and the part inside the sphere.  Of course the part inside the sphere contributes nothing to potential.  
+        
+        $$ V = -\int_\infty^b\vec E\cdot d\vec \ell = -\int_\infty^b\frac {kQ} {r^2}dr - \int_b^a \frac{Q}{4\pi\epsilon r^2}dr $$
+      </p>
+    </div>
+    <div class="question">
+      <p>
+        You might suspect that since linear dielectrics are proportional to the field then the displacement is then conservative like the field.  Unfortunately the equation is only true in most of space, and not in all of space--but this exception is enough to make the field not conservative.
+      </p>
+      <p>
+        In particular at the interface between one dielectric and another, the integral of a closed path around that interface will make \(\vec E\) vanish but \(\vec P\) will not.  What's interesting about this is that the displacement would be conservative if we further required that the material fill all of space.  
+      </p>
+      <p>
+        For example, if a free charge <i>q</i> is embedded in a large dielectric, the field it produces is \(\vec E = \vec D/\epsilon = \frac{1}{4\pi \epsilon}\frac{q}{r^2}\hat r\).  
+      </p>
+    </div>
+    <h3>Example 4.6</h3>
+    <div>
+      <p>
+        A parallel plate capacitor is filled with a dielectric with constant \(\epsilon_r\).  What effect does this have on the capacitance?
+      </p>
+    </div>
+    <div>
+      <p>
+        If \(\vec E_0\) is the field without the dielectric, 
+        
+        $$\vec E = \frac 1 {\epsilon_r} \vec E_0 $$
+        
+        similar to what we saw just above with a point charge.  This immediately implies the relationship between potential differences.  From \(C = Q/V\) we get \(C = \epsilon_r C_{vac}\).
+      </p>
+    </div>
+    <h3>Problem 4.18</h3>
+    <div>
+      <p>
+        The space between plates of a parallel plate capacitor (density \(\sigma\)) is filled half with one linear dielectric and half with another.  Each slab of dielectric has thickness <i>a</i>.  
+      </p>
+      <p>
+        (a) Find \(\vec D\) in each slab. <br><br>
+        (b) Find the electric field \(\vec E\) in each. <br><br>
+        (c) Find the \(\vec P\). <br><br>
+        (d) Find the potential difference between the plates. <br><br>
+        (e) Find the location and amount of all bound charge.  <br><br>
+        (f) Now that you know the free and bound charge, recalculate the field.
+      </p>
+    </div>
+    <div class="sol">
+      <p>
+        
+      </p>
+    </div>
 
 
 
