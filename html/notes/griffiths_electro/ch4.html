@@ -264,14 +264,14 @@ condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field 
       </p>
       <div class="sol">
         <p>
-          We first fit a Gaussian surface which is a cylinder passing through any point inside the rubber.  By symmetry we can first infer that the polarization is symmetric and then infer that the total field is symmetric, so the electric displacement must be too.  This justifies using the Gauss's law approach and the rest is simple.  
+          We first fit a Gaussian surface which is a cylinder passing through any point inside the rubber.  By symmetry we can first infer that the polarization is symmetric and then infer that the total field is symmetric, so the electric displacement must be too.  This justifies using the Gauss's law approach and the rest is simple.
         </p>
       </div>
     </div>
     <h3>Problem 4.15</h3>
     <div>
       <p>
-        If a spherical shell of inner radius <i>a</i> and outer radius <i>b</i> has polarization defined by \(\vec P = \frac k r \hat r \).  Find the electric field in the three regions by two methods.  
+        If a spherical shell of inner radius <i>a</i> and outer radius <i>b</i> has polarization defined by \(\vec P = \frac k r \hat r \).  Find the electric field in the three regions by two methods.
       </p>
       <p>
         a) Locate all the bound charge and use Gauss's law.
@@ -282,7 +282,7 @@ condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field 
     </div>
     <div class="sol">
       <p>
-        a) 
+        a)
         $$ \sigma_b = \vec P \cdot \hat n = \pm k/r $$
         at each point on the outer and inner surface.  It is positive on the outer, negative on the inner.  For points inside the material
       </p>
@@ -291,7 +291,7 @@ condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field 
         $$ = -\frac 1 {r^2} \left( \frac \partial {\partial r} r^2 k/r \right) = -\frac 1 {r^2} k$$
       </p>
       <p>
-        To confirm that this makes sense let's see that the total charge is 0.  On the outer surface the net charge is \(4\pi b^2 k/b\) and on the inner surface \(-4\pi a^2k/a \).  And throughout the material \( \int_a^b (-k/r^2) (4\pi r^2) \ dr = -4\pi k (b-a) \).  Since this sums to zero we may be on the right track.  
+        To confirm that this makes sense let's see that the total charge is 0.  On the outer surface the net charge is \(4\pi b^2 k/b\) and on the inner surface \(-4\pi a^2k/a \).  And throughout the material \( \int_a^b (-k/r^2) (4\pi r^2) \ dr = -4\pi k (b-a) \).  Since this sums to zero we may be on the right track.
       </p>
       <p>
         From here we now just have a system of charges and can solve this using the techniques of before.  To address part (b) we use the equation \(\oint \vec D \cdot d\vec a = Q_{f_{enc}} \) but the charge here is the free charge ... and in this problem there is none.  So the integral over \(\vec D\) is zero entailing \(\vec D = \vec 0\).  So from \(\vec D = \epsilon_0 \vec D + \vec P\) we infer \(\vec D = -\frac {\vec P}{\epsilon_0} \).
@@ -299,49 +299,49 @@ condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field 
     </div>
     <h3>Problem 4.4.16</h3>
     <p>Suppose the field inside a large piece of dielectric is \(\vec E_0\) so that \(\vec D_0 = \epsilon_0\vec E_0+\vec P\).</p>
-    
+
     <p>(a) A small spherical cavity is hollowed out of the material.  Find the field at the center in terms \(\vec E_0, \vec P\).  Also find the displacement at the center in terms of \(\vec D_0, \vec P\).  Assume the cavities described below are small enough that the fields involved are uniform.  <i>Hint:</i> Carving out a cavity is the same as super-imposing an object of opposite polarization.</p>
-    
+
     <p>
       (b) Do the same for a long needle-shaped cavity running parallel to \(\vec P\).
     </p>
-    
+
     <p>
       (c) Do likewise for a thin wafer-shaped cavity perpendicular to \(\vec P\).
     </p>
-    <div class="sol question">
+    <div class="sol">
       <p>
         (a) As the hint suggests, we place a polarized material in the location of the hollow, with opposite polarization \(-\vec P\).  The field due to this sphere is, as discussed earlier in the book which I may have skipped, \(-\frac{\vec{P}}{3\epsilon_0} \).  Then \(\vec E = \vec E_0 - \frac{\vec{P}}{3\epsilon_0} \).
       </p>
       <p>
-        Now that we have the field, we can stop thinking about a negatively polarized material superposed.  We can merely say \(\vec D = \epsilon_0 \vec E\) and use the previous result, and the fact that \(\vec D_0 = \epsilon_0 \vec E_0 + \vec P\).  
+        Now that we have the field, we can stop thinking about a negatively polarized material superposed.  We can merely say \(\vec D = \epsilon_0 \vec E\) and use the previous result, and the fact that \(\vec D_0 = \epsilon_0 \vec E_0 + \vec P\).
       </p>
       <p>
-        (b) A needle is effectively a thin and long cylinder.  Since the volumetric bound charge in a negatively polarized material that we might superpose is zero, all that matters is the ends.  But those are so small and far apart that these are also effectively zero.  Then \(\vec E = \vec E_0\).  
+        (b) A needle is effectively a thin and long cylinder.  Since the volumetric bound charge in a negatively polarized material that we might superpose is zero, all that matters is the ends.  But those are so small and far apart that these are also effectively zero.  Then \(\vec E = \vec E_0\).
       </p>
       <p>
-        (c) If we add a negatively charged wafer this is sort of the opposite of the needle scenario.  The wafer is mostly surface area, so it has the maximum impact on the field.  In fact the surface bound charge is like a parallel plate with \(\sigma = -P\) on one side and \(\sigma = P\) on the other.  Inside the plates the field is \(\frac{\sigma}{\epsilon_0}\hat n\).  So \(\vec E = \vec E_0 - \frac{\vec{P}}{\epsilon_0} \).  
+        (c) If we add a negatively charged wafer this is sort of the opposite of the needle scenario.  The wafer is mostly surface area, so it has the maximum impact on the field.  In fact the surface bound charge is like a parallel plate with \(\sigma = -P\) on one side and \(\sigma = P\) on the other.  Inside the plates the field is \(\frac{\sigma}{\epsilon_0}\hat n\).  So \(\vec E = \vec E_0 - \frac{\vec{P}}{\epsilon_0} \).
       </p>
     </div>
     <h3>4.3.2 A Deceptive Parallel</h3>
     <div>
       <p>
-        It may seem like the displacement is just like an electric field, but importantly it is not guaranteed to be conservative.  In particular the curl is not always zero, but since the curl of the electric field is, then we can say 
-        
+        It may seem like the displacement is just like an electric field, but importantly it is not guaranteed to be conservative.  In particular the curl is not always zero, but since the curl of the electric field is, then we can say
+
         $$ \nabla\times \vec D = \nabla\times\vec P $$
-        
+
         Because displacement is not conservative, it has no equivalent to a "potential".  The integral must be evaluated using direct calculations rather than the fundamental theorem of line integrals or other threoms that deepend on conservatism.
       </p>
     </div>
     <h3>Boundary Conditions</h3>
-    <div class="question">
+    <div>
       <p>
-        
-        The equation 
-        
+
+        The equation
+
         $$\int D\cdot d\vec a = Q_f$$
-         tells us the discontinuity in the component perpendicular to an interface.  
-         
+         tells us the discontinuity in the component perpendicular to an interface.
+
          $$D^{\perp}_{above} - D^{\perp}_{below} = \sigma_f$$
       </p>
       <p>
@@ -349,7 +349,7 @@ condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field 
       </p>
       <p>
         But because we know the field will still have no parallel component, we can say that the difference in the displacement is the difference in the polarization.
-        
+
         $$ \vec D_{above}^{||} - \vec D_{below}^{||} = \vec P_{above}^{||}-\vec P_{below}^{||} $$
       </p>
     </div>
@@ -357,19 +357,19 @@ condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field 
     <h3>4.4.1 Susceptibility, Permitivity, Dielectric Constant</h3>
     <div>
       <p>
-        For many substances 
-        
+        For many substances
+
         $$ \vec P = \epsilon_0\chi_e \vec E $$
-        
+
         where \(\chi_e\) is the <b>electric susceptibility</b> of the medium and is dimensionless (the dimensions are accounted for in the permitivity of free space).  When this approximation is valid we call the material a <b>linear dielectric</b>.
       </p>
       <p>
-        From this definition we gain an obvious simplification of the displacement 
-        
+        From this definition we gain an obvious simplification of the displacement
+
         $$ \vec D = \epsilon_0(1+\chi_e)\vec E = \epsilon\vec E $$
-        
+
         where we call \(\epsilon\) the <b>permitivity</b> of the material.  We also call the following the <b>relative permitivity</b>:
-        
+
         $$ \epsilon_r = \frac \epsilon {\epsilon_0} = 1+\chi_e $$
       </p>
     </div>
@@ -379,32 +379,34 @@ condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field 
         A metal sphere of radius <i>a</i> carries charge <i>Q</i>.  It is surrounded, out to radius <i>b</i>, by linear dialectric material of permativity \(\epsilon\).  Find the potential at the center.
       </p>
     </div>
-    <div class="sol question">
+    <div class="sol">
       <p>
-        Traditionally to get the potential we want the field.  Here to get the field, we would perhaps want to find the bound charge of the dielectric as we have in the past.  But the polarization is first due to \(\vec E\).  
+        <b>In the final equation, check to make sure you include the right bounds of the integral and use the coefficients for potential.</b> <br><br>
+        
+        Traditionally to get the potential we want the field.  Here to get the field, we would perhaps want to find the bound charge of the dielectric as we have in the past.  But the polarization is first due to \(\vec E\).
       </p>
       <p>
         Nonetheless we can calculate \(\vec D\) using the free charge.  We fit a Gaussian surface around it and use the diplacement Gauss's law.
-        
+
         $$ \vec D = \frac Q {4\pi r^2}\hat r\ \ \ \ \text{ for \(r>a\)} $$
-        
-        And of course inside a metal sphere the field is zero.  
+
+        And of course inside a metal sphere the field is zero.
       </p>
       <p>
-        Now \(\vec E = \vec D/\epsilon\) in the material and \(\vec E = \vec D/\epsilon_0\) in free space.  With this we can next find the potential by bringing a particle in from infinity to the center.  Naturally we divide the path into those parts outside the dielectric, the part inside, and the part inside the sphere.  Of course the part inside the sphere contributes nothing to potential.  
-        
+        Now \(\vec E = \vec D/\epsilon\) in the material and \(\vec E = \vec D/\epsilon_0\) in free space.  With this we can next find the potential by bringing a particle in from infinity to the center.  Naturally we divide the path into those parts outside the dielectric, the part inside, and the part inside the sphere.  Of course the part inside the sphere contributes nothing to potential.
+
         $$ V = -\int_\infty^b\vec E\cdot d\vec \ell = -\int_\infty^b\frac {kQ} {r^2}dr - \int_b^a \frac{Q}{4\pi\epsilon r^2}dr $$
       </p>
     </div>
-    <div class="question">
+    <div>
       <p>
         You might suspect that since linear dielectrics are proportional to the field then the displacement is then conservative like the field.  Unfortunately the equation is only true in most of space, and not in all of space--but this exception is enough to make the field not conservative.
       </p>
       <p>
-        In particular at the interface between one dielectric and another, the integral of a closed path around that interface will make \(\vec E\) vanish but \(\vec P\) will not.  What's interesting about this is that the displacement would be conservative if we further required that the material fill all of space.  
+        In particular at the interface between one dielectric and another, the integral of a closed path around that interface will make \(\vec E\) vanish but \(\vec P\) will not.  What's interesting about this is that the displacement would be conservative if we further required that the material fill all of space.
       </p>
       <p>
-        For example, if a free charge <i>q</i> is embedded in a large dielectric, the field it produces is \(\vec E = \vec D/\epsilon = \frac{1}{4\pi \epsilon}\frac{q}{r^2}\hat r\).  
+        For example, if a free charge <i>q</i> is embedded in a large dielectric, the field it produces is \(\vec E = \vec D/\epsilon = \frac{1}{4\pi \epsilon}\frac{q}{r^2}\hat r\).
       </p>
     </div>
     <h3>Example 4.6</h3>
@@ -415,17 +417,17 @@ condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field 
     </div>
     <div>
       <p>
-        If \(\vec E_0\) is the field without the dielectric, 
-        
+        If \(\vec E_0\) is the field without the dielectric,
+
         $$\vec E = \frac 1 {\epsilon_r} \vec E_0 $$
-        
+
         similar to what we saw just above with a point charge.  This immediately implies the relationship between potential differences.  From \(C = Q/V\) we get \(C = \epsilon_r C_{vac}\).
       </p>
     </div>
     <h3>Problem 4.18</h3>
     <div>
       <p>
-        The space between plates of a parallel plate capacitor (density \(\sigma\)) is filled half with one linear dielectric and half with another.  Each slab of dielectric has thickness <i>a</i>.  
+        The space between plates of a parallel plate capacitor (density \(\sigma\)) is filled half with one linear dielectric and half with another.  Each slab of dielectric has thickness <i>a</i>.
       </p>
       <p>
         (a) Find \(\vec D\) in each slab. <br><br>
@@ -438,7 +440,7 @@ condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field 
     </div>
     <div class="sol">
       <p>
-        
+
       </p>
     </div>
 
