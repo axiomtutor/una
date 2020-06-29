@@ -381,9 +381,7 @@ condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field 
     </div>
     <div class="sol">
       <p>
-        <b>In the final equation, check to make sure you include the right bounds of the integral and use the coefficients for potential.</b> <br><br>
-        
-        Traditionally to get the potential we want the field.  Here to get the field, we would perhaps want to find the bound charge of the dielectric as we have in the past.  But the polarization is first due to \(\vec E\).
+        Traditionally to get the potential we want the field.  Here to get the field, we would perhaps want to find the bound charge of the dielectric as we have in the past.  But the polarization is first due to \(\vec E\) and we've come full-circle.
       </p>
       <p>
         Nonetheless we can calculate \(\vec D\) using the free charge.  We fit a Gaussian surface around it and use the diplacement Gauss's law.
@@ -395,7 +393,7 @@ condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field 
       <p>
         Now \(\vec E = \vec D/\epsilon\) in the material and \(\vec E = \vec D/\epsilon_0\) in free space.  With this we can next find the potential by bringing a particle in from infinity to the center.  Naturally we divide the path into those parts outside the dielectric, the part inside, and the part inside the sphere.  Of course the part inside the sphere contributes nothing to potential.
 
-        $$ V = -\int_\infty^b\vec E\cdot d\vec \ell = -\int_\infty^b\frac {kQ} {r^2}dr - \int_b^a \frac{Q}{4\pi\epsilon r^2}dr $$
+        $$ V = - \int_\infty^a\vec E\cdot d\vec \ell = -\frac 1 \epsilon_0 \int_\infty^b\frac {kQ} {r^2}dr - \frac 1 \epsilon_0 \int_b^a \frac{Q}{4\pi\epsilon r^2}dr $$
       </p>
     </div>
     <div>
@@ -440,15 +438,107 @@ condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field 
     </div>
     <div class="sol">
       <p>
-
+        Suppose the plates are horizontal.  We draw a Gaussian pillbox through the top so that it reaches out of the plate into a region where we know the polarization is zero.  Also because the plates are responsible for all the electrical charge, we should expect the field outside the plates is also zero, so the flux through the surface outside is 0.  The walls of the pillbox should by symmetry experience a net zero "flux".  Inside the dialectric we have a uniform field from the plate, and planar symmetry should convince us that the strength of the polarization should be symmetrically distributed.
+      </p>
+      <p>
+        Then the "electric displacement flux" is <i>DA</i>, but is also equal to the enclosed free charge.  So \(DA = \sigma A\) which interestingly indicates that the displacement is independent of the distance into the material.  Somewhat sensible, actually, if you imagine the parallel plates make pseudo-parallel plates of polarization. All of them exerting a constant force.  Anyway, of course the above implies \(D = \sigma\), which is true in both materials.
+      </p>
+      <p>
+        For (b), from the above we can infer \(\vec D = \epsilon \vec E\) so that \(E = \sigma/\epsilon_1\) in the first slab, and likewise for the second.
+      </p>
+      <p>
+        For (c) we can simply apply linearity of the dialectric.  For (d) we integrate directly.  For (e) we use the bound charge formula.  For (f) of course use Coulomb's law.
       </p>
     </div>
+    <h3>Problem 19</h3>
+    <p>
+      Suppose you half-fill a capacitor with a dialectric.  How does the change in capacitance depend on wether you fill it in the middle of the capacitor or packed all to one side?
+    </p>
+    <div class="sol question">
+      <p>
+        If you pack the material in the middle you use the same technique as above, with some of the material having permitivity the permitivity of free space.  But if it's all packed to one side,
+      </p>
+    </div>
+    <h3>Problem 20</h3>
+    <p>
+      Suppose a linear dialectric has a free charge density \(\rho\) embedded within it.  If it is a sphere of radius <i>R</i> and dialectric constant \(\epsilon_r\), find the potential at the center of the sphere relative to infinity.
+    </p>
+    <div class="sol question">
+      <p>
+        To find the potential we want to find the field.  For any Gaussian sphere inside the material, the displacement flux is \(D(4\pi r^2)\) and the enclosed charge is \(\frac 4 3 \pi r^3 \rho \).  From knowing the displacement we find the field.  Of course outside the material we only use the radius of the material, <i>R</i>.  Now calculate the potential difference by direct integration of the field.
+      </p>
+    </div>
+    <h3>Problem 21</h3>
+    <p>
+      Find the capacitance in a coaxial cable with the space between the central wire and the outer tube filled with a linear dialectric.
+    </p>
+    <div class="sol question">
+      <p>
+        For any Gaussian tube passing symmetrically through the dialectric, the displacement is constant by symmetry.  And the enclosed charge is just the charge on the cable.  Linearity tells you the field.
+      </p>
+    </div>
+    <h2>4.2 Boundary Value Problems with Linear Dialectrics</h2>
+    <div>
+      <p>
 
+        In a homogeneous isotropic linear dialectric, the bound charge density is proportional to the free charge density
 
+        $$ \rho_b = -\nabla\cdot\vec P = -\nabla \cdot \left( \epsilon_0\frac{\chi_e}{\epsilon} \vec D \right) = -\left(\frac{\chi_e}{1+\chi_e}\right)\rho_f $$
+      </p>
+      <p>
+        The first equation above is because of the definition of the bound charge.  The second is due to linearity.  The third is the theorem we found at the end of the discussion of unit polarization.
+      </p>
+      <p>
+        We earlier saw that \(D^\perp_{above}-D^{\perp}_{below} = \sigma_f\) which tells us that
 
+        $$\epsilon_{above}E^{\perp}_{above}-\epsilon_{below}E^{\perp} = \sigma_f$$
+      </p>
+      <p>
+        We can rephrase this in terms of the potential
 
+        $$\epsilon_{above}\frac{\partial V_{above}}{\partial n} - \epsilon_{below}\frac{\partial V_{below}}{\partial n} = -\sigma_{f}$$
+      </p>
+      <p class="question">
+        But we know the potential is continuous so that \(V_{above}=V_{below}\).  <br><br>
 
+        <b>What did we learn here?  The potential being continuous is really looking at two sides of a function at a corner.  The potential is, say, an increasing function just above the surface and decreasing just below.  So you expect the partial derivatives to not be equal, yet here there seems like an implied ellipsis suggesting that the partial derivatives are equal.</b>
+      </p>
+    </div>
+    <h3>Example 7</h3>
+    <div>
+      <p>
+        A sphere of homogeneous linear dielectric material is placed in an otherwise constant field.  Find the field inside the dielectric.
+      </p>
+      <div class="sol question">
+        <p>
+          We can view this as an instance of Laplace's equation with boundary conditions: <i>V</i> is continuous everywhere, \(\epsilon \frac{\partial V_{in}}{\partial r} = \epsilon_0\frac{\partial V_{out}}{\partial r}\), and \(V_{out} \rightarrow -E_0 r\cos\theta\) if <i>r</i> is large.  This last claim is due to the fact that, were you to bring in a charge from infinity, the only portion of the field that you would work against is the parallel component of the path.  So here \(\theta=0\) indicates a direction parallel to the constant electric field.
+        </p>
+        <p>
+          From here we use some Legendre polynomial stuff I'd rather not chase down right now.
+        </p>
+      </div>
+    </div>
+    <h3>Example 8</h3>
+    <div>
+      <p>
+        Suppose the entire region below <i>z = 0</i> is filled with a uniform linear dielectric.  Calculate the force on a point charge <i>q</i> a distance above the origin.
+      </p>
+      <div class="sol question">
+        <p>
+          The surface bound charge will be opposite in sign to <i>q</i>.  So the force will be attractive.  There is no volumetric bound charge.  The surface bound charge formula we can write in terms of the field, because of linearity.
 
+          $$ \sigma_b = \vec P\cdot \hat n = P_z = \epsilon_0 \chi_e E_z $$
+
+          <b>To be clear about the above, \(E_z\) is the strength of the electric field at the point of the charged particle yes?  So at that point the charged particle does not exert any force, because things don't exert forces on themselves? So when we calculate the force due to the charged particle we are only using this in order to then apply Newton's third law?</b>
+        </p>
+        <p>
+          We want to find the force of the dielectric acting at <i>q</i> but it's easier to find the force <i>q</i> exerts on each point of the bound charge and then by Newton's third law this is the opposite force that the point exerts on <i>q</i>.  Coulomb's law solves this part.
+        </p>
+        <p>
+          
+        </p>
+      </div>
+    </div>
 
 
 
