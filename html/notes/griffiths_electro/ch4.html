@@ -499,9 +499,7 @@ condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field 
         $$\epsilon_{above}\frac{\partial V_{above}}{\partial n} - \epsilon_{below}\frac{\partial V_{below}}{\partial n} = -\sigma_{f}$$
       </p>
       <p class="question">
-        But we know the potential is continuous so that \(V_{above}=V_{below}\).  <br><br>
-
-        <b>What did we learn here?  The potential being continuous is really looking at two sides of a function at a corner.  The potential is, say, an increasing function just above the surface and decreasing just below.  So you expect the partial derivatives to not be equal, yet here there seems like an implied ellipsis suggesting that the partial derivatives are equal.</b>
+        But we know the potential is continuous so that \(V_{above}=V_{below}\).
       </p>
     </div>
     <h3>Example 7</h3>
@@ -509,7 +507,7 @@ condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field 
       <p>
         A sphere of homogeneous linear dielectric material is placed in an otherwise constant field.  Find the field inside the dielectric.
       </p>
-      <div class="sol question">
+      <div class="sol">
         <p>
           We can view this as an instance of Laplace's equation with boundary conditions: <i>V</i> is continuous everywhere, \(\epsilon \frac{\partial V_{in}}{\partial r} = \epsilon_0\frac{\partial V_{out}}{\partial r}\), and \(V_{out} \rightarrow -E_0 r\cos\theta\) if <i>r</i> is large.  This last claim is due to the fact that, were you to bring in a charge from infinity, the only portion of the field that you would work against is the parallel component of the path.  So here \(\theta=0\) indicates a direction parallel to the constant electric field.
         </p>
@@ -523,7 +521,7 @@ condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field 
       <p>
         Suppose the entire region below <i>z = 0</i> is filled with a uniform linear dielectric.  Calculate the force on a point charge <i>q</i> a distance above the origin.
       </p>
-      <div class="sol question">
+      <div class="sol">
         <p>
           The surface bound charge will be opposite in sign to <i>q</i>.  So the force will be attractive.  There is no volumetric bound charge.  The surface bound charge formula we can write in terms of the field, because of linearity.
 
@@ -548,6 +546,8 @@ condition on <i>ρ(r)</i> such that proportionality will hold in the weak-field 
           Putting three quantities together we get that
 
           $$\sigma_b = -\epsilon_0\chi_e\Big[-kqd/(r^2+d^2)^{3/2}-\sigma_b/(2\epsilon_0)\Big]$$
+
+          which we can then solve for \(\sigma_b\).  It interesting gives the same expression for the field given a conducting surface, but with a factor for \(\frac{\chi_e}{\chi_e+2}\).
         </p>
       </div>
     </div>
