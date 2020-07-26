@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta http-equiv="content-language" content="en">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notes - Griffiths Ch4</title>
+    <title>Notes - Griffiths Ch5</title>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -151,7 +151,292 @@
           $$ J = \frac{I}{\pi a^2} $$
         </p>
       </div>
+      <p> As a follow-up problem, suppose the current density is proportional to the distance from the axis.  Now find the current.</p>
+
+      <div class="sol">
+        <p>
+          We can rearrange \( \vec J = \frac{d\vec I}{da_{\perp}} \) into \(d\vec I = \vec J da_{\perp} \) and realize that all components are pointing in a single direction so that
+
+          $$ \int dI = I = \int J\ da = $$
+          $$ \int (ks)(s\ ds d\phi) = 2\pi k s^2 \ ds = $$
+          $$ \frac{2\pi k}{3} s^3\Big|_0^a = 2\pi ka^3/3 $$
+        </p>
+      </div>
     </div>
+    <div>
+      <p>
+        Given that generally, for current crossing a surface $S$, the total current is given by \(I=\int_S J\ da_\perp = \int_S\vec J\cdot d\vec a\).  If we imagine the surface is closed then charge can flow in or out of the surface, and the current is the rate of this flow.  I.e.
+
+        $$ I = -\frac{dq}{dt} $$
+
+        where <i>q</i> is the charge enclosed.  It would be nice to relate this to the charge density over the enclosed space.  We can relate each to a volume integral, the first one regarding the net charge as the integral over charge density.
+
+        $$ q = \int_V\rho\ d\tau $$
+
+        Then using the Divergence Theorem,
+
+        $$ I = \oint_S \vec J \cdot d\vec a = \int_V (\nabla\cdot \vec J)d\tau = $$
+        $$ -\frac{d}{dt}\int_V\rho \ d\tau$$
+
+        If we pack everything strictly inside the integrals and use the equality of these over any surface then
+
+        $$\nabla \cdot \vec J = -\frac{\partial \rho}{\partial t} $$
+
+        This is called the <b>continuity equation</b>.
+      </p>
+    </div>
+    <div>
+      <p>
+        <b>Problem 5.4</b>
+        <br><br>
+        If \(\vec B = kz\hat x\) find the force on a square loop lying in the <i>yz</i>-plane centered at the origin, carrying a counterclockwise current if seen down the <i>x</i>-axis.
+      </p>
+      <div class="sol">
+        <p>
+          The continuity equation will be useless here, not sure why this problem is here.  But we will just use the Lortentz equation with \( \vec I = I\langle 0,d\ell, 0\rangle, \quad \vec B = \langle kz, 0, 0\rangle \).  If we draw out the picture and look at the lower edge of the loop we realize that along this path <i>z = -a/2</i>.  Then the component of force due to this segment is
+
+          $$ \vec F = I\int \langle 0, d\ell, 0\rangle \times \langle kz, 0, 0\rangle = $$
+          $$ I\int_{-a/2}^{a/2}(-kz d\ell \hat x) = \left(-Ik\int_{-a/2}^{a/2}(-a/2)\ d\ell\right)\hat x =  $$
+          $$ \frac{Ika}{2}(a)\hat x = \frac{Ika^2}{2}\hat x $$
+        </p>
+        <p>
+          We could proceed like so along each other edge, but intuitively the two lateral sides of the edge will merely cancel out.  On the other hand your right-hand rule and the swap in the direction of the magnetic field above and below the axis should convince you that the top and bottom edges actually constructively combine.  By symmetry we expect them to be equal in magnitude, so the net force on the loop is
+
+          $$ Ika^2 \hat x $$
+        </p>
+      </div>
+    </div>
+    <div>
+      <p>
+        <b>Problem 5.5</b>
+        <br><br>
+        Current flows down a circular wire.
+      </p>
+      <p>
+        (a) If the current is uniformly distributed over the surface of the wire, what is the surface current density?
+      </p>
+      <p>
+        (b) If it's inversely proportional to distance from the axis?
+      </p>
+      <div class="sol">
+        <p>
+          (a) \(K(2\pi a) = I\) solve for <i>K</i>.
+        </p>
+        <p>
+          (b) \( \int_0^{2\pi}\int_0^a (k/r)(r\ dr \ d\theta) = I \) which evaluates to
+
+          $$ 2\pi k\int_0^a dr = 2\pi k a $$
+        </p>
+        <p>
+          Since the goal of the problem is to find the surface current density we must solve for <i>k</i> and use this in the expression for <i>J</i>.
+        </p>
+      </div>
+    </div>
+    <h2>5.2. The Biot-Savart Law</h2>
+    <h3>5.2.1. Steady Currents</h3>
+    <div>
+      <p>
+        A <b>steady current</b> is one which satisfies
+
+        $$ \frac{\partial \rho}{\partial t} = 0, \quad \frac{\partial \vec J}{\partial t} = \vec 0 $$
+
+        In particular the first equation implies \(\nabla \cdot \vec J = 0\).
+      </p>
+    </div>
+    <h3>5.2.2. The Magnetic Field of a Steady Current</h3>
+    <div>
+      <p>
+        The magnetic field of a steady line current is given by the <b>Biot-Savart law</b>
+
+        $$\vec B(\vec r) = \frac{\mu_0}{4\pi} \int\frac{\vec I\times \hat{\mathcal{R}}}{\mathcal{R}^2}d\ell' $$
+
+        and since the magnitude of \(\vec I \) is constant we can move it outside the integral if we track direction with \(d\vec \ell'\).
+      </p>
+    </div>
+    <div>
+      <p>
+        <b>Example 5.5</b>
+        <br><br>
+        Suppose current runs through a thin wire.  What is the magnetic field generated at a point far from the wire?
+      </p>
+      <div class="sol">
+        <p>
+          In the textbook Griffiths parameterizes the curve by \(\theta\) and this is certainly the simplest solution.  But we could also compute
+
+          $$ B = \frac{\mu_0 I}{4\pi} \int_{-\infty}^\infty \frac{d\vec \ell'\times \hat{\mathcal{R}}}{\mathcal{R}^2} $$
+
+          where \( d\vec\ell' = \langle d\ell',0,0\rangle \) and \(\hat{\mathcal{R}}\) and \(\mathcal{R}^2\) can be computed from
+
+          $$ \vec{\mathcal{R}} = \langle \ell', s, 0\rangle $$
+        </p>
+      </div>
+    </div>
+    <div>
+      <p>
+        We could apply the lesson above to this scenario:  Two parallel wires carry a current.  What magnetic force do they exert on each other?
+      </p>
+      <p>
+        First let's establish the geometry at a high level.  Suppose the currents run in the same direction.  Using the right-hand rule, think about the direction of the magnetic field.  Pointing one finger along the second current in Griffiths' diagram, and middle finger toward the first wire.  Your thumb points toward you (out of the page) so that's the direction of the magnetic field along the second wire.  The opposite is true when you switch the roles of the wires.
+      </p>
+      <p>
+        Next imagine the force due to the magnetic field.  Using the right-hand rule for \(\vec I \times \vec B\) you should find that the force pushes the second wire away from the first.
+      </p>
+      <p>
+        With the lesson from above, looking at the second wire, \(B = \frac{mu_0 I}{2\pi d} \) which we then pass into the Lorentz law equation to find force.
+      </p>
+    </div>
+    <div>
+      <p>
+        <b>Example 5.6</b>
+        <br><br>
+        A circular loop carries a current.  Find the magnetic field at a point above the center of the circle.
+      </p>
+      <div class="sol">
+        <p>
+          First think about a small chunk of current on the loop and what magnetic field it creates (moving on a short distance tangent to the loop).  Importantly the cross-product will have the same magnitude at each such chunk and rotate with a rotation around the loop.  This should convince us that the components parallel to the plane will cancel.  This leaves only the vertical component.
+        </p>
+        <p>
+          To get the vertical component we'll first compute the magnitude of \(d\vec B\) for each small chunk on the loop.
+
+          $$|d\vec B| = | d\vec \ell' \times \hat{\mathcal{R}} | = d\ell'$$
+        </p>
+        <p>
+          The picture in Griffiths' convinces us that \(\theta\) is the separation between \(d\vec B\) and the vertical.  Hence \(d\vec B \cos\theta\) is the vertical component and has magnitude \(d\ell'\cos\theta\).
+
+          $$ B(z) = \frac{\mu_0 I}{4\pi}\int \frac{d\ell' \cos\theta}{\mathcal{R}^2} = $$
+          $$ \frac{\mu_0 I}{4\pi}\cdot \frac{\cos\theta}{\mathcal{R}^2}\cdot 2\pi R $$
+        </p>
+      </div>
+    </div>
+    <div>
+      <p>
+        For surfaces and volumes the Biot-Savart law generalizes to surface and volume charge densities.
+      </p>
+    </div>
+    <div>
+      <p>
+        <b>Problem 5.8</b>
+        <br><br>
+        Find the magnetic field at the center of a square loop.
+      </p>
+      <div class="sol">
+        <p>
+          All vectors should point up, for each chunk around the wire, and each side contributes the same.  So we only compute along a single edge of length <i>a</i>.  This amounts to the same as with a point away from a thin wire which we computed before.  We only change the bounds of integration.  Here I parameterize in terms of the angle, as Griffiths did.
+
+          $$\frac{\mu_o I}{4\pi} \int_{-\pi/4}^{\pi/4} \left(\frac{\cos^2\theta}{s^2}\right)\left(\frac{s}{\cos^2\theta}\right) \cos\theta \ d\theta = $$
+          $$ \frac{\mu_0 I}{4\pi s}\int_{-\pi/4}^{\pi/4}\cos\theta\ d\theta = \frac{\mu_0 I}{4\pi s}(\sin(\pi/4)-\sin(-\pi/4)) = $$
+          $$\frac{\mu_0 I}{4\pi s}2(\sqrt{2}/2)$$
+        </p>
+      </div>
+    </div>
+    <h2>5.3. The Divergence and Curl of \(\vec B\)</h2>
+    <h3>5.3.1. Straight-line Currents</h3>
+    <div>
+    <p>
+      We consider again an infinite thin wire and the magnetic field it generates.  We already know that at a single point a distance <i>s</i> away the field strength is \(\frac{\mu_0 I}{2\pi s}\) and direction is determined by the right-hand rule.  If you consider the collection of all points a distance <i>s</i> away and accumulate all of these magnetic field vectors, simple considerations can show
+
+      $$ \oint \vec B \cdot d\vec \ell = \mu_0 I $$
+
+      Since the expression is actually independent of <i>s</i> then we can infer that this would hold for any closed loop encolsing the wire, regardless of whether it's circular.
+    </p>
+    <p>
+      So we can then infer that if we had a bundle of wires, the same would be true acting in superposition:
+
+      $$ \oint \vec B \cdot d\vec \ell = \mu_0 I_{enc} $$
+    </p>
+    <p>
+      But of course a bundle of wires is like integrating over the charge density,
+
+      $$ I_{enc} = \int \vec J \cdot d\vec a $$
+    </p>
+    <p>
+      Stokes law then tells us
+
+      $$ \int (\nabla \times \vec B) \cdot d\vec a = \mu_0\int \vec J \cdot d\vec a $$
+
+      so
+
+      $$ \nabla \times \vec B = \mu_0 \vec J $$
+    </p>
+    <p>
+      However it remains to see what happens if the wires are not straight.
+    </p>
+    </div>
+    <h3>5.3.2. The Divergence and Curl of \(\vec B\)</h3>
+    <div>
+      <p>
+        This result requires knowing something about differential forms which I skip.  All that's important is that we can take the divergence of \(\vec B\) directly from its Biot-Savart form to obtain
+
+        $$ \nabla \cdot \vec B = 0 $$
+
+        which is geometrically unsurprising.
+      </p>
+      <p>
+        By a similar direct application and use of differential forms, we also get
+
+        $$ \nabla \times \vec B = \mu_0 \vec J $$
+
+        even when the wire is not straight.
+      </p>
+    </div>
+    <h3>5.3.3. Ampere's Law</h3>
+    <div>
+      <p>
+        The expression derived above for the curl of \(\vec B\) is called <b>Ampere's Law</b> in differential form.  Converting to integral form
+
+        $$ \oint \vec B \cdot d\vec \ell = \mu_0 I_{enc} $$
+
+        Coulomb is to Gauss as Biot-Savart is to Ampere.
+      </p>
+    </div>
+    <div>
+      <p>
+        <b>Example 5.7</b>
+        <br><br>
+        Find the magnetic field a distance <i>s</i> from a long thin wire.
+      </p>
+      <div class="sol">
+        <p>
+          Use symmetry so \(\vec B\) is constant and factors out of the interal, hence \(\oint \vec B\cdot d\vec \ell = B2\pi s\).  Solving for <i>B</i> is easy.
+        </p>
+      </div>
+    </div>
+    <div>
+      <p>
+        <b>Example 5.8</b>
+        <br><br>
+        Find the magnetic field of an infinite uniform surface current.
+      </p>
+      <div class="sol">
+        <p>
+          It should be easy to prove that, parallel to the current, the magnetic field is zero.  If we parameterize our surface such that the flow is in the <i>x</i>-direction and the surface otherwise extends in the <i>y</i> then we can argue the <i>z</i>-component is zero too.  This is because of cancelling components.
+        </p>
+        <p>
+          In the <i>y</i>-direction for a point above the plane the field points left.  Drawing a rectangular loop parallel to the plane and perpendicular to the flow, the field is constant on the top and bottom of the loop.  Along each vertical edge the top part cancels the bottom because of the switching direction of the field.  Thus the Amperian integral evaluates to \(2B\ell\).  Then use Ampere's law together with \(I_{enc} = K\ell\) to solve for <i>B</i> in terms of <i>K</i>.
+        </p>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
