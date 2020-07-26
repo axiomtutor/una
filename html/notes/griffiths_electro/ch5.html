@@ -429,6 +429,23 @@
 
         $$ \vec B = \nabla \times \vec A $$
       </p>
+      <p>
+        This immediately implies \(\nabla \cdot \vec B = 0\).  Differential forms tells us \(\nabla\times \vec B = \nabla(\nabla\cdot\vec A)-\nabla^2\vec A\) which we require to be \(\mu_0\vec J\).
+      </p>
+      <p>
+        From the construction of \(\vec A\) it is clear that we can add to \(\vec A\) any term which has zero curl, so in particular we can add a term with zero curl which eliminates \(\nabla\cdot\vec A\) in the previous expression.  To the point, if \(\vec A_0\) is some initial "guess" at a magnetic potential which is <i>not</i> divergenceless then we take \(\vec A = \vec A_0+\nabla\lambda\) where \(\lambda\) is some function such that
+
+        $$\nabla^2\lambda = -\nabla\cdot \vec A_0$$
+      </p>
+      <p>
+        This is strikingly similar to Poisson's equation
+
+        $$ \nabla^2 V = -\rho/\epsilon_0 $$
+
+        As we saw with Poisson's equation, this is determined if we further require, as we physically would like, that \(\nabla\cdot\vec A_0\) go to zero at infinity.  In particular
+
+        $$ \lambda = \frac 1 {4\pi} \int \frac{\nabla\cdot\vec A_0}{\mathcal{R}}d\tau' $$
+      </p>
     </div>
 
 
