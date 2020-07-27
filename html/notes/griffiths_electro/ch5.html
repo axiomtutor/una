@@ -445,7 +445,49 @@
         As we saw with Poisson's equation, this is determined if we further require, as we physically would like, that \(\nabla\cdot\vec A_0\) go to zero at infinity.  In particular
 
         $$ \lambda = \frac 1 {4\pi} \int \frac{\nabla\cdot\vec A_0}{\mathcal{R}}d\tau' $$
+
+        Then Ampere's Law becomes
+
+        $$ \nabla^2 \vec A = -\mu_0\vec J $$
       </p>
+      <p>
+        If \(\vec J\) goes to zero at infinity then
+
+        $$ \vec A(\vec r) = \frac{\mu_0}{4\pi}\int \frac{\vec J(\vec r')}{\mathcal{R}}d\tau' $$
+
+        and this generalizes to surface and line currents.
+      </p>
+    </div>
+    <div>
+      <p>
+        <b>Example 11.</b>
+        <br><br>
+        A spherical shell with uniform surface charge density is spinning at a contant angular rate.  Find the vector potential at some point away from the shell.
+      </p>
+      <div class="sol">
+        <p>
+          Since current goes to 0 at infinity (in fact much earlier), from the generalization for surface currents
+
+          $$\vec A = \frac{\mu_0}{4\pi} \int \frac{\vec K(\vec{r}')}{\mathcal{R}}\ da' $$
+
+          hence we need to understand \(\vec K\) and \(\mathcal{R}\) and, depending on parameterization, <i>da'</i>.
+        </p>
+        <p>
+          We can simply take \(\vec K = \sigma\vec v\) and then study \(\vec v\).  As is common in settings of angular motion, we use the fact that \(\vec v = \vec \omega\times \vec r'\) where \(\vec r'\) is the displacement to the point on the sphere.
+        </p>
+        <p>
+          Now the calculations can be made somewhat easier by choosing the <i>z</i>-axis aligned with the point outside the sphere \(\vec r \).  This still leaves the <i>x</i> and <i>y</i> axes to be determined.  We might as well introduce the vector representation of \(\vec \omega\) which points along the axis of rotation, with magnitude \(\omega\).  You can then check that indeed \(\vec v = \vec \omega \times \vec r'\) by scrutinizing direction and magnitude.  Then we choose <i>x</i> and <y>y</y> axes so that the <i>y</i>-component of \(\vec \omega\) is zero.  I.e. this vector lies inside the <i>xz</i>-plane.
+        </p>
+        <p>
+          With these choice made we continue investigating \(\vec v\) now by investigating \(\vec \omega\) and \(\vec r'\).  Since the main thing we know about \(\vec \omega\) is its magnitude we would perhaps do well to express it further in a polar form.  Viewing it as determining a right triangle in the <i>xz-</i>plane we can find that
+
+          $$\vec \omega = \omega \langle \sin\psi, 0, \cos\psi\rangle $$
+
+          where \(\psi\) is the angle of separation of \(\vec \omega\) and \(\vec r\).  To write the components of \(\vec r'\) we use standard spherical coordiantes,
+
+          $$ \vec r' = R\langle \sin\theta'\cos\phi', \sin\theta'\sin\phi', \cos\theta'\rangle $$
+        </p>
+      </div>
     </div>
 
 
