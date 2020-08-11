@@ -35,23 +35,49 @@
       <p>
         In preparation for further ideas, we first derive a few facts about homomorphisms beyond those already derived in chapter 2.  Homomorphisms always:
       </p>
+      <ul>
+          <li>
+            <p>
+              <i>Maps the identity to the identity.</i> Because \(\varphi(\mathbb 1) = \varphi(\mathbb 1 \cdot\mathbb 1)\) and so on.
+            </p>
+          </li>
+          <li>
+            <p>
+              <i>Maps inverses to inverses.</i> \(\varphi(gg^{-1}) = \varphi(g)\varphi(g^{-1}) = \varphi(\mathbb 1) \) and so on.
+            </p>
+          </li>
+          <li>
+            <p>
+              <i>Maps powers to powers.</i>  Same logic as before.
+            </p>
+          </li>
+          <li>
+            <p>
+              <i>\(ker\varphi \leq G\).</i>  A direct check confirms this.
+            </p>
+          </li>
+          <li>
+            <p>
+              <i>\(im\varphi \leq H\).</i>  Direct check.
+            </p>
+          </li>
+    </div>
+    <div>
       <p>
-        <i>Maps the identity to the identity.</i> Because \(\varphi(\mathbb 1) = \varphi(\mathbb 1 \cdot\mathbb 1)\) and so on.
+        We're now ready to define the group of fibers discussed earlier.  It is called the <b>factor group</b>, written as \(G/ker\varphi\).  The operation between the fiber above <i>a</i> and the fiber above <i>b</i> is defined as the fiber above <i>ab</i>.  So in effect the group <i>H</i> defines this operation.
       </p>
       <p>
-        <i>Maps inverses to inverses.</i> \(\varphi(gg^{-1}) = \varphi(g)\varphi(g^{-1}) = \varphi(\mathbb 1) \) and so on.
-      </p>
-      <p>
-        <i>Maps powers to powers.</i>  Same logic as before.
-      </p>
-      <p>
-        <i>\(ker\varphi \leq G\).</i>  A direct check confirms this.
-      </p>
-      <p>
-        <i>\(im\varphi \leq H\).</i>  Direct check.
+        The division symbol is evocative of the fact that we are partitioning, or dividing up, the group <i>G</i>.  The analogy will only grow stronger as we learn more.
       </p>
     </div>
-
+    <div>
+      <p>
+        Since the definition of the operation in the factor group is given by the operation in <i>H</i>, one might wonder if we could instead simply perform the operation if we ignore <i>H</i> and only use the fibers.  Of course one group operation is already clear: whichever fiber has (mathbb 1) is the identity element of the factor group.
+      </p>
+      <p>
+        Can we infer for any two fibers, which fiber their product is?  Continue with insights that are clearest about the kernel.  For instance, multiplying an element of a fiber by an element of the kernel doesn't change its fiber.  This is a compelling idea since the kernel acts like \(\mathbb 1\).  Put more formally, for any fiber <i>X</i> and element <i>u</i>, and element of the kernel, <i>k</i>, then \(uk \in X\).  
+      </p>
+    </div>
 
 
 
