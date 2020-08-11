@@ -223,7 +223,7 @@
         It's easy to see that the collection <i>hK</i> covers <i>HK</i> and we know that any two cosets are of the same size.  And we know that two cosets are either disjoint or equal.  So we need the size of this union is equal to the sum of the size of each distinct term, which is itself just <i>|K|</i> multiplied by the number of distinct cosets.  Hence we want to show that the number of distinct <i>hK</i> is \(\frac{|H|}{|H\cap K}\).
       </p>
       <p>
-        One easy observation while we're trying to get there, is that from Lagrange's theorem the number of cosets of \(H\cap K\) as a subgroup of <i>H</i> is \(\frac{|H|}{|H\cap K}\).  So really we just need to see that there are just as many cosets of \(H\cap K\) in <i>H</i> as there are cosets of <i>K</i> in <i>HK</i>.
+        One easy observation while we're trying to get there, is that from Lagrange's theorem the number of cosets of \(H\cap K\) as a subgroup of <i>H</i> is \(\frac{|H|}{|H\cap K|}\).  So really we just need to see that there are just as many cosets of \(H\cap K\) in <i>H</i> as there are cosets of <i>K</i> in <i>HK</i>.
       </p>
       <p>
         To see this we recall an earlier theorem which told us \(h_1K = h_2K \Leftrightarrow h_2^{-1}h_1\in K\) which in this case automatically makes \(h_2^{-1}h_1 \in H\cap K\).  With this in hand, establishing
@@ -238,7 +238,7 @@
         Theorem: <i>HK</i> is a subgroup if and only if <i>HK = KH</i>
       </h4>
       <p>
-        Before explaining the proof, notice that this is not the same thing as the elements of <i>H</i> and <i>K</i> commuting.  It is just the property that <i>hk</i> is always some <i>k'h'</i>.
+        Before explaining the proof, notice that this is <i>not</i> the same thing as the elements of <i>H</i> and <i>K</i> commuting.  It is just the property that <i>hk</i> is always some <i>k'h'</i>.
       </p>
       <p>
         Now the proof: Suppose <i>HK = KH</i>. We want to show that if \(a,b\in HK\) then so is \(ab^{-1}\in HK\).  If we write <i>a</i> and <i>b</i> as <i>HK</i> elements, take an inverse, multiply, we're stuck with the <i>k</i>s in the middle and an <i>h</i> on the right.  But of course we can swap them around and get new elements of <i>H</i> and <i>K</i> but that's adequate for the claim we must prove.
@@ -248,7 +248,7 @@
       </p>
     </div>
     <div>
-      <h4>Theorem: For any subgroup <i>K\leq G</i> and a subgroup of its normalizer, \(H\leq N_G(K)\), then <i>HK</i> is a subgroup.  In particular, products with normal subgroups are always subgroups.</h4>
+      <h4>Theorem: For any subgroup \(K\leq G\) and a subgroup of its normalizer, \(H\leq N_G(K)\), then <i>HK</i> is a subgroup.  In particular, products with normal subgroups are always subgroups.</h4>
       <p>
         Since we're proving <i>HK</i> is a subgroup and this is in the previous theorem, we'll probably use that.  So we try to show <i>HK = KH</i>.  But by being in the normalizer and therefore free to conjugate, we can wiggle in terms as needed and the proof is easy.
       </p>
@@ -263,7 +263,7 @@
       </p>
     </div>
     <div>
-      <h4>The First Isomorphism Theorem: Homomorphism kernels are normal and \(G/ker\varphi \cong \phi(G).</h4>
+      <h4>The First Isomorphism Theorem: Homomorphism kernels are normal and \(G/ker\varphi \cong \phi(G)\).</h4>
       <h4>Corollary: \(\varphi\) is injective if and only if \(ker\varphi = \mathbb 1\).</h4>
     </div>
     <div>
@@ -276,11 +276,31 @@
           \(A\cap B\trianglelefteq A\)
         </li>
         <li>
-          \( AB/B \cong A/(A\cap B) \)
+          The previous two make this make sense: \( AB/B \cong A/(A\cap B) \)
         </li>
       </ol>
       <p>
+        Notice that this theorem may be useful either when we are trying to analyze the factor of a product, or when the factor is an intersection.
+      </p>
+      <p>
+        Now the proof.  That <i>AB</i> is a subgroup is the consequence of a previous theorem.
+      </p>
+      <p>
+        That \(B\trianglelefteq AB\) follows because \(A,B\leq N_G(B)\).
+      </p>
+      <p>
+        We will show \(A\cap B\trianglelefteq A\) and in fact, also show the third part, by showing that \(A\cap B = ker\varphi\) for some homomorphism \(\varphi: A\rightarrow AB/B\).  In fact it is just the natural projection.
+      </p>
+    </div>
+    <div>
+      <h4>The Third Isomorphism Theorem: Quotients of quotients cancel.</h4>
+      <p>
+        Stated only slightly more explicitly, the theorem claims that for two normal subgroups <i>H, K</i> and if \(H\leq K\) then \(K/H \trianglelefteq G/H\) and
 
+        $$ \frac{G/H}{K/H} \cong G/K $$
+      </p>
+      <p>
+        As is typical we'll try to give a homomorphism \(\varphi: G/H \rightarrow G/K\) such that \(ker\varphi = K/H\).  In fact it will be the obvious choice.  
       </p>
     </div>
 
