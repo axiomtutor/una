@@ -165,7 +165,7 @@
             \(gN = Ng\)
           </li>
           <li>
-            gNg^{-1} \subseteq N
+            \(gNg^{-1} \subseteq N\)
           </li>
         </ol>
       </p>
@@ -181,11 +181,108 @@
         $$ g\mapsto gN $$
       </p>
       <p>
-        This theorem is not hard to prove:  If \(N\trianglelefteq G\) then showing that \(ker\pi = N\) is relatively simple, you just show that all and only the elements of <i>N</i> map to the identity (not hard).  Conversely if a group is the kernel, then we prove it's normal--but in fact we already saw that earlier.
+        This theorem is not hard to prove.
       </p>
     </div>
     <h2>3.2 More on Cosets and Lagrange's Theorem</h2>
+    <h4>Lagrange's Theorem: The order of a subgroup divides the order of the group.</h4>
+    <div>
+      <p>
+        To see this, observe that the cosets partition and have equal size.  How do we know they have equal size?  Prove \(f: H\rightarrow aH\) given by \(f(h) = ah\) is a bijection.
+      </p>
+    </div>
+    <div>
+      <p>
+        From the above we can also see that the size of the factor group <i>|G/H| = |G|/|H|</i> which we call the <b>index</b>.
+      </p>
+    </div>
+    <h4>Corollary: A group of prime order is cyclic.</h4>
+    <div>
+      <p>
+        Just take a non-identity element and inspect the subgroup it generates.  It has to be the whole group.
+      </p>
+    </div>
+    <div>
+      <h4>Cauchy's Theorem: If a prime divides the order of a group then there's a subgroup of that order.</h4>
+      <p>
+        The proof is an exercise and involves looking at group actions of "rotation" of tuple coordinates.
+      </p>
+    </div>
+    <div>
+      <h4>Theorem: The order of a product is the product of the orders, divided by the intersection.  (For finite groups.)</h4>
+      <p>
+        The theorem claims
 
+        $$|HK| = \frac{|H||K|}{|H\cap K|}$$
+
+        and we prove this by construing <i>HK</i> as <i>K</i> together with <i>hK</i> together with ... or otherwise said,
+
+        $$HK = \bigcup_{h\in H}hK$$
+      </p>
+      <p>
+        It's easy to see that the collection <i>hK</i> covers <i>HK</i> and we know that any two cosets are of the same size.  And we know that two cosets are either disjoint or equal.  So we need the size of this union is equal to the sum of the size of each distinct term, which is itself just <i>|K|</i> multiplied by the number of distinct cosets.  Hence we want to show that the number of distinct <i>hK</i> is \(\frac{|H|}{|H\cap K}\).
+      </p>
+      <p>
+        One easy observation while we're trying to get there, is that from Lagrange's theorem the number of cosets of \(H\cap K\) as a subgroup of <i>H</i> is \(\frac{|H|}{|H\cap K}\).  So really we just need to see that there are just as many cosets of \(H\cap K\) in <i>H</i> as there are cosets of <i>K</i> in <i>HK</i>.
+      </p>
+      <p>
+        To see this we recall an earlier theorem which told us \(h_1K = h_2K \Leftrightarrow h_2^{-1}h_1\in K\) which in this case automatically makes \(h_2^{-1}h_1 \in H\cap K\).  With this in hand, establishing
+
+        $$ h_1K = h_2K \Leftrightarrow h_1(H\cap K) = h_2(H\cap K)$$
+
+        is easy.
+      </p>
+    </div>
+    <div>
+      <h4>
+        Theorem: <i>HK</i> is a subgroup if and only if <i>HK = KH</i>
+      </h4>
+      <p>
+        Before explaining the proof, notice that this is not the same thing as the elements of <i>H</i> and <i>K</i> commuting.  It is just the property that <i>hk</i> is always some <i>k'h'</i>.
+      </p>
+      <p>
+        Now the proof: Suppose <i>HK = KH</i>. We want to show that if \(a,b\in HK\) then so is \(ab^{-1}\in HK\).  If we write <i>a</i> and <i>b</i> as <i>HK</i> elements, take an inverse, multiply, we're stuck with the <i>k</i>s in the middle and an <i>h</i> on the right.  But of course we can swap them around and get new elements of <i>H</i> and <i>K</i> but that's adequate for the claim we must prove.
+      </p>
+      <p>
+        For the converse, suppose <i>HK</i> is a group.  Then \(H, K\leq HK\) and so when taking products we can never leave the group, hence \(KH \subseteq HK\).  The hard part is showing \(HK\subseteq KH\) since we don't know <i>KH</i> is a group.  But since <i>HK</i> is closed under inverses and the inverse reverses the order, we can complete the proof along these lines.
+      </p>
+    </div>
+    <div>
+      <h4>Theorem: For any subgroup <i>K\leq G</i> and a subgroup of its normalizer, \(H\leq N_G(K)\), then <i>HK</i> is a subgroup.  In particular, products with normal subgroups are always subgroups.</h4>
+      <p>
+        Since we're proving <i>HK</i> is a subgroup and this is in the previous theorem, we'll probably use that.  So we try to show <i>HK = KH</i>.  But by being in the normalizer and therefore free to conjugate, we can wiggle in terms as needed and the proof is easy.
+      </p>
+    </div>
+    <h2>3.3 The Isomorphism Theorems</h2>
+    <div>
+      <p>
+        Stuff gets important and also hard starting about now.  These isomorphism theorems are sometimes regarded as fundamental theorems and they will be used repeatedly throughout the rest of the study of group theory.
+      </p>
+      <p>
+        The first is something we've actually already discussed in the previous section.
+      </p>
+    </div>
+    <div>
+      <h4>The First Isomorphism Theorem: Homomorphism kernels are normal and \(G/ker\varphi \cong \phi(G).</h4>
+      <h4>Corollary: \(\varphi\) is injective if and only if \(ker\varphi = \mathbb 1\).</h4>
+    </div>
+    <div>
+      <h4>The Second Isomorphism Theorem: If \(B\leq G\) is any subgroup and <i>A</i> is in its normalizer, then <i>AB</i> is a subgroup, and </h4>
+      <ol>
+        <li>
+          \(B\trianglelefteq AB\)
+        </li>
+        <li>
+          \(A\cap B\trianglelefteq A\)
+        </li>
+        <li>
+          \( AB/B \cong A/(A\cap B) \)
+        </li>
+      </ol>
+      <p>
+
+      </p>
+    </div>
 
 
 
