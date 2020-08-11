@@ -87,14 +87,28 @@
         Since we will very often use <i>uK</i> rather than fibers and homomorphisms, we give this a name.  It is called a <b>left coset</b> and of course right cosets are similarly defined.  <i>u</i> is called a <b>representative</b>.  Any element from a coset can be used as a representative.
       </p>
     </div>
-    <h4>Theorem: Coset operations are as you'd hope: (uK)(vK) = (uv)K.</h4>
+    <h4>Theorem: Coset operations on kernels are as you'd hope: <i>(uK)(vK) = (uv)K</i>.</h4>
     <div>
       <p>
          We are assuming <i>K</i> is the kernel of a homomorphism.  Identify these cosets with fibers and unravel the definitions.  A fairly direct use of the homomorphism distribution concludes the proof.
       </p>
     </div>
     <div>
-      <h4>Theorem </h4>
+      <p>
+        Now we may want to even further remove the notion of a homomorphism.  Can we take any subset of <i>G</i> and form a group of cosets?  If you want this to still form a partition, then no.  In \(\mathbb Z/4\mathbb Z\) we can see that {0,3} doesn't work: 1+{0,3} = {1,0}.  If you don't have a partition then you can't talk in terms of representatives, since two cells now share elements.
+    </div>
+    <div>
+      <h4>Theorem: Cosets formed from subgroups form a partition, and equal cosets contain both representatives.</h4>
+
+      <p>
+        If <i>H</i> is any subgroup of <i>G</i> then to show the set of cosets forms a partition, we first show that every element of <i>G</i> is in some coset.  Since \(\mathbb 1 \in H\) then \(g\in gH\).
+      </p>
+      <p>
+        To show disjointedness we argue that if two cosets <i>uH</i> and <i>vH</i> share any element then they share every element.  If <i>x = un = vm</i> is in both, then for any \(un' \in uN\) we argue \(un'\in vN\).  Of course we leverage <i>x</i> to exchange a <i>u</i> for a <i>v</i>, invoke the closedness of <i>H</i>, and so on.
+      </p>
+    </div>
+    <div>
+      <h4>Theorem: <i>uH = vH</i> if and only if \(H = u^{-1}vH\) if and only if \(u^{-1}v\in H\).</h4>
     </div>
 
 
