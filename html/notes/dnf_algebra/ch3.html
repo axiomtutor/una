@@ -72,11 +72,29 @@
     </div>
     <div>
       <p>
-        Since the definition of the operation in the factor group is given by the operation in <i>H</i>, one might wonder if we could instead simply perform the operation if we ignore <i>H</i> and only use the fibers.  Of course one group operation is already clear: whichever fiber has (mathbb 1) is the identity element of the factor group.
+        Since the definition of the operation in the factor group is given by the operation in <i>H</i>, one might wonder if we could instead simply perform the operation if we ignore <i>H</i> and only use the fibers.  Of course one group operation is already clear: whichever fiber has \(\mathbb 1\) is the identity element of the factor group.
       </p>
       <p>
-        Can we infer for any two fibers, which fiber their product is?  Continue with insights that are clearest about the kernel.  For instance, multiplying an element of a fiber by an element of the kernel doesn't change its fiber.  This is a compelling idea since the kernel acts like \(\mathbb 1\).  Put more formally, for any fiber <i>X</i> and element <i>u</i>, and element of the kernel, <i>k</i>, then \(uk \in X\).  
+        Can we infer for any two fibers, which fiber their product is?  Continue with insights that are clearest about the kernel.  For instance, multiplying an element of a fiber by an element of the kernel doesn't change its fiber.  This is a compelling idea since the kernel acts like \(\mathbb 1\).  Put more formally, for any fiber <i>X</i> and element <i>u</i>, and element of the kernel, <i>k</i>, then \(uk \in X\).  This is because \(\varphi(uk) = \varphi(u)\).
       </p>
+      <p>
+        More generally, every fiber is of the form \(uK\) where <i>K</i> is the kernel, and <i>u</i> is any arbitrarily chosen element of the fiber.  Call the fiber <i>X</i> again, and the argument from earlier already establishes \(uK\subseteq X\).  For the reverse, take any \(g\in X\) and construct a \(k\in K\) such that <i>g = uk</i>.  The construction of <i>k</i> is obviously \(k = u^{-1}g\).  It's easy to show this is in fact an element of the kernel.
+      </p>
+      <p>
+        An important note is that we could reproduce the previous claims for <i>Ku</i>.  Since both are equal to the fiber containing <i>u</i> then they're equal to each other.  That is to say <i>uK = Ku</i>.
+      </p>
+      <p>
+        Since we will very often use <i>uK</i> rather than fibers and homomorphisms, we give this a name.  It is called a <b>left coset</b> and of course right cosets are similarly defined.  <i>u</i> is called a <b>representative</b>.  Any element from a coset can be used as a representative.
+      </p>
+    </div>
+    <h4>Theorem: Coset operations are as you'd hope: (uK)(vK) = (uv)K.</h4>
+    <div>
+      <p>
+         We are assuming <i>K</i> is the kernel of a homomorphism.  Identify these cosets with fibers and unravel the definitions.  A fairly direct use of the homomorphism distribution concludes the proof.
+      </p>
+    </div>
+    <div>
+      <h4>Theorem </h4>
     </div>
 
 
