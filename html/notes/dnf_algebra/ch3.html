@@ -115,13 +115,22 @@
     </div>
     <div>
       <p>
-        Since we're committed to subgroups to generate our cosets, one wonders if any subset will do.  We know kernels will, but how about other groups?  It won't, since the group operation isn't always well-defined.  That is to say, we can find an instance where \((uH)(vH)\) comes out to one thing, and \(uH = u'H\), and yet \((u'H)(vH)\) comes out different.  Take \(G=D_{6}\) and take the subgroup of the reflection \(S = \{\mathbb 1, s\}\).  Then \(rS = \{r, rs\}\) and \(rsS = \{rs, r\}\), so they're equal.  But
+        Since we're committed to subgroups to generate our cosets, one wonders if any subgroup will do.  We know kernels will, but how about others?  They won't, since the group operation isn't always well-defined.  That is to say, we can find an instance where \((uH)(vH)\) comes out to one thing, and \(uH = u'H\), and yet \((u'H)(vH)\) comes out different.  Take \(G=D_{6}\) and take the subgroup of the reflection \(S = \{\mathbb 1, s\}\).  Then \(rS = \{r, rs\}\) and \(rsS = \{rs, r\}\), so they're equal.  But
 
         $$ (rS)(rS) = r^2S = \{r^2, r^2s\} $$
 
         and yet
 
-        $$(rsS)(rS) = rsrS = rr^{-1}sS = sS = {s, \mathbb 1} = S $$
+        $$(rsS)(rS) = rsrS = rr^{-1}sS = sS = S $$
+      </p>
+      <p>
+        <i>What goes wrong with the subgroup of a reflection in the dihedral group?</i>  To get clarity, let's try to prove that the operation is well-defined and see which assumptions we need to make along the way to accomplish the proof.
+      </p>
+      <p>
+        If \(u_1H = u_2H\) and \(v_1H = v_2H\) then we want \(u_1v_1H = u_2v_2H\).  To make this easier we recall that two cosets are equal if they are representatives of the same coset.  In this case, that means we merely need to show that the coset containing \(u_1v_1\) is the coset containing \(u_2v_2\).  Put even more directly, we need \(u_1v_1\in u_2v_2H\), and even more directly, we need to show that \(u_1v_1\) can be written as \(u_2v_2h\).
+      </p>
+      <p>
+        
       </p>
     </div>
 
