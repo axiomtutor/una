@@ -127,10 +127,15 @@
         <i>What goes wrong with the subgroup of a reflection in the dihedral group?</i>  To get clarity, let's try to prove that the operation is well-defined and see which assumptions we need to make along the way to accomplish the proof.
       </p>
       <p>
-        If \(u_1H = u_2H\) and \(v_1H = v_2H\) then we want \(u_1v_1H = u_2v_2H\).  To make this easier we recall that two cosets are equal if they are representatives of the same coset.  In this case, that means we merely need to show that the coset containing \(u_1v_1\) is the coset containing \(u_2v_2\).  Put even more directly, we need \(u_1v_1\in u_2v_2H\), and even more directly, we need to show that \(u_1v_1\) can be written as \(u_2v_2h\).
+        If \(u_1H = u_2H\) and \(v_1H = v_2H\) then we want \(u_1v_1H = u_2v_2H\).  To make this easier we recall that two cosets are equal if they are representatives of the same coset.  In this case, that means we merely need to show that the coset containing \(u_1v_1\) is the coset containing \(u_2v_2\).  Put even more directly, we need \(u_1v_1\in u_2v_2H\), and even more directly, we need to show that \(u_1v_1\) can be written as \(u_2v_2h\).  Obviously we can write
+
+        $$ u_1v_1 = u_2h_1v_2h_2 $$
       </p>
       <p>
-        
+        We would clearly be done if we could switch around \(h_1\) and \(v_2\) somehow.  Abelianness would do it but that's going too far--we don't need the \(h_1v_2 = v_2h_1\) although that'd be ok.  All we really need is that when you do the switcheroo you have \(v_2\) on the left and any element of <i>H</i> on the right.  By limiting ourselves to this weaker property we can identify a property that is not just sufficient but also necessary.
+      </p>
+      <p>
+        So what we require is that our subgroup <i>H</i> has the property that for any group element \(g\in G\) and subgroup element \(h\in H\) we have <i>gh = h'g</i> for some \(h'\in H\).  
       </p>
     </div>
 
