@@ -25,15 +25,30 @@
         $$ \{g\in G: \varphi(g) = h\} $$
       </p>
       <p>
-        Since every fiber corresponds to an element in <i>H</i>, the set of fibers acts exactly like the group <i>H</i>.  So in this way we have split <i>G</i> up into a partition, and the cells of the partition form a group.  Note that the identity of a group is an important element, so we similarly stress the importance of the fiber above \(\mathbb 1\).  We call this the <b>kernel</b> of \(\varphi\).
+        Since every fiber corresponds to an element in <i>H</i>, the set of fibers acts exactly like the group <i>H</i>.  So in this way we have split <i>G</i> up into a partition, and the cells of the partition form a group.  Note that the identity of a group is an important element, so we similarly stress the importance of the fiber above \(\mathbb 1\).  We call this the <b>kernel</b> of \(\varphi\) and write it as \(ker\varphi\).
+      </p>
+      <p>
+        The map may be both not injective and not surjective.  Therefore not every element of <i>H</i> has a fiber above it.  So we use \(im\varphi\) to denote the <b>image</b> of the map.  Every element in the image does have a fiber above it.
       </p>
     </div>
     <div>
       <p>
-        In preparation for further ideas, we derive a few facts about homomorphisms beyond those already derived in chapter 2.  Homomorphisms always:
+        In preparation for further ideas, we first derive a few facts about homomorphisms beyond those already derived in chapter 2.  Homomorphisms always:
       </p>
       <p>
-        <i>Map the identity to the identity.</i> Because \(\varphi(\mathbb 1) = \varphi(\mathbb 1 \mathbb 1)\).
+        <i>Maps the identity to the identity.</i> Because \(\varphi(\mathbb 1) = \varphi(\mathbb 1 \cdot\mathbb 1)\) and so on.
+      </p>
+      <p>
+        <i>Maps inverses to inverses.</i> \(\varphi(gg^{-1}) = \varphi(g)\varphi(g^{-1}) = \varphi(\mathbb 1) \) and so on.
+      </p>
+      <p>
+        <i>Maps powers to powers.</i>  Same logic as before.
+      </p>
+      <p>
+        <i>\(ker\varphi \leq G\).</i>  A direct check confirms this.
+      </p>
+      <p>
+        <i>\(im\varphi \leq H\).</i>  Direct check.
       </p>
     </div>
 
