@@ -63,38 +63,13 @@
             Given that \(p\in A\) how do we construct <i>q</i>?  First notice that if \(p\leq 0\) we can easily just pick <i>q=1</i>.  So we only need to do work for the case when <i>p > 0</i>.
           </p>
           <p>
-            Rudin found a <i>q</i> that works, but he gives no explanation for how he found it.  He tells us
-
-            $$ q = p + \frac{2-p^2}{p+2} $$
+            But it's here that I give up.  Rudin provides a choice of <i>q</i> that works, but he gives no clue as to how he came up wtih this choice.  And I've tried to reproduce some logic which makes no magical leaps, but I can't see how.  Therefore I find that the proof does not give any insight.
           </p>
           <p>
-            This <i>q</i> is <i>p</i> plus a positive number so clearly <i>p < q</i>.  But how did he choose this extra positive quantity?  It certainly guarantees that \(q^2 < 2\), so somehow he built it to satisfy this inequality.  But you would never have come up with it on your own.
+            Moreover it's not necessary to give this sort of a proof.  Our hands are tied because we don't yet know that \(\sqrt 2\) exists.  But we will see the existence of real numbers, and the existence of \(\sqrt 2\), in later sections.
           </p>
           <p>
-            If you tried to come up with it on your own a reasonable attempt would be to say "Let's take <i>p</i> and add some positive \(\delta\) to get <i>q</i>.  That is to say, assume \(q = p+\delta\) and then plug this into the equation \(q^2 < 2\) and see what this tells us about \(\delta\)."
-          </p>
-          <p>
-            Unfortunately it doesn't tell you as much as you would like.
-
-            $$ q^2 < 2 \Leftrightarrow (p+\delta)^2 < 2 \Leftrightarrow $$
-            $$ p^2 + 2p\delta + \delta^2 < 2 $$
-          </p>
-          <p>
-            You could rearrange this and try to do some kind of solution for \(\delta\).  In fact when I did it, I eventually arrived at
-
-            $$\delta < \frac{2-p^2}{2p+\delta}$$
-          </p>
-          <p>
-            This is a little tantilizing beacuse it looks nearly like what Rudin got.  Still, having \(\delta\) on both sides of the inequation makes it hard to know exactly what we should do.
-          </p>
-          <p>
-            A different approach might go like this:  Let's be really crude and say that we want \(\delta < \sqrt 2 - p^2\) but to eliminate any reference to \(\sqrt 2\) let's replace it with something close, like 2.  Except we need to shrink this back down, otherwise we could pick a \(\delta\) that's too large.  If we're free to pick any positive denominator we want (so long as we only use constants and the <i>p</i> that we started with) then say we use <i>x</i> for the denominator and figure out what might be a good <i>x</i>.  We know we need \(\frac{2-p^2}{x} < \sqrt{2}-p^2\) so
-
-            $$ \frac{2-p^2}{\sqrt{2}-p^2} < x $$
-
-            and if we use the conjugate
-
-            $$ \frac{(2-p^2)(\sqrt 2 + p^2)}{2+p^4} < x $$
+            Once we know that \(\sqrt 2\) exists then all we need is the existence of some positive rational \(\delta\) such that \(q = p+\delta\) satisfies \(q^2 < 2\).  And to get this \(\delta\) we just need it to be some rational number \(0 < \delta < \sqrt 2 - p\).  The existence of such a number will be guaranteed by the Archimedean property, once we get there.
           </p>
         </div>
       </div>
