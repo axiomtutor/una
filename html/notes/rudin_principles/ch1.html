@@ -60,48 +60,32 @@
             The theorem says that <i>A</i> has no largest element and <i>B</i> has no smallest.  We sketch only the proof that <i>A</i> has no greatest element.  In particular for each \(p\in A\) we construct a \(q\in A\) such that <i>p < q</i>.
           </p>
           <p>
-            Given that \(p\in A\) how do we construct <i>q</i>?  First notice that if \(p\leq 0\) we can easily just pick <i>q=1</i>.  So we only need to do work for the case when <i>p > 0</i>.  For these <i>p</i>, since we need <i>q</i> bigger, it would make sense if we add to <i>p</i> some small positive quantity, call it \(\delta\).
-
-            $$ q = p+\delta $$
+            Given that \(p\in A\) how do we construct <i>q</i>?  First notice that if \(p\leq 0\) we can easily just pick <i>q=1</i>.  So we only need to do work for the case when <i>p > 0</i>.
           </p>
           <p>
-            But now the challenge is figuring out what \(\delta\) should be.  Let's throw it into the inequation \(q^2 < 2\) to see if we can force some choice for \(\delta\).
+            Rudin found a <i>q</i> that works, but he gives no explanation for how he found it.  He tells us
+
+            $$ q = p + \frac{2-p^2}{p+2} $$
           </p>
           <p>
-            $$ q^2 = p^2 +2p\delta + \delta^2 < 2 $$
-
-            We probably want to leverage the fact that \(p^2 < 2\) so rearrange this into
-
-            $$ 2p\delta + \delta^2 < 2-p^2 $$
-
-            and then
-
-            $$ \delta(2p+\delta) < 2-p^2 $$
-
-            and then
-
-            $$ \delta < \frac{2-p^2}{2p+\delta} $$
+            This <i>q</i> is <i>p</i> plus a positive number so clearly <i>p < q</i>.  But how did he choose this extra positive quantity?  It certainly guarantees that \(q^2 < 2\), so somehow he built it to satisfy this inequality.  But you would never have come up with it on your own.
           </p>
           <p>
-            At this point we can make an informed guess for \(\delta\).  We can pretty easily see that it should be less than \(\frac{2-p^2}{2p}\).  There are a few ways to make this smaller, but some are "unsafe".  I mean that if you try to subtract this number by some constant, you run the risk of turning it negative, so that's a bad strategy.  Same goes for just subtracting from the numerator.  But we can add anything to the denominator and it will stay positive and shrink \(\delta\) so this is a safe strategy.
+            If you tried to come up with it on your own a reasonable attempt would be to say "Let's take <i>p</i> and add some positive \(\delta\) to get <i>q</i>.  That is to say, assume \(q = p+\delta\) and then plug this into the equation \(q^2 < 2\) and see what this tells us about \(\delta\)."
           </p>
           <p>
-            Just to give you a sense of my process, I initially guessed \(\delta = \frac{2-p^2}{2p+2}\) and then tried to show that \((p+\delta)^2 < 2\) using the knowledge that \(p^2 < 2\).  This guess does work but it's hard to prove it.  It's much easier if I just rig my guess to have a huge denominator.  Then I can do some pretty crude estimating and still get the result I want.  After some trial and error I picked
+            Unfortunately it doesn't tell you as much as you would like.
 
-            $$ \delta = \frac{2-p^2}{2p+2^3} $$
+            $$ q^2 < 2 \Leftrightarrow (p+\delta)^2 < 2 \Leftrightarrow $$
+            $$ p^2 + 2p\delta + \delta^2 < 2 $$
           </p>
           <p>
-            In the proof below you can see how this choice makes for some easy crude estimating and yet I still am able to show \(q^2 < 2\).
-          </p>
-          <p>
-            <i>Proof idea</i>: Let \(p\in A\) and define \(\delta = \frac{2-p^2}{2p+2^3}\) and \(q = p+\delta\).  Then I claim that <i>p < q</i> and \(q\in A\).  The first claim is obvious since \(\delta > 0\).
-          </p>
-          <p>
-            For the second claim notice that
+            You could rearrange this and try to do some kind of solution for \(\delta\).  In fact when I did it, I eventually arrived at
 
-            $$ q^2 = \left(p+\frac{2-p^2}}{2p+2^3}\right)^2 $$
-            $$ = \left(\frac{p(2p+2^3)+2-p^2}{2p+2^3}\right)^2 $$
-            $$ = \left(\frac{p^2 + 8p + 2}{2p+8}\right)^2 $$
+            $$\delta < \frac{2-p^2}{2p+\delta}$$
+          </p>
+          <p>
+            This is a little tantilizing beacuse it looks nearly like what Rudin got.  Still, having \(\delta\) on both sides of the inequation makes it hard to know exactly what we should do.  
           </p>
         </div>
       </div>
