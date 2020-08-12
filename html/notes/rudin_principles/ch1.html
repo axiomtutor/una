@@ -53,7 +53,7 @@
 
             $$ A = \{r\in \mathbb Q: r^2 < 2\} $$
 
-            and similarly define <i>B</i> to be the set larger than \(\sqrt 2\)
+            Note that I don't actually use the symbol \(\sqrt 2\) because at this point in the book we're not supposed to really know about irrational numbers.  So everything should be phrased in a way that makes sense only for rational numbers.  Anyway, similarly define <i>B</i> to be the set larger than \(\sqrt 2\)
 
             $$ B = \{r\in \mathbb Q: r^2 > 2\} $$
 
@@ -91,6 +91,10 @@
             A different approach might go like this:  Let's be really crude and say that we want \(\delta < \sqrt 2 - p^2\) but to eliminate any reference to \(\sqrt 2\) let's replace it with something close, like 2.  Except we need to shrink this back down, otherwise we could pick a \(\delta\) that's too large.  If we're free to pick any positive denominator we want (so long as we only use constants and the <i>p</i> that we started with) then say we use <i>x</i> for the denominator and figure out what might be a good <i>x</i>.  We know we need \(\frac{2-p^2}{x} < \sqrt{2}-p^2\) so
 
             $$ \frac{2-p^2}{\sqrt{2}-p^2} < x $$
+
+            and if we use the conjugate
+
+            $$ \frac{(2-p^2)(\sqrt 2 + p^2)}{2+p^4} < x $$
           </p>
         </div>
       </div>
