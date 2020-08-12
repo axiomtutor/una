@@ -82,6 +82,17 @@
 
             $$ \delta < \frac{2-p^2}{2p+\delta} $$
           </p>
+          <p>
+            At this point we can make an informed guess for \(\delta\).  We can pretty easily see that it should be less than \(\frac{2-p^2}{2p}\).  There are a few ways to make this smaller, but some are "unsafe".  I mean that if you try to subtract this number by some constant, you run the risk of turning it negative, so that's a bad strategy.  Same goes for just subtracting from the numerator.  But we can add anything to the denominator and it will stay positive and shrink \(\delta\) so this is a safe strategy.
+          </p>
+          <p>
+            Just to give you a sense of my process, I initially guessed \(\delta = \frac{2-p^2}{2p+2}\) and then tried to show that \((p+\delta)^2 < 2\) using the knowledge that \(p^2 < 2\).  This guess does work but it's hard to prove it.  It's much easier if I just rig my guess to have a huge denominator.  Then I can do some pretty crude estimating and still get the result I want.  After some trial and error I picked
+
+            $$ \delta = \frac{p^2-2}{2p+2^3} $$
+          </p>
+          <p>
+            In the proof below you can see how this choice makes for some easy crude estimating and yet I still am able to show \(q^2 < 2\).
+          </p>
         </div>
       </div>
     </div>
