@@ -102,7 +102,7 @@
           Since we know that <i>S</i> has the least upper-bound property we need to use that.  If you draw a random set of points on the numberline which is bounded below, so that this is a picture of <i>B</i>, then notice that <i>B</i> acts like an upper-bound on the half of the real line which is below <i>B</i>.  On that set, we can use the least upper-bound property.  We then argue that this least upper-bound is (inf B), which should make intuitive sense in the real number line picture.
         </p>
         <p>
-          <i>Proof:</i> Let <i>L</i> be the set of lower-bounds of <i>B</i>, i.e.
+          <i>Proof outline:</i> Let <i>L</i> be the set of lower-bounds of <i>B</i>, i.e.
 
           $$ L = \{x\in S: \forall y \in B, x\leq y\} $$
         </p>
@@ -115,14 +115,55 @@
         <p>
           <i>
             That \(\sup L\) is the greatest of all lower-bounds of
-          </i> B: Usually we argue that if <i>y</i> is a lower bound then \(y\leq \sup L\).  Here it will be easier to argue the contrapositive, so suppose \(y > \sup L\) and we show that <i>y</i> is not a lower-bound.  
+          </i> B: Usually we argue that if <i>y</i> is a lower bound then \(y\leq \sup L\).  Here it will be easier to argue the contrapositive, so suppose \(y > \sup L\) and we show that <i>y</i> is not a lower-bound.  If \(y>\sup L\) then <i>y</i> cannot be an upper-bound on <i>L</i>, from which the rest follows easily.
         </p>
       </div>
     </div>
     <h2>Section 3</h2>
     <h2>Fields</h2>
 
+    <div>
+      <p>
+        A <b>field</b> is any set with operations that satisfy the field axioms.  These include closure, commutativity, associativity, an additive 0 and inverse, a multiplicative 1 and inverse, and distributivity.
+      </p>
+      <p>
+        From this follows several properties.
+      </p>
+    </div>
+    <div>
+      <h3>
+        Theorem: The cancelation law holds.
+      </h3>
+        <div class="sol">
+          <p>
+            <i>Explanation:</i> By that I mean
 
+            $$ x+y = x+z quad Rightarrow y = z $$
+          </p>
+          <p>
+            The proof just goes by adding the additive inverse of <i>x</i> on the left of both sides.  Technically this requires some use of use of the associative law.
+          </p>
+        </div>
+    </div>
+    <div>
+      <h3>Theorem: If adding <i>y</i> does nothing then <i>y = 0.</i></h3>
+      <p class="sol">
+        Same proof as before.
+      </p>
+    </div>
+    <div>
+      <h3>
+        Theorem: <i>-(-x) = x</i>.
+      </h3>
+      <p class="sol">
+        <i>Explanation</i>: By definition <i>-(-x)</i> is the number which when added to <i>-x</i> sums to 0.  Of course <i>x</i> has this property.
+      </p>
+    </div>
+    <div>
+      <p>
+        Similar other properties and their proofs hold for multiplication and so on.
+      </p>
+    </div>
 
     <h2>Section 4</h2>
     <h2>The Real Field</h2>
