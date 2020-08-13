@@ -274,7 +274,7 @@
             And similar to earlier proofs, we'll try to find some small positive <i>h</i> such that \((y+h)^n < x\).  That would then mean that would then mean that \(y+h\in E\) and so \(y+h\leq y\), contradicting \(y < y+h\).  So the question now is, what is the <i>h</i>?
           </p>
           <p>
-            We know we need an <i>h</i> such that 
+            We know we need an <i>h</i> such that
 
             $$ (y+h)^n < x $$
 
@@ -289,7 +289,11 @@
 
             so that we can now say
 
-            $$(y+h)^n - y^n = \frac{(y+h)^{n-1} + y(y+h)^{n-2} + \dots + y^{n-1}}{(y+h)-y}$$
+            $$(y+h)^n - y^n = ((y+h)-y)((y+h)^{n-1} + y(y+h)^{n-2} + \dots + y^{n-1}) = h((y+h)^{n-1} + y(y+h)^{n-2} + \dots + y^{n-1})$$
+
+            and in fact if we replace each <i>y</i> with <i>y+h</i> then we get the inequality
+
+            $$ (y+h)^n-y^n < hn(y+h)^{n-1} $$
           </p>
         </div>
       </div>
