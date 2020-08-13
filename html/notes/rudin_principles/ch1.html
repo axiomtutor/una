@@ -205,13 +205,30 @@
         <h3>The Archimedean Property Part 2: The rationals are dense in the reals.</h3>
         <div class="sol">
           <p>
-            <i>Explanation:</i> Said more explicitly, \(\forall x,y\in \mathbb{R}\) if we have <i>x < y</i> then \(\exists p \in \mathbb Q\) such that <i>x < p < y</i>.
+            <i>Explanation:</i> Said more explicitly, \(\forall r,s\in \mathbb{R}\) if we have <i>r < s</i> then \(\exists p \in \mathbb Q\) such that <i>r < p < s</i>.
           </p>
           <p>
-            What geometrically makes sense here is to use the distance between <i>x</i> and <i>y</i>, which is <i>y - x</i>.  If we can find a rational number <i>0 < q < y-x</i> then by adding <i>q</i> over and over, eventually one of these integral multiples should land inside the interval between <i>x</i> and <i>y</i>.  Drawing the picture on the real line should help to see this.
+            What geometrically makes sense here is to use the distance between <i>r</i> and <i>s</i>, which is <i>s - r</i>.  If we can find a rational number <i>0 < q < s-r</i> then by adding <i>q</i> over and over, eventually one of these integral multiples should land inside the interval between <i>r</i> and <i>s</i>.  Drawing the picture on the real line should help to see this.
           </p>
           <p>
-            So then the question is how do we find this rational <i>q</i>?  First let's note that we can choose a particularly simple <i>q</i>, namely \(q = \frac{1}{n}\) for some \(n\in\mathbb Z^+\).  Because intuitively we should be able to make <i>1/n</i> as small as we need, by picking <i>n</i> as big as we need.
+            So then the question is how do we find this rational <i>q</i>?  First let's note that we can choose a particularly simple <i>q</i>, namely \(q = \frac{1}{a}\) for some \(a\in\mathbb Z^+\).  Because intuitively we should be able to make <i>1/a</i> as small as we need, by picking <i>a</i> as big as we need.
+          </p>
+          <p>
+            Now to get
+
+            $$ 0 < \frac 1 m < s - r $$
+
+            or
+
+            $$ 0 < 1 < n(s-r) $$
+
+            we can invoke the part 1 of the Archimedean property.  In that theorem we are choosing <i>x = 1</i>, and <i>y = s-r</i>.  The <i>n</i> which the theorem tells us exists, is the <i>a</i> that we wanted to obtain.
+          </p>
+          <p>
+            So now that we know there is some \(\frac 1 a < s - r\), the plan was to use it by add it repeatedly until one of these lands inside the interval between <i>r</i> and <i>s</i>.  We again invoke part 1 of the Archimedean property this time with <i>x = 1/a</i> and <i>y = r</i>, so that we get some \(r < \frac{b}{a} \).  The problem is that we don't know if \(s < \frac b a \).
+          </p>
+          <p>
+            To make sure we choose something both bigger than <i>r</i> and smaller than <i>s</i> we need to choose the <i>first</i> \(\frac b a \) which is over <i>r</i>.  That means \(\frac{b-1}{a} \leq r < \frac b a \).  
           </p>
         </div>
       </div>
