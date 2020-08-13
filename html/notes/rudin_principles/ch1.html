@@ -289,11 +289,24 @@
 
             so that we can now say
 
-            $$(y+h)^n - y^n = ((y+h)-y)((y+h)^{n-1} + y(y+h)^{n-2} + \dots + y^{n-1}) = h((y+h)^{n-1} + y(y+h)^{n-2} + \dots + y^{n-1})$$
+            $$(y+h)^n - y^n = ((y+h)-y)((y+h)^{n-1} + y(y+h)^{n-2} + \dots + y^{n-1}) $$
+            $$ = h((y+h)^{n-1} + y(y+h)^{n-2} + \dots + y^{n-1})$$
 
             and in fact if we replace each <i>y</i> with <i>y+h</i> then we get the inequality
 
             $$ (y+h)^n-y^n < hn(y+h)^{n-1} $$
+          </p>
+          <p>
+            If we can make \(hn(y+h)^{n-1} < x-y^n\) with an appropriate choice of <i>h</i> we'll be done.  The <i>h</i> inside the parentheses complicates the matter.  But it should be possible to find an <i>h</i> less than 1 which satisfies this requirement, since all we really need is a "very small" <i>h</i>.  Requiring it to be less than 1 is either no impossition if <i>h</i> was already less than 1; or it only picks a smaller <i>h</i> than we needed to pick.  But if any <i>h</i> works, then any number smaller than it also works.
+          </p>
+          <p>
+            So agreeing that we'll pick <i>h < 1</i>, we then need to pick <i>h</i> subject to the constraint that
+
+            $$ hn(y+1)^{n-1} < x -y^n$$
+
+            But obviously this entails the choice
+
+            $$ h < \frac{x-y^n}{n(y+1)^{n-1}} $$
           </p>
         </div>
       </div>
