@@ -243,7 +243,26 @@
 
              $$ \frac b a - (s-r) \leq r $$
 
-             and with small rearrangements from here, you get the desired result.
+             and with easy rearrangements from here, you get the desired result.
+          </p>
+        </div>
+      </div>
+      <div>
+        <h3>Theorem: <i>n</i>th roots of positive reals exist and are unique.</h3>
+        <div class="sol">
+          <p>
+            <i>Explanation: </i>Said explicitly, for each real <i>x > 0</i> and \(n\in\mathbb Z^+\) there is a unique positive real <i>y</i> such that \(y^n = x\).
+          </p>
+          <p>
+            The "uniqueness" part is the easiest to prove so we deal with that first and quickly.  If there were two distinct <i>y</i>s, then take the <i>n</i>th power of both and these will also be distinct, so they can't both equal <i>x</i>.
+          </p>
+          <p>
+            Now for the existence part.  Of course the main tool we've been using for existence is the least upper-bound property so we want to find some non-empty set bounded above which would relate to this problem.  It's not too hard to imagine that what we want is
+
+            $$ \{ t^n: t \in \mathbb R^+, \text{ and } t^n < x \}$$
+          </p>
+          <p>
+            We first need to show that it's non-empty.  If \(x\leq 1\) then taking <i>n</i>th powers makes \(t^n \leq t\). So in this case all we have to do is take any <i>t < x</i>.  But if 
           </p>
         </div>
       </div>
