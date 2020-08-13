@@ -188,13 +188,13 @@
           You can think of it this way: Mark <i>x</i> and <i>y</i> on the real line with <i>x</i> before <i>y</i>.  Add <i>x</i> to itself over and over.  Eventually it has to cross to the other side of <i>y</i>.
         </p>
         <p>
-          To formalize this we need to phrase the problem in terms that can be solved by the least upper-bound property.  Since <i>y</i> acts like some kind of upper-bound, you could imagine it might be useful to use it as an upper-bound on the set of all possible <i>nx</i>.  Since we know it actually doesn't upper-bound this set and that's the whole point, then maybe we can accomplish this proof in the form of a proof by contradiction.
+          To formalize this argument we need to phrase the problem in terms that can be solved by the least upper-bound property.  In the picture I just described, <i>y</i> acts like some kind of upper-bound, until it doesn't. <i>y</i> is bigger than <i>x</i> and maybe bigger than <i>2x</i>, and maybe bigger than <i>3x</i>, and so on.  Eventually one of these becomes bigger than <i>y</i>, but up until that point <i>y</i> is acting like an upper-bound. So let's maybe assume that <i>y</i> is an upper-bound and derive a contradiction.  After all, by assuming it's an upper-bound we then get to use the least upper-bound property.
         </p>
         <p>
-          <i>Proof idea:</i> For contradiction suppose that <i>y</i> is an upper-bound on \(\{nx: n\in \mathbb{Z}^+\}\).  Of course apply the least upper-bound property, call this \(\alpha\).  Now intuitively we're taking "steps of size <i>x</i>" and in any step of size <i>x</i> there must be one of these integral multiples of <i>x</i>.  Draw it out and you should be able to convince yourself.
+          <i>Proof idea:</i> For contradiction suppose that <i>y</i> is an upper-bound on \(\{nx: n\in \mathbb{Z}^+\}\).  Of course apply the least upper-bound property, and call the sup \(\alpha\).  Now intuitively, there should be some <i>mx</i> in between \(\alpha-x\) and \(\alpha\) because the distance between them is <i>x</i>.  Draw it out and you should be able to convince yourself.
         </p>
         <p>
-          To formalize this idea, we take a step of size <i>x</i>, going down from \(\alpha\).  Formally this means we consider \(\alpha - x\).  Now notice that since this is smaller than the smallest upper-bound, then \(\alpha - x\) can't be an upper-bound.  But that means some element of the set is larger than it.  That means there is some
+          Now for the formal argument that there must be some <i>mx</i> between \(\alpha-x\) and \(\alpha\): Notice that since \(\alpha-x\) is smaller than the smallest upper-bound (\(\alpha\)), then \(\alpha - x\) can't be an upper-bound.  But that means some element of the set is larger than it.  That means there is some
 
           $$ \alpha - x < mx $$
 
