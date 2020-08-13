@@ -259,7 +259,7 @@
           <p>
             Now for the existence part.  Of course the main tool we've been using for existence is the least upper-bound property so we want to find some non-empty set bounded above which would relate to this problem.  It's not too hard to imagine that what we want is
 
-            $$ \{ t^n: t \in \mathbb R^+, \text{ and } t^n < x \}$$
+            $$ E = \{ t^n: t \in \mathbb R^+, \text{ and } t^n < x \}$$
           </p>
           <p>
             We first need to show that it's non-empty.  If \(x\leq 1\) then taking <i>n</i>th powers makes \(t^n \leq t\). So in this case all we have to do is take any <i>t < x</i>.  But if <i>x > 1</i> then we could pick <i>t = 1</i>, so in every case we see that the set is non-empty.
@@ -268,7 +268,28 @@
             Next we need to show it's bounded above.  But trivially it's bounded above by <i>x</i>.
           </p>
           <p>
-            So now we know it has a sup, and we claim that this sup is the <i>y</i> that we seek.  
+            So now we know it has a sup, and we claim that this sup is the <i>y</i> that we seek.  To show that \(y^n = x\) we should that it cannot possibly be greater or less than <i>x</i>.  Intuitively, by assuming \(y^n < x\) this means there is some "gap" between them, and we try to exploit that gap to show that <i>y</i> wasn't really the sup, which would be our contradiction.
+          </p>
+          <p>
+            And similar to earlier proofs, we'll try to find some small positive <i>h</i> such that \((y+h)^n < x\).  That would then mean that would then mean that \(y+h\in E\) and so \(y+h\leq y\).  So the question now is, what is the <i>h</i>?
+          </p>
+          <p>
+            We know we need
+
+            $$ (y+h)^n < x $$
+
+            From \(y^n < x\) we get \(0 < x-y^n\) so we might find it useful to subtract \(y^n\) on both sides.
+
+            $$ (y+h)^n - y^n < x-y^n $$
+          </p>
+          <p>
+            At this point we can invoke the binomial identity
+
+            $$ \frac{b^n-a^n}{b-a} = b^{n-1} + ab^{n-2} + \dots + a^{n-1} $$
+
+            so that we can now say
+
+            $$(y+h)^n - y^n = \frac{(y+h)^{n-1} + y(y+h)^{n-2} + \dots + y^{n-1}}{(y+h)-y}$$
           </p>
         </div>
       </div>
