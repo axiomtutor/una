@@ -416,16 +416,18 @@
               $$ (x+y)(\overline x + \overline y) = x\overline x+x\overline y+y\overline x+y\overline y $$
 
               has \(x\overline x, y\overline y\) "square-like terms", and \(x\overline y, x\overline y\) "cross terms".  So we might suspect that some kind of product of sums is at play here--we just have to figure out what the terms are.
+            </p>
             <p>
-              To help guide us let's note that the theorem to prove is
+              By the way, notice that there's an even stronger reason to look back at what we just wrote and believe it has something to do with our problem.
+
+              $$ (x+y)(\overline x+\overline y) = (x+y)\overline{(x+y)} = |x+y|^2 $$
+
+              and we know this is always non-negative.
+            </p>
+            <p>
+              That's provocative because, if we write the problem in our current symbols, we are trying to prove 
 
               $$ |C|^2 \leq AB \quad \Leftrightarrow \quad 0\leq AB-|C|^2 $$
-
-              and we might wish we could move the summation outside of all the relevant terms (i.e. use the linearity of finite sums).  Two things prevent this.  The first term is a product of sums, and the second term has an absolute value around the sum.  We can somewhat easily solve the second problem, though, by writing this in its product-of-conjugate form, \(|C|^2 = C\overline C\).  And to deal with the first problem, we merely ignore that one of them is a sum and treat it just as a real number.
-
-              $$ 0 \leq \sum a_i\overline a_i B - C\overline C $$
-              $$ = \sum a_i \overline a_i B - \overline C \sum a_i\overline b_i $$
-              $$ = \sum (a_i\overline a_i B - \overline C a_i \overline b_i) $$
             </p>
           </div>
 
