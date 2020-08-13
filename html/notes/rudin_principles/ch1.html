@@ -420,9 +420,11 @@
               To help guide us let's note that the theorem to prove is
 
               $$ |C|^2 \leq AB \quad \Leftrightarrow \quad 0\leq AB-|C|^2 $$
-            </p>
-            <p>
-              We can pick <i>A</i> or <i>B</i> arbitrarily so I'm going to pick <i>A</i>.  Looking at <i>A</i> as our square terms we would like to then introduce some extra <i>B</i> square terms on the other side somehow.  That way the rest can perhaps be construed as <i>C</i> terms that are cross terms, and we can factor this into some kind of product of sums.
+
+              and we might wish we could move the summation outside of all the relevant terms (i.e. use the linearity of finite sums).  Two things prevent this.  The first term is a product of sums, and the second term has an absolute value around the sum.  We can somewhat easily solve the second problem, though, by writing this in its product-of-conjugate form, \(|C|^2 = C\overline C\).  And to deal with the first problem, we merely ignore that one of them is a sum and treat it just as a real number.
+
+              $$ 0 \leq \sum a_i\overline a_i B - C\overline C $$
+              $$ = \sum a_i \overline a_i B - \overline C \sum a_i\overline B $$
             </p>
           </div>
 
