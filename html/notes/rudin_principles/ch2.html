@@ -241,7 +241,21 @@
         <h3>Theorem: For compact sets, finitely intersecting is sufficient for intersecting.</h3>
         <div class="sol">
           <p>
-            <i>Expalantion:</i> If \(\{K_\alpha\}\) is any collection of compact sets, the theorem claims that if every finite \(\{K_{\alpha_1}, ..., K_{\alpha_n\}\) intersects then so does all of \(\{K_\alpha\}\).  
+            <i>Expalantion:</i> If \(\{K_\alpha\}\) is any collection of compact sets, the theorem claims that if every finite \(\{K_{\alpha_1}, ..., K_{\alpha_n}\}\) intersects then so does all of \(\{K_\alpha\}\).
+          </p>
+          <p>
+            The theorem sounds so similar to the definition of compactness, execpt somehow stated in an opposite form.  In the definition, every infinite union of open sets has a finite subset. Here every finite intersection of compact sets entails an intersection of all compact sets ... stated very roughly, in order to highlight the parallels.  It sure feels like somehow one is the same as the other just using De Morgan's to flip open sets to closed and unions to intersections.
+          </p>
+          <p>
+            To argue by contradiction we assume that the intersection is empty.  That must mean that if we pick any set, call it \(K_1\in \{K_\alpha\}\), each of the elements of \(K_1\) must be lacking in some other set.  Well that means that for each element, there exists a \(K_\alpha^c\) which contains it and is open.  This is shaping up to be an open cover, from which we select a finite subcover.  From which we can get a contradiction with the fininte intersecting property.
+          </p>
+        </div>
+      </div>
+      <div>
+        <h3>Corollary: Any decreasing chain of non-empty compact sets has an intersection.</h3>
+        <div class="sol">
+          <p>
+            <i>Explanation: </i> Because each set is non-empty, any finite intersection is just equal to the last set, which is non-empty.  That means this has the finite intersection property, so apply the previous result.
           </p>
         </div>
       </div>
