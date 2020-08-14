@@ -137,13 +137,21 @@
         <h3>Theorem: The closure of any set is closed.  A set is closed if and only if it equals its closure.  \(\overline E\) is contained in any closed set that contains <i>E</i>.</h3>
         <div class="sol">
           <p>
-            <i>Explanation:</i> We start with showing that the closure of any set is closed. Take any limit point of \(\overline E\).  Intuitively it's either a limit point of <i>E</i> or a limit point of <i>E'</i>.  If it's a limit point of <i>E</i> we're done because it's automatically in <i>E'</i>.  But if it's a limit point of <i>E'</i> then we still need to do some work to show that this is a limit point of <i>E</i>.  Intuitively that should be true because if anything is infinitely to <i>E'</i> and <i>E'</i> is infinitely close to <i>E</i>, then the point should also be infinitely close to <i>E</i>.  But all of this is just getting some intuitions--next we need a plan for a rigorous proof.
+            <i>Explanation:</i> We start with showing that the closure of any set is closed. Rudin proves that the complement is open, which is nice.  But I go for a direct proof: Take any limit point of \(\overline E\).  Intuitively it's either a limit point of <i>E</i> or a limit point of <i>E'</i>.  If it's a limit point of <i>E</i> we're done because it's automatically in <i>E'</i>.  But if it's a limit point of <i>E'</i> then we still need to do some work to show that this is a limit point of <i>E</i>.  Intuitively that should be true because if anything is infinitely to <i>E'</i> and <i>E'</i> is infinitely close to <i>E</i>, then the point should also be infinitely close to <i>E</i>.  But all of this is just getting some intuitions--next we need a plan for a rigorous proof.
           </p>
           <p>
             Let <i>x</i> be a limit point of \(\overline E\).  We are trying to show it's a limit point of <i>E</i>, so let's put a neighborhood \(N_r(x)\) around it.  We want to show that \(N_r(x)\) must have a point other than <i>x</i> which is in <i>E</i>.
           </p>
           <p>
-            Since there is a point \(y\in E\cup E'\) where \(x\ne y\) then if \(y\in E\) we're done.  If \(y\in E'\) then 
+            Since there is a point \(y\in E\cup E'\) in the neighborhood where \(x\ne y\) then if \(y\in E\) we're done.  If \(y\in E'\) then ... well, we can put a neighborhood around <i>y</i> which must intersect <i>E</i>.  If we can choose this neighborhood small enough so that the whole thing fits inside the original neighborhood, then we're done.  But to do this is just like how we showed that all neighborhoods are open.  We draw a picture and let it motivate a choice of radius.
+          </p>
+          <p>
+            <i>For the claim that a set is closed just in case it equals its closure:</i>  One direction is trivial.  If \(E=\overline E\) then since we already proved \(\overline E\) is closed, automatically <i>E</i> is closed.  The other direction is actually also trivial because if <i>E</i> is closed then it contains all its limit points, so \(E'\subseteq E\) and therefore \(E = E\cup E' = \overline E\).
+          </p>
+          <p>
+            <i>
+              That \(\overline E\) is contained in any closed set that contains <i>E</i>:
+            </i> Let <i>F</i> be any closed set with \(E\subseteq F\).  We will have \(\overline E \subseteq F\) if we can just show \(E'\subseteq F\).  So if <i>x</i> is any limit point we need to show it's in <i>F</i>.  Clearly we need to appeal to the closedness of <i>F</i>, but you quickly realize that <i>F</i> containing its limit points means it also contains the limit points of <i>E</i>.  
           </p>
         </div>
       </div>
