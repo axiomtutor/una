@@ -67,7 +67,7 @@
             <i>Explanation:</i> The picture makes this obvious, and it's not too much work to turn the picture into a proof.  Draw any blob of a set <i>E</i> and pick a limit point.  Best to draw it on the edge of the set <i>E</i> since that's where the most interesting limit points live.  Put any neighborhood around <i>p</i>.  By definition as a limit point, we get some distinct other point in <i>E</i>, call it \(q_1\).
           </p>
           <p>
-            Now we generate a \(q_2\).  How?  We need it to be distinct from \(q_1\), and we can guarantee this if we use \(d(p,q_1)\) as the radius of a new neighborhood around <i>p</i>. Get a point from inside there, call it \(q_2\).  The radius puts \(q_1\) outside this new neighborhood so the \(q_2\ne q_1\) and we have a genuiney new point.
+            Now we generate a \(q_2\).  How?  We need it to be distinct from \(q_1\), and we can guarantee this if we use \(d(p,q_1)\) as the radius of a new neighborhood around <i>p</i>. Get a point from inside there, call it \(q_2\).  The radius puts \(q_1\) outside this new neighborhood so the \(q_2\ne q_1\) and we have a genuinely new point.
           </p>
           <p>
             Generate \(q_3\) with a neighborhood of radius \(d(p,q_2)\), and generate \(q_4\) with a neighborhood of radius \(d(p,q_3)\) and so on.
@@ -80,7 +80,7 @@
         </h3>
         <div class="sol">
           <p>
-            Notice that you can prove this directly without too much difficulty.  Still, it's a nice corollary from the previous theorem.  In fact, it is just the contrapositive of the previous theorem.
+            <i>Explanation:</i> Notice that you can prove this directly without too much difficulty.  Still, it's a nice corollary from the previous theorem.  In fact, it is just the contrapositive of the previous theorem.
           </p>
         </div>
       </div>
@@ -107,7 +107,7 @@
         <h3>Theorem: A set is clsoed if and only if its complement is open.</h3>
         <div class="sol">
           <p>
-            This is a very nice and easy corollary to the previous theorem.  If <i>F</i> is closed, then the complement of \(F^c\) is closed and therefore \(F^c\) is open.  Do similarly to go in the other direction.
+            <i>Explanation:</i> This is a very nice and easy corollary to the previous theorem.  If <i>F</i> is closed, then the complement of \(F^c\) is closed and therefore \(F^c\) is open.  Do similarly to go in the other direction.
           </p>
         </div>
       </div>
@@ -115,13 +115,13 @@
         <h3>Theorem: Unions of open sets are open.  Finite intersections of open sets are open.  Intersections of closed sets are closed.  Finite unions of closed sets are closed.</h3>
         <div class="sol">
           <p>
-            The easiest claim in here is the first one.  If you pick a point in the union it must have come from one of the open sets, and now put a neighborhood fitting inside that set.
+            <i>Explanation: </i>The easiest claim in here is the first one.  If you pick a point in the union it must have come from one of the open sets, and now put a neighborhood fitting inside that set.
           </p>
           <p>
-            Having proved that the next easiest proof is that intersections of closed sets are closed.  Construce the closed set as the complement of an open set, which by De Morgans is now a union of open sets, and so on.
+            Having proved the first claim, the next easiest is that intersections of closed sets are closed.  Construct the closed set as the complement of an open set, which by De Morgans is now a union of open sets, and so on.
           </p>
           <p>
-            For finite intersections of open sets, finiteness is the key: Any point in the intersection is in all the open sets.  For each of them, take a neighborhood, and then take the least radius (which exists because there are only finitely many of them).  That will fit in all of them.
+            For finite intersections of open sets, finiteness is the key: Any point in the intersection is in all the open sets.  For each of them, take a neighborhood. Then take the least radius of those neighborhoods (which exists because there are only finitely many of them).  That will fit in all of them.
           </p>
           <p>
             Unsurprisingly, we can again leverage complements and De Morgan's to prove the claim about closed sets from the fact about open sets.
@@ -134,13 +134,16 @@
         </p>
       </div>
       <div>
-        <h3>Theorem: \(\overline E\) is closed.  <i>E</i> is closed if and only if it equals its closure.  \(\overline E\) is contained in any closed set that contains <i>E</i>.</h3>
+        <h3>Theorem: The closure of any set is closed.  A set is closed if and only if it equals its closure.  \(\overline E\) is contained in any closed set that contains <i>E</i>.</h3>
         <div class="sol">
           <p>
-            Take any limit point of \(\overline E\).  Intuitively it's either a limit point of <i>E</i> or a limit point of <i>E'</i>.  If it's a limit point of <i>E</i> we're done because it's automatically in <i>E'</i>.  But if it's a limit point of <i>E'</i> then we still need to do some work to show that this is a limit point of <i>E</i>.  Intuitively that should be true because if anything is infinitely to <i>E'</i> and <i>E'</i> is infinitely close to <i>E</i>, then the point should also be infinitely close to <i>E</i>.  But all of this is just getting some intuitions--next we need a plan for a rigorous proof.
+            <i>Explanation:</i> We start with showing that the closure of any set is closed. Take any limit point of \(\overline E\).  Intuitively it's either a limit point of <i>E</i> or a limit point of <i>E'</i>.  If it's a limit point of <i>E</i> we're done because it's automatically in <i>E'</i>.  But if it's a limit point of <i>E'</i> then we still need to do some work to show that this is a limit point of <i>E</i>.  Intuitively that should be true because if anything is infinitely to <i>E'</i> and <i>E'</i> is infinitely close to <i>E</i>, then the point should also be infinitely close to <i>E</i>.  But all of this is just getting some intuitions--next we need a plan for a rigorous proof.
           </p>
           <p>
-            If <i>x</i> is a limit point of \(\overline E\).  We are trying to show it's a limit point of <i>E</i>, so let's put a neighborhood \(N_r(x)\) around it.  
+            Let <i>x</i> be a limit point of \(\overline E\).  We are trying to show it's a limit point of <i>E</i>, so let's put a neighborhood \(N_r(x)\) around it.  We want to show that \(N_r(x)\) must have a point other than <i>x</i> which is in <i>E</i>.
+          </p>
+          <p>
+            Since there is a point \(y\in E\cup E'\) where \(x\ne y\) then if \(y\in E\) we're done.  If \(y\in E'\) then 
           </p>
         </div>
       </div>
