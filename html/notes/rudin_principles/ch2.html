@@ -217,7 +217,23 @@
           </i> In general when proving openness or closedness we have an option.  To prove that a compact set is closed, we can either directly prove it contains its limit points or we can prove its complement is open.  In this case it's hard for me to imagine linking the idea of a limit point to an open cover.  But to show the complement is open, we can can use a point outside the set to build an open cover.  So let's chase down that line of thinking.
           </p>
           <p>
-            We pick a point in the complement, \(p\in K^c\) and try to build an open set <i>V</i> around it that is guaranteed to be entirely in the complement, i.e. \(V\subseteq K^C\).  To do this, we take every point <i>in</i> the compact set, \(q\in K\), and build two open sets, one around <i>p</i> and one around <i>q</i>.  These two open sets, call them \(V_q\) and \(W_q\), split the difference of their distances.  Intuitively, the <i>V</i>s will cover <i>p</i> and eventually become our <i>V</i> by taking intersections.  And <i>W</i>s will become the open cover from which we select a finite subcover.  With these insights in mind, the rest is chasing down the details.
+            We pick a point in the complement, \(p\in K^c\) and try to build an open set <i>V</i> around it that is guaranteed to be entirely in the complement, i.e. \(V\subseteq K^C\).  To do this, we take every point <i>in</i> the compact set, \(q\in K\), and build two open sets, one around <i>p</i> and one around <i>q</i>.  These two open sets, call them \(V_q\) and \(W_q\), split the difference the distance from <i>p</i> to <i>q</i>.  Intuitively, the <i>V</i>s will cover <i>p</i> and eventually become our <i>V</i> by taking intersections.  And <i>W</i>s will become the open cover from which we select a finite subcover.  With these insights in mind, the rest is chasing down the details.
+          </p>
+        </div>
+      </div>
+      <div>
+        <h3>Theorem: Closed subsets of compact sets are compact.</h3>
+        <div class="sol">
+          <p>
+            <i>Explanation:</i> Clearly somehow the closed set inside has to leverage the compact superset.  We take an open cover of the closed set and don't yet know why there should be a finite subcover, since this isn't necessarily an open cover of the superset.  But here's the kicker: We can add one more open set to get an open cover of the superset.  It's the complement of the closed set.
+          </p>
+        </div>
+      </div>
+      <div>
+        <h3>Corollary: The intersection of a closed set and a compact set is compact.</h3>
+        <div class="sol">
+          <p>
+            <i>Explanation:</i> The compact set is closed.  Intersections of clsoed sets are closed.  Closed subsets of compact sets are compact.
           </p>
         </div>
       </div>
