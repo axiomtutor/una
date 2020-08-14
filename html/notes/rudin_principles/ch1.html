@@ -415,7 +415,7 @@
 
               $$ (x+y)(\overline x + \overline y) = x\overline x+x\overline y+y\overline x+y\overline y $$
 
-              has \(x\overline x, y\overline y\) "square-like terms", and \(x\overline y, x\overline y\) "cross terms".  So we might suspect that some kind of product of sums is at play here--we just have to figure out what the terms are.
+              has \(x\overline x, y\overline y\) "square-like terms", and \(x\overline y, y\overline x\) "cross terms".  So we might suspect that some kind of product of sums is at play here--we just have to figure out what the terms are.
             </p>
             <p>
               By the way, notice that there's an even stronger reason to look back at what we just wrote and believe it has something to do with our problem.
@@ -429,10 +429,16 @@
 
               $$ |C|^2 \leq AB \quad \Leftrightarrow \quad 0\leq AB-|C|^2 $$
 
-              The lesson here is that if we can align \(AB-|C|^2\) with some choice of \( (x+y)(\overline x + \overline y\) then we'll know this quantity is non-negative and the theorem will be proved.
+              The lesson here is that if we can align \(AB-|C|^2\) with some choice of \( (x+y)(\overline x + \overline y)\) then we'll know this quantity is non-negative and the theorem will be proved.
             </p>
             <p>
-              Making a best first attempt at this, let's guess \(x = AB\) and \(y = C\overline C\) (which is the same as \(y=|C|^2\) but possibly more helpful to write it as a product).  
+              Making a best first attempt at this, let's guess that <i>x</i> contains an \(a_i\) since that way the product will give us an \(a_i\overline a_i\) that will hopefully build up to <i>A</i>.  You might think that by the same logic we should include a \(b_i\) in <i>x</i> but there are two reasons to suspect that's not what we want.  First \(a_ib_i\) builds up to <i>C</i> which is not what we want.  Second, if we use all of <i>B</i> instead of just its components, then this can actually factor out of the \(a_i\) components.  So let's agree to put \(x = a_iB\).
+            </p>
+            <p>
+              Let's now see how much we have left to fill in.
+
+              $$ (a_ib + y)(\overline{a_iB} +\overline y) = (a_iB + y)(\overline a_iB + \overline y) $$
+              $$ = B^2a_i\overline a_i + a_iB\overline y + \overline a_i B y + y\overline y $$
             </p>
           </div>
 
