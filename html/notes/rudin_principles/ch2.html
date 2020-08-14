@@ -184,7 +184,7 @@
             This gives an indication of how to prove the left-to-right direction.  We build the set <i>G</i> by taking points in <i>E</i> and neighborhoods which fit within it while living in <i>Y</i>.  We use the same radius, but now construct the neighborhood while living in <i>X</i>.  Unioning all these neighborhoods constructs <i>G</i>.  Intersecting with <i>Y</i> lops off the part that gets us back down to <i>E</i>.
           </p>
           <p>
-
+            <i>For the right-to-left:</i> This just falls right out of definitions.
           </p>
         </div>
       </div>
@@ -195,8 +195,26 @@
     <h2>Compact Sets</h2>
     <div>
       <p>
-
+        An <b>open cover</b> of a set is any collection of open sets which covers.  "Covers" means that the set is contained in the union of the collection.  A set is <b>compact</b> if every open cover has a finite subcover.
       </p>
+    </div>
+    <div>
+      <h3>Theorem: Compact sets survive the restriction to a subspace.</h3>
+      <div class="sol">
+        <p>
+          <i>Explanation:</i> More formally, if \(K\subseteq Y\subset X\) then <i>K</i> is compact relative to <i>X</i> if and only if it's compact relative to <i>Y</i>. To to left-to-right: take an open cover relative to <i>Y</i> and then use the fact that open sets relative to <i>Y</i> have an open set <i>G</i> relative to <i>X</i>.  The right-to-left is similar.
+        </p>
+      </div>
+      <div>
+        <h3>Theorem: Compactness entails closedness.</h3>
+        <div class="sol">
+          <p>
+            <i>
+            Explanation:
+            </i> 
+          </p>
+        </div>
+      </div>
     </div>
 
 
