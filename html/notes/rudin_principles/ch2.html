@@ -159,7 +159,7 @@
         <h3>Theorem: The sup of a nonempty bounded set is always in the closure.</h3>
         <div class="sol">
           <p>
-            <i>Explanation:</i> This naturally breaks into two cases, depending on whether the sup is in the set or not.  If it is, the case is trivial.  If it's not, then we take a neighborhood and in particular look at the part that's below the sup.  Since this region is less than the sup, none of it is an upper-bound and so there must exist some element of the set above.  Because the sup was not in the set, this element that we've found cannot be the sup itself.  Hence we found a distinct point in the neighborhood.
+            <i>Explanation:</i> This naturally breaks into two cases, depending on whether the sup is in the set or not.  If it is, the case is trivial.  If it's not then we prove it's a limit point.  We take a neighborhood of the sup and in particular look at the part that's below the sup.  Since this region is less than the sup, none of it is an upper-bound and so there must exist some element of the set above.  Because the sup was not in the set, this element that we've found cannot be the sup itself.  Hence we found a distinct point in the neighborhood.
         </div>
       </div>
       <div>
@@ -199,10 +199,13 @@
       </p>
     </div>
     <div>
-      <h3>Theorem: Compact sets survive the restriction to a subspace.</h3>
+      <h3>Theorem: Compactness survives the restriction to a subspace.</h3>
       <div class="sol">
         <p>
-          <i>Explanation:</i> More formally, if \(K\subseteq Y\subset X\) then <i>K</i> is compact relative to <i>X</i> if and only if it's compact relative to <i>Y</i>. To to left-to-right: take an open cover relative to <i>Y</i> and then use the fact that open sets relative to <i>Y</i> have an open set <i>G</i> relative to <i>X</i>.  The right-to-left is similar.
+          <i>Explanation:</i> More formally, the theorem claims that if \(K\subseteq Y\subset X\) then <i>K</i> is compact relative to <i>X</i> if and only if it's compact relative to <i>Y</i>. To to left-to-right: take an open cover relative to <i>Y</i> and then use the fact that open sets relative to <i>Y</i> have an open set <i>G</i> relative to <i>X</i>.
+        </p>
+        <p>
+           The right-to-left is similar.
         </p>
       </div>
       <div>
@@ -211,7 +214,10 @@
           <p>
             <i>
             Explanation:
-            </i> 
+          </i> In general when proving openness or closedness we have an option.  To prove that a compact set is closed, we can either directly prove it contains its limit points or we can prove its complement is open.  In this case it's hard for me to imagine linking the idea of a limit point to an open cover.  But to show the complement is open, we can can use a point outside the set to build an open cover.  So let's chase down that line of thinking.
+          </p>
+          <p>
+            We pick a point in the complement, \(p\in K^c\) and try to build an open set <i>V</i> around it that is guaranteed to be entirely in the complement, i.e. \(V\subseteq K^C\).  To do this, we take every point <i>in</i> the compact set, \(q\in K\), and build two open sets, one around <i>p</i> and one around <i>q</i>.  These two open sets, call them \(V_q\) and \(W_q\), split the difference of their distances.  Intuitively, the <i>V</i>s will cover <i>p</i> and eventually become our <i>V</i> by taking intersections.  And <i>W</i>s will become the open cover from which we select a finite subcover.  With these insights in mind, the rest is chasing down the details.
           </p>
         </div>
       </div>
