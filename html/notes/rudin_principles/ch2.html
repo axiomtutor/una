@@ -159,13 +159,34 @@
         <h3>Theorem: The sup of a nonempty bounded set is always in the closure.</h3>
         <div class="sol">
           <p>
-            <i>Explanation:</i> This naturally breaks into two cases, depending on whether the sup is in the set or not.  If it is, the case is trivial.  If it's not, then we take a neighborhood and in particular look at the part that's below it.  Since this region is less than the sup, none of it is an upper-bound and so there must exist some element of the set above.  Because the sup was not in the set, this element that we've found cannot be the sup itself.  Hence we found a distinct point in the neighborhood.
+            <i>Explanation:</i> This naturally breaks into two cases, depending on whether the sup is in the set or not.  If it is, the case is trivial.  If it's not, then we take a neighborhood and in particular look at the part that's below the sup.  Since this region is less than the sup, none of it is an upper-bound and so there must exist some element of the set above.  Because the sup was not in the set, this element that we've found cannot be the sup itself.  Hence we found a distinct point in the neighborhood.
         </div>
       </div>
       <div>
         <p>
-          It sometimes happens that we study a space, <i>X</i>, but then want to study some subspace \(Y\subset X\).  Sets that were open in <i>X</i> may no longer be open if we regard it as now living just in <i>Y</i>.  For instance, [0,1) is actually an open set if the universal set is \([0,\infty)\).
+          It sometimes happens that we study a space, <i>X</i>, but then want to study some subspace \(Y\subset X\).  Sets that were open in <i>X</i> may no longer be open if we regard it as now living just in <i>Y</i>.  For instance, [0,1) is actually an open set if the universal set is \([0,\infty)\).  Hence it really is illegitimate to say that a set is open--we can only say that it is open "relative to" the metric space we consider it to live in.  We rarely need to worry about this subtlety but when we do, we have the following helpful theorem.
         </p>
+      </div>
+      <div>
+        <h3>
+          Theorem: Suppose \(Y\subseteq X\).  A set <i>E</i> is open relative to <i>Y</i> if and only if \(E=Y\cap G\) for some set <i>G</i> which is open relative to <i>X</i>.
+        </h3>
+        <div class="sol">
+          <p>
+            <i>
+              Explanation:
+            </i> Use the example of \(E = [0,1)\) being open relative to \(Y = [0,\infty)\) for motivation.  We can see that \(E = Y\cap G\) with \(G = (-1,1)\).  The over-hang on the left side gets chopped off by <i>Y</i> so it doesn't matter. We could have used (-2,1) and it would have worked just as well for a choice of <i>G</i>.
+          </p>
+          <p>
+            Another way to see this is to imagine the point 0.1 in [0,1) and the neighborhood of radius 0.2.  If we are living in <i>Y</i> when we do this, the neighborhood is [0,0.3).  But if we did this when living in <i>X</i> the neighborhood would have been (-0.1, 0.3).  But the neighborhood from <i>X</i> is still a good neighborhood in <i>Y</i> if we just intersect it with <i>Y</i> first.
+          </p>
+          <p>
+            This gives an indication of how to prove the left-to-right direction.  We build the set <i>G</i> by taking points in <i>E</i> and neighborhoods which fit within it while living in <i>Y</i>.  We use the same radius, but now construct the neighborhood while living in <i>X</i>.  Unioning all these neighborhoods constructs <i>G</i>.  Intersecting with <i>Y</i> lops off the part that gets us back down to <i>E</i>.
+          </p>
+          <p>
+
+          </p>
+        </div>
       </div>
     </div>
 
