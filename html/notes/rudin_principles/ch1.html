@@ -437,14 +437,25 @@
             <p>
               Let's now see how much we have left to fill in.
 
-              $$ (a_ib + y)(\overline{a_iB} +\overline y) = (a_iB + y)(\overline a_iB + \overline y) $$
+              $$ (a_iB + y)(\overline{a_iB} +\overline y) = (a_iB + y)(\overline a_iB + \overline y) $$
               $$ = B^2a_i\overline a_i + a_iB\overline y + \overline a_i B y + y\overline y $$
             </p>
             <p>
-              Clearly <i>y</i> is going to need a \(b_i\) term so that at least one of these terms builds up to <i>C</i>.  Moreover, there are two reasons to suspect it should have more.  For one thing, this just seems like too few components for it to mix well with the other terms.  \(B^2a_i\overline a_i\) has six components, if you image two come from each factor of <i>B</i> and then two from \(a_i\overline a_i\).  I expect <i>y</i> should have three components, that way each of \(a_iB\overline y, \overline a_iBy\),  and \(y\overline u\) will all have six components.
+              Clearly <i>y</i> is going to need a \(b_i\) term so that at least one of these terms builds up to <i>C</i>.  Moreover, there are two reasons to suspect it should have more.  For one thing, this just seems like too few components for it to mix well with the other terms.  \(B^2a_i\overline a_i\) has six components, if you image two come from each factor of <i>B</i> and then two from \(a_i\overline a_i\).  I expect <i>y</i> should have three components, that way each of \(a_iB\overline y, \overline a_iBy\),  and \(y\overline y\) will all have six components.
             </p>
             <p>
-              A second consideration of what should go into <i>y</i>:  
+              A second consideration of what should go into <i>y</i>: If we did choose just \(y=b_i\) and churn through the calculations, you'd see that nowhere do we recover the \(C\overline C\).  We would have a \(CB\) term and a \(\overline CB\) term, and a \(B\) term.  To get \(C\overline C\) somehow in there, we could include in <i>y</i> an \(a_i\) and a \(\overline b_i\).  I tried it, it turns out that fails.  Perhaps like <i>B</i> we can just include <i>C</i> in its entirety.  Turns out that also fails, but if you then try <i>-C</i> it works.  Here's how that shakes out:
+            </p>
+            <p>
+              $$ (a_iB - b_iC)(\overline a_iB - \overline b_i\overline C) = a_i\overline a_i B^2 - B\overline Ca_i\overline b_i - BC\overline a_i b_i + C\overline C b_i\overline b_i $$
+
+              and if we now start summing over this expression, we get
+
+              $$ = B^2A - B\overline C C - B C\overline C + C\overline C B $$
+              $$ = B(AB - |C|^2) $$
+            </p>
+            <p>
+              An easy argument now shows that either <i>B = 0</i> in which case the theorem holds, or \(0\leq AB-|C|^2\) in which case again the theorem holds.
             </p>
           </div>
 
@@ -453,6 +464,12 @@
 
     <h2>Section 7</h2>
     <h2>Euclidean Spacces</h2>
+
+    <div>
+      <p>
+        Here we see that we can generalize to length-<i>k</i> vectors of real numbers, with reasonable definitions of addition, scalar multiplication, and absolute value.  We also define the <b>dot-product</b> and use that to define the absolute value.  Several of the old results survive the generalization.  
+      </p>
+    </div>
 
 
 
