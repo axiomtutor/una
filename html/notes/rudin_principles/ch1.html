@@ -432,13 +432,19 @@
               The lesson here is that if we can align \(AB-|C|^2\) with some choice of \( (x+y)(\overline x + \overline y)\) then we'll know this quantity is non-negative and the theorem will be proved.
             </p>
             <p>
-              Making a best first attempt at this, let's guess that <i>x</i> contains an \(a_i\) since that way the product will give us an \(a_i\overline a_i\) that will hopefully build up to <i>A</i>.  You might think that by the same logic we should include a \(b_i\) in <i>x</i> but there are two reasons to suspect that's not what we want.  First \(a_ib_i\) builds up to <i>C</i> which is not what we want.  Second, if we use all of <i>B</i> instead of just its components, then this can actually factor out of the \(a_i\) components.  So let's agree to put \(x = a_iB\).
+              Making a best first attempt at this, let's guess that <i>x</i> contains an \(a_i\) since that way the product will give us an \(a_i\overline a_i\) that will hopefully build up to <i>A</i>.  You might think that by the same logic we should include a \(b_i\) in <i>x</i> but there are two reasons to suspect that's not what we want.  First \(a_ib_i\) builds up to <i>C</i> which is not what we want.  Second, if we use all of <i>B</i> instead of just its components, then this can actually factor out of the \(a_i\) components.  That both gives us a facor of <i>B</i>, which we want, and is simple, which we also want.  So let's agree to put \(x = a_iB\).
             </p>
             <p>
               Let's now see how much we have left to fill in.
 
               $$ (a_ib + y)(\overline{a_iB} +\overline y) = (a_iB + y)(\overline a_iB + \overline y) $$
               $$ = B^2a_i\overline a_i + a_iB\overline y + \overline a_i B y + y\overline y $$
+            </p>
+            <p>
+              Clearly <i>y</i> is going to need a \(b_i\) term so that at least one of these terms builds up to <i>C</i>.  Moreover, there are two reasons to suspect it should have more.  For one thing, this just seems like too few components for it to mix well with the other terms.  \(B^2a_i\overline a_i\) has six components, if you image two come from each factor of <i>B</i> and then two from \(a_i\overline a_i\).  I expect <i>y</i> should have three components, that way each of \(a_iB\overline y, \overline a_iBy\),  and \(y\overline u\) will all have six components.
+            </p>
+            <p>
+              A second consideration of what should go into <i>y</i>:  
             </p>
           </div>
 
