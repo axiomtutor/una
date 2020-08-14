@@ -425,9 +425,14 @@
               and we know this is always non-negative.
             </p>
             <p>
-              That's provocative because, if we write the problem in our current symbols, we are trying to prove 
+              That's provocative because, if we write the problem in our current symbols, we are trying to prove
 
               $$ |C|^2 \leq AB \quad \Leftrightarrow \quad 0\leq AB-|C|^2 $$
+
+              The lesson here is that if we can align \(AB-|C|^2\) with some choice of \( (x+y)(\overline x + \overline y\) then we'll know this quantity is non-negative and the theorem will be proved.
+            </p>
+            <p>
+              Making a best first attempt at this, let's guess \(x = AB\) and \(y = C\overline C\) (which is the same as \(y=|C|^2\) but possibly more helpful to write it as a product).  
             </p>
           </div>
 
