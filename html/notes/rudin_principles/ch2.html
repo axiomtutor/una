@@ -151,9 +151,21 @@
           <p>
             <i>
               That \(\overline E\) is contained in any closed set that contains <i>E</i>:
-            </i> Let <i>F</i> be any closed set with \(E\subseteq F\).  We will have \(\overline E \subseteq F\) if we can just show \(E'\subseteq F\).  So if <i>x</i> is any limit point we need to show it's in <i>F</i>.  Clearly we need to appeal to the closedness of <i>F</i>, but you quickly realize that <i>F</i> containing its limit points means it also contains the limit points of <i>E</i>.  
+            </i> Let <i>F</i> be any closed set with \(E\subseteq F\).  We will have \(\overline E \subseteq F\) if we can just show \(E'\subseteq F\).  So if <i>x</i> is any limit point we need to show it's in <i>F</i>.  Clearly we need to appeal to the closedness of <i>F</i>, but you quickly realize that <i>F</i> containing its limit points means it also contains the limit points of <i>E</i>.
           </p>
         </div>
+      </div>
+      <div>
+        <h3>Theorem: The sup of a nonempty bounded set is always in the closure.</h3>
+        <div class="sol">
+          <p>
+            <i>Explanation:</i> This naturally breaks into two cases, depending on whether the sup is in the set or not.  If it is, the case is trivial.  If it's not, then we take a neighborhood and in particular look at the part that's below it.  Since this region is less than the sup, none of it is an upper-bound and so there must exist some element of the set above.  Because the sup was not in the set, this element that we've found cannot be the sup itself.  Hence we found a distinct point in the neighborhood.
+        </div>
+      </div>
+      <div>
+        <p>
+          It sometimes happens that we study a space, <i>X</i>, but then want to study some subspace \(Y\subset X\).  Sets that were open in <i>X</i> may no longer be open if we regard it as now living just in <i>Y</i>.  For instance, [0,1) is actually an open set if the universal set is \([0,\infty)\).
+        </p>
       </div>
     </div>
 
