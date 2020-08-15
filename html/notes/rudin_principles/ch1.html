@@ -315,7 +315,7 @@
             It still remains for us to show that \(y^n > x\) entails a contradiction, and to do that we will use the gap to show that there is a value smaller than <i>y</i> which upper-bounds <i>E</i>.  Which contradicts that <i>y</i> is the sup.  In particular we will find a <i>k</i> such that <i>y-k</i> is still an upper bound of <i>E</i>.
           </p>
           <p>
-            To construct <i>k</i> we need to be able to take any \(t\in E\) and show \(t \leq y-k\).  But actually we will show the contrapositive: if \(t > y-k\) then \(t\not\in E\).  In fact that means, if <i>t > y-k</i> then \(t^n > x\).
+            To construct <i>k</i> we need to be able to take any \(t\in E\) and show \(t \leq y-k\).  But actually we will show the contrapositive: if \(t > y-k\) then \(t\not\in E\).  In fact that's the same as showing, if <i>t > y-k</i> then \(t^n > x\).
           </p>
           <p>
             To show \(t^n > x\) again we subtract \(y^n\)
@@ -326,19 +326,19 @@
 
             $$\color{red} t^n-y^n > (y-k)^n - y^n > kny^{n-1}$$
 
-            using the binomial as before, replacing this time the <i>y+k</i> with <i>y</i> so that we get smaller values.  Similar to last time, set this larger than <i>x</i> and solve for <i>k</i>.
+            using the binomial as before, replacing this time the <i>y+k</i> with <i>y</i> so that we get smaller values.  Similar to last time, set this larger than \(x-y^n\) and solve for <i>k</i>.
           </p>
         </div>
       </div>
       <div>
         <p>
-          As a quick note, it is at this point where we could revisit the proof that there is no closest number to \(\sqrt 2\) if we wanted.  We know that <i>n</i>th roots exist now, and we know the Archimedean property.
+          As a quick note, it is at this point where we could revisit the proof that there is no closest rational to \(\sqrt 2\) if we wanted.  We know that <i>n</i>th roots exist now, and we know the Archimedean property.
         </p>
       </div>
       <div>
         <h3>Theorem: <i>n</i>th roots distribute.</h3>
         <p class="sol">
-          To show \((ab)^{1/n} = a^{1/n}b^{1/n}\) we merely need to see that \((a^{1/n}b^{1/n})^n = ab\) and that follows from the distributivity of integer powers.
+          To show \((ab)^{1/n} = a^{1/n}b^{1/n}\) we merely need to see that \((a^{1/n}b^{1/n})^n = ab\) and that follows from the distributivity of integer powers.  The uniqueness part of the previous theorem of course guarantees that this is the unique solution.
         </p>
       </div>
     </div>
@@ -387,7 +387,7 @@
         </p>
       </div>
       <div>
-        <h3>Theorem: The absolute value is non-negative. It's equal to zero if and only if the complex number is.  The conjugate has the same absolute value.  Absolute value distributes over multiplication.  Real and imaginary projections have smaller absolute value.  The triangle inequality.</h3>
+        <h3>Theorem: The absolute value is non-negative. Only 0 has absolute value equal to 0.  A number and its conjugate have the same absolute value.  Absolute value distributes over multiplication.  Real and imaginary projections have smaller absolute value.  The triangle inequality is true.</h3>
         <div class="sol">
           <p>
             <i>Explanation:</i> The only one of these that's hard to prove is the triangle inequality.  We use the definition in terms of the conjugate, and then distribute. We want to rearrange this into the expression we'd get if we also distributed \((|z|+|w|)^2\) but we are hindered by the middle terms.  (If you are tempted to write out <i>z</i> or <i>w</i> in terms of their components, don't.  This will get you lost in a sea of symbols and it's unnecessary.)
