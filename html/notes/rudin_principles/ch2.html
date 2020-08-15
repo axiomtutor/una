@@ -294,10 +294,10 @@
         <h3>Theorem: <i>k</i>-cells are compact.</h3>
         <div class="sol">
           <p>
-            <i>Explanation:</i> Draw the distance from one corner of the <i>k</i>-cell to the opposite corner.  If <i>k = 2</i> this is just opposite corners of a rectangle, and if <i>k = 3</i> it's opposite corners of a box.  For any other <i>k</i> there is a natural generalization of the concept.  The <i>k</i>-cell is parameterized by intervals along each coordinate, \([a_i,b_i[\).  Call the length of the diagonal \(\delta = \displaystyle \sqrt{ \sum_{i=1}^k (b_i-a_i)^2 }\).  
+            <i>Explanation:</i> For contradiction we suppose that it is not compact, so that for some open cover, there is no finite subcover.  The fundamental intuition here is that, if you take any finite subcover it must not cover some part of the <i>k</i>-cell.  So we cut the <i>k</i>-cell up and then consider the smaller <i>k</i>-cell which contained the point not covered.  This smaller <i>k</i>-cell must not be finitely subcoverable, so we repeat the process and get a smaller <i>k</i>-cell.
           </p>
           <p>
-
+            In this way we generate a descending chain of <i>k</i>-cells.  We apply the previous result to find a point in their intersection.  This point must be inside some open set in an open cover, and since the set is open we can put a neighborhood around the point and inside the set.  From there we are in a good position to argue that some one of the <i>k</i>-cells which we showed is not finitely subcovered, is also covered by this one open set.
           </p>
         </div>
       </div>
