@@ -309,12 +309,39 @@
         <p>
           More precisely if \(N\trianglelefteq G\) and \(N\leq A\) then for each \(B\leq G\):
           <ul>
-            <li>\(A\leq B \quad \Leftrightarrow \quad (A/N)\leq (G/N)\)</li>
-            <li>\(\overline (A\cap B) = \overline A\cap \overline B\)</li>
+            <li>\(A\leq B \quad \Leftrightarrow \quad A/N\leq G/N\)</li>
+            <li>\(\overline{(A\cap B)} = \overline A\cap \overline B\)</li>
             <li>\(A\trianglelefteq B \quad \Leftrightarrow \quad A/N \trianglelefteq B/N\)</li>
           </ul>
         </p>
+        <p>
+          <i>Explanation:</i> Chase down details using the natural projection.
+        </p>
       </div>
+    </div>
+    <h2>3.4 Composition Series and the Hölder Program</h2>
+    <div>
+      <p>
+        A group is called <b>simple</b> if it's not trivial and has no interesting normal subgroup.  An "interesting" normal subgroup is anything other than the trivial or improper subgroups.
+      </p>
+      <p>
+        A <b>composition series</b> is a sequence of subgroups
+
+        $$ \mathbb 1=N_0\leq N_1 \leq \dots \leq N_k = G $$
+
+        where \(N_i \trianglelefteq N_{i+1}\) and the quotient \(N_{i+1}/N_i\) is simple.  Each \(N_{i+1}/N_i\) is called a <b>composition factor</b>.
+      </p>
+      <h4>Jordan-Hölder Theorem: Every nontrivial group has a composition series, and the composition factors are unique up to isomorphism.</h4>
+      <p>
+        Note that the isomorphism between the composition factors may not occur in the same order in the series.
+      </p>
+    </div>
+    <div>
+      <p>
+        A group is <b>solvable</b> if there is a chain of subgroups
+
+        $$ \mathbb 1 \trianglelefteq G_0 \trianglelefteq G_1 \trianglelefteq \dots \trianglelefteq G_s = G $$
+      </p>
     </div>
 
 
