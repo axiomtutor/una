@@ -394,10 +394,16 @@
 
           $$ \sigma(\Delta) = \Pi_{1\leq i < j\leq n}  x_{\sigma(i)}-x_{\sigma(j)}) $$
 
-          Clearly \(\sigma(\Delta) = \pm \Delta\).  For each \(\sigma\in S_n\) we define the parity function
+          Clearly \(\sigma(\Delta) = \pm \Delta\).  For each \(\sigma\in S_n\) we define the <b>sign</b> function
 
-          $$ \epsilon(\sigma) = \begin{cases} +1 & \text{ if } \sigma(\Delta) = \Delta \\ -1 & \text{ if } \sigma(\Delta) = -1 \end{cases} $$
+          $$ \epsilon(\sigma) = \begin{cases} +1 & \text{ if } \sigma(\Delta) = \Delta \\ -1 & \text{ if } \sigma(\Delta) = -\Delta \end{cases} $$
         </p>
+        <h4>Theorem: The sign function is a homomorphism.</h4>
+        <div class="sol">
+          <p>
+            <i>Explanation: </i> We need to show \(\epsilon(\tau\sigma)=\epsilon(\tau)\epsilon(\sigma)\).  We assume \(\sigma\) causes <i>k</i> flips, so that \(\epsilon(\sigma) = (-1)^k\) and try to show that this essentially factors out of \((\tau\sigma)(\Delta)\) so that what you're left with is \((-1)^k \tau(\Delta)\) and then \(\epsilon(\tau\sigma) = (-1)^k\epsilon(\tau) = \epsilon(\sigma)\epsilon(\tau)\).  
+          </p>
+        </div>
       </div>
     </div>
 
