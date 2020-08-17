@@ -361,7 +361,30 @@
         <p>
           Before proving the theorem, though, we see how to do this practically on small examples.  The trick really is to first write a permutation into some product of disjoint cycles, and then know how to transform a disjoint cycle into a product of permutations.  The formula below shows how to do this last step.
 
-          $$ (a_1 a_2 \dots a_n)  = (a_1 a_m)(a_1 a_{m-1}) \dots (a_1 a_2) $$
+          $$ (a_1 a_2 \ \dots a_n)  = (a_1 \ a_m)(a_1 \ a_{m-1}) \dots (a_1 \ a_2) $$
+        </p>
+        <p>
+          Notice that this establishes the existence of a transposition product representation, and therefore that the set of all transpositions generates \(S_n\).
+        </p>
+      </div>
+      <div>
+        <h3>The Alternating Group</h3>
+        <p>
+          We now prove that parity is well-defined. Intuitively every permutation causes a flip, and there is some sense in which this is related to negatives in algebraic expressions.  In particular if you flip two terms in a difference, it's equivalent to a negative factor.
+
+          $$ x-y = -(y-x) $$
+        </p>
+        <p>
+          To try to capture this idea, we make a polynomial with <i>n</i> variables, where <i>n</i> is also the index for \(S_n\).  The variables we write as
+
+          $$ x_1, x_2, ..., x_n $$
+
+          We will call the polynomial that we build \(\Delta\).  Ultimately the polynomial that we build up will be
+
+          $$ \Delta = \Pi_{1 \leq i < j \leq n} (x_i-x_j) $$
+        </p>
+        <p>
+          But to explain why we would ever think to construct this polynomial let's think of it in steps.  It should have a factor for every pair of indices, so that every possible transposition of the terms causes a negative to occur.  This leads us to include in the polynomial a factor for every pair of variables.  That is to say for every \(x_i,x_j\) we include the factor \(x_i-x_j\) in \(\Delta\).  That way if \(\sigma\) exchanges <i>i</i> and <i>j</i> then \(\sigma (x_i-x_j)  = x_j-x_i\).  
         </p>
       </div>
     </div>
