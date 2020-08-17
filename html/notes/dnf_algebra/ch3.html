@@ -384,7 +384,15 @@
           $$ \Delta = \Pi_{1 \leq i < j \leq n} (x_i-x_j) $$
         </p>
         <p>
-          But to explain why we would ever think to construct this polynomial let's think of it in steps.  It should have a factor for every pair of indices, so that every possible transposition of the terms causes a negative to occur.  This leads us to include in the polynomial a factor for every pair of variables.  That is to say for every \(x_i,x_j\) we include the factor \(x_i-x_j\) in \(\Delta\).  That way if \(\sigma\) exchanges <i>i</i> and <i>j</i> then \(\sigma (x_i-x_j)  = x_j-x_i\).  
+          But to explain why we would ever think to construct this polynomial let's think of it in steps.  It should have a factor for every pair of indices, so that every possible transposition of the terms causes a negative to occur.  This leads us to include in the polynomial a factor for every pair of variables.  That is to say for every \(x_i,x_j\) we include the factor \(x_i-x_j\) in \(\Delta\).  That way if \(\sigma\) exchanges <i>i</i> and <i>j</i> then \(\sigma (x_i-x_j)  = x_j-x_i\).
+        </p>
+        <p>
+          But we want to be careful, if you have every such factor then you're including \(x_1-x_1\) for instance, and this definitely doesn't introduce negatives upon permuting.  Similarly, if you allow repeats then \(x_1-x_2)(x_2 - x_1)\) generates two negatives and they cancel, so we want to avoid this also.  We want a polynomial where each transposition tracks in a well-behaved way with these swaps.  So we only allow \(x_1 - x_2\) in and not \(x_2-x_1\).  And in general we let in \(x_i - x_j\) if and only if <i>i < j</i>.  Hence we have constructed \(\Delta\).
+        </p>
+        <p>
+          And to be explicit about how \(\sigma\) acts on \(\Delta\),
+
+          $$\sigma(\Delta) = \Pi_{1\leq i < j\leq n} $$ x_{\sigma(i)}-x_{\sigma(j)}) $$
         </p>
       </div>
     </div>
