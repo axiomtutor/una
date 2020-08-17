@@ -407,7 +407,13 @@
             <i>Explanation: </i> We need to show \(\epsilon(\tau\sigma)=\epsilon(\tau)\epsilon(\sigma)\).  We assume \(\sigma\) causes <i>k</i> flips, so that \(\epsilon(\sigma) = (-1)^k\) and try to show that this essentially factors out of \((\tau\sigma)(\Delta)\) so that what you're left with is \((-1)^k \tau(\Delta)\) and then \(\epsilon(\tau\sigma) = (-1)^k\epsilon(\tau) = \epsilon(\sigma)\epsilon(\tau)\).
           </p>
           <p>
-            So for \(\tau\sigma(\Delta) = \Pi_{1\leq i < j \leq n}(x_{(\tau\sigma)(i)}-x_{(\tau\sigma)(j)}) \) how do we show that the \((-1)^k\) factors out?
+            So for \((\tau\sigma)(\Delta) = \Pi_{1\leq i < j \leq n}(x_{(\tau\sigma)(i)}-x_{(\tau\sigma)(j)}) \) how do we show that the \((-1)^k\) factors out?  We can observe that \((\tau\sigma)(\Delta)\) has <i>k</i> factors \(x_{\tau(j)-\tau(i)}\) with <i>i < j</i>.  We then express these as negative multiples and move the negatives outside.
+          </p>
+        </div>
+        <div>
+          <h4>Theorem: Transpositions are odd.</h4>
+          <p>
+            Clearly (1 2) is odd.  We will the use the homomorphism property to give a very nice proof that any other transposition can be related to this one.  In particular it's the old trick of translating our problem to this problem, doing the calculation, and translating back out.  If \(\sigma\) is any transposition (<i>i, j</i>), then we build a translation permutation \(\lambda\) such that \( (i \ j) = \lambda^{-1}(1 \ 2) \lambda\).  
           </p>
         </div>
       </div>
