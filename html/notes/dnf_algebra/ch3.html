@@ -417,10 +417,23 @@
             Clearly (1 2) is odd.  We will the use the homomorphism property to give a very nice proof that any other transposition can be related to this one.  In particular it's the old trick of translating our problem to this problem, doing the calculation, and translating back out.  If \(\sigma\) is any transposition (<i>i, j</i>), then we build a translation permutation \(\lambda\) such that \( (i \ j) = \lambda^{-1}(1 \ 2) \lambda\).  If we then know how to compute the sign of \(\lambda\) and its inverse, we'll be done.  But in fact, we won't compute the sign of \(\lambda\) but just show that it equals the sign of \(\lambda^{-1}\) and therefore this forms a square number and so must be 1.
           </p>
           <p>
-            To then construct \(\lambda\), intuitively, we basically want to map <i>i</i> and <i>j</i> to 1 and 2.  So you just build the permutation which does exactly that.  And then it's easy to see that \(\lambda^{-1}=\lambda\) and that \((i \ j) = \lambda (1\ 2)\lambda\).  
+            To then construct \(\lambda\), intuitively, we basically want to map <i>i</i> and <i>j</i> to 1 and 2.  So you just build the permutation which does exactly that.  And then it's easy to see that \(\lambda^{-1}=\lambda\) and that \((i \ j) = \lambda (1\ 2)\lambda\).
           </p>
           </div>
         </div>
+        <div>
+          <p>
+            It's worth noting that, as soon as we knew that one permutation is odd, we knew that the sign function is surjective.
+          </p>
+          <p>
+            It's also worth noting that we can now easily argue that the parity is well-defined.  Take any permutation, write it as a product of transpositions, apply \(\epsilon\) and the value is uniquely determined by the number of transpositions.  Any other way of expressing it as transpositions must give the same sign and therefore share the parity.  
+          </p>
+        </div>
+      </div>
+      <div>
+        <p>
+          We call the set of all even permutations the <b>alternating group</b> and write it as \(A_n\).  We will want a proof that in fact this set is a group. But it is easy: It is the kernel of the homomorphism \(\epsilon\).  But also since it's normal we know that \(S_n/A_n \cong \epsilon(S_n) = \{\pm 1\}\) so that the order of \(A_n\) is half that of \(S_n\).  Moreover, due to this factor group, it's easy to see that all other permutations are odd, and the factor group obeys the regular laws of even-odd multiplication.  This shows that an even permutation times an even is even, and so on.
+        </p>
       </div>
     </div>
 
