@@ -395,7 +395,7 @@
         <p>
           And to be explicit about how \(\sigma\) acts on \(\Delta\),
 
-          $$ \sigma(\Delta) = \Pi_{1\leq i < j\leq n}  x_{\sigma(i)}-x_{\sigma(j)}) $$
+          $$ \sigma(\Delta) = \Pi_{1\leq i < j\leq n}  (x_{\sigma(i)}-x_{\sigma(j)}) $$
 
           Clearly \(\sigma(\Delta) = \pm \Delta\).  For each \(\sigma\in S_n\) we define the <b>sign</b> function
 
@@ -426,7 +426,7 @@
             It's worth noting that, as soon as we knew that one permutation is odd, we knew that the sign function is surjective.
           </p>
           <p>
-            It's also worth noting that we can now easily argue that the parity is well-defined.  Take any permutation, write it as a product of transpositions, apply \(\epsilon\) and the value is uniquely determined by the number of transpositions.  Any other way of expressing it as transpositions must give the same sign and therefore share the parity.  
+            It's also worth noting that we can now easily argue that the parity is well-defined.  Take any permutation, write it as a product of transpositions, apply \(\epsilon\) and the value is uniquely determined by the number of transpositions.  Any other way of expressing it as transpositions must give the same sign and therefore share the parity.
           </p>
         </div>
       </div>
@@ -434,6 +434,12 @@
         <p>
           We call the set of all even permutations the <b>alternating group</b> and write it as \(A_n\).  We will want a proof that in fact this set is a group. But it is easy: It is the kernel of the homomorphism \(\epsilon\).  But also since it's normal we know that \(S_n/A_n \cong \epsilon(S_n) = \{\pm 1\}\) so that the order of \(A_n\) is half that of \(S_n\).  Moreover, due to this factor group, it's easy to see that all other permutations are odd, and the factor group obeys the regular laws of even-odd multiplication.  This shows that an even permutation times an even is even, and so on.
         </p>
+        <h4>Theorem: An <i>m</i>-cycle is odd if and only if its length is even.  A permutation is odd if and only if it contains an odd number of even-length cycles in its cycle decomposition.</h4>
+        <div class="sol">
+          <p>
+            
+          </p>
+        </div>
       </div>
     </div>
 
