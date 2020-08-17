@@ -412,9 +412,14 @@
         </div>
         <div>
           <h4>Theorem: Transpositions are odd.</h4>
+          <div class="sol">
           <p>
-            Clearly (1 2) is odd.  We will the use the homomorphism property to give a very nice proof that any other transposition can be related to this one.  In particular it's the old trick of translating our problem to this problem, doing the calculation, and translating back out.  If \(\sigma\) is any transposition (<i>i, j</i>), then we build a translation permutation \(\lambda\) such that \( (i \ j) = \lambda^{-1}(1 \ 2) \lambda\).  
+            Clearly (1 2) is odd.  We will the use the homomorphism property to give a very nice proof that any other transposition can be related to this one.  In particular it's the old trick of translating our problem to this problem, doing the calculation, and translating back out.  If \(\sigma\) is any transposition (<i>i, j</i>), then we build a translation permutation \(\lambda\) such that \( (i \ j) = \lambda^{-1}(1 \ 2) \lambda\).  If we then know how to compute the sign of \(\lambda\) and its inverse, we'll be done.  But in fact, we won't compute the sign of \(\lambda\) but just show that it equals the sign of \(\lambda^{-1}\) and therefore this forms a square number and so must be 1.
           </p>
+          <p>
+            To then construct \(\lambda\), intuitively, we basically want to map <i>i</i> and <i>j</i> to 1 and 2.  So you just build the permutation which does exactly that.  And then it's easy to see that \(\lambda^{-1}=\lambda\) and that \((i \ j) = \lambda (1\ 2)\lambda\).  
+          </p>
+          </div>
         </div>
       </div>
     </div>
