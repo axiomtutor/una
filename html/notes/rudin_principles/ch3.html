@@ -50,7 +50,7 @@
         <p>
           Use the triangle inequality
 
-          $$ |s_n t_n - s_n t + s_n t - st| \leq |s_nt_n - s_n t| + |s_n t - st|
+          $$ |s_n t_n - s_n t + s_n t - st| \leq |s_nt_n - s_n t| + |s_n t - st| $$
           $$ = |s_n||t_n-t| + |t||s_n-s| $$
         </p>
         <p>
@@ -63,6 +63,8 @@
           <i>That limits distribute to the denominator: </i> We need to show \(\Big| \frac 1 {s_n}  - \frac 1 s \Big| < \varepsilon\).
 
           $$ \Big| \frac{1}{s_n} - \frac 1 s \Big| = \Big| \frac{s-s_n}{ss_n}\Big| $$
+
+          And since the numerator can be bounded, that part is easy.  And the <i>s</i> in the denominator is constant, so not a worry.  But again the \(s_n\) is a cause for concern but this time it's in the denominator.  But if <i>M</i> bounds \(s_n\) then \(s_n \leq M \quad \Leftrightarrow \quad \frac 1 M \leq \frac 1 {s_n}\).  
         </p>
       </div>
     </div>
