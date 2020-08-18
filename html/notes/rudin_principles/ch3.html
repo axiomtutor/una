@@ -109,6 +109,31 @@
           </p>
         </div>
       </div>
+      <div>
+        <h3>Theorem: The set of subsequential limits of a sequence is closed.</h3>
+        <div class="sol">
+          <p>
+            <i>Explanation: </i> The proof is direct from the definition of closed.  We select a point in the set and show that it is a limit point.  We have to care for some details, but the essentil plan is to form a sequence of neighborhoods around the point which shrink to zero, picking elements of the sequence along the way.
+          </p>
+        </div>
+      </div>
+    </div>
+    <h2>Section 2</h2>
+    <h2>Cauchy Sequences</h2>
+    <div>
+      <p>
+        A sequence is <b>Cauchy</b> if \((\forall \varepsilon\in\mathbb R^+)(\exists N\in \mathbb Z^+)(\forall n\in mathbb Z^+,n\geq N)(d(p_n,p_m)< \varepsilon)\).  This effectively means the points get infinitely close to each other.
+      </p>
+      <p>
+        We call the <b>diameter</b> the sup over all the distances in a set.  Viwewed geometrically in the plane it's like taking the smallest circle that encompasses all the points, and using its diameter.
+      </p>
+      <p>
+        Unpacking definitions it is not a hard proof that a sequence is Cauchy if and only if the limit of the truncated sequence diameters goes to 0.  Said formally, a sequence is Cauchy if and only if
+
+        $$ \displaystyle \lim_{N\rightarrow \infty}\diam E_N} = 0 $$
+
+        where \(E_N\)  is the set of all points in the sequence after index <i>N</i>.  
+      </p>
     </div>
 
 
