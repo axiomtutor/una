@@ -64,7 +64,10 @@
 
           $$ \Big| \frac{1}{s_n} - \frac 1 s \Big| = \Big| \frac{s-s_n}{ss_n}\Big| $$
 
-          And since the numerator can be bounded, that part is easy.  And the <i>s</i> in the denominator is constant, so not a worry.  But again the \(s_n\) is a cause for concern but this time it's in the denominator.  But if <i>M</i> bounds \(s_n\) then \(s_n \leq M \quad \Leftrightarrow \quad \frac 1 M \leq \frac 1 {s_n}\).  
+          And since the numerator can be bounded, that part is easy.  And the <i>s</i> in the denominator is constant, so not a worry.  But again the \(s_n\) is a cause for concern but this time it's in the denominator.  And rounding up to the upper bound won't help since it moves the inequality in the wrong direction.
+        </p>
+        <p>
+          But actually it is somewhat clear that these old strategies won't work this time.  We need to use the assumption that the limit is not zero.  So find an <i>N</i> such that the sequence stays far enough away from zero.  For specificity, let <i>N</i> be such that \((\forall n\geq N)(|p_n-p| < p/2) \).  
         </p>
       </div>
     </div>
