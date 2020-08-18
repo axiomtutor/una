@@ -67,8 +67,21 @@
           And since the numerator can be bounded, that part is easy.  And the <i>s</i> in the denominator is constant, so not a worry.  But again the \(s_n\) is a cause for concern but this time it's in the denominator.  And rounding up to the upper bound won't help since it moves the inequality in the wrong direction.
         </p>
         <p>
-          But actually it is somewhat clear that these old strategies won't work this time.  We need to use the assumption that the limit is not zero.  So find an <i>N</i> such that the sequence stays far enough away from zero.  For specificity, let <i>N</i> be such that \((\forall n\geq N)(|p_n-p| < p/2) \).  
+          But actually it is somewhat clear that these old strategies won't work this time.  We need to use the assumption that the limit is not zero.  So find an <i>N</i> such that the sequence stays far enough away from zero.  For specificity, let <i>N</i> be such that \((\forall n\geq N)(|p_n-p| < p/2) \).  This again assumes <i>p > 0</i> but the proof for a negative <i>p</i> is very similar.  What we're effectively doing here is just choosing the half-way point between 0 and <i>p</i>.  With all the terms staying inside that region, we can then replace \(p_n\) with the lower bound <i>p/2</i>.
         </p>
+      </div>
+      <div>
+        <h3>Theorem: Vector sequences converge if and only if each coordinate does.  They also obey distribution in sums and dot-products.  Also if \(\vec x_n \rightarrow \vec x, \beta_n \rightarrow \beta\) then \(\displaystyle \lim_{n\rightarrow \infty} \beta_n\vec x_n = \beta\vec x\).</h3>
+        <div class="sol">
+          <p>
+            <i>Explanation: </i> If every coordinate convergences, then to make \(|\vec x_n - \vec x | < \varepsilon \) that means we need
+
+            $$ \sqrt{(x_{1,n}-x_1)^2 + \dots + (x_{n,n}-x_n)^2} < \varepsilon $$
+          </p>
+          <p>
+            We want to do a term-by-term rounding up of the LHS, and we want to replace each \(x_{i,n}-x_i\) by \(\varepsilon\) or at least something close (maybe divided by <i>n</i>, or after toying with that it might be even better to use \(\sqrt n\).)  Lucky for us the assumption is just right for this sort of thing.  
+          </p>
+        </div>
       </div>
     </div>
 
