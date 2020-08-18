@@ -125,10 +125,10 @@
         A sequence is <b>Cauchy</b> if \((\forall \varepsilon\in\mathbb R^+)(\exists N\in \mathbb Z^+)(\forall n\in \mathbb Z^+,n\geq N)(d(p_n,p_m)< \varepsilon)\).  This effectively means the points get infinitely close to each other.
       </p>
       <p>
-        We call the <b>diameter</b> the sup over all the distances in a set.  Viwewed geometrically in the plane it's like taking the smallest circle that encompasses all the points, and using its diameter.
+        We call the <b>diameter</b> the sup over all the distances in a set.  Viewed geometrically in the plane it's like taking the smallest circle that encompasses all the points, and using its diameter.
       </p>
       <p>
-        Unpacking definitions it is not a hard proof that a sequence is Cauchy if and only if the limit of the truncated sequence diameters goes to 0.  Said formally, a sequence is Cauchy if and only if
+        Unpacking definitions it is not a hard proof that a sequence is Cauchy if and only if the limit of the truncated sequence diameters goes to 0.  Said a little formally, a sequence is Cauchy if and only if
 
         $$ \displaystyle \lim_{N\rightarrow \infty} diam E_N = 0 $$
 
@@ -138,7 +138,7 @@
         <h3>Theorem: Taking the closure of a set doesn't change its diameter.  Any descending chain of compact sets with diameter approaching 0 consists of exactly one point.</h3>
         <div class="sol">
           <p>
-              <i>Expalantion: </i> It's clear that adding more points can only increase the diameter, i.e. \( diam E \leq  diam \overline E\).  To prove the other direction, we take any two points in the closure and show and show that their distance cannot be more than diam<i>E</i>.  
+              <i>Expalantion: </i> It's clear that adding more points can only increase the diameter, i.e. \( diam E \leq  diam \overline E\).  To prove the other direction, we take any two points in the closure and show and show that their distance cannot be more than diam<i>E</i>. In particular we show that they are each as close as you want to points in <i>E</i>, so you can find an upper bound on diam\(\overline E\) in terms of \(\varepsilon\) and diam<i>E</i>.  Since \(\varepsilon\) can be chosen arbitrarily small this implies \( diam\overline E\leq diam E \).  
           </p>
         </div>
       </div>
