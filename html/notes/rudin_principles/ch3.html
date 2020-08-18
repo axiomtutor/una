@@ -20,8 +20,51 @@
 
     <div>
       <p>
-        A sequence \(\{p_n\}\) is said to <b>converge</b> if there is a point \(p\in X\) such that \((\forall \varepsilon > 0) (\exists N) (\forall n\geq N)( d(p_n,p) < \varepsilon)\).  
+        A sequence \(\{p_n\}\) is said to <b>converge</b> if there is a point \(p\in X\) such that \((\forall \varepsilon\in \mathbb R^+) (\exists N\in \mathbb Z^+) (\forall n\in \mathbb{Z}^+, n \geq N)( d(p_n,p) < \varepsilon)\).  We write either \(p_n\rightarrow p\) or \(\displaystyle \lim_{n\rightarrow \infty}p_n = p\).
       </p>
+      <h3>Theorem: A sequence converges to a point if and only if every neighborhood of the point excludes only finitely many points in the sequence.  Limits are unique.  Convergence implies bounded.  Limit points of sets have sequences converging to the point, with the sequence in the set.</h3>
+      <div class="sol">
+        <p>
+          <i>Explanation:</i> Proving the first sentence, we assume a sequence converges.  Then for each neighborhood with a given radius, there exists a corresponding <i>N</i>.  By definition only the terms before this could be outside the neighborhood.  For the reverse direction, the argument is similar.
+        </p>
+        <p>
+          <i>That limits are unique:</i> Take any two limits and show that their distance from each other is smaller than every positive \(\varepsilon\).  To do this, find an <i>N</i> corresponding to \(\varepsilon/2\) for each limit point and use the triangle inequality.
+        </p>
+        <p>
+          <i>That convergence implies bounded:</i> Use \(\varepsilon = 1\).  The terms after this are all less than \(p+\varepsilon\), thinking of a positive example (negatives are handled just as easily).  Terms before it are finite and must have a max.
+        </p>
+        <p>
+          <i>That limit points of sets have a sequence in the set which converges to it:</i> Take a neighborhood, pick a point, take a smaller neighborhood ... Construct your sequence this way.
+        </p>
+      </div>
+      <h3>Theorem: If individual limits exist then limits are linear, distribute over multiplication, and into denominators (except limit 0).</h3>
+      <div class="sol">
+        <p>
+          <i>Explanation:</i> For distributing over sums, pick \(\varepsilon/2\) and use the triangle inequality.  For distributing over constants, use \(\varepsilon/c\).  Distributing over products is harder, so we focus on that.
+        </p>
+        <p>
+          <i>That limits distribute over products:</i> Wiggle into \(|s_nt_n - st|\) the term \(s_nt\).  Then we need a bound on <i>n</i> which guarantees
+
+          $$ |s_nt_n - s_nt + s_nt t_n - st| < \varepsilon $$
+        </p>
+        <p>
+          Use the triangle inequality
+
+          $$ |s_n t_n - s_n t + s_n t - st| \leq |s_nt_n - s_n t| + |s_n t - st|
+          $$ = |s_n||t_n-t| + |t||s_n-s| $$
+        </p>
+        <p>
+          Now we can easily get a bound on the right-hand term because <i>t</i> is fixed.  We can enforce a condition on the <i>s</i>'s in terms of \(\varepsilon\) and <i>t</i>.  The tricky part is the left-hand term because \(|s_n|\) is not fixed, it's a function of <i>n</i>.  When using the convergence of \(s_n\) we always need bounds that are constant in <i>n</i>.
+        </p>
+        <p>
+          So the trick is to round it up to its maximum, since we already know it's bounded.
+        </p>
+        <p>
+          <i>That limits distribute to the denominator: </i> We need to show \(\Big| \frac 1 {s_n}  - \frac 1 s \Big| < \varepsilon\).
+
+          $$ \Big| \frac{1}{s_n} - \frac 1 s \Big| = \Big| \frac{s-s_n}{ss_n}\Big| $$
+        </p>
+      </div>
     </div>
 
 
