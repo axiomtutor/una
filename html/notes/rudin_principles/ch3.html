@@ -122,7 +122,7 @@
     <h2>Cauchy Sequences</h2>
     <div>
       <p>
-        A sequence is <b>Cauchy</b> if \((\forall \varepsilon\in\mathbb R^+)(\exists N\in \mathbb Z^+)(\forall n\in mathbb Z^+,n\geq N)(d(p_n,p_m)< \varepsilon)\).  This effectively means the points get infinitely close to each other.
+        A sequence is <b>Cauchy</b> if \((\forall \varepsilon\in\mathbb R^+)(\exists N\in \mathbb Z^+)(\forall n\in \mathbb Z^+,n\geq N)(d(p_n,p_m)< \varepsilon)\).  This effectively means the points get infinitely close to each other.
       </p>
       <p>
         We call the <b>diameter</b> the sup over all the distances in a set.  Viwewed geometrically in the plane it's like taking the smallest circle that encompasses all the points, and using its diameter.
@@ -130,10 +130,18 @@
       <p>
         Unpacking definitions it is not a hard proof that a sequence is Cauchy if and only if the limit of the truncated sequence diameters goes to 0.  Said formally, a sequence is Cauchy if and only if
 
-        $$ \displaystyle \lim_{N\rightarrow \infty}\diam E_N} = 0 $$
+        $$ \displaystyle \lim_{N\rightarrow \infty}\diam E_N = 0 $$
 
-        where \(E_N\)  is the set of all points in the sequence after index <i>N</i>.  
+        where \(E_N\)  is the set of all points in the sequence after index <i>N</i>.
       </p>
+      <div>
+        <h3>Theorem: Taking the closure of a set doesn't change its diameter.  Any descending chain of compact sets with diameter approaching 0 consists of exactly one point.</h3>
+        <div class="sol">
+          <p>
+              <i>Expalantion: </i> It's clear that adding more points can only increase the diameter, i.e. \(\diam E \leq \diam \overline E\).  
+          </p>
+        </div>
+      </div>
     </div>
 
 
