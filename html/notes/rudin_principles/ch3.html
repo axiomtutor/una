@@ -79,7 +79,33 @@
             $$ \sqrt{(x_{1,n}-x_1)^2 + \dots + (x_{n,n}-x_n)^2} < \varepsilon $$
           </p>
           <p>
-            We want to do a term-by-term rounding up of the LHS, and we want to replace each \(x_{i,n}-x_i\) by \(\varepsilon\) or at least something close (maybe divided by <i>n</i>, or after toying with that it might be even better to use \(\sqrt n\).)  Lucky for us the assumption is just right for this sort of thing.  
+            We want to do a term-by-term rounding up of the LHS, and we want to replace each \(x_{i,n}-x_i\) by \(\varepsilon\) or at least something close (maybe divided by <i>n</i>, or after toying with that it might be even better to use \(\sqrt n\).)  Lucky for us the assumption is just right for this sort of thing.
+          </p>
+          <p>
+            To go in the other direction is even easier just because the absolute value of any coordinate is always smaller than the absolute value of a vector.
+          </p>
+          <p>
+            This then allows us to easily prove the rest coordinate-wise.
+          </p>
+        </div>
+      </div>
+      <div>
+        <p>
+          A <b>subsequence</b> is any in-order subset of the sequence.  If a subsequence has a limit we call it at subsequential limit of the larger sequence.
+        </p>
+        <h3>Theorem: Sequences in compact sets always have a subsequential limit in the set. Every bounded sequence in has a subsequential limit.</h3>
+        <div class="sol">
+          <p>
+            <i>Explanation: </i> There are two important parts of this claim.  First, these sequences always have subsequential limits.  Second, that the limit is in the set.  Boundedness would already be enough to guarantee that the sequence has some subsequential limit.  Closedness guarantees that the set contains its limit points.
+          </p>
+          <p>
+            First notice that, as soon as the first part is done we can quickly handle the second by embedding any bounded set in a <i>k</i>-cell.
+          </p>
+          <p>
+            Now to prove the first part, we consider whether the sequence visits finitely or infinitely many points.  If it's finite the matter is trivial: Some point must be visited infinitely often since there are infinitely many indices.
+          </p>
+          <p>
+            If it visits infinitely many points, then this sounds too much like previous theorems about infinite subsets and compactness.  Once you obtain a limit point it is easy to use it to construct a sequence approaching it.
           </p>
         </div>
       </div>
