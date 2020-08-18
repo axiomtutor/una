@@ -122,7 +122,7 @@
     <h2>Cauchy Sequences</h2>
     <div>
       <p>
-        A sequence is <b>Cauchy</b> if \((\forall \varepsilon\in\mathbb R^+)(\exists N\in \mathbb Z^+)(\forall n\in \mathbb Z^+,n\geq N)(d(p_n,p_m)< \varepsilon)\).  This effectively means the points get infinitely close to each other.
+        A sequence is <b>Cauchy</b> if \((\forall \varepsilon\in\mathbb R^+)(\exists N\in \mathbb Z^+)(\forall n\in \mathbb Z^+,n\geq N)(d(p_n,p_m)< \varepsilon)\).  This effectively means the points get infinitely close to each other.  In a sense, convergence specifies what the limit point is; on the other hand, Cauchy does not name a point to which the sequence converges. Note also that there may not be a limit point.  You can have Cauchy sequences of rational numbers which "converge to a real", although if viewed entirely within the rationals then you can't actually speak about the reals.  So the more faithful statement would be that there are Cauchy sequences of rationals which do not have any limit.
       </p>
       <p>
         We call the <b>diameter</b> the sup over all the distances in a set.  Viewed geometrically in the plane it's like taking the smallest circle that encompasses all the points, and using its diameter.
@@ -142,6 +142,22 @@
           </p>
           <p>
             <i>That descending chains of compact sets with diameters converging to zero have a unique element:</i> We already know that the intersection contains a point, so all that remains is to show it's unique with the new condition that the diameters go to zero.  But if there were two elements the diameter couldn't be smaller than their distance.
+          </p>
+        </div>
+      </div>
+      <div>
+        <h3>
+          Theorem: Convergence entails Cauchy.  In a compact space, Cauchy entails convergence.
+        </h3>
+        <div class="sol">
+          <p>
+            <i>Explanation:</i> Of course we are meant to think especially of the case of Euclidean spaces.  Since these are compact, this theorem shows that convergence and Cauchy are equivalent in Euclidean spaces.
+          </p>
+          <p>
+            <i>That convergence entails Cauchy:</i> For any \(\varepsilon\) you can keep all the terms this close to the limit, and therefore close to each other.
+          </p>
+          <p>
+            <i>That Cauchy entails convergence in compact spaces:</i> The the theorems just above will be useful.  We form a subsequential
           </p>
         </div>
       </div>
