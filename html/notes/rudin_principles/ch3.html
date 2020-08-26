@@ -160,6 +160,33 @@
             <i>That Cauchy entails convergence in compact spaces:</i> The the theorems just above will be useful.  In particular, we will use the idea of limits of diameters going to zero.  Since the image of the sequence may not be closed, notice that taking the closure of them doesn't change the diameter.  Now we have a descending chain of closed sets in a compact space.  We then know there is a unique element in the intersection, which we can prove is the limit point.
           </p>
         </div>
+        <p>
+          A space in which every Cauchy sequence converges is <b>complete</b>.
+        </p>
+        <p>
+          A sequence is <b>monotonically increasing</b> if each next term is no less than the last.
+        </p>
+        <div>
+          <h3>Theorem: A monotonically increasing sequence converges if and only if it's bounded.</h3>
+          <div class="sol">
+            <p>
+              <i>Explanation:</i> If it converges we already know it's bounded, so the interesting part is the other direction.  Suppose it's bounded, then you can prove it converges to its supremum.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h2>Section 3</h2>
+    <h2>Upper and Lower Limits</h2>
+    <div>
+      <p>
+        The <b>limsup</b> of a sequence is the supremum over the set of all subsequential limits.  Similarly for <b>liminf</b>.  (Note some authors define the limsup as the limit of the suprema of all truncated sequences.  These definitions are equivalent and proving this fact is a good exercise.)
+      </p>
+      <h3>Theorem: The limsup is a subsequential limit, and any point larger than the limsup is an upper bound for some truncated sequence.</h3>
+      <div class="sol">
+        <p>
+          <i>Explanation:</i> If the sequence is unbounded you can make a subsequence going to infinity in the usual way.  If it's bounded then we already know that the set of subsequential limits is a closed set.  The limsup is a limit point of this set and therefore in the set.
+        </p>
       </div>
     </div>
 

@@ -340,8 +340,25 @@
     <h2>Section 4</h2>
     <h2>Perfect Sets</h2>
     <div>
+      <h3>Theorem: Nonempty perfect sets are always uncountable.</h3>
+      <div class="sol">
       <p>
-
+        <i>Explanation:</i> Since some point is a limit point, then it has infinitely many points.  To show that it's uncountable, we assume for contradiction it's countable.  So of course assume \(\vec x_1, \vec x_2, ...\) is an enumeration.  Start by finding a neighborhood \(V_1\) around \(\vec x_1\).  What contradiction are we driving toward?  We can build a descending chain with no intersection.  To that end, construct a neighborhood that <i>excludes</i> \(\vec x_1\) and fits inside \(V_1\).  Then take its closure.  And so on, constructing neighborhoods that avoid all the other points.
+      </p>
+      <p>
+        How do we know we can get this \(V_2\)?  Since \(\vec x_1\) is a limit point we can find an \(\vec x_i\) inside \(V_1\) and fit an obvious ball around that.
+      </p>
+      </div>
+    </div>
+    <h3>Theorem: Every interval of positive length is uncountable.</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation: </i> Take the closure of any interval of positive length, it's perfect.
+      </p>
+    </div>
+    <div>
+      <p>
+        The <b>Cantor set</b> is constructed by \(E_1 = \left[0,\frac 1 3\right]\cup \left[\frac 2 3, 1\right]\) and then \(E_2\) removes the middle third of the left and right parts of \(E_1\), and so on with \(E_3, E_4, ...\)
       </p>
     </div>
 
