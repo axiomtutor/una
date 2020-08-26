@@ -370,7 +370,14 @@
     <h2>Connected Sets</h2>
     <div>
       <p>
-        Sets <i>A</i> and <i>B</i> are <b>separated</b> if both \(A\cap\overline B\) and \(\overline A \cap B\) are empty. 
+        Sets <i>A</i> and <i>B</i> are <b>separated</b> if both \(A\cap\overline B\) and \(\overline A \cap B\) are empty. A set <i>E</i> is connected if it is not the union of two separated sets.
+      </p>
+      <h3>Theorem: A set of real numbers is connected if and only if it contains every intermediate point.</h3>
+      <p>
+        <i>Explanation: </i> If it did not contain some intermediate point then this could be used as a "point of separation".  Take the part of it to the left of the absent point, the part to the right, and show these are separated sets.
+      </p>
+      <p>
+        On the other hand, if the set is separated, then we can take any two points and construct a gap between them.  In particular, if the set is separated into <i>A</i> and <i>B</i> then pick \(x\in A\) and \(y\in B\).  Without loss of generality, we suppose <i>x < y</i>.  What is the gap between them?  \(z = \sup (A\cap [x,y])\) is a good start, especially if we luck out and have \(z \not \in A\).  The hard part is if \(z\in A\).  
       </p>
     </div>
 
