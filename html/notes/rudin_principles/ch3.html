@@ -236,13 +236,19 @@
       <h3>Theorem: \(\sqrt[n] n \rightarrow 1\)</h3>
       <div class="sol">
         <p>
-          <i>Explanation: </i>
+          <i>Explanation:</i> Similar to the previous problem, except when you get to the application of the binomial theorem. The familiar approximation no longer works.  However, we can still approximate it as an upper bound on the second-order term.  (Since every term is zero and so we can drop any that we want.)
         </p>
       </div>
       <h3>Theorem: \(\frac{n^\alpha}{(1+p)^n} \rightarrow 0\) if <i>p > 0</i> and \(\alpha\in\mathbb R\).</h3>
       <div class="sol">
         <p>
-          <i>Explanation: </i>
+          <i>Explanation: </i> This time we don't solve for anything per se, but we can just directly approximate \((1+p)^n\) which is intuitively the hard spot in this problem anyway.  And of course this is also intuitive because it already looks like the binomial theorem.
+        </p>
+        <p>
+          As we saw before we can approximate it down by dropping any terms we want.  If we keep only the <i>k</i>th term let's see what we get.
+
+          $$ \frac{n^\alpha}{(1+p)^n} < \frac{n^\alpha}{\binom n k p^k} $$
+          
         </p>
       </div>
 
