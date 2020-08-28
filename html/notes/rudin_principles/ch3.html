@@ -180,12 +180,15 @@
     <h2>Upper and Lower Limits</h2>
     <div>
       <p>
-        The <b>limsup</b> of a sequence is the supremum over the set of all subsequential limits.  Similarly for <b>liminf</b>.  (Note some authors define the limsup as the limit of the suprema of all truncated sequences.  These definitions are equivalent and proving this fact is a good exercise.)
+        The <b>limsup</b> of a sequence is the supremum over the set of all subsequential limits.  This is also called the <b>upper limit</b>.  Similarly for <b>liminf</b>, called the <b>lower limit</b>.  These are respectively often denoted as \(s^*\) and \(s_*\).  (Note some authors define the limsup as the limit of the suprema of all truncated sequences.  These definitions are equivalent and proving this fact is a good exercise.)
       </p>
       <h3>Theorem: The limsup is a subsequential limit, and any point larger than the limsup is an upper bound for some truncated sequence.</h3>
       <div class="sol">
         <p>
           <i>Explanation:</i> If the sequence is unbounded you can make a subsequence going to infinity in the usual way.  If it's bounded then we already know that the set of subsequential limits is a closed set.  The limsup is a limit point of this set and therefore in the set.
+        </p>
+        <p>
+          For the second part, if we have a value larger than the sup then all the limits are strictly below it and eventually the sequences stay underneath.  For a proof, suppose some limit never stays below <i>x</i>, a contradiction for \(s^*\) comes pretty quickly thereafter.
         </p>
       </div>
     </div>
