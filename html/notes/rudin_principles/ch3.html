@@ -255,7 +255,9 @@
           $$ \binom n k = \frac{n!}{(n-k)!k!} = $$
           $$ n(n-1)\cdots (n-k+1)/k! $$
 
-          Clearly we can round this down by changing <i>n-i</i>s to 1s but this approximation, if you try it, is too severe.  The proof will typically fail.  One thought is that we can approximate at least half of them down to <i>n-i</i> to <i>n/2</i> so long as <i>n-i > n/2</i> (which of course, switches from true to false about halfway down the list of factors).  
+          Clearly we can round this down by changing <i>n-i</i>s to 1s but this approximation, if you try it, is too severe.  The proof will typically fail.  One thought is that we can approximate at least half of them down to <i>n-i</i> to <i>n/2</i> so long as <i>n-i > n/2</i> (which of course, switches from true to false about halfway down the list of factors).  This helps guide us in the choice of <i>k</i>, it needs to be <i>n/2 > k</i>.  For any such choice of <i>k</i>
+
+          $$ \binom n k > \frac{n^k}{2^kk!} $$
         </p>
       </div>
 
