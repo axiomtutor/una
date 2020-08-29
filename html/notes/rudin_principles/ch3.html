@@ -258,6 +258,8 @@
           Clearly we can round this down by changing <i>n-i</i>s to 1s but this approximation, if you try it, is too severe.  The proof will typically fail.  One thought is that we can approximate at least half of them down to <i>n-i</i> to <i>n/2</i> so long as <i>n-i > n/2</i> (which of course, switches from true to false about halfway down the list of factors).  This helps guide us in the choice of <i>k</i>.  We need <i>n/2 > k</i>.  For any such choice of <i>k</i>
 
           $$ \binom n k > \frac{n^k}{2^kk!} $$
+
+          This effectively rounds the first <i>k</i> factors to <i>n/2</i> and the rest to 1.
         </p>
         <p>
           Then we have
@@ -271,9 +273,22 @@
       <h3>Theorem: \(x^n\rightarrow 0\) if |<i>x</i>| < 1.</h3>
       <div class="sol">
         <p>
-          <i>Explanation: </i> Use the theorem above.  With \(\alpha = 0\) we can make any \(x\geq 0\) equal to some \(\frac 1 {1+p}\).  For the case where <i>x < 0</i>, 
+          <i>Explanation: </i> Use the theorem above.  With \(\alpha = 0\) we can make any \(x\geq 0\) equal to some \(\frac 1 {1+p}\).  For the case where <i>x < 0</i>, the even terms and the odd terms both go to 0.  So for any \(\varepsilon\in\mathbb R^+\) we can find an <i>N</i> such that for every odd \(n\geq N \) we have \(|x^n| < \varepsilon\) and then this automatically also holds for all even terms after <i>N+1</i>.  So it holds for all \(n\geq N+1\).
         </p>
       </div>
+    </div>
+    <h2>Section 5</h2>
+    <h2>Series</h2>
+    <div>
+      <p>
+        We did all that work on sequences, in part, because we want to take infinite sums (i.e. <b>series</b>) which are defined as the limits of partial sums.  Each <b>partial sum</b> is just the sum up to some finite final term.  The limit is taken over the number of terms.  If the sequence of terms is given by \(\{a_n\}\) then a partial sum up to <i>q</i> is
+
+        $$ \sum_{n=p}^q a_n $$
+
+        for the series starting at <i>p</i>.  Then for a series
+
+        $$ \sum_{n=1}^\infty a_n = \lim_{q\rightarrow\infty} \sum_{n=1}^q a_n $$
+      </p>
     </div>
 
 
