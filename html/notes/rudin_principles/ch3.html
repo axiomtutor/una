@@ -252,14 +252,10 @@
         <p>
           We can approximate that down even further by approximating up the binomial factor.
 
-          $$ \binom n k = \frac{n!}{(n-k)!k!} = n(n-1)\cdots (n-k+1)/k! < n^k/k! $$
+          $$ \binom n k = \frac{n!}{(n-k)!k!} = $$
+          $$ n(n-1)\cdots (n-k+1)/k! $$
 
-          Where we are replacing each <i>n-i</i> with <i>n</i>.
-        </p>
-        <p>
-          Then we have
-
-          $$ \frac{n^\alpha}{(1+p)^n} < \frac{n^\alpha}{n^kp^k/k!} $$
+          Clearly we can round this down by changing <i>n-i</i>s to 1s but this approximation, if you try it, is too severe.  The proof will typically fail.  One thought is that we can approximate at least half of them down to <i>n-i</i> to <i>n/2</i> so long as <i>n-i > n/2</i> (which of course, switches from true to false about halfway down the list of factors).  
         </p>
       </div>
 
