@@ -312,15 +312,20 @@
       <h3>Theorem: Non-negative Convergence Test.</h3>
       <div class="sol">
         <p>
-          <i>Explanation:</i> The absolute convergence test is a theorem that applies to series of non-negative terms.  For such a series, it must converge if and only if the partial sums are bounded. If the series converges then the partial sums are bounded just from the fact that convergent sequencecs are bounded.  If the partial sums are bounded then they form an increasing (because the terms are non-negative) bounded sequence, and so must converge.
+          <i>Explanation:</i> The non-negative convergence test is a theorem that applies to series of non-negative terms.  For such a series, it must converge if and only if the partial sums are bounded. If the series converges then the partial sums are bounded just from the fact that convergent sequencecs are bounded.  If the partial sums are bounded then they form an increasing (because the terms are non-negative) bounded sequence, and so must converge.
         </p>
       </div>
       <h3>Theorem: Comparison Test.</h3>
       <div class="sol">
         <p>
-          <i>Explanation:</i> The comparison test says that if a larger series converges then the smaller one does; and if a smaller series diverges then the larger one does.  More rigorously, we imagine some given series \(\displaystyle \sum_{n=1}^\infty a_n\).  If \(|a_n|\leq c_n\) for some other terms \(c_n\) and some \(N_0\) and each \(n\geq N_0\), then
+          <i>Explanation:</i> The comparison test says that if a larger series converges, then the smaller one does; and if a smaller series diverges then the larger one does.  More rigorously, we imagine some given series \(\displaystyle \sum_{n=1}^\infty a_n\).  If \(|a_n|\leq c_n\) for some other terms \(c_n\) and some \(N_0\) and each \(n\geq N_0\), then
 
-          $$ \sum_{n=1}^\infty c_n < \infty \Longrightarrow \sum_{n=1}^\infty a_n $$
+          $$ \sum_{n=1}^\infty c_n < \infty \Longrightarrow \sum_{n=1}^\infty a_n < \infty $$
+        </p>
+        <p>
+          It has a dual as well. If a smaller series diverges then the larger one does.  That is to say, if \(a_n\geq d_n\geq 0\) for \(n\geq N_0\), then
+
+          $$ \sum_{n=1}^\infty d_n \not\in \mathbb R \Longrightarrow \sum_{n=1}^ a_n \not\in \mathbb R$$
         </p>
       </div>
 
