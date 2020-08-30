@@ -523,7 +523,28 @@
       <p>
         <i>
           Explanation:
-        </i> The theorem claims that if the limsup of \(\left|\frac{a_{n+1}}{a_n}\right|\) is < 1, then \(\sum a_n < \infty\).  
+        </i> The theorem claims that if the limsup of \(\left|\frac{a_{n+1}}{a_n}\right|\) is < 1, then \(\sum a_n < \infty\). If the liminf is > 1, then divergence.
+      </p>
+      <p>
+        If the limsup is < 1, like before we can find a \(0 < \beta < 1\) and <i>N</i> such that for all \(n\geq N\)
+
+        $$ \left|\frac{a_{n+1}}{a_n}\right| < \beta $$
+      </p>
+      <p>
+        The main trick of the proof is to realize that every <i>n</i> gives an inequality, and these can be rearranged and chained together.
+
+        $$ |a_{N+1}| < \beta |a_N| $$
+        $$ |a_{N+2}| < \beta |a_{N+1}| < \beta^2|a_N| $$
+      </p>
+      <p>
+        What you see is that every \(|a_{n}|\) can be related to \(|a_N|\).
+
+        $$ |a_n| < |a_N|\beta^{-N}\cdot \beta^n $$
+
+        Well this looks like a geometric series again, and we can use the comparison test.
+      </p>
+      <p>
+        When the liminf is greater than 1, it's easy enough to show that the series fails the test for divergence.  
       </p>
     </div>
 
