@@ -703,8 +703,8 @@
           For this \(\varepsilon\) apply absolute convergence and get an <i>N</i>.  Now go far enough out in the permutation until all numbers up to <i>N</i> show up in it.  Call this point <i>M</i>.  Now consider for any \(m\geq M\)
 
           $$ \left|\left(\sum_{n=1}^m a_{\sigma(n)}\right)-A \right| = \left|\left(\sum_{n=1}^M a_n\right) + \left(\sum_{\text{other terms up to $m$}}a_{n}\right)-A\right| $$
-          $$ \leq \left|\sum_{n=1}^M a_n\right| + \left|\sum_{\text{other}}a_n-A\right| $$
-          $$ < \sum_{n=1}^M|a_n| + \varepsilon $$
+          $$ \leq \left|\sum_{n=1}^M a_n-A\right| + \left|\sum_{\text{other}}a_n\right| $$
+          $$ < \varepsilon +  $$
         </p>
       </div>
     </div>
