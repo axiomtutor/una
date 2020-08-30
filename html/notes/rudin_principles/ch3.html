@@ -574,7 +574,7 @@
           $$ R = \frac 1 {\limsup_{n\rightarrow \infty}\sqrt[n]{|c_n|}} $$
         </p>
         <p>
-          The proof effectively swallows the entire \( c_z^n \) into a single term \(a_n\) and applies the root test.
+          The proof effectively swallows the entire \( c_nz^n \) into a single term \(a_n\) and applies the root test.
         </p>
       </div>
     </div>
@@ -588,7 +588,26 @@
     </h3>
     <div class="sol">
       <p>
-        <i>Explanation:</i> 
+        <i>Explanation:</i> The proof is very straight-forward
+
+        $$ \sum_{n=p}^q a_nb_n = \sum_{n=p}^{q-1} (A_n-A_{n-1})b_n $$
+
+        and then distribute and split of late and early terms.
+      </p>
+      <p>
+        The expression treats \(\{b_n\}\) differently, especially introducing \(b_n-b_{n+1}\).  If the sequence is montonic we then always know the sign of this factor.
+      </p>
+    </div>
+    <h3>Theorem: \(\sum a_nb_n < \infty\) when the partial sums of \(\sum a_n\) are bounded, when \(b_n\) is monotonically decreasing, and when \(b_n\rightarrow 0\).</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> The proof is direct from Cauchy convergence, and falls right out of the assumptions and the previous theorem.
+      </p>
+    </div>
+    <h3>Theorem: Alternating Series Test</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> The theorem states that, if a sequence is monotonically decreasing in absolute value, alternating, and goes to 0, then the series always converges.  
       </p>
     </div>
 
