@@ -463,16 +463,20 @@
 
           $$ 0 < e-\sum_{n=0}^m \frac{1}{n!} < \frac{1}{(m+1)!}\cdot \frac{1}{1-1/(m+2)} $$
           $$ = \frac{1}{(m+1)!}\frac{1}{\frac{m+2-1}{m+2}} = \frac{1}{(m+1)!}\frac{m+2}{m+1} $$
-          $$ = \frac{1}{m!} $
         </p>
         <p>
-          The advantage of a rational expression is that we can use this to prove <i>e</i> is irrational.
+          The advantage of a rational expression is that we can use this to prove <i>e</i> is irrational.  Before doing so it'll be nice to use an even simpler rational expression, in order to minimize computation later on.
+
+          $$ \frac{1}{(m+1)!}\frac{m+2}{m+1} < \frac{1}{(m+1)!}\frac{m+1}{m} $$
+          $$ =\frac{1}{m!m} $$
         </p>
       </div>
       <h3>Theorem: <i>e</i> is irrational.</h3>
       <div class="sol">
         <p>
-          <i>Explanation:</i>
+          <i>Explanation:</i> If <i>e = p/q</i> then we should get some kind of integer-like problem from
+
+          $$ 0 < e-\sum_{n=0}^m \frac 1 {n!} < \frac{1}{m!m} $$
         </p>
       </div>
     </div>
