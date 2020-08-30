@@ -607,12 +607,32 @@
     <h3>Theorem: Alternating Series Test</h3>
     <div class="sol">
       <p>
-        <i>Explanation:</i> The theorem states that, if a sequence is monotonically decreasing in absolute value, alternating, and goes to 0, then the series always converges.  
+        <i>Explanation:</i> The theorem states that, if a sequence is monotonically decreasing in absolute value, alternating, and goes to 0, then the series always converges.
+      </p>
+      <p>
+        The proof merely uses the previous result with \(a_n=(-1)^n\) and \(b_n=|c_n|\).
       </p>
     </div>
+    <h3>Theorem: Convergence on the radius except at 1, for power series with decreasing coefficients that go to 0.</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> We already have the theorem about radii of convergence always existing, but we couldn't get a clear answer about convergence on the radius.  Here we get some clarity for a class of power series.  Namely if it's \(\sum c_n z^n\) and:
 
+        <ul>
+          <li>The radius is 1</li>
+          <li>\(c_n\rightarrow 0\)</li>
+          <li>\( c_1 \geq c_2 \geq \dots \)</li>
 
+         then convergence of the power series holds for all numbers on the radius, i.e. for <i>|z| = 1</i>, except for possibly <i>z = 1</i>.  If the radius is not 1 we can
+      </p>
+      <p>
+        The proof again merely leverages the earlier theorem.  Setting \(a_n = z_n\) and \(b_n = c_n\), we do need to see that the partial sums \(A_n\) are bounded before we can infer the result.
 
+        $$ |A_n| = \left|\sum_{m=0}^n z^m\left| = \left|\frac{1-z^{n+1}}{1-z}\right| $$
+
+        and if <i>|z| = 1</i> then \(|1-z^{n+1}| \leq |1|+|-z^{n+1}| \leq 2\).  
+      </p>
+    </div>
 
 
 
