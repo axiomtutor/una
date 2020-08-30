@@ -419,12 +419,17 @@
         <p>
           We define \(\displaystyle e = \sum_{n=0}^\infty \frac 1 {n!}\) for no apparent reason.
         </p>
-        <h3>Theorem: \(\left( 1+\frac 1 n\right)^n \rightarrow e</h3>
+        <h3>Theorem: \(\left( 1+\frac 1 n\right)^n \rightarrow e \)</h3>
         <div class="sol">
           <p>
-            <i>Explanation:</i> It is easy to show that \(\left(1+\frac 1 n\right)^n \leq \sum_{m=1}^n \frac 1 {n!}\) merely with the binomial theorem, after expanding out the binomial function and grouping factors.  Since limsups preserve ordering, we have
+            <i>Explanation:</i> It is easy to show that \(\displaystyle\left(1+\frac 1 n\right)^n \leq \sum_{m=1}^n \frac 1 {n!}\) merely with the binomial theorem, after expanding out the binomial function and grouping factors.  Since limsups preserve ordering, we have
 
             $$ \limsup_{n\rightarrow \infty} \left(1+\frac 1 n\right)^n \leq e $$
+          </p>
+          <p>
+            Proving the reverse inequality is tricky.  The intuition is to play with the binomial expansion of \(\left(1+\frac 1 n\right)^n\) and observe that the non-factorial part is (1) the part we want to go away and (2) goes to 1 as we let the denominators go to infinity.  So for any fixed choice of <i>m</i> we can find an <i>n</i> such that
+
+            $$ \left(1+\frac 1 n\right)^n \geq 1+1+\frac{1}{2!}\left(1-\frac 1 n\right)+\dots+\frac{1}{m!}\left(1-\frac 1 n\right)\left(\1-\frac{m-1}{n}\right) $$
           </p>
         </div>
       </div>
