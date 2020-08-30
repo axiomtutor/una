@@ -452,13 +452,26 @@
 
           $$ \frac{1}{(m+1)!}e $$
 
-          and for the purpose of seeing how fast these "remainders" go to zero, this is good enough.  It goes to zero at least as fast as \(\frac{1}{n!}\) which is very fast. But a different approximation will be even more useful.  If we instead approximate
+          and for the purpose of seeing how fast these "remainders" go to zero, this is good enough.  It goes to zero at least as fast as \(\frac{1}{n!}\) which is very fast.
+        </p>
+        <p>
+          But a different approximation will be even more useful.  If we instead approximate
 
           $$ 1+\frac{1}{m+2}+\frac{1}{(m+3)(m+2)}+\dots < 1+\frac{1}{m+2}+\frac{1}{(m+2)^2}+\dots $$
 
           which is a less severe rounding anyway, then we get a geometric series.  The advantage of this is we get an express in rational numbers.
 
-          $$ 0 < e-\sum_{n=0}^m < \frac{1}{(m+1)!}\cdot \frac{1}{1-(m+2)} $$
+          $$ 0 < e-\sum_{n=0}^m \frac{1}{n!} < \frac{1}{(m+1)!}\cdot \frac{1}{1-1/(m+2)} $$
+          $$ = \frac{1}{(m+1)!}\frac{1}{\frac{m+2-1}{m+2}} $$
+        </p>
+        <p>
+          The advantage of a rational expression is that we can use this to prove <i>e</i> is irrational.
+        </p>
+      </div>
+      <h3>Theorem: <i>e</i> is irrational.</h3>
+      <div class="sol">
+        <p>
+          <i>Explanation:</i>
         </p>
       </div>
     </div>
