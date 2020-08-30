@@ -657,7 +657,20 @@
     </div>
     <div>
       <p>
-        We define the <b>Cauchy product</b> of \(\sum a_n\) and \(\sum b_n\) to be \(\sum \sum a_kb_{n-k} \).
+        We define the <b>Cauchy product</b> of \(\sum a_n\) and \(\sum b_n\) to be \(\sum \sum a_kb_{n-k} \). We define it this way because it is just what you need for products of power series.  If you examine products of polynomials these are exactly the coefficients on the term of degree <i>n</i>.
+      </p>
+    </div>
+    <h3>Theorem: If one series converges absolutely, and another series converges, then the series of the Cauchy product is the product of the series.</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> Say the partial sums of all three series are \(A_n,B_n,C_n\).  Take the terms of the Cauchy product, \(C_n\).  Group all the \(a_0\) terms together and get \(a_0B_n\).  Group the \(a_1\) terms, and so on, you get
+
+        $$ C_n = a_0B_n+\dots+a_nB_0 $$
+      </p>
+      <p>
+        If \(\sum a_n = A, \sum b_n = B\) then use the remainder of \(B_n\) defined by \(B = B_n - \beta_n\).  Replace \(B_n\) in the above and collect <i>B</i> so tht you get
+
+        $$ A_n B + \sum a_n \beta_{n-k} $$
       </p>
     </div>
 
