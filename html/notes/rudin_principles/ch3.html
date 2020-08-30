@@ -695,13 +695,9 @@
       <h3>Theorem: Absolutely convergent series are invariant under rearrangements.</h3>
       <div class="sol">
         <p>
-          <i>Explanation:</i> We show that the difference of the two sums goes to 0, which is to say
+          <i>Explanation:</i> If the series is \(\sum a_n = A\) then we show that the difference with any partial sum is arbitrarily small.  That is, 
 
-          $$ \sum(a_n-a_{\sigma(n)}) = 0 $$
-
-          Using absolute convergence to a given value <i>A</i>, we get an <i>N</i>.  Go far enough out in the permutation so that all natural numbers up to <i>N</i> appear.  Call this point \(N_2\).  The claim is that for \(m\geq N_2\) we get
-
-          $$ \left|\sum_{n=1}^m (a_n-a_{\sigma(n)})\right| < \varepsilon $$
+          $$ \left|\sum_{n=1}^m (a_{\sigma(n)}-A) \right| < \varepsilon $$
         </p>
       </div>
     </div>
