@@ -657,7 +657,7 @@
     </div>
     <div>
       <p>
-        We define the <b>Cauchy product</b> of \(\sum a_n\) and \(\sum b_n\) to be \(\sum \sum a_kb_{n-k} \). We define it this way because it is just what you need for products of power series.  If you examine products of polynomials these are exactly the coefficients on the term of degree <i>n</i>.
+        We define the <b>Cauchy product</b> of \(\sum a_n\) and \(\sum b_n\) to be \(\sum \sum a_kb_{n-k} \). We define it this way as the natural extension of how finite products of sums distribute.
       </p>
     </div>
     <h3>Theorem: If one series converges absolutely, and another series converges, then the series of the Cauchy product is the product of the series.</h3>
@@ -673,8 +673,31 @@
         $$ A_n B + \sum a_n \beta_{n-k} $$
       </p>
       <p>
-        Taking the limit as \(n\rightarrow\infty\) we hope the right-hand term dies. Because \(\sum b_n < \infty\) we know \(\beta_n \rightarrow 0\).  
+        Taking the limit as \(n\rightarrow\infty\) we hope the right-hand term dies. Because \(\sum b_n < \infty\) we know \(\beta_n \rightarrow 0\).  So at this point we jump into an \(\varepsilon, N\) proof to show
+
+        $$ \sum a_n \beta_{n-k} = 0 $$
+
+        Using the <i>N</i> that we get from the \(\beta\)s, we break the sum above into two parts.  One is rounded up to \(\varepsilon \sum|a_n|\) at which point the assumption of absolute convergence kicks in. The other term goes to 0 simply because \(a_k\rightarrow 0\).
       </p>
+    </div>
+    <h2>Section 11</h2>
+    <h2>Rearrangements</h2>
+    <div>
+      <p>
+        A rearrangement of \(\sum a_n\) is any \(\sum a_{\sigma(n)}\) where \(\sigma\) is a permutation of the natural numbers.
+      </p>
+      <h3>Theorem: Any convergent series which is not absolutely convergent can be rearranged to converge to anything.</h3>
+      <div class="sol">
+        <p>
+          <i>Explanation:</i> I'm not currently going to explain this because it's pretty elaborate for a theorem that isn't that useful really.  The most important point is just that you are warned against doing rearrangements on series that don't converge absolutely.  But the big-picture version of the proof is:  Separate the series out into its negative and positive terms.  Then take positive terms until you go over the value you want.  Then start taking negative terms until you go under.  Continue, and in the limit, this converges to whatever value you want.
+        </p>
+      </div>
+      <h3>Theorem: Absolutely convergent series are invariant under rearrangements.</h3>
+      <div class="sol">
+        <p>
+          <i>Explanation:</i>
+        </p>
+      </div>
     </div>
 
 
