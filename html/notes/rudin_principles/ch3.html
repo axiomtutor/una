@@ -363,7 +363,7 @@
         <p>
           <i>Explanation:</i> The theorem is that, for a decreasing sequence of non-negative \(a_n\),
 
-          $$ \sum_{n=1}^\infty a_n < \infty \Longleftrightarrow \sum_{n=1}^\infty 2^na_{2^n} < \infty $$
+          $$ \sum_{n=1}^\infty a_n < \infty \Longleftrightarrow \sum_{n=0}^\infty 2^na_{2^n} < \infty $$
 
           which seems like an utterly useless theorem.  At least at first glance it seemed that way to me--why should we care about this powers of two thing?  Its use is that it affords a kind of severe rounding of the terms to just the value at every power of two, which is incredibly sparse in the integers.
         </p>
@@ -377,13 +377,13 @@
           The harder direction is to prove the converse.  In fact Rudin doesn't even prove the first direction because his proof is so much nicer.  Because the two sequences \(a_n\) and \(2^na_{2^n}\) are positive and decreasing, we can rely on the theorem which tells us they converge if and only if the partial sums are bounded.  In particular, the really sweet flavor of Rudin's proof comes from the fact that we can prove that they are either both bounded or both unbounded.  Then they either converge together or diverge together.
         </p>
         <p>
-          More specifically the proof strategy is to show that for any \(\displaystyle \sum_{n=1}^m a_m\) we can find a \(\displaystyle\sum_{n=1}^k 2^k a_{2^k}\) which is bigger.  And conversely for each partial sum of the second kind we can find a sum of the first kind which is bigger.  Thus if all partial sums of one is bounded, it's also a bound for the other.
+          More specifically the proof strategy is to show that for any \(\displaystyle \sum_{n=1}^m a_n\) we can find a \(\displaystyle\sum_{n=0}^k 2^n a_{2^n}\) which is bigger.  And conversely for each partial sum of the second kind we can find a sum of the first kind which is bigger.  Thus if all partial sums of one is bounded, it's also a bound for the other.
         </p>
         <p>
           Showing that a sum of the first kind is bounded by some sum of the second is done in the same way as my proof earlier.  Showing that a sum of the second kind is bounded by a sum of the first kind ... well I lied a little bit.  That's close but not quite what we will show.
         </p>
         <p>
-          For any given sum of the second kind, we expand each term, as a kind of inverse of the collapsing that we did in the left-to-right direction.  We replace each \(2^n a_{2^n}\) with \(2(a_{2^{n-1}}+\dots+a_{2^n}\).  After all such replacements and pulling the 2 out, you get \(\displaystyle 2\sum_{n=1}^{2^k} a_n\).  
+          For any given sum of the second kind, we expand each term, as a kind of inverse of the collapsing that we did in the left-to-right direction.  It might be best illustrated on a small example.  If you have \(a_1+2a_2+4a_4+8a_8\) then we know we want to line this up with terms from a series of the first kind.  Thinking of \(4a_4 = a_4+a_4+a_4+a_4\) we will want to round one of these to \(a_3\) and one to \(a_2\) and one to \(a_1\). Then use the replacement \(4a_4 \leq a_1+a_2+a_3+a_4\).  But what do we do with \(a_2\) and \(a_1\)?  We seem to have reproduced them, and they don't fit neatly into something that will give us a series of the first kind.  
         </p>
       </div>
     </div>
