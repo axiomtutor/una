@@ -412,8 +412,21 @@
       <h3>Theorem: \(\displaystyle \sum \frac 1 {n(\log n)^p} \) converges just if <i>p > 1</i>.</h3>
       <div class="sol">
         <p>
-          <i>Explanation:</i> 
+          <i>Explanation:</i> Again use Cauchy's covering theorem, which interacts nicely with the logarithm.
         </p>
+      </div>
+      <div>
+        <p>
+          We define \(\displaystyle e = \sum_{n=0}^\infty \frac 1 {n!}\) for no apparent reason.
+        </p>
+        <h3>Theorem: \(\left( 1+\frac 1 n\right)^n \rightarrow e</h3>
+        <div class="sol">
+          <p>
+            <i>Explanation:</i> It is easy to show that \(\left(1+\frac 1 n\right)^n \leq \sum_{m=1}^n \frac 1 {n!}\) merely with the binomial theorem, after expanding out the binomial function and grouping factors.  Since limsups preserve ordering, we have
+
+            $$ \limsup_{n\rightarrow \infty} \left(1+\frac 1 n\right)^n \leq e $$
+          </p>
+        </div>
       </div>
     </div>
 
