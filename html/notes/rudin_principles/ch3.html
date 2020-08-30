@@ -484,17 +484,32 @@
           $$ 0 < m!me - m!m\sum_{n=0}^m \frac 1 {n!} < 1 $$
         </p>
         <p>
-          Since we want integers, and <i>m</i> is free for us to pick, then setting <i>m = q</i> implies that each of <i>q!qe = q!q(p/q)</i> and \(q!q\sum_{n=0}^q\frac{1}{n!}\) are integers.  So there's an integer between 0 and 1, a contradiction.
+          Since we want integers, and <i>m</i> is free for us to pick, then setting <i>m = q</i> implies that each of <i>q!qe = q!q(p/q)</i> and \(\displaystyle q!q\sum_{n=0}^q\frac{1}{n!}\) are integers.  So there's an integer between 0 and 1, a contradiction.
         </p>
       </div>
     </div>
-    <h3>Section 7</h3>
-    <h3>Theorem: Root Test</h3>
+    <h2>Section 7</h2>
+    <h2>Theorem: Root Test</h2>
     <div class="sol">
       <p>
         <i>
           Explanation:
         </i> The theorem claims that if \(\{a_n\}\) is a sequence, and the limsup of \(\sqrt[n]{|a_n|}\) is less than one, then \(\sum a_n < \infty\).  If it's > 1 then the series diverges, and the test is indeterminant when = 1.
+      </p>
+      <p>
+        For the case when the limsup is < 1, this seems related to the geometric series.  We can in fact get powers of <i>n</i> by considering any \(0 < \beta < 1\) such that for some <i>N</i> and any \(n\geq N\)
+
+        $$ \sqrt[n]{|a_n|} < \beta $$
+
+        so that
+
+        $$ |a_n| < \beta^n $$
+      </p>
+      <p>
+        From here we can use the comparison test with a geometric series to easily show convergence.
+      </p>
+      <p>
+        
       </p>
     </div>
 
