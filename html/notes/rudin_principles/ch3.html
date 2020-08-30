@@ -441,10 +441,25 @@
         </div>
       </div>
       <div>
-        We will later be interested in the speed with which sequences converge to their values, and we can see a first instance of this analysis with <i>e</i>.  We estimate \(\displaystyle e - \sum_{n=0}^m \frac{1}{n!}\) by canceling the shared first <i>m </i> + 1 terms.  
+        <p>
+          We will later be interested in the speed with which sequences converge to their values, and we can see a first instance of this analysis with <i>e</i>.  We estimate \(\displaystyle e - \sum_{n=0}^m \frac{1}{n!}) by canceling the shared first <i>m </i> + 1 terms.
 
-        $$ \sum_{n=m+1}^\infty \frac{1}{n!} = \frac{1}{(m+1)!} + \frac{1}{(m+2)!} + \dots  $$
-        $$ = \frac{1}{(m+1)!}\left(1 + \frac{1}{m+2} + \frac{1}{(m+3)(m+2)}\right) $$
+          $$ \sum_{n=m+1}^\infty \frac{1}{n!} = \frac{1}{(m+1)!} + \frac{1}{(m+2)!} + \dots  $$
+          $$ = \frac{1}{(m+1)!}\left(1 + \frac{1}{m+2} + \frac{1}{(m+3)(m+2)} + \dots \right) $$
+        </p>
+        <p>
+          I'm tempted to try to wrangle this into a form that looks like <i>e</i>.  Certainly the given quantity is less than
+
+          $$ \frac{1}{(m+1)!}e $$
+
+          and for the purpose of seeing how fast these "remainders" go to zero, this is good enough.  It goes to zero at least as fast as \(\frac{1}{n!}\) which is very fast. But a different approximation will be even more useful.  If we instead approximate
+
+          $$ 1+\frac{1}{m+2}+\frac{1}{(m+3)(m+2)}+\dots < 1+\frac{1}{m+2}+\frac{1}{(m+2)^2}+\dots $$
+
+          which is a less severe rounding anyway, then we get a geometric series.  The advantage of this is we get an express in rational numbers.
+
+          $$ 0 < e-\sum_{n=0}^m < \frac{1}{(m+1)!}\cdot \frac{1}{1-(m+2)} $$
+        </p>
       </div>
     </div>
 
