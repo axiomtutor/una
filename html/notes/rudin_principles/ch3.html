@@ -433,9 +433,10 @@
 
           </p>
           <p>
-            And now we can take the limit on both sides as \(n\rightarrow\infty\) to get
-
-            $$ \lim_{n\rightarrow\infty}\left(1+\frac 1 n\right) \geq \sum_{k=0}^m \frac{1}{m!} $$
+            And now we can take the limit on both sides as \(n\rightarrow\infty\) ... except we kind of can't.  If you're impulse is just to apply \(\displaystyle \lim_{n\rightarrow\infty}\) to both sides, keep in mind that we haven't proved this theorem.  And it's not true if one of the limits isn't already guaranteed to exist.  Instead we have to use the facts that limsups and liminfs preserve order.
+          </p>
+          <p>
+            If you're tempted to apply the limsup, because did in the earlier part, and now you get equality ... well you're right.  But then you're left wondering how to show that the limsup is the limit.  If you applied the liminf instead, you would have a liminf above a limsup.  You know that implies equality.  And because the equality of liminf and limsup implies equality with the limit, now you're done.  
           </p>
         </div>
       </div>
