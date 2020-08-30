@@ -695,9 +695,14 @@
       <h3>Theorem: Absolutely convergent series are invariant under rearrangements.</h3>
       <div class="sol">
         <p>
-          <i>Explanation:</i> If the series is \(\sum a_n = A\) then we show that the difference with any partial sum is arbitrarily small.  That is, 
+          <i>Explanation:</i> If the series is \(\sum a_n = A\) then we show that the rearrangement is also $A$.  In particular we show there is always an <i>M</i> such that if \(m\geq M\) then
 
           $$ \left|\sum_{n=1}^m (a_{\sigma(n)}-A) \right| < \varepsilon $$
+        </p>
+        <p>
+          For this \(\varepsilon\) apply absolute convergence and get an <i>N</i>.  Now go far enough out in the permutation until all numbers up to <i>N</i> show up in it.  Call this point <i>M</i>.  Now consider for any \(m\geq M\)
+
+          $$ \left|\sum_{n=1}^m (a_{\sigma(n)}-A) \right| = \left|\left(\sum_{n=1}^N a_n\right) + \left(\sum_{\text{other terms up to $m$}}a_{n}\right)-a\right| $$
         </p>
       </div>
     </div>
