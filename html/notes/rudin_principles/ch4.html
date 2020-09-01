@@ -24,6 +24,45 @@
 
         $$ d(x,p) <\delta \Longrightarrow d(f(x),f(p)) < \varepsilon $$
       </p>
+      <h3>Theorem: The limit of a function at a point is the same as the limit of function values, on any sequence of domain values converging to the correct point.</h3>
+      <div class="sol">
+        <p>
+          <i>Explanation:</i> The theorem claims that  \(\displaystyle\lim_{x\rightarrow p}f(x) = q\) if and only if for every \(p_n\rightarrow p\) we have
+
+          $$ \lim_{n\rightarrow\infty}f(p_n) = q $$
+        </p>
+        <p>
+          The proof going left-to-right takes any \(\varepsilon\in\mathbb R^+\) and finds a \(\delta\).  But by the convergence of \(P_n\) we can find an <i>N</i> corresponding to \(\delta\).
+        </p>
+        <p>
+          In the right-to-left direction, we prove the contrapositive and suppose there is some \(\varepsilon\in\mathbb R^+\) for which every \(\delta\in\mathbb R^+\) does what it does.  We can then build a specific sequence of \(\delta\)s like \(\delta_n = 1/n\) to construct a sequence converging to <i>p</i> but the function values staying out of range.
+        </p>
+      </div>
+      <h3>Corollary: Limits of functions are unique.</h3>
+      <div class="sol">
+        <p>
+          <i>Explanation:</i> Since limits of sequences are unique.  Limits of functions are some limits of sequences, so they too must be unique.
+        </p>
+      </div>
+      <h3>Theorem: Limits of functions distribute over sums, products, and quotients.</h3>
+      <div class="sol">
+        <p>
+          <i>Explanation:</i> These all inherit from theorems about limits of sequences.
+        </p>
+      </div>
+    </div>
+    <h2>Section 2</h2>
+    <h2>Continuous Functions</h2>
+    <div>
+      <p>
+        A function <i>f</i> between metric spaces is <b>continuous at <i>p</i></b> if for every neighborhood of \(f(p)\) there is a neighborhood of <i>p</i> which maps into it.
+      </p>
+    </div>
+    <h3>Theorem: Being continuous at <i>p</i> is the same as the limit and function value agreeing at <i>p</i>.</h3>
+    <div class="sol">
+      <p>
+        <i>Expalantion:</i> 
+      </p>
     </div>
 
 
