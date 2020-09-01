@@ -73,7 +73,28 @@
         Let \(\varepsilon\in\mathbb R^+\) be given, get \(\delta\in\mathbb R^+\) for <i>g</i>.  Use \(\delta\) for the "\(\varepsilon\)" bound on <i>f</i>.
       </p>
     </div>
-    <h3>Theorem: Continuous functions are precisely those which inverse map open sets to open sets.</h3>
+    <h3>Theorem: Continuous functions are precisely those which inverse-map open sets to open sets.</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> Suppose <i>f</i> is continuous and <i>V</i> is an open subset of the range.  We directly show that the inverse image is open by showing every point \(x\in f^{-1}(V)\) is interior.  In particular, because <i>V</i> is open, we can find an \(\varepsilon\) neighborhood of \(f(x)\), and then find a \(\delta\) neighborhood of <i>x</i> which maps into <i>V</i>.  But therefore this is a neighborhood of <i>x</i> fitting entirely inside the inverse image.
+      </p>
+      <p>
+        Now suppose <i>f</i> inverse-maps open sets to open sets, and we show that <i>f</i> is continuous everywhere. So let \(x\in X\), and take an \(\varepsilon\) neighborhood of <i>f(x)</i>.  The inverse image is an open set, so put a neighborhood of <i>x</i> fitting inside this inverse image.  Say the radius is \(\delta\).
+      </p>
+    </div>
+    <h3>Corollary: Continuous functions are also those which inverse-map closed sets to closed sets.</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> Complements of open sets are closed.
+      </p>
+    </div>
+    <h3>Theorem: Sums, products, and quotients of complex continuous functions are continuous (except where the denominator is 0).</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> This is not very different from the analogous claim for limits of functions.  The only difference is the possibility of isolated points, but here there is nothing to prove since all functions are continuous at any isolated point.
+      </p>
+    </div>
+    <h3>Theorem: If \(f: X \rightarrow \mathbb R^k\) by \(f(\vec x) = (f_1(x_1, \dots, f_k(x_k))\) then <i>f</i> is continuous if and only if each component function is.  Sums and dot-products of continuous functions are continuous.</h3>
     <div class="sol">
       <p>
         <i>Explanation:</i> 
