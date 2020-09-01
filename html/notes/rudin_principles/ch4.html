@@ -94,7 +94,23 @@
         <i>Explanation:</i> This is not very different from the analogous claim for limits of functions.  The only difference is the possibility of isolated points, but here there is nothing to prove since all functions are continuous at any isolated point.
       </p>
     </div>
-    <h3>Theorem: If \(f: X \rightarrow \mathbb R^k\) by \(f(\vec x) = (f_1(x_1, \dots, f_k(x_k))\) then <i>f</i> is continuous if and only if each component function is.  Sums and dot-products of continuous functions are continuous.</h3>
+    <h3>Theorem: If \(f: X \rightarrow \mathbb R^k\) by \(f(\vec x) = (f_1(x_1), \dots, f_k(x_k))\) then <i>f</i> is continuous if and only if each component function is.  Sums and dot-products of continuous functions are continuous.</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> Suppose <i>f</i> is continuous at \(x\in X\).  Then with the \(\varepsilon,\delta\) you get, use in the codomain the fact that projections are always smaller in magnitude.  For the converse, you can either bound each component by \(\varepsilon/k\) or prove the contrapositive.
+      </p>
+      <p>
+        The second claim comes from the first and the closure of continuous functions under sums and products.
+      </p>
+    </div>
+    <h2>Section 3</h2>
+    <h2>Continuity and Compactness</h2>
+    <div>
+      <p>
+        A function is called <b>bounded</b> if its image is a bounded set.
+      </p>
+    </div>
+    <h3>Theorem: Continuous functions on a compact metric space have a compact image.</h3>
     <div class="sol">
       <p>
         <i>Explanation:</i> 
