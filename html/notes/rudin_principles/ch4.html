@@ -22,7 +22,7 @@
       <p>
         We suppose we have metric spaces <i>X</i> and <i>Y</i>, and \(f:X\rightarrow Y\).  <i>q</i> is the <b>limit of the function</b> <i>f</i> at <i>p</i> if \( (\forall \varepsilon\in\mathbb R^+)(\exists \delta\in\mathbb R^+)(\forall x\in X) \) we have
 
-        $$ d(x,p) <\delta \Longrightarrow d(f(x),f(p)) < \varepsilon $$
+        $$ d(x,p) <\delta \Longrightarrow d(f(x),q) < \varepsilon $$
       </p>
       <h3>Theorem: The limit of a function at a point is the same as the limit of function values, on any sequence of domain values converging to the correct point.</h3>
       <div class="sol">
@@ -61,7 +61,22 @@
     <h3>Theorem: Being continuous at <i>p</i> is the same as the limit and function value agreeing at <i>p</i>.</h3>
     <div class="sol">
       <p>
-        <i>Expalantion:</i> 
+        <i>Expalantion:</i> The only difference between the definitions of limit and continuity is the specification the function value.  When the limit point is specified to be <i>f(p)</i>, the two defintions collapse into the same.
+      </p>
+    </div>
+    <h3>Theorem: Compositions of continuous functions are continuous.</h3>
+    <div class="sol">
+      <p>
+        <i>Expalantion:</i> More precisely the theorem states that if <i>f</i> is continuous at <i>p</i>, and <i>g</i> is continuous at <i>f(p)</i>, then the function \(h=g\circ f\) is continuous at <i>p</i>.
+      </p>
+      <p>
+        Let \(\varepsilon\in\mathbb R^+\) be given, get \(\delta\in\mathbb R^+\) for <i>g</i>.  Use \(\delta\) for the "\(\varepsilon\)" bound on <i>f</i>.
+      </p>
+    </div>
+    <h3>Theorem: Continuous functions are precisely those which inverse map open sets to open sets.</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> 
       </p>
     </div>
 
