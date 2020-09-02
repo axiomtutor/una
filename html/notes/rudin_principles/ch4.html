@@ -179,6 +179,46 @@
         We already know [<i>a,b</i>] is connected and so the image is.  And we know that for a connected set of real numbers they contain all intermediate values.
       </p>
     </div>
+    <h2>Section 5</h2>
+    <h2>Discontinuities</h2>
+    <div>
+      <p>
+        The <b>left-handed limit</b> at a point <i>x</i> is defined by limits to <i>x</i> taking only values less than <i>x</i>.  We denote the left-handed limit by <i>f(x-)</i> and the right-handed by <i>f(x+)</i>.
+      </p>
+    </div>
+    <h3>Theorem: The limit exists if and only if it is equal to both the left- and right-handed limits.</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> Part of this theorem is a cheat.  Namely in the right-to-left direction, part of the assumption is that the limit exists.  So of course from that we infer the limit exists.  Dumb.
+      </p>
+      <p>
+        The interesting part is left-to-right, but even that's not so interesting.  We already know that if the limit exists, every sequence converging to <i>x</i> makes function values converge to <i>f(x)</i>.
+      </p>
+    </div>
+    <div>
+      <p>
+        A <b>simple discontinuity</b> is one in which both handed limits exist.  A discontinuity is <b>of the second kind</b> if it's not simple.
+      </p>
+    </div>
+    <h3>Section 6</h3>
+    <h3>Monotonic Functions</h3>
+    <div>
+      <p>
+        A function is <b>monotonically increasing</b> if it weakly preserves order.
+      </p>
+    </div>
+    <h3>Theorem: For a monotonically increasing function, at any point the left-handed limit exist.  And it is the sup of function values over the left side of the domain.  Similar for right-handed limits.  Also the handed limits surround the function value.</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> The intuition is clear from any arbitrary picture of a monotonically increasing function and a point on it.  If you follow the curve from the left, up to the point, then you're tracing a path to the left-handed limit.  And you're just getting closer to the sup of the left-handed values.  Because if you look anywhere other than the point, you're getting smaller values and so not the sup.  I feel like this explanation is going in circles, but maybe ultimately it's ok because you still end up getting the picture.
+      </p>
+      <p>
+        For the proof we first establish the sup exists, but clearly it's non-empty and bounded by <i>f(x)</i>.  Call <i>A</i> the sup over the left-handed function values.  We can argue that <i>A = f(x-)</i> by considering any sequence approaching <i>x</i> consisting only of values less than <i>x</i>, call this \(x_n\).  We need to show that \(\displaystyle\lim_{n\rightarrow\infty}x_n=A\).  Of course if we go down from <i>A</i> a little bit, by \(\varepsilon\), there must be a left-handed function value above \(A-\varepsilon\).  Because it's left-handed it's at some \(x-\delta\), and because the function is increasing, this is the \(\delta\) we needed for the given \(\varepsilon\).
+      </p>
+    </div>
+    <h3>
+      Theorem: With reasonable conditions on an increasing function, even right-handed limits at left points are smaller than left-handed limits at right points.
+    </h3>
 
 
 
