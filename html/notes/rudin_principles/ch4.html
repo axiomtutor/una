@@ -141,9 +141,28 @@
       <p>
         A function is called <b>uniformly continuous</b> if for any error in the image, it's never exceeded by two points in the domain sufficiently close.
       </p>
-      <h3>Theorem: </h3>
     </div>
-
+    <h3>Theorem: Continuity on a compact space implies uniform continuity.</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> Around every point in the domain we put a neighborhood which is implied to exist by continuity.  Clearly this is an open cover and we can select a finite subcover.  Of this finite list of neighborhoods we select the least radius.  Now intuitively we'd hope that this would be \(\delta\) and everything would work out from there to show uniform continuity.  When we have some <i>p</i>, <i>q</i> with \(d(p,q) < \delta\) we want it to fall out that <i>p</i> and <i>q</i> must have been in the same open covering set, and therefore the images must be within \(\varepsilon\).  Unfortunately it doesn't work, the two points may not be in the same neighborhood.
+      </p>
+      <p>
+        We need to pick a tigher \(\delta\), but even that alone doesn't work out.  But if we pick the neighborhoods half as small as continuity requires, and \(\delta\) half as small as the minimum available choice, then these bounds become tight enough.  Because if we're in <i>p</i>'s neighborhood, the distance from the center of the neighborhood to <i>q</i> splits up on <i>p</i> by the triangle inequality, and with each part being less than half the bound from continuity, then we get what we want.
+      </p>
+    </div>
+    <h3>Theorem: Compactness is a necessary condition for the theorems above that assumed it.</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> We start by showing that if <i>E</i> is a non-compact set in \(\mathbb R\) then there always is a continuous function which is not bounded.  This is clear because <i>E</i> is either not closed or not bounded.  If it's not bounded, we can form a function which goes to infinity.  If it's not closed then it fails to contain a limit point, so we can build a sequence in the domain going to it, and function values that fly off to infinity as they approach.
+      </p>
+      <p>
+        Next we show that if <i>E</i> is non-compact then there is a continuous function which does not attain its maximum.  The exact same remarks above demonstrate this.  Next we show that the image is not compact, but again the same reasoning accomplishes this.
+      </p>
+      <p>
+        I find it hard to parse Rudin's language when it comes to the claim about uniform continuity.  Since it's not too important, I'm going to skip it.
+      </p>
+    </div>
 
 
 
