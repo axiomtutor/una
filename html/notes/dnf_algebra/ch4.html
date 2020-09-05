@@ -36,10 +36,13 @@
           <p>
             For a group <i>G</i> acting on set <i>A</i> we define the <b>orbit</b> of an element \(a\in A\) to be the set of all \(b\in A\) such that \(a\sim b\) where this means that there exists some \(g\in G\) such that \(a = g\cdot b\).
           </p>
-          <h4>Theorem: Orbits partition the <i>G</i>-set.  </h4>
+          <h4>Theorem: Orbits partition the <i>G</i>-set into sets of size the index of the stabilizer.  </h4>
           <div class="sol">
             <p>
-              <i>Explanation: </i> We show that the relation above is an equivalence relation.  But that's easy.
+              <i>Explanation: </i> It's very straight-forward to show the relation is an equivalence relation.  So the interesting task is to show that the orbit of an element <i>a</i> has size \(|G:G_a|\).  The intuition is the same as for Lagrange's Theorem.  In that theorem you imagine a subgroup <i>H</i>, and then imagine multiplying it by any element.  You get a coset <i>xH</i> and only one of the following two is possible: <i>H = xH</i> or \(H\cap xH = \emptyset\).  So all these cosets partition and have the same size, so the size of the subgroup is |<i>G</i>| over the number of cosets.
+            </p>
+            <p>
+              In this case we have orbits and the stabilizer group. We want to identify each coset of \(G_a\) with some element of the orbit \(\mathcal O_a\).  So we set up the bijection \(\varphi:\mathcal O_a \rightarrow \{xG_a:x\in G\}\) defined on any \(x\in\mathcal O_a\) in the following way.  Let \(g\in G\) such that \(g\cdot x = a\).  Then \(\varphi(x) = gG_a\).
             </p>
           </div>
         </div>
