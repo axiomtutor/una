@@ -90,10 +90,16 @@
         implies \(x^{-1}gx \in H\) and so \(g\in xHx^{-1}\).  We can turn this observation into a bi-directional proof to show that the sets are equal.
       </p>
       <p>
-        Finally, let \(\pi_H\) be the permutation representation associated with <i>H</i>.  Before anything else we should actually confirm that this is a homomorphism.  If \(a,b\in G\) then \(\varphi(ab) = \sigma_{ab}\).  Let <i>1H</i> be the coset indexed 1, and \(\sigma_b(1) = 2\).  That means \(b\cdot 1H = 2H\).  Likewise let <i>3H</i> be the coset such that \(sigma_a(2)=3\) so that \(a\cdot 2H = 3H\).  
+        Finally, let \(\pi_H\) be the permutation representation associated with <i>H</i>.  Before anything else we should actually confirm that this is a homomorphism.  If \(a,b\in G\) then \(\varphi(ab) = \sigma_{ab}\).  The equality that we want to proof is an equality of the functions \(\sigma_{ab}=\sigma_a\sigma_b\) so we need to show that these map the same things to the same things.
+      </p>
+      <p>
+        Let <i>iH</i> be the coset indexed <i>i</i>, and \(\sigma_b(i) = j\).  That means \(b\cdot iH = jH\).  Likewise let <i>kH</i> be the coset such that \(\sigma_a(j)=k\) so that \(a\cdot jH = kH\).
+
+        $$ \sigma_{ab}(iH) = ab\cdot iH = a\cdot jH = kH $$
+        $$ (\sigma_a\sigma_b)(iH) = \sigma_a(jH) = kH $$
       <p>
       </p>
-        We want to show that ker(\(\pi_H\)) is the largest normal subgroup of <i>G</i> such that \(ker(\pi_H)\leq H\).  We already know that the kernels of homomorphisms are normal.
+        Moving on, we want to show that ker(\(\pi_H\)) is the largest normal subgroup of <i>G</i> such that \(ker(\pi_H)\leq H\).  We already know that the kernels of homomorphisms are normal.  So we want to show that any normal subgroup which is contained in <i>H</i> is contained in ker(\(\pi_H\)).
       </p>
     </div>
 
