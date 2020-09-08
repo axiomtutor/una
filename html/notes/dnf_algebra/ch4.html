@@ -75,7 +75,7 @@
     <h4>Theorem: A group acting on cosets of a subgroup acts transitively.  The stabilizer of the subgroup is just itself.  The kernel of the action is the intersection of all conjugations of the subgroup.  The kernel of the permutation representation homomorphism is the largest normal subgroup that is still contained in our first subgroup. </h4>
     <div class="sol">
       <p>
-        <i>Explanation:</i> To show the action is transitive we need to see that you can "get from any coset to another by multiplication".  Of course to get from <i>aH</i> to <i>bH</i> you can multiply by \(ba^{-a}\).
+        <i>Explanation:</i> To show the action is transitive we need to see that you can "get from any coset to another by multiplication".  Of course to get from <i>aH</i> to <i>bH</i> you can multiply by \(ba^{-1}\).
       </p>
       <p>
         The stabilizer of <i>H</i> is the set of all elements that fix <i>H</i>.  The previous chapter makes it pretty clear that everything in <i>H</i> fixes <i>H</i> and everything not in <i>H</i> doesn't.
@@ -99,10 +99,27 @@
         $$ (\sigma_a\sigma_b)(iH) = \sigma_a(jH) = kH $$
       <p>
       </p>
-        Moving on, we want to show that ker(\(\pi_H\)) is the largest normal subgroup of <i>G</i> such that \(ker(\pi_H)\leq H\).  We already know that the kernels of homomorphisms are normal.  So we want to show that any normal subgroup which is contained in <i>H</i> is contained in ker(\(\pi_H\)).
+        Moving on, we want to show that ker(\(\pi_H\)) is the largest normal subgroup of <i>G</i> such that \(ker(\pi_H)\leq H\).  We already know that the kernels of homomorphisms are normal.  Checking that ker(\(\pi_H\)) is in <i>H</i> is straight-forward.  This is the set of elements which map to the identity permutation.  That makes it the set of elements which fix all cosets (and so is the same as the set we discussed above).  Anything which fixes <i>H</i> in particular is in <i>H</i>.
+      </p>
+      <p>
+        So we want to show that any normal subgroup which is contained in <i>H</i> is contained in ker(\(\pi_H\)).  From the previous observation that \(\displaystyle ker(\pi_H) = \bigcap_{x\in G}xHx^{-1}\), together with the fact that normal subgroups are fixed under conjugation, this is immediate.
       </p>
     </div>
-
+    <h4>Cayley's Theorem: Every group is isomorphic to some symmetric group.</h4>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> Apply the above to the subgroup of just the identity.  Since the kernel is the identity the map is injective.
+      </p>
+    </div>
+    <h4>Theorem: If any subgroup has order the smallest prime dividing the order of the group (for finite groups), then this subgroup must be normal.</h4>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> For the case when the prime is 2, the proof goes by directly thinking about the cosets.  One coset is the subgroup itself.  If you think of left and right cosets, they both share the subgroup as a coset.  Therefore everything that remains is also "the other coset".  Therefore all left cosets are the same right coset, and therefore the subgroup is normal.
+      </p>
+      <p>
+        For a more general group of order <i>|H| = p</i> the least prime dividing <i>|G|</i>, we know that this is isomorphic to a subgroup of \(S_p\).  In particular we'll try to see that ker(\(\pi_H)\) is just the identity, and we'll do this by scrutinizing its size.
+      </p>
+    </div>
 
 
 
