@@ -78,7 +78,19 @@
         <i>Explanation:</i> To show the action is transitive we need to see that you can "get from any coset to another by multiplication".  Of course to get from <i>aH</i> to <i>bH</i> you can multiply by \(ba^{-a}\).
       </p>
       <p>
-        The kernel of the action is the set of all group elements which fix all G-set elements.
+        The stabilizer of <i>H</i> is the set of all elements that fix <i>H</i>.  The previous chapter makes it pretty clear that everything in <i>H</i> fixes <i>H</i> and everything not in <i>H</i> doesn't.
+      </p>
+      <p>
+        The kernel of the action is the set of all group elements that fix every G-set element.  That is to say, we need all elements that fix all cosets.
+
+        $$ gxH = xH $$
+
+        $$ x^{-1}gxH = H$$
+
+        implies \(x^{-1}gx \in H\) and so $g\in xHx^{-1}\).  We can turn this observation into a bi-directional proof to show that the sets are equal.
+      </p>
+      <p>
+        Finally, let \(\pi_H\) be the permutation representation associated with <i>H</i>.  We want to show that ker\(\pi_H\) is the largest normal subgroup of <i>G</i> such that \(ker\(\pi_H)\leq H\).  
       </p>
     </div>
 
