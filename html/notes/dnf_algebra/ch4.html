@@ -12,15 +12,13 @@
     <link rel="stylesheet" href="../notes.css">
   </head>
   <body>
-    <h1>Chapter 4</h1>
-    <h1></h1>
-    <h2></h2>
+
+      <h1>Chapter 4</h1>
+      <h1>Group Actions</h1>
+
+      <h2>4.1 Group Actions and Permutation Representations</h2>
     <div>
       <p>
-        <h1>Chapter 4</h1>
-        <h1>Group Actions</h1>
-
-        <h2>4.1 Group Actions and Permutation Representations</h2>
         <div>
           <h4>Theorem: There is a bijection between group actions and the homomorphisms into the symmetric group.</h4>
           <p class="sol">
@@ -51,8 +49,35 @@
         </div>
       </p>
     </div>
-
-
+    <h3>Cycle Decompositions</h3>
+    <div>
+      <h4>Theorem: Every element of the symmetric group has a unique cycle decomposition.</h4>
+      <p>
+        <i>Explanation:</i> Take any \(\sigma \in S_n\) and consider the subgroup it generates, call it \(G = \langle \sigma \rangle\). Also consider how <i>G</i> acts on <i>A = {1, 2, ..., n}</i>.  From the above, <i>A</i> is partitioned into orbits of the elements of <i>G</i>.  Those orbits make up the cycles, which we know since <i>G</i> is cyclic and it's not hard to prove that inside each cycle we can get from any element to another with a sufficient power of \(\sigma\).  This shows that \(\sigma\) has a cycle decomposition.
+      </p>
+      <p>
+        To see that it's unique, note that in any orbit the order of the elements is determined by the powers of \(\sigma\) up to the choice of the first element (i.e. the orbit representative).  Any other rearrangement comes from the order in which the orbits are considered.  But the orbits themselves, and the sequence in which elements are visited within each, is unique and hence so are the cycles and the order in which their elements appear.
+      </p>
+    </div>
+    <h2>Section 4.2</h2>
+    <h2>Cayley's Theorem--Groups Acting on Themselves</h2>
+    <div>
+      <p>
+        We can view any given element of a group as acting on the group by multiplication. We will later see that this action is both transitive and faithful, and the stabilizer of any point is always just the identity.
+      </p>
+      <p>
+        In a way it is even more interesting to choose an element and a subgroup, and then have the element act on cosets.  Note that when the subgroup is just the identity then we might as well be acting on all of the group (as we described it in the previous paragraph).
+      </p>
+      <p>
+        If \(H \leq G\) then we homomorphically map <i>G</i> into a symmetric group of <i>|G|</i> elements.
+      </p>
+    </div>
+    <h4>Theorem: A group acting on cosets of a subgroup acts transitively.  The stabilizer of the subgroup is just itself.  The kernel of the action is the intersection of all conjugations of the subgroup.  The kernel of the permutation representation homomorphism is the largest normal subgroup that is still contained in our first subgroup. </h4>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> Let \(H\leq G\) and let \(
+      </p>
+    </div>
 
 
 
