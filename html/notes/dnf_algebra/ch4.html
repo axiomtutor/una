@@ -50,7 +50,7 @@
       </p>
     </div>
     <h3>Cycle Decompositions</h3>
-    <div>
+    <div class="sol">
       <h4>Theorem: Every element of the symmetric group has a unique cycle decomposition.</h4>
       <p>
         <i>Explanation:</i> Take any \(\sigma \in S_n\) and consider the subgroup it generates, call it \(G = \langle \sigma \rangle\). Also consider how <i>G</i> acts on <i>A = {1, 2, ..., n}</i>.  From the above, <i>A</i> is partitioned into orbits of the elements of <i>G</i>.  Those orbits make up the cycles, which we know since <i>G</i> is cyclic and it's not hard to prove that inside each cycle we can get from any element to another with a sufficient power of \(\sigma\).  This shows that \(\sigma\) has a cycle decomposition.
@@ -66,16 +66,19 @@
         We can view any given element of a group as acting on the group by multiplication. We will later see that this action is both transitive and faithful, and the stabilizer of any point is always just the identity.
       </p>
       <p>
-        In a way it is even more interesting to choose an element and a subgroup, and then have the element act on cosets.  Note that when the subgroup is just the identity then we might as well be acting on all of the group (as we described it in the previous paragraph).
+        In a way it is even more interesting to act on cosets.  Note that when the subgroup is just the identity then the cosets are just the individual elements of the group.  So in this case we might as well act on the group (as we described it in the previous paragraph).
       </p>
       <p>
-        If \(H \leq G\) then we homomorphically map <i>G</i> into a symmetric group.  In particular if there are <i>n</i> cosets of <i>H</i> (i.e. if <i>|G:H| = n</i>) then we map into \(S_n\).  The map is defined by \(g \mapsto \sigma_g\) where \(\sigma_g\) sends <i>i</i> to <i>j</i> if <i>g</i> sends the coset indexed by <i>i</i> to the coset indexed by <i>j</i>.  
+        If \(H \leq G\) then we homomorphically map <i>G</i> into a symmetric group.  In particular if there are <i>n</i> cosets of <i>H</i> (i.e. if <i>|G:H| = n</i>) then we map into \(S_n\).  The map is defined by \(g \mapsto \sigma_g\) where \(\sigma_g\) sends <i>i</i> to <i>j</i> if <i>g</i> sends the coset indexed by <i>i</i> to the coset indexed by <i>j</i>.  If this homomorphism from <i>G</i> to \(S_n\) is called \(\pi_H\) then we call this the <b>permutation representation</b> associated with <i>H</i>.  (The system of indexing is unimportant.)
       </p>
     </div>
     <h4>Theorem: A group acting on cosets of a subgroup acts transitively.  The stabilizer of the subgroup is just itself.  The kernel of the action is the intersection of all conjugations of the subgroup.  The kernel of the permutation representation homomorphism is the largest normal subgroup that is still contained in our first subgroup. </h4>
     <div class="sol">
       <p>
-        <i>Explanation:</i> Let \(H\leq G\) and let \(
+        <i>Explanation:</i> To show the action is transitive we need to see that you can "get from any coset to another by multiplication".  Of course to get from <i>aH</i> to <i>bH</i> you can multiply by \(ba^{-a}\).
+      </p>
+      <p>
+        The kernel of the action is the set of all group elements which fix all G-set elements.
       </p>
     </div>
 
