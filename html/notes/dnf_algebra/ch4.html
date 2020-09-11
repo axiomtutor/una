@@ -160,7 +160,16 @@
     <h4>Theorem: If a group has order the power of a prime, then it has a non-trivial center.</h4>
     <div class="sol">
       <p>
-        <i>Explanation:</i> 
+        <i>Explanation:</i> In the class equation, the order of the group is on the left and is divisible by the prime.  Therefore the quantity on the right is.  But every orbit has index which divides the order of the group, so each term here is divisible by the prime.  Hence the order of the center must be divisible by the prime, and so is non-trivial.
+      </p>
+    </div>
+    <h4>Theorem: If \(|P|=p^2\) for a prime <i>p</i> then <i>P</i> is abelian.  In particular <i>P</i> is either \(Z_{p^2}\) or \(Z_p\times Z_p\).</h4>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> By the previous theorem the center is not trivial.  Then <i>P/Z(P)</i> has order 1 or <i>p</i> but in either case it's cyclic.  Therefore <i>P</i> is abelian.
+      </p>
+      <p>
+        Now for the more particular part.  If it has an element of order \(p^2\) we're done.  Otherwise every element has order <i>p</i> or 1.  Take one non-identity element, and another not in the set that the first one generates.  These two generate a group larger than the one that they generate individually, so they together generate the whole group.  It is now possible to set up an explicit isomorphism from \(\langle x\rangle \times \langle y\rangle \) to \(Z_p\times Z_p\).  
       </p>
     </div>
 
