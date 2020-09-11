@@ -182,11 +182,15 @@
     <h4>Theorem: For permutations \(\sigma,\tau\) the permutation \(\sigma\) has the same cycle type as \(\tau\sigma\tau^{-1}\).  Moreover, the entries in the conjugate are precisely what \(\tau\) sends each entry in \(\sigma\) to.</h4>
     <div class="sol">
       <p>
-        <i>Explanation:</i> If \(\sigma=(a_1 \ a_2 \ \dots \ a_p)(b_1 \ \dots \ b_q)\dots \) then \(\tau\sigma\tau^{-1}\) is
+        <i>Explanation:</i> If \(\sigma=(a_1 \ a_2 \ \dots \ a_p)(b_1 \ \dots \ b_q)\dots \) then the theorem claims that \(\tau\sigma\tau^{-1}\) is
 
-        $$(\tau(a_1) \ \tau(a_2) \ \dots \ \tau(a_p)) (\tau(b_1) \ \dots \ \tau(b_q)) \dots $$ 
+        $$(\tau(a_1) \ \tau(a_2) \ \dots \ \tau(a_p)) (\tau(b_1) \ \dots \ \tau(b_q)) \dots $$
+      </p>
+      <p>
+        The proof goes entirely by saying "Well if the theorem is true, and if \(\sigma\) sends some <i>i</i> to <i>j</i>, then let's see what \(\tau\sigma\tau^{-1}\) does to input \(\tau(i)\)."
       </p>
     </div>
+    <h4>Theorem: Two permutations have the same cycle type if and only if they're conjugates.  There are as many conjugacy classes of \(S_n\) as there are partitions of the number <i>n</i>.</h4>
 
 
 
