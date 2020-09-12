@@ -199,7 +199,32 @@
         From having proved this first part we now know that the conjugacy classes of \(S_n\) just is the partition of the group by cycle types. Every cycle type corresponds to a partition of <i>n</i>, so we have the theorem.
       </p>
       <p>
-        ... Wait what?  How is there a cycle type per permutation of <i>n</i>?  This requires some more explanation.  Make the alignment like this:  For any given cycle type, the length of each factor cycle corresponds to a term in the partition. 
+        ... Wait what?  How is there a cycle type per permutation of <i>n</i>?  This requires some more explanation.  Make the alignment like this:  For any given cycle type, the length of each factor cycle corresponds to a term in the partition.
+      </p>
+    </div>
+    <h4>Theorem: The elements that commute with any <i>m</i>-cycle are precisely those that are disjoint, those that are powers, or products of the two.</h4>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> We could have started this proof a long time ago, but we would have stalled out at a certain point.  But with the help of the theorem above, we can complete the proof.  We start by observing that of course any <i>m</i>-cycle commutes with all of its powers, and there are <i>m</i> of these.  Moreover, of course, it commutes with anything that is disjoint from it, and there are <i>(n-m)!</i> of these.  And of course, it commutes with any product of the two, and there are <i>m(n-m)!</i> of these.
+      </p>
+      <p>
+        The question where we would have stalled out is: Are there any other elements which commute with the given <i>m</i>-cycle?  We can answer this question using what we now know about its centralizer and the relationship to its conjugacy class.  We know that its conjugacy class is the set of all permutations of the same cycle type.  And we know that, if we call the permutation \(\sigma\), the conjugacy class has size equal to \(|S_n:C_{S_n}(\sigma) = \frac{n!}{|C_{S_n}(\sigma)}\).
+      </p>
+      <p>
+        Being an <i>m</i>-cycle it has a particularly easy to cycle type. There are \(\frac{n(n-1)\cdots(n-m+1)}{m}\) many <i>m</i>-cycles (the total number of ways to pick coordinates without replacement, divided by the number of "rotations" of these).  Putting all of the information we've gathered above together,
+
+        $$ |C_{S_n}(\sigma)|=m(n-m)! $$
+      </p>
+      <p>
+        What this tells us is that there are no other conjugates of \(\sigma\) than the ones we counted at the start!  Note that another way of understanding what this is saying, is that
+
+        $$ C_{S_n}(\sigma) = \{\sigma^i\tau| 0\leq i < m, \text{ and } \tau \in S_{n-m}\} $$
+      </p>
+    </div>
+    <h4>Theorem: \(A_5\) is simple.</h4>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> To show that \(A_5\) has no proper non-trivial normal subgroup, we will make use of the following general observation: For a normal subgroup, an element inside of it is never sent outside by conjugation; and an element outside is never sent inside.  Put more formally, if <i>H</i> is normal then \(x\in H\) if and only if \(gxg^{-1}\in H\) for every \(g\in G\).  
       </p>
     </div>
 
