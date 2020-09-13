@@ -224,7 +224,19 @@
     <h4>Theorem: \(A_5\) is simple.</h4>
     <div class="sol">
       <p>
-        <i>Explanation:</i> To show that \(A_5\) has no proper non-trivial normal subgroup, we will make use of the following general observation: For a normal subgroup, an element inside of it is never sent outside by conjugation; and an element outside is never sent inside.  Put more formally, if <i>H</i> is normal then \(x\in H\) if and only if \(gxg^{-1}\in H\) for every \(g\in G\).  
+        <i>Explanation:</i> To show that \(A_5\) has no proper non-trivial normal subgroup, we will make use of the following general observation: For a normal subgroup, an element inside of it is never sent outside by conjugation; and an element outside is never sent inside.  Put more formally, if <i>H</i> is normal then \(x\in H\) if and only if \(gxg^{-1}\in H\) for every \(g\in G\). Part of this we already know immediately because we know that normal subgroups are closed under conjugation.  In the other direction, if we suppose that some conjugate of <i>x</i> is outside <i>H</i> then <i>x</i> must be outside of <i>H</i>.  For <i>x</i> were inside <i>H</i> this would entail that it's "inverse conjugate" sent it outside, which we know is impossible.
+      </p>
+      <p>
+        Note that another way of understanding what we've just learned is that every normal subgroup is the union of the conjugacy classes inside of it.  Because each conjugacy class is either entirely inside or entirely outside.
+      </p>
+      <p>
+        Since this is a property of all normal subgroups, we'll show that there cannot be any subgroup with this property.  And to do that, we'll work out the sizes of all the conjugacy classes in \(A_5\).  As a note about how we do this, keep in mind that two elments in \(A_5\) may be of the same cycle type but may not be conjugate to each other in \(A_5\), because \(A_5\) is not all of \(S_5\).  The element that conjugates one permutation to another of the same cycle type may be missing.
+      </p>
+      <p>
+        Now notice that every cycle type in <i>A <sub>5</sub></i> is represented by the elements (1), (1 2 3), (1 2 3 4 5), and (1 2)(3 4).  And although being of the same cycle type doesn't entail being conjugate, being conjugate certainly still entails being of the same cycle type.  So every conjugacy class is made up of the same cycle type--there just might be multiple conjugacy classes of the same cycle type.
+      </p>
+      <p>
+        Let's start by analyzing the 3-cycles.  We know the only things that the centralizer of (1 2 3) is only the elements which are powers of this, times the elements which are disjoint.  But the only disjoint element in <i>A <sub>5</sub></i> is (1) so the centralizer is just <(1 2 3)> and this has size 3, hence its conjugacy class has size 60/3 = 20.
       </p>
     </div>
 
