@@ -239,7 +239,13 @@
         Let's start by analyzing the 3-cycles.  We know the only things in the centralizer of (1 2 3) are powers of this, times the elements which are disjoint.  But the only disjoint element in <i>A<sub>5</sub></i> is (1) so the centralizer is just <(1 2 3)> and this has size 3, hence its conjugacy class has size 60/3 = 20.  With the same sort of combinatorial analysis as we've been using, you can see that this is exactly the same as the total number of 3-cycles, so we've found that all 3-cycles are conjugate.
       </p>
       <p>
-        Now let's analyze the 5-cycles.  Again the only thing disjoint is (1) so the centralizer is <(1 2 3 4 5)> which has order 5 and therefore conjugacy class of size 60/5 = 12.  However, there are 24 different 5-cycles.  So what's in the conjugacy class of (1 2 3 4 5) and what's not?  An example of something that's not is (1 2)(1 2 3 4 5)(1 2) = (2 1 3 4 5).  Clearly that's because (1 2) is not in <i>A<sub>5</sub></i>.  In general a 5-cycle is not in the conjugacy class of (1 2 3 4 5) if it is conjugate by an odd permutation.  Since half of the 5-cycles are conjugate by even permutations and half by odd, then this is how the conjugacy classes split up.  There are two conjugacy classes of 5-cycles and there are 12 in each.  
+        Now let's analyze the 5-cycles.  Again the only thing disjoint is (1) so the centralizer is <(1 2 3 4 5)> which has order 5 and therefore conjugacy class of size 60/5 = 12.  However, there are 24 different 5-cycles.  So what's in the conjugacy class of (1 2 3 4 5) and what's not?  An example of something that's not is (1 2)(1 2 3 4 5)(1 2) = (2 1 3 4 5).  Clearly that's because (1 2) is not in <i>A<sub>5</sub></i>.  In general a 5-cycle is not in the conjugacy class of (1 2 3 4 5) if it is conjugate by an odd permutation.  Since half of the 5-cycles are conjugate by even permutations and half by odd, then this is how the conjugacy classes split up.  There are two conjugacy classes of 5-cycles and there are 12 elements in each.
+      </p>
+      <p>
+        Finally there are 60-20-24-1 = 15 different permutations in <i>A<sub>5</sub></i> which have type (1 2)(3 4).  For this, a brute-force check shows that (1 2)(3 4) commutes with every element of the same cycle type and nothing else, so that <i>|C<sub>A<sub>4</sub></sub>((1 2)(3 4))| = 4</i> and therefore the conjugacy class contains 60/4 = 15 which means it contains all 15 elements of the shared cycle type.
+      </p>
+      <p>
+        Ok, phew!  Nowe we know all the conjugacy classes and they have sizes 1, 12, 12, 15, and 20.  If any group were normal, from what we discussed at the start, it would have to have size a sum of these numbers.  But since non sum of these numbers divides 60, this is impossible.
       </p>
     </div>
 
