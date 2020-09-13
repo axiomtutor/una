@@ -233,10 +233,13 @@
         Since this is a property of all normal subgroups, we'll show that there cannot be any subgroup with this property.  And to do that, we'll work out the sizes of all the conjugacy classes in \(A_5\).  As a note about how we do this, keep in mind that two elments in \(A_5\) may be of the same cycle type but may not be conjugate to each other in \(A_5\), because \(A_5\) is not all of \(S_5\).  The element that conjugates one permutation to another of the same cycle type may be missing.
       </p>
       <p>
-        Now notice that every cycle type in <i>A <sub>5</sub></i> is represented by the elements (1), (1 2 3), (1 2 3 4 5), and (1 2)(3 4).  And although being of the same cycle type doesn't entail being conjugate, being conjugate certainly still entails being of the same cycle type.  So every conjugacy class is made up of the same cycle type--there just might be multiple conjugacy classes of the same cycle type.
+        Now notice that every cycle type in <i>A<sub>5</sub></i> is represented by the elements (1), (1 2 3), (1 2 3 4 5), and (1 2)(3 4).  And although being of the same cycle type doesn't entail being conjugate, being conjugate certainly still entails being of the same cycle type.  So every conjugacy class is made up of the same cycle type--there just might be multiple conjugacy classes of the same cycle type.
       </p>
       <p>
-        Let's start by analyzing the 3-cycles.  We know the only things that the centralizer of (1 2 3) is only the elements which are powers of this, times the elements which are disjoint.  But the only disjoint element in <i>A <sub>5</sub></i> is (1) so the centralizer is just <(1 2 3)> and this has size 3, hence its conjugacy class has size 60/3 = 20.
+        Let's start by analyzing the 3-cycles.  We know the only things in the centralizer of (1 2 3) are powers of this, times the elements which are disjoint.  But the only disjoint element in <i>A<sub>5</sub></i> is (1) so the centralizer is just <(1 2 3)> and this has size 3, hence its conjugacy class has size 60/3 = 20.  With the same sort of combinatorial analysis as we've been using, you can see that this is exactly the same as the total number of 3-cycles, so we've found that all 3-cycles are conjugate.
+      </p>
+      <p>
+        Now let's analyze the 5-cycles.  Again the only thing disjoint is (1) so the centralizer is <(1 2 3 4 5)> which has order 5 and therefore conjugacy class of size 60/5 = 12.  However, there are 24 different 5-cycles.  So what's in the conjugacy class of (1 2 3 4 5) and what's not?  An example of something that's not is (1 2)(1 2 3 4 5)(1 2) = (2 1 3 4 5).  Clearly that's because (1 2) is not in <i>A<sub>5</sub></i>.  In general a 5-cycle is not in the conjugacy class of (1 2 3 4 5) if it is conjugate by an odd permutation.  Since half of the 5-cycles are conjugate by even permutations and half by odd, then this is how the conjugacy classes split up.  There are two conjugacy classes of 5-cycles and there are 12 in each.  
       </p>
     </div>
 
