@@ -294,7 +294,9 @@
       <h4>Theorem: \(Aut(\mathbb Z_n) \cong (\mathbb Z_n)^\times\).</h4>
       <div class="sol">
         <p>
-          <i>Explanation:</i>
+          <i>Explanation:</i> We build an isomorphism \(\Psi: Aut(Z_n)\to (Z_n)^\times\) by taking any automorphism \(\psi\) and chase the generator.  That is to say, \(\psi(1)=a\), and for no other automorphism can this be true.  Moreover since \(\psi\) is an automorphism then 1 and <i>a</i> have the same order, so <i>(a,n) = 1</i>.  In fact, this is an if and only if:  For every <i>a</i> coprime to <i>n</i> there is an automorphsim mapping 1 to <i>a</i>.  So
+
+          $$\Psi(\psi) = \psi(1) \mod n $$
         </p>
       </div>
     </div>
