@@ -10,10 +10,6 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="stylesheet" href="../notes.css">
-    <link rel="stylesheet" href="../../../MathFonts-gh-pages/Asana/mathfonts.css">
-    <link rel="stylesheet" href="../../../MathFonts-gh-pages/Cambria/mathfonts.css">
-    <link rel="stylesheet" href="../../../MathFonts-gh-pages/DejaVu/mathfonts.css">
-    <link rel="stylesheet" href="../../../MathFonts-gh-pages/Asana/mathfonts.css">
   </head>
   <body>
 
@@ -331,22 +327,25 @@
         Next we handle the case when <i>p &#8740; |Z(G)|</i>.  From the class equation there must exist at least one <i>C<sub>G</sub>(g<sub>i</sub>)</i> such that <i>p</i> does not divide its index.  But if it doesn't divide the index it must divide <i>m</i> instead (prime facts).  So now <i>C<sub>G</sub>(g<sub>i</sub>)</i> has a Sylow <i>p</i>-subgroup by the induction clause, <i>P</i>.  Of course <i>|P| = p<sup>&alpha;</sup></i> so it is a Sylow <i>p</i>-subgroup of <i>G</i>.
       </p>
       <p>
-        Alright moving on, we prove the remaining claims together.  Let <i>Q</i> be any <i>p</i>-subgroup of <i>G</i>.  List out all the conjugates of <i>P</i> and call it \(\mathscr S\).  So \(\mathscr S = \{P_1, \dots, P_r\}\) with each <i>P<sub>i</sub> = g<sub>i</sub>Pg<sub>i</sub><sup>-1</sup></i>.  Suppose for contradiction that <i>Q</i> is not contained in any of them, so that
+        Alright moving on, we prove the remaining claims together.  Let <i>Q</i> be any <i>p</i>-subgroup of <i>G</i>.  List out all the conjugates of <i>P</i> and call it \(\mathcal S\).  So \(\mathcal S = \{P_1, \dots, P_r\}\) with each <i>P<sub>i</sub> = g<sub>i</sub>Pg<sub>i</sub><sup>-1</sup></i>.  Suppose for contradiction that <i>Q</i> is not contained in any of them, so that
 
         $$ |Q : Q\cap P_i| > 1 $$
       </p>
       <p>
-        Now at this point we need to go on an extended lemma to show that \(|\mathcal O_i|=|Q:Q\cap P_i|\).
+        Now at this point we need to go on an extended lemma to show that \(|Q:Q\cap P_i|\) is the size of the orbit of <i>P<sub> i</sub></i> under conjugation by <i>Q</i>.  So to get started, first let \(\mathcal O_1, \mathcal O_2, \dots \mathcal O_s\) be the partition of \(\mathcal S\) into the orbits of \(\mathcal S\) under conjugation by <i>Q</i>.  That is to say each \(\mathcal O_i\) is the set of all <i>qP<sub>j</sub>q<sup>-1</sup></i> for some <i>P<sub>j</sub></i>, and also \(\mathcal S = \bigcup \mathcal O_i\), and also \(r = \sum |\mathcal O|_i\).  Moreover, re-number the <i>P<sub>i</sub></i> such that the first <i>s</i> of them are representatives of their orbits.  Then for each <i>1 &leq; i &leq; s</i> we have \(P_i\in \mathcal O_i\).
       </p>
-      <p style="font-family: Asana">
-        Test text. g
+      <p>
+        Now with all of this notation in place, from the start of the chapter we know that the size of an orbit is the index of the stabilizer.  Hence \(|\mathcal O_i| = |G:G_{P_i}|\).  Because the action is conjugation by elements in <i>Q</i> that makes <i>G<sub>P<sub>i</sub></sub></i> the same as <i>N<sub>Q</sub>(P<sub>i</sub>)</i>.  It is trivial to show that <i>N<sub>Q</sub>(P<sub>i</sub>) = N<sub>G</sub>(P<sub>i</sub>)&cap;Q</i>.
       </p>
-      <p style="font-family: Cambria">
-        Test text.
+      <p>
+        Now in fact we have to get even <i>further</i> diverted from our main proof.  We want to show that <i>N<sub>G</sub>(P<sub>i</sub>)&cap;Q = P<sub>i</sub>&cap;Q</i>.  This will in fact be a lemma.
       </p>
-      <p style="font-family: DejaVu">
-        Test text. <math><mi mathvariant="script" class="calligraphic">A</mi></math>
-      </p>
+      <h4>Lemma: If <i>P</i> is a Sylow <i>p</i>-subgroup and <i>Q</i> is any <i>p</i>-subgroup, then \(Q\cap N_G(P) = Q\cap P\).</h4>
+      <div class="sol">
+        <p>
+          <i>Explanation:</i> We already know that any group is contained in its normalizer, so half of the equality is trivial.  What takes work is \(Q\cap N_G(P)\subseteq Q\cap P\).
+        </p>
+      </div>
     </div>
 
 
