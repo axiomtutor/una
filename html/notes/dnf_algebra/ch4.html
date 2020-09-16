@@ -318,7 +318,7 @@
         </ul>
       </p>
     </div>
-    <h4>Sylow's Theorem: <i>Syl<sub>p</sub>(G) &ne; 0</i>.  Any two Sylow <i>p</i>-subgroups are conjugate.  <i>n<sub>p</sub> &equiv; 1 (mod <i>p</i>)</i>.  Also <i>n<sub>p</sub> = |G:N<sub>G</sub>(P)|</i> for any Sylow <i>p</i>-subgroup <i>P</i>.</h4>
+    <h4>Sylow's Theorem: <i>Syl<sub>p</sub>(G) &ne; 0</i>.  If <i>P</i> is a Sylow <i>p</i>-subgroup and <i>Q</i> is any <i>p</i>-subgroup, then <i>Q</i> is comtained in some conjugate of <i>P</i>.  <i>n<sub>p</sub> &equiv; 1 (mod <i>p</i>)</i>.  Also <i>n<sub>p</sub> = |G:N<sub>G</sub>(P)|</i> for any Sylow <i>p</i>-subgroup <i>P</i>.</h4>
     <div class="sol">
       <p>
         <i>Explanation:</i> For the first claim, we proceed by induction on the order of <i>G</i>.  When <i>|G| = 1</i> there is nothing to prove.  Now with <i>|G| = p<sup>&alpha;</sup>m > 1</i>, we divide into two cases: Either <i>p | Z(G)</i> or not.  If it does then by Cauchy's theorem for abelian groups, <i>Z(G)</i> has a subgroup <i>N</i> of order <i>p</i>.  Apply the inductive hypothesis to <i>G/N</i>. We can use this with the isomorphism theorems to wrangle the subgroup we want.
@@ -327,12 +327,15 @@
         Next we handle the case when <i>p &#8740; |Z(G)|</i>.  From the class equation there must exist at least one <i>C<sub>G</sub>(g<sub>i</sub>)</i> such that <i>p</i> does not divide its index.  But if it doesn't divide the index it must divide <i>m</i> instead (prime facts).  So now <i>C<sub>G</sub>(g<sub>i</sub>)</i> has a Sylow <i>p</i>-subgroup by the induction clause, <i>P</i>.  Of course <i>|P| = p<sup>&alpha;</sup></i> so it is a Sylow <i>p</i>-subgroup of <i>G</i>.
       </p>
       <p>
-        Alright moving on, we build this is many stages.  Let <i>Q</i> be any <i>p</i>-subgroup of <i>G</i>.  List out all the conjugates of <i>P</i> and call it \(\mathcal S\).  So \(\mathcal S = \{P_1, \dots, P_r\}\) with each <i>P<sub>i</sub> = g<sub>i</sub>Pg<sub>i</sub><sup>-1</sup></i>.  Suppose for contradiction that <i>Q</i> is not contained in any of them, so that
+        Alright moving on, we build this in many stages.  Let <i>Q</i> be any <i>p</i>-subgroup of <i>G</i>.  List out all the conjugates of <i>P</i> and call it \(\mathcal S\).  So \(\mathcal S = \{P_1, \dots, P_r\}\) with each <i>P<sub>i</sub> = g<sub>i</sub>Pg<sub>i</sub><sup>-1</sup></i>.  Suppose for contradiction that <i>Q</i> is not contained in any of them, so that
 
         $$ |Q : Q\cap P_i| > 1 $$
       </p>
       <p>
-        Now at this point we need to go on an extended lemma to show that \(|Q:Q\cap P_i|\) is the size of the orbit of <i>P<sub> i</sub></i> under conjugation by <i>Q</i>.  So to get started, first let \(\mathcal O_1, \mathcal O_2, \dots \mathcal O_s\) be the partition of \(\mathcal S\) into the orbits of \(\mathcal S\) under conjugation by <i>Q</i>.  That is to say each \(\mathcal O_i\) is the set of all <i>qP<sub>j</sub>q<sup>-1</sup></i> for some <i>P<sub>j</sub></i>, and also \(\mathcal S = \bigcup \mathcal O_i\), and also \(r = \sum |\mathcal O|_i\).  Moreover, re-number the <i>P<sub>i</sub></i> such that the first <i>s</i> of them are representatives of their orbits.  Then for each <i>1 &leq; i &leq; s</i> we have \(P_i\in \mathcal O_i\).
+        Notice at this point that this is enough to infer, from the orders of the groups involved, that <i>p | |Q : Q&cap;P<sub>i</sub>|</i> for every <i>i</i>.
+      </p>
+      <p>
+        Now at this point we need to go on an extended lemma to show that \(|Q:Q\cap P_i|\) is the size of the orbit of <i>P<sub> i</sub></i> under conjugation by <i>Q</i>.  So to get started, first let \(\mathcal O_1, \mathcal O_2, \dots, \mathcal O_s\) be the partition of \(\mathcal S\) into the orbits of \(\mathcal S\) under conjugation by <i>Q</i>.  That is to say each \(\mathcal O_i\) is the set of all <i>qP<sub>j</sub>q<sup>-1</sup></i> for some <i>P<sub>j</sub></i>, and also \(\mathcal S = \bigcup \mathcal O_i\), and also \(r = \sum |\mathcal O_i|\).  Moreover, re-number the <i>P<sub>i</sub></i> such that the first <i>s</i> of them are representatives of their orbits.  Then for each <i>1 &leq; i &leq; s</i> we have \(P_i\in \mathcal O_i\).
       </p>
       <p>
         Now with all of this notation in place we can state more formally what we're trying to show.  We're trying to show \(|\mathcal O_i| = |Q:Q\cap P_i|\).  From the start of the chapter we know that the size of an orbit is the index of the stabilizer.  Hence \(|\mathcal O_i| = |Q:Q_{P_i}|\).  Because the action is conjugation by elements in <i>Q</i> that makes <i>Q<sub>P<sub>i</sub></sub></i> the same as <i>N<sub>Q</sub>(P<sub>i</sub>)</i>.  It is trivial to show that <i>N<sub>Q</sub>(P<sub>i</sub>) = N<sub>G</sub>(P<sub>i</sub>)&cap;Q</i>.
@@ -350,7 +353,75 @@
         </p>
       </div>
       <p>
-        Ok!  Finally we can get back to proving Sylow's theorem, now that we know \(|\mathcal O_i| = |Q:Q\cap P_i|\).  From what we established earlier we have that there is some \(|\mathcal O_i|>1\).
+        Ok!  Finally we can get back to proving Sylow's theorem, now that we know \(|\mathcal O_i| = |Q:Q\cap P_i|\).  From what we established earlier we now have the two facts that \(p\mid |\mathcal O_i|\) and \(\sum |\mathcal O_i|=r\) hence we infer that <i>p | r</i>. This is the fact that we will contradict, in particular by showing that <i>r &equiv; 1</i> (mod <i>p</i>).
+      </p>
+      <p>
+        To show this congruence relation, we re-do several things above that we did with <i>Q</i>, except that we do it with <i>P</i> in place of <i>Q</i>.  So this time call \(\mathcal O_1', \mathcal O_2', \dots, \mathcal O_t'\) the orbits of \(\mathcal S\) under conjugation by <i>P</i>.  If in particular we choose the labeling where <i>P<sub>1</sub> = P</i> then we have \(|\mathcal O_1 | = 1\).  Yet the rest of the argument goes through just as before, where every other orbit is still divisible by <i>p</i>.  Hence <i>r &equiv; 1</i> (mod <i>p</i>) and we have our contradiction.  Namely, the second claim in Sylow's theorem is now proved.
+      </p>
+      <p>
+        We move on to the third claim, which in fact we've already proved when we showed <i>r &equiv; 1</i> (mod <i>p</i>).  For at this point we also know that <i>r = n<sub>p</sub></i>, since obviously the Sylow <i>p</i>-subgroups are the conjugates of <i>P</i>.
+      </p>
+      <p>
+        And finally since \(n_p=|\mathcal O_1| = |G:G_P| = |G:N_G(P)|\) we have the last statement.
+      </p>
+    </div>
+    <h4>Corollary: Any two Sylow <i>p</i>-subgroups are isomorphic.</h4>
+    <div class="sol">
+      <i>Explanation:</i> We've already seen that conjugation is an isomorphism between subgroups.
+    </div>
+    <h4>
+      Corollary: If <i>P</i> is a Sylow <i>p</i>-subgroup, the following are equivalent: <br>
+
+      (1) <i>n<sub>p</sub> = 1</i> <br>
+
+      (2) <i>P &#8884; G</i><br>
+
+      (3) <i>P</i> char <i>G</i><br>
+
+      (4) Any set of elements, each of <i>p</i>-power order, always generates a <i>p</i>-group.
+    </h4>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> The equivalence (1) &Leftrightarrow; (2) pretty much just comes from definitions and the fact that all Sylow <i>p</i>-subgroups are conjugate.
+      </p>
+      <p>
+        The equivalence (2) &Leftrightarrow; (3) is half-done from the fact that every characteristic subgroup is normal, and the other half owes to the equivalence between (2) and (1).
+      </p>
+      <p>
+        The equivalence (4) &Leftrightarrow; (1) is half done directly by using the fact that every <i>p</i>-subgroup is in a conjugate <i>P</i> but <i>P</i> is normal.  In the other direction, union over all elements of order a <i>p</i>-power, which must contain <i>P</i>, but <i>P</i> is maximal.
+      </p>
+    </div>
+    <div>
+      <p>
+        Note that if <i>p</i> is a prime not dividing the order of a group, technically according to the definition, <i>|G| = p<sup>&alpha;</sup>m</i> where <i>&alpha; = 0</i> and <i>|G| = m</i>.  So the Sylow <i>p</i>-subgroup is the group of order <i>p<sup>&alpha;</sup> = 1</i> which must be the trivial group.  Also if <i>|G| = p<sup>&alpha;</sup></i> then the only way to write <i>|G| = p<sup>&beta;</sup>m</i> where <i>p &#8740; m</i> is when <i>m = 1</i> and so <i>G</i> is the Sylow <i>p</i>-subgroup.
+      </p>
+      <p>
+        Note that since all Sylow <i>p</i>-subgroups are conjugate, then in an abelian group, every Sylow <i>p</i>-subgroup is unique.  Since in this case we can take the subgroup of all elements of order <i>p</i> and show that this is a Sylow <i>p</i>-subgroup, then this is THE Sylow <i>p</i>-subgroup.
+      </p>
+      <p>
+        It is also worth noting that because <i>n<sub>p</sub></i> is the index of the stabilizer, it divides the the order of the group.  Since it cannot divide <i>p</i> that means it divides <i>m</i>.
+      </p>
+    </div>
+    <h3>Applications of Sylow's Theorem</h3>
+    <h4>Theorem: If the order of a group is the product of two distinct primes, <i>p < q</i>, then there is a unique Sylow <i>q</i>-subgroup.</h4>
+    <div class="sol">
+      <p>
+        <i>Explanation: </i>Suppose <i>|G| = pq</i> where <i>p, q</i> are primes and <i>p < q</i>. Then <i>n<sub>q</sub> | p</i> and <i>p < q</i> so <i>n<sub>q</sub> < q</i>.  But also <i>n<sub>q</sub> &equiv; 1</i> (mod <i>q</i>), so <i>n<sub>q</sub> = 1</i>.
+      </p>
+    </div>
+    <h4>Follow-up theorem: If in the previous situation we further have that the Sylow <i>p</i>-subgroup is unique then <i>G</i> is cyclic.</h4>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> Under this further condition we have that <i>n<sub>p</sub> = 1</i> and so there is a unique Sylow <i>p</i>-subgroup, call it <i>P</i>.  And there is a unique Sylow <i>q</i>-subgroup, call it <i>Q</i>.  Each of these has order a prime number and therefore must be cyclic (pretty sure we proved that earlier).  From here we use some fairly fancy footwork to show that <i>P</i> is contained in the center of <i>G</i>.
+      </p>
+      <p>
+        First we refer to the fact from the discussion of automorphisms: \(N_G(H)/C_G(H)\) is congruent to a subgroup of <i>Aut(H)</i>.  Applying this to <i>P</i> and using the fact that <i>P</i> is normal, therefore its normalizer is the whole group, then \(G/C_G(P)\leq Aut(P)\) (said roughly).  Because <i>P</i> is cyclic of order <i>p</i> then it might as well be <i>Z<sub>p</sub></i>. Again using automorphism facts, \(Aut(Z_p)\cong (Z_p)^\times\) and so \(G/C_G(P) \leq (Z_p)^\times\) which has order <i>p-1</i>.  So
+
+        $$ |G|/|C_G(P)| = pq/|C_G(P)| \leq p-1 $$
+
+        $$ |C_G(P)| \geq \frac{pq}{p-1} $$
+
+        Neither <i>p</i> nor <i>q</i> can divide <i>p-1</i>.
       </p>
     </div>
 
