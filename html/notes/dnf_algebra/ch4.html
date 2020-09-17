@@ -421,10 +421,49 @@
 
         $$ |C_G(P)| \geq \frac{pq}{p-1} > q$$
 
-        The only possible order left for \(C_G(P)\) is <i>pq</i>, so <i>P</i> commutes with everything in <i>G</i>.
+        The only possible order left for \(C_G(P)\) is <i>pq</i>, so <i>P</i> commutes with everything in <i>G</i>.  But now we can infer that the order <i>|xy| = </i>lcm(<i>p,q</i>) = <i>pq</i>, so that <i>G = &langle;xy&rangle;</i>.
       </p>
     </div>
-
+    <h4>Theorem: Every group of order 30 has a normal subgroup isomorphic to <i>&Zopf;<sub>15</sub></i>.</h4>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> Note that a subgroup of order 15 has index 2, so is normal for that reason.  Also notice that the previous result applies too, with <i>p=3, q=5</i>.  In fact, according to the Sylow theorems, <i>n<sub>3</sub> &equiv; 1</i> (mod 3) and <i>n<sub>3</sub> | 5</i>.  This could only be <i>n<sub>3</sub> = 1</i> and hence there is a unique normal subgroup of order 3.  We now have the full force of the previous result, and can infer that any group of order 15 is cyclic.
+      </p>
+      <p>
+        All that remains then is to show the existence of any subgroup of order 15 in a group of order 30.  Call the normal Sylow 3-subgroup <i>P</i>, and any Sylow 5-subgroup <i>Q</i>.  Since we already know <i>P &#8884; G</i> then <i>PQ</i> is a subgroup of order 15.
+      </p>
+    </div>
+    <h4>Theorem: Every group of order 12 either has a normal Sylow 3-subgroup, or <i>G &cong; A<sub>4</sub></i>.</h4>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> Assume there is no normal Sylow 3-subgroup and show that <i>G &cong; A<sub>4</sub></i>. Like before we start with an analysis of the numbers of Sylow groups, and show <i>n<sub>3</sub> = 4</i>.  Now if <i>A, B</i> are two distinct subgroups of order 3, then any element in either of them will generate the whole group.  Hence their intersection can only be the identity.  So each has 2 elements not shared with any others, so this accounts for 1 + 4*2 = 9 elements among them.
+      </p>
+      <p>
+        Now on a different track, we can observe that <i>|G : N<sub>G</sub>(P)| = n<sub>3</sub> = 4 = 12/|N<sub>G</sub>(P)</i>.  Since the order of <i>N<sub>G</sub>(P)</i> is 3 and <i>P</i> has order 3, and <i>P &leq; N<sub>G</sub>(P)</i>, we have equality.
+      </p>
+      <p>
+        Next we examine the permutation representation afforded by <i>G</i> acting by conjugation on the four Sylow 3-subgroups.  The kernel of this action fixes <i>P</i> under conjugation, and since <i>P</i> is not normal in <i>G</i>, this kernel lacks at least one element.  Since the kernel is also contained in the normalizer, which we showed was equal to <i>P</i>, the only possible subgroup is the trivial subgroup.  That is to say, the permutation representation is an injective map <i>&phi;: G &rightarrow; S<sub>4</sub></i>.
+      </p>
+      <p>
+        This makes <i>G</i> isomorphic to a subgroup of <i>S<sub>4</sub></i>.  Moreover, <i>A<sub>4</sub></i> has all 8 of the elements of order 3 in <i>S<sub>4</sub></i>, so <i>G</i> maps into a subgroup of <i>A<sub>4</sub></i>.  Moreover, this subgroup has at least 9 elements, and <i>|A<sub>4</sub>|=12</i>, so in fact it is all of <i>A<sub>4</sub></i>.
+      </p>
+    </div>
+    <h4>Theorem: If <i>|G| = p<sup>2</sup>q</i> for distinct primes <i>p, q</i>, then <i>G</i> has some normal Sylow subgroup.</h4>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> If <i>p < q</i> then quick analysis of the number of Sylow subgroups yields <i>P &#8884; G</i>.  Otherwise we can show that if <i>Q</i> is not normal in <i>G</i> then by the divisibility criteria <i>n<sub>q</sub></i> must be <i>p</i> or <i>p<sup>2</sup></i>.  From the congruence criteria and the assumption that <i>Q</i> is not normal, we can infer that <i>q < n<sub>q</sub></i> and from <i>p < q</i> we know <i>n<sub>q</sub></i> cannot be <i>p</i>.  So <i>q = p<sup>2</sup></i>.
+      </p>
+      <p>
+        Now write out the congruence relation by definition, use the above, rearrange, and infer that <i>q|p-1</i> or <i>q|p+1</i>.  Of course the former is impossible from <i>p < q</i>, but the latter entails <i>q=p+1</i>.  The only adjacent primes are 2 and 3.  Now apply the previous result.
+      </p>
+    </div>
+    <h3>Groups of Order 60</h3>
+    <h4>Theorem: Any group of order 60 with more than one Sylow 5-subgroup is simple.</h4>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> 
+      </p>
+    </div>
 
 
 
