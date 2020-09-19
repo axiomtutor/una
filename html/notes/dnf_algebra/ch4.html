@@ -461,10 +461,25 @@
     <h4>Theorem: Any group of order 60 with more than one Sylow 5-subgroup is simple.</h4>
     <div class="sol">
       <p>
-        <i>Explanation:</i> 
+        <i>Explanation:</i> By way of contradiction, suppose both <i>n<sub>5</sub> > 1</i> and that there is a normal subgroup <i>H &ne; 1</i> or <i>G</i>.  Then by examining the congruence and division criteria, <i>n<sub>5</sub> = 6</i>.  By a now familiar analysis of the size of the normalizer, it must have size 10.
+      </p>
+      <p>
+        The possible orders of <i>H</i> are 2, 3, 4, 5, 6, 10, 12, 15, 20, or 30.  We eliminate all of these possibilities.  We can eliminate 5, 10, 15, 20, and 30 at the same time, since if 5 | <i>|H|</i> then there is a Sylow 5-subgroup in <i>H</i>.  Since <i>H</i> is normal it contains all 6 conjugates of this group.  This implies at least 25 elements in <i>H</i> so already <i>|H| = 30</i>, but yet a subgroup of order 30 has index 2, which must be normal.
+      </p>
+      <p>
+        By the previous theorems, if <i>|H| = 6</i> or 12 then <i>H</i> has a PROPER characteristic subgroup which therefore is normal in <i>G</i>.  If we now show that normal subgroups of orders 2, 3, and 4 are impossible, we will have eliminated all possibilities.
+      </p>
+      <p>
+        So now suppose that <i>H</i> has a subgroup of order 2, 3, or 4.  We will look at the quotient group, and infer from its order that the quotient group has a proper normal subgroup with order 5.  From the third isomorphism theorem this entails that this subgroup of the quotient group corresponds to a subgroup of <i>G</i>, with order divisible by 5.  Since we've eliminated that possibility, there can be no such subgroup.
       </p>
     </div>
-
+    <h4>Corollary: <i>A<sub>5</sub></i> is simple.</h4>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> <i>&langle;(1 2 3 4 5)&rangle;</i> and <i>&langle;(1 2 3 5 4)&rangle;</i> are distinct Sylow 5-subgroups.
+      </p>
+    </div>
+    <h4>Theorem: Any simple group of order 60 is isomorphic to <i>A<sub>5</sub></i>.</h4>
 
 
 
