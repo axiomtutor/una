@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Notes - Purcell Ch1</title>
+    <script id="MathJax-script" async src="../../../MathJax-master/es5/tex-chtml.js">
+    </script>
+    <link rel="stylesheet" href="../notes.css">
+  </head>
+  <body>
+    <h1>2.0 The electric potential</h1>
+    The first half discusses the potential of an electric field, the second discusses relevant mathematics.  The <i>potential difference</i> between two points is defined as the negative of the line integral.  Equivalently the field is the negative gradient of potential.  The potential is the potential energy per unit charge.  An important charge distribution giving rise to a frequently important potential is the <i>dipole</i> which consists of two equal and opposite charges.  
+    <h1>2.1 Line integral of the electric field</h1>
+    <p>
+      The line integral is defined as the limit of the sum of the dot-product of the field and a secant vector.  An important theorem is that the line integral around any closed path in an electrostatic field is zero.
+    </p>
+    <h1>2.2 Potential difference and the potential function</h1>
+    <p>
+      For any points <i>P<sub>1</sub>, P<sub>2</sub></i> the potential difference 
+      
+      $$\phi_{21} = -\int_{P_1}^{P_2}\vec{E}\cdot d\vec{s}$$
+      
+      is independent of path and represents the work done moving a positive charge from <i>P<sub>1</sub></i> to <i>P<sub>2</sub></i>.  It has units \([J]/[C]\).  When we fix <i>P<sub>1</sub></i> then the potential difference becomes a function of <i>P<sub>2</sub></i> which we call the potential function.  
+    </p>
+    <div class="example">
+      <b>Example: Potential from a given field</b>
+      <p>
+        For \(\vec{E}=K\langle y,x,0\rangle\) with <i>K</i> a constant, we want to find the potential.  We fix some point, and the choice of <i>P<sub>1</sub></i> can be arbitrary so we pick the origin for convenience.  We then evaluate \(-\int \vec{E}\cdot d\vec{s}\) to some point <i>P<sub>2</sub></i> at (<i>x<sub>2</sub>,y<sub>2</sub>,0</i>).  
+      </p>
+      <p>
+        I'll parameterize the straight line from the origin to the point:
+        
+        $$\langle tx_2, ty_2, 0\rangle \quad 0 \leq t \leq 1$$
+        
+        It follows that 
+        
+        $$d\vec{s}=\langle x_2\ dt, y_2\ dt, 0 \rangle$$
+        
+        and then 
+        
+        $$\vec{E}\cdot d\vec{s} = K\langle ty_2, tx_2, 0\rangle\cdot 
+        \langle x_2\ dt, y_2\ dt, 0\rangle$$
+        $$=K(tx_2y_2\ dt + tx_2y_2\ dt) = 2Ktx_2y_2\ dt$$ 
+        
+        and then 
+        
+        $$\phi_{21}=-\int_0^1(2Kx_2y_2t\ dt) = -Kx_2y_2[t^2]_0^1 = -Kx_2y_2$$
+      </p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript" src=""></script>
+  </body>
+</html>

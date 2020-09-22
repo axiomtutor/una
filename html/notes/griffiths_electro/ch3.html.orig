@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - Griffiths Ch 3</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="../notes.css">
+  </head>
+  <body>
+    <h1>3. Potentials</h1>
+    <h2>3.1. Laplace's Equation</h2>
+    <p>I <i>think</i> the main result of this section is that the potential difference satisfies a wave PDE and implies the existence and uniqueness of solutions of the equation.  In particular we focus on Poisson's equation which we've already seen, \(\nabla^2 V = -\rho/\epsilon_0\).  Laplace's equation is where \(\rho=0\).  Since the solution of PDEs is better treated on its own in a PDE course, we'll skip the details here.</p>
+    <h2>3.2. The Method of Images</h2>
+    <h3>3.2.1. The Classic Image Problem</h3>
+    <p>
+      Suppose you have an infinite flat conductor and hold a point charge near it.  It will attract some amount of charge and repel like charge until it reaches equilibrium.  One imagines most of the collected opposite charge at the point nearest on the plane.  What is the field or potential difference?
+    </p>
+    <p>
+      Approaching the question directly is hard but the uniqueness theorem says that if we have the same boundary conditions we have the same solution for the potential.  Before doing so we should establish what the differential equation is, and what the boundary conditions are.  From Poisson's equation we have \(\nabla^2 V = -\rho/\epsilon_0\) and we are particularly considering the region above the plane.  Since the region is <i>strictly</i> above the plane there is only the point charge. Therefore \( \rho = q\delta^3(\vec r) \) where \(\vec r\) is the vector pointing to the point charge.  Great.  Now what's the boundary?
+    </p>
+    <p>
+      The boundary is tne infinite plane, nothing about it being infinite violates any assumptions of any of our theorems (see: math).  I argue that on this infinite plane, the potential energy is 0.  A fairly simple argument suffices: we define the point at infinity to have zero potential, and the plane is a conductor therefore an equipotential surface.
+    </p>
+    <p>
+      At least for me it was confusing to realize that the potential was zero even though the charge distribution on the plane is non-constant.  In light of Poisson's equation that seems like it shouldn't be so--as the charge distribution varies, the Laplacian of potential varies.  Even more intuitively, if the charge is different throughout spae and the field is correspondingly varying, the potential is very much related to the field so it should also vary.
+    </p>
+    <p>
+      But here's the thing, keep in mind how the potential is defined.  It is the work you'd have to do <i>against the field</i> to bring in a point from infinity.  Since the point is intuitively pointing straight up, perpendicular to the surface because it's a conductor, then bringing a point in along the plane always runs orthogonal to the field and requires no work.
+    </p>
+    <p>
+      In any case, at least one of these arguments should be convincing that the potential along the plane is 0, and this constitutes our boundary condition.  So to exploit the uniqueness theorem, if we can conjure any other system which satisfies the same differential equation above the plane and the same boundary condition, the rest of the universe can be whatever we choose it to be.
+    </p>
+    <p>
+      Let's choose the universe with a mirror image point of opposite charge.  Since the point charges cancel each other in horizontal directions, the same orthogonality argument as before applies now.  The potential through the plane is 0.  However, now the system can be easily analyzed, since <i>V</i> at any point is just the sum of the potentials due to the two point charges.
+    </p>
+    <h3>3.2.2 Induced Surface Charge</h3>
+    <p>
+      Here we solve for the potential and use Poisson's equation to find the charge distribution.  I personally feel like this is just math; the problem was cracked above.
+    </p>
+    <h3>3.2.3. Force and Energy</h3>
+    <p>In the scenario above we can also compute force and energy.  Here we need to not use the image problem, and must go back to the original problem.</p>
+    <h3>3.2.4. Other Image Problems</h3>
+    <p> The technique generalizes.  </p>
+    <h2>3.3. Separation of variables</h2>
+    <p>Here we find a half-assed physicist's solution of PDEs.</p>
+    <h2>3.4. Multipole Expansion</h2>
+    <h3>3.4.1. Approximations at Large Distances</h3>
+    <p>
+      A <b>dipole</b> is just two equal magnitude, <i>q</i>, opposite point charges separated by a distance, call it <i>d</i>.  The question is what the potential difference is at any point, and along the line running through the two points, the question is not hard.  But off of that line, it's more complicated.
+    </p>
+    <p>
+      Let's fix the origin at the midpoint of the line segment separating the points, putting the positive charge at (0,0,<i>d</i>) and the negative at (0,0,<i>-d</i>).  Any point in space is the end of a vector \(\vec r\) emanating from the midpoint of this line segment.  But the vector connecting the positive charge to this point, \(\vec{\mathcal{R}}_+\), is not exactly the same, and likewise for \(\vec{\mathcal{R}}_-\).
+    </p>
+    <p>
+      Using the law of cosines we can get \(\vec{\mathcal{R}}_{\pm}\) but we'll need the angles \(\theta_+,\theta_-\) in the two triangles that allow us to relate \(\vec r\) to the appropriate displacement vector.
+
+      $$ \mathcal{R}_{\pm}^2 = r^2+(d/2)^2 \mp rd\cos\theta $$
+
+      Note that indeed both distances use the same \(\theta \), although seeing this takes a little Geometry work.
+    </p>
+    <p>
+      From this we can state the potential, using \( V(\vec{r}) = kq\left(\frac{1}{\mathcal{R}_+} - \frac{1}{\mathcal{R}_-} \right) \).   Griffiths then goes on to approximate this but I think it will be more interesting to delay the approximation until we need it.
+    </p>
+    <p>
+      This result is useful on its own, but in particular Griffiths applies similar techniques to find the potential due to a continuous distribution.  This time there are not two poles, but we imagine a small region of charge at \(\vec r'\) forming angle \(\alpha\) in a triangle formed with the position vector \(\vec r\) and displacement vector \(\vec{\mathcal{R}}\).  As before using the law of cosines
+
+      $$ \mathcal{R}^2 = r^2 + (r')^2 - 2rr' \cos \alpha $$
+
+      and then finding the potential
+
+      $$ V(\vec r) = k\int \frac{1}{\mathcal{R}}\rho(\vec r') \ d\tau' $$
+
+      $$ = k\int \frac{\rho(\vec r')\ d\tau'}{r\sqrt{1+(r'/r)^2 - 2(r'/r)\cos\alpha}} $$
+    </p>
+    <p>
+      If we collect together some garbage using
+
+      $$ \varepsilon = (r'/r)^2-2(r'/r)\cos\alpha $$
+
+      and use the fact that <i>r</i> is a constant with respect to the integration we get
+
+      $$ \frac k r \int \frac{\rho(\vec r') \ d\tau'}{\sqrt{1+\varepsilon}} $$
+    </p>
+    <p>
+      The garbage collection is especially useful because \(r'/r\) is usually small if we consider points far from the surfae.  This makes the Taylor series appropriate since \(\varepsilon < 1\), although the result of this is not especially clean.  However, we again perform some garbage collection using Legendre polynomials, \(P_n\), and the result is
+
+      $$ V(\vec r) = k\sum_{n=0}^\infty \frac{1}{r^{(n+1)}}\int (r'^n)P_n(\cos \alpha)\rho(\vec r')\ d\tau' $$
+    </p>
+    <p>
+      Who are we kidding, this is a mess.  We won't bother talking about what the Legendre polynomials are and just trust that they work as promised.
+    </p>
+    <h3>3.4.2. The Monopole and Dipole Terms</h3>
+    <p>
+      Although the dipole expansion never resolved very well, we can at least choose the zero-th order term and call this the <b>monopole term</b>
+
+      $$ V(\vec r) \approx k\left(\frac 1 r \int 1\cdot P_0(\cos\alpha)\rho(\vec r')\ d\tau' \right)$$
+
+      $$ = \frac k r \int \rho(\vec r')\ d\tau' $$
+
+      $$ = kQ/r $$
+    </p>
+    <p>
+      Ordinarily the monopole term dominates.  However, if the net charge throughout the system is zero, the monopole term is zero and we are left mostly feeling the effect of the next largest term, which we call the <b>dipole term</b>.
+
+      $$ V(\vec r) \approx \frac{k}{r^2}\hat r \cdot \int \vec r' \rho(\vec r')\ d\tau' $$
+
+      and we call the integral the <b>dipole moment</b>
+
+      $$ \vec p = \int \vec r'\rho(\vec r')\ d\tau' $$
+    </p>
+    <p>
+      This constitutes more garbage collection for the expression of the potential when the net charge is zero.
+
+      $$ V_{dip}(\vec r) \approx k\frac{\vec p\cdot \hat r}{r^2} $$
+    </p>
+    <p>
+      Although the garbage collection is visually appealing, we must remember that the dipole moment depends on the geometry and density of the charge distribution.
+    </p>
+    <p>
+
+      From here we can define a dipole moment for a point charge or collection of point charges.  To do so, we can either 1) work by analogy from the continuous case, or 2) consider \(\rho\) to be defined in tersm of a Dirac-delta function, or 3) look back at the previous section where we discussed the potential of a point-charge
+
+      $$V(\vec r) = kq/r$$
+
+      and recognize that by saying \(\vec p = q\vec r\) then we have \(\vec p\cdot \hat r = qr\) and then
+
+      $$ V(\vec r) = k\vec p\cdot \hat r/r^2 $$
+
+      or for a system
+
+      $$ \vec p = \sum q_i\vec r_i $$
+    </p>
+    <p>
+      If we're dealing with a true dipole this implies \(\vec p = q\vec r_+-q\vec r_- = q\vec d\).
+    </p>
+    <h3>3.4.3. Origin of Coordinates in Multipole Expansions</h3>
+    <p>
+      If we no longer locate the charges at the origin then consider how a displacement of the origin \(\vec a\) affects our calculations.
+
+      $$ \int (\vec r - \vec a) \rho (\vec r) \ d\tau  = \int \vec r \rho(\vec r)\ d\tau - \vec a \int \rho(\vec r)\ d\tau$$
+      $$ = \int \vec r \rho(\vec r)\ d\tau - Q\vec a$$
+
+      where here I'm eliminating the primes on all the variables just to keep it clean.
+    </p>
+    <p>
+      In the above we see that the new dipole moment is the old one plus a term related to charge and the displacement.
+    </p>
+    <h3>3.4.4. The Electric Field of a Dipole</h3>
+    <p>
+      Recalling that \(V_{dip} = k\frac{\vec p \cdot \hat r}{r^2}\) if we want the field, \(\vec E = -\nabla V\).  The calculations can become especially clean if we take the coordinates such that the origin is the tail of \(\vec p\), the tip is along the <i>z</i>-axis, and we express everything in polar coordinates.  Then the potential becomes independent of \(\varphi\).  More precisely
+
+      $$ V_{dip} = k\frac{p\cos\theta}{r^2} $$
+
+      Using the formulae for gradient in polar coordiantes gives results that aren't the worst thing you've ever seen.
+    </p>
+    <h3>Problem 3.33</h3>
+    <div>
+      <p>
+        Suppose a pure dipole <i>p</i> is at the origin pointing in the <i>z</i> direction.
+      </p>
+      <p>
+        Are all of the following solved correctly?
+
+        (a) What is the force on a point charge <i>q</i> at (<i>a</i>, 0, 0)?
+      </p>
+      <p>
+        (b) What is the force on <i>q</i> at (0,0,<i>a</i>)?
+      </p>
+      <p>
+        (c) How much work does it take to move <i>q</i> from one point to the other?
+      </p>
+    </div>
+    <div class="sol">
+      <p>(a) We could approach this directly by Coulomb's law.  Pretty quickly we realize that the equal distance opposite charges imply that the force in the <i>x-</i> and <i>y</i>-directions cancel or are 0.  But in the <i>z</i>-direction they don't.  Better than Coulomb's law, especially because the question to come about work, would be to compute the potential. </p>
+      <p>
+<<<<<<< HEAD
+        Since the net charge is 0 we can use the dipole term and the potential is \( (kp\cos\theta)/r^2 \) which is of course in spherical coordinates.  To get the field we need the negative gradient, and looking up the formula we have 
+        
+        $$ \nabla V = \frac{\partial V}{\partial r}\hat r +
+=======
+        Since the net charge is 0 we can use the dipole term and the potential is \( (kp\cos\theta)/r^2 \) which is of course in spherical coordinates.  To get the field we need the negative gradient, and looking up the formula we have
+
+        $$ \nabla V = \frac{\parital V}{\partial r}\hat r +
+>>>>>>> 7c064465e0c7c3e50baaadda8b39dbcf25ee9df5
+                      \frac{1}{r}\frac{\partial V}{\partial \theta}\hat\theta +
+                      0\hat\phi
+        $$
+<<<<<<< HEAD
+        
+        where the \(0\hat\phi\) term comes from laziness in writing out a term that will turn into 0 anyway.  These compute to 
+        
+        $$ \nabla V = kp\left(-2\frac{\cos\theta}{r^3}\hat r -\frac{1}{r}\frac{\sin\theta}{r^2}\hat \theta \right) $$
+        
+        so that the field is 
+        
+        $$ - \nabla V = \frac{kp}{r^3} (2\cos\theta\hat r + \sin\theta\hat\theta) $$
+      </p>
+      <p>
+        Now for the point in part (a) we have \(r=a, \theta=\pi/2\), implies \(\vec E = kp\hat\theta/a^3\), indicating the pure downward force that we expected from the start.  
+=======
+
+        where the \(0\hat\phi\) term comes from laziness in writing out a term that will turn into 0 anyway.
+      </p>
+    </div>
+    <div class="sol">
+      <p>
+        (b) Approaching this with Coulomb's law would require bifurcating the problem between whether <i>a</i> is larger or smaller than <i>d</i>/2.  If we use the potential we can apply the topic immediately above.  First we want to know the dipole moment, \(\vec p = q\vec d\) and \(\vec d = d\hat z\).
+      </p>
+      <p>
+        The analysis above had a requirement about the position and orientation of the dipole.  But the corrective when that wasn't satisfied, as it isn't here, was proportionate to the total charge.  Since that's zero here, we actually don't care and can just use the results.
+
+        $$ V = k\frac{p\cos\theta}{a^2} $$
+>>>>>>> 7c064465e0c7c3e50baaadda8b39dbcf25ee9df5
+      </p>
+    </div>
+    <div class="sol">
+      <p>
+<<<<<<< HEAD
+        (b) Because we already have an expression for the field generally in the earlier part, we can simply use it here again where \(r=a,\theta=0\) or \(\theta=\pi\) depending on which side of the axis <i>a</i> is on.  This only controls the sign but in general we have \(\vec E = 2kp\cos\theta\hat r / a^3\).
+=======
+        Here \(\theta = 0\) or \(\pi\) depending on which side of the dipole we're one (i.e. the sign of <i>a</i>).  And from what we said above <i>p = qd</i>. Anyway, we now get the field
+
+        $$ \vec E = 2k\frac{p\cos\theta}{a^2} \hat r $$
+>>>>>>> 7c064465e0c7c3e50baaadda8b39dbcf25ee9df5
+      </p>
+    </div>
+    <div class="sol">
+      <p>
+        (c) The work needed is the change in potential energy.  Take the difference of the potential which we found in part (a) at the two different points.  Now multiply by charge.
+      </p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="module" src="../../../js/notes/griffiths_electro/ch2.js"></script>
+  </body>
+</html>

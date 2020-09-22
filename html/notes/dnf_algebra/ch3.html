@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - D&F Algebra Ch3</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="../notes.css">
+  </head>
+  <body>
+    <h1>Chapter 3</h1>
+    <h1>Quotient Groups and Homomorphisms</h1>
+    <h2>3.1 Definitions and Examples</h2>
+    <div>
+      <p>
+        Let \(\varphi:G \rightarrow H\) be a homomorphsim.  We've already seen that if it's an isomorphism then <i>G</i> and <i>H</i> are the same.  By the same token if it's not surjective but injective, then a copy of <i>G</i> lives in <i>H</i>.  However, even when \(\varphi\) is not injective there is still some amount of shared structure between <i>G</i> and <i>H</i>.  The quotient group describes this shared structure.
+      </p>
+      <p>
+        In particular when \(\varphi\) is not injective many elements of <i>G</i> map to a single element in <i>H</i>.  We call the "many elements" a <b>fiber</b>.  More formally, if \(h\in H\) then the "fiber over <i>h</i>" is
+
+        $$ \{g\in G: \varphi(g) = h\} $$
+      </p>
+      <p>
+        Since every fiber corresponds to an element in <i>H</i>, the set of fibers acts exactly like the group <i>H</i>.  So in this way we have split <i>G</i> up into a partition, and the cells of the partition form a group.  Note that the identity of a group is an important element, so we similarly stress the importance of the fiber above \(\mathbb 1\).  We call this the <b>kernel</b> of \(\varphi\) and write it as \(ker\varphi\).
+      </p>
+      <p>
+        The map may be both not injective and not surjective.  Therefore not every element of <i>H</i> has a fiber above it.  So we use \(im\varphi\) to denote the <b>image</b> of the map.  Every element in the image does have a fiber above it.
+      </p>
+    </div>
+    <div>
+      <p>
+        In preparation for further ideas, we first derive a few facts about homomorphisms beyond those already derived in chapter 2.  Homomorphisms always:
+      </p>
+      <ul>
+          <li>
+            <p>
+              <i>Maps the identity to the identity.</i> Because \(\varphi(\mathbb 1) = \varphi(\mathbb 1 \cdot\mathbb 1)\) and so on.
+            </p>
+          </li>
+          <li>
+            <p>
+              <i>Maps inverses to inverses.</i> \(\varphi(gg^{-1}) = \varphi(g)\varphi(g^{-1}) = \varphi(\mathbb 1) \) and so on.
+            </p>
+          </li>
+          <li>
+            <p>
+              <i>Maps powers to powers.</i>  Same logic as before.
+            </p>
+          </li>
+          <li>
+            <p>
+              <i>\(ker\varphi \leq G\).</i>  A direct check confirms this.
+            </p>
+          </li>
+          <li>
+            <p>
+              <i>\(im\varphi \leq H\).</i>  Direct check.
+            </p>
+          </li>
+    </div>
+    <div>
+      <p>
+        We're now ready to define the group of fibers discussed earlier.  It is called the <b>factor group</b>, written as \(G/ker\varphi\).  The operation between the fiber above <i>a</i> and the fiber above <i>b</i> is defined as the fiber above <i>ab</i>.  So in effect the group <i>H</i> defines this operation.
+      </p>
+      <p>
+        The division symbol is evocative of the fact that we are partitioning, or dividing up, the group <i>G</i>.  The analogy will only grow stronger as we learn more.
+      </p>
+    </div>
+    <div>
+      <p>
+        Since the definition of the operation in the factor group is given by the operation in <i>H</i>, one might wonder if we could instead simply perform the operation if we ignore <i>H</i> and only use the fibers.  Of course one group operation is already clear: whichever fiber has \(\mathbb 1\) is the identity element of the factor group.
+      </p>
+      <p>
+        Can we infer for any two fibers, which fiber their product is?  Continue with insights that are clearest about the kernel.  For instance, multiplying an element of a fiber by an element of the kernel doesn't change its fiber.  This is a compelling idea since the kernel acts like \(\mathbb 1\).  Put more formally, for any fiber <i>X</i> and element <i>u</i>, and element of the kernel, <i>k</i>, then \(uk \in X\).  This is because \(\varphi(uk) = \varphi(u)\).
+      </p>
+      <p>
+        More generally, every fiber is of the form \(uK\) where <i>K</i> is the kernel, and <i>u</i> is any arbitrarily chosen element of the fiber.  Call the fiber <i>X</i> again, and the argument from earlier already establishes \(uK\subseteq X\).  For the reverse, take any \(g\in X\) and construct a \(k\in K\) such that <i>g = uk</i>.  The construction of <i>k</i> is obviously \(k = u^{-1}g\).  It's easy to show this is in fact an element of the kernel.
+      </p>
+      <p>
+        An important note is that we could reproduce the previous claims for <i>Ku</i>.  Since both are equal to the fiber containing <i>u</i> then they're equal to each other.  That is to say <i>uK = Ku</i>.
+      </p>
+      <p>
+        Since we will very often use <i>uK</i> rather than fibers and homomorphisms, we give this a name.  It is called a <b>left coset</b> and of course right cosets are similarly defined.  <i>u</i> is called a <b>representative</b>.  Any element from a coset can be used as a representative.
+      </p>
+    </div>
+    <h4>Theorem: Coset operations on kernels are as you'd hope: <i>(uK)(vK) = (uv)K</i>.</h4>
+    <div>
+      <p>
+         We are assuming <i>K</i> is the kernel of a homomorphism.  Identify these cosets with fibers and unravel the definitions.  A fairly direct use of the homomorphism distribution concludes the proof.
+      </p>
+    </div>
+    <div>
+      <p>
+        Now we may want to even further remove the notion of a homomorphism.  Can we take any subset of <i>G</i> and form a group of cosets?  If you want this to still form a partition, then no.  In \(\mathbb Z/4\mathbb Z\) we can see that {0,3} doesn't work: 1+{0,3} = {1,0}.  If you don't have a partition then you can't talk in terms of representatives, since two cells now share elements.
+    </div>
+    <div>
+      <h4>Theorem: Cosets formed from subgroups form a partition, and equal cosets contain both representatives.</h4>
+
+      <p>
+        If <i>H</i> is any subgroup of <i>G</i> then to show the set of cosets forms a partition, we first show that every element of <i>G</i> is in some coset.  Since \(\mathbb 1 \in H\) then \(g\in gH\).
+      </p>
+      <p>
+        To show disjointedness we argue that if two cosets <i>uH</i> and <i>vH</i> share any element then they share every element.  If <i>x = un = vm</i> is in both, then for any \(un' \in uN\) we argue \(un'\in vN\).  Of course we leverage <i>x</i> to exchange a <i>u</i> for a <i>v</i>, invoke the closedness of <i>H</i>, and so on.
+      </p>
+    </div>
+    <div>
+      <h4>Theorem: <i>uH = vH</i> if and only if \(H = u^{-1}vH\) if and only if \(u^{-1}v\in H\).</h4>
+      <p>
+        Let's chase a little bit of the first "iff".  Suppose <i>uH = vH</i> and we show \(H\subseteq u^{-1}vH\).  So let \(h\in H\).  First observe that <i>v = uh'</i> by the first assumption, and so \(h' = u^{-1}v \in H\).  We want to show \(h\in u^{-1}vH\) so we need to show \(h = u^{-1}vh_2 = h'h_2\) for some appropriate choice of \(h_2\).  But of course we take \(h_2 = h(h')^{-1}\).
+      </p>
+    </div>
+    <div>
+      <p>
+        Since we're committed to subgroups to generate our cosets, one wonders if any subgroup will do.  We know kernels will, but how about others?  They won't, since the group operation isn't always well-defined.  That is to say, we can find an instance where \((uH)(vH)\) comes out to one thing, and \(uH = u'H\), and yet \((u'H)(vH)\) comes out different.  Take \(G=D_{6}\) and take the subgroup of the reflection \(S = \{\mathbb 1, s\}\).  Then \(rS = \{r, rs\}\) and \(rsS = \{rs, r\}\), so they're equal.  But
+
+        $$ (rS)(rS) = r^2S = \{r^2, r^2s\} $$
+
+        and yet
+
+        $$(rsS)(rS) = rsrS = rr^{-1}sS = sS = S $$
+      </p>
+      <p>
+        <i>What goes wrong with the subgroup of a reflection in the dihedral group?</i>  To get clarity, let's try to prove that the operation is well-defined and see which assumptions we need to make along the way to accomplish the proof.
+      </p>
+      <p>
+        If \(u_1H = u_2H\) and \(v_1H = v_2H\) then we want \(u_1v_1H = u_2v_2H\).  To make this easier we recall that two cosets are equal if they are representatives of the same coset.  In this case, that means we merely need to show that the coset containing \(u_1v_1\) is the coset containing \(u_2v_2\).  Put even more directly, we need \(u_1v_1\in u_2v_2H\), and even more directly, we need to show that \(u_1v_1\) can be written as \(u_2v_2h\).  Obviously we can write
+
+        $$ u_1v_1 = u_2h_1v_2h_2 $$
+      </p>
+      <p>
+        We would clearly be done if we could switch around \(h_1\) and \(v_2\) somehow.  Abelianness would do it but that's going too far--we don't need the \(h_1v_2 = v_2h_1\) although that'd be ok.  All we really need is that when you do the switcheroo you have \(v_2\) on the left and any element of <i>H</i> on the right.  By limiting ourselves to this weaker property we can identify a property that is not just sufficient but also necessary.
+      </p>
+      <p>
+        So what we require is that our subgroup <i>H</i> has the property that for any group element \(g\in G\) and subgroup element \(h\in H\) we have <i>hg = gh'</i> for some \(h'\in H\).  A more convenient expression of this is that \(g^{-1}hg\in H\) which can also nicely be expressed as "<i>H</i> is closed under conjugation".  Notice the similarity with the previous definitions of the centralizer and normalizer.  You can see that another way of expressing is that <i>H</i> is fixed under the action of conjugation, when the group acts on its powerset by conjugation.
+      </p>
+      <p>
+        A subgroup that is closed under conjugation by elements in its supergroup is called <b>normal</b>.  We write this as \(N\trianglelefteq G\), usually using <i>N</i> where possible for normal subgroups.  IMPORTANT: A group itself cannot be normal or not.  You must always consider normalcy according to which supergroup it is a subgroup of.  This determines the class of \(g\in G\) for which <i>H</i> might be fixed by conjugation.
+      </p>
+    </div>
+    <h4>Theorem: Coset group operations are well-defined if and only if the group is normal.</h4>
+    <div>
+      <p>
+        The explanation of this theorem follows fairly directly from the foregoing discussion.
+      </p>
+    </div>
+    <div>
+      <h4>Theorem: If the group operation is well-defined then the cosets form a group.  In particular each element has an inverse and \((gN)^{-1} = g^{-1}N\).  </h4>
+      <p>
+        The proof merely shows that <i>(gN)(g^{-1}N) = N</i>.
+      </p>
+    </div>
+    <div>
+      <p>
+        There are in fact many important characterizations of what a normal subgroup is.  It is a fairly straight-forward consequence of definitions that normalcy is equivalent to
+
+        <ol>
+          <li>
+            \((N_G)(N) = G\)
+          </li>
+          <li>
+            \(gN = Ng\)
+          </li>
+          <li>
+            \(gNg^{-1} \subseteq N\)
+          </li>
+        </ol>
+      </p>
+    </div>
+    <div>
+      <p>
+        The final point is that although it seems we have finally removed any reference to a homomorphism by characterizing normal subgroups, in fact ...
+      </p>
+      <h4>Theorem: A group is normal if and only if it is the kernel of its natural projection.</h4>
+      <p>
+        Of course this requires saying what the natural projection is, but you might eve be able to guess it.  It's \(\pi:G\rightarrow G/N\) where
+
+        $$ g\mapsto gN $$
+      </p>
+      <p>
+        This theorem is not hard to prove.
+      </p>
+    </div>
+    <h2>3.2 More on Cosets and Lagrange's Theorem</h2>
+    <h4>Lagrange's Theorem: The order of a subgroup divides the order of the group.</h4>
+    <div>
+      <p>
+        To see this, observe that the cosets partition and have equal size.  How do we know they have equal size?  Prove \(f: H\rightarrow aH\) given by \(f(h) = ah\) is a bijection.
+      </p>
+    </div>
+    <div>
+      <p>
+        From the above we can also see that the size of the factor group <i>|G/H| = |G|/|H|</i> which we call the <b>index</b>.
+      </p>
+    </div>
+    <h4>Corollary: A group of prime order is cyclic.</h4>
+    <div>
+      <p>
+        Just take a non-identity element and inspect the subgroup it generates.  It has to be the whole group.
+      </p>
+    </div>
+    <div>
+      <h4>Cauchy's Theorem: If a prime divides the order of a group then there's a subgroup of that order.</h4>
+      <p>
+        The proof is an exercise and involves looking at group actions of "rotation" of tuple coordinates.
+      </p>
+    </div>
+    <div>
+      <h4>Theorem: The order of a product is the product of the orders, divided by the intersection.  (For finite groups.)</h4>
+      <p>
+        The theorem claims
+
+        $$|HK| = \frac{|H||K|}{|H\cap K|}$$
+
+        and we prove this by construing <i>HK</i> as <i>K</i> together with <i>hK</i> together with ... or otherwise said,
+
+        $$HK = \bigcup_{h\in H}hK$$
+      </p>
+      <p>
+        It's easy to see that the collection <i>hK</i> covers <i>HK</i> and we know that any two cosets are of the same size.  And we know that two cosets are either disjoint or equal.  So we need the size of this union is equal to the sum of the size of each distinct term, which is itself just <i>|K|</i> multiplied by the number of distinct cosets.  Hence we want to show that the number of distinct <i>hK</i> is \(\frac{|H|}{|H\cap K}\).
+      </p>
+      <p>
+        One easy observation while we're trying to get there, is that from Lagrange's theorem the number of cosets of \(H\cap K\) as a subgroup of <i>H</i> is \(\frac{|H|}{|H\cap K|}\).  So really we just need to see that there are just as many cosets of \(H\cap K\) in <i>H</i> as there are cosets of <i>K</i> in <i>HK</i>.
+      </p>
+      <p>
+        To see this we recall an earlier theorem which told us \(h_1K = h_2K \Leftrightarrow h_2^{-1}h_1\in K\) which in this case automatically makes \(h_2^{-1}h_1 \in H\cap K\).  With this in hand, establishing
+
+        $$ h_1K = h_2K \Leftrightarrow h_1(H\cap K) = h_2(H\cap K)$$
+
+        is easy.
+      </p>
+    </div>
+    <div>
+      <h4>
+        Theorem: <i>HK</i> is a subgroup if and only if <i>HK = KH</i>
+      </h4>
+      <p>
+        Before explaining the proof, notice that this is <i>not</i> the same thing as the elements of <i>H</i> and <i>K</i> commuting.  It is just the property that <i>hk</i> is always some <i>k'h'</i>.
+      </p>
+      <p>
+        Now the proof: Suppose <i>HK = KH</i>. We want to show that if \(a,b\in HK\) then so is \(ab^{-1}\in HK\).  If we write <i>a</i> and <i>b</i> as <i>HK</i> elements, take an inverse, multiply, we're stuck with the <i>k</i>s in the middle and an <i>h</i> on the right.  But of course we can swap them around and get new elements of <i>H</i> and <i>K</i> but that's adequate for the claim we must prove.
+      </p>
+      <p>
+        For the converse, suppose <i>HK</i> is a group.  Then \(H, K\leq HK\) and so when taking products we can never leave the group, hence \(KH \subseteq HK\).  The hard part is showing \(HK\subseteq KH\) since we don't know <i>KH</i> is a group.  But since <i>HK</i> is closed under inverses and the inverse reverses the order, we can complete the proof along these lines.
+      </p>
+    </div>
+    <div>
+      <h4>Theorem: For any subgroup \(K\leq G\) and a subgroup of its normalizer, \(H\leq N_G(K)\), then <i>HK</i> is a subgroup.  In particular, products with normal subgroups are always subgroups.</h4>
+      <p>
+        Since we're proving <i>HK</i> is a subgroup and this is in the previous theorem, we'll probably use that.  So we try to show <i>HK = KH</i>.  But by being in the normalizer and therefore free to conjugate, we can wiggle in terms as needed and the proof is easy.
+      </p>
+    </div>
+    <h2>3.3 The Isomorphism Theorems</h2>
+    <div>
+      <p>
+        Stuff gets important and also hard starting about now.  These isomorphism theorems are sometimes regarded as fundamental theorems and they will be used repeatedly throughout the rest of the study of group theory.
+      </p>
+      <p>
+        The first is something we've actually already discussed in the previous section.
+      </p>
+    </div>
+    <div>
+      <h4>The First Isomorphism Theorem: Homomorphism kernels are normal and \(G/ker\varphi \cong \varphi(G)\).</h4>
+      <h4>Corollary: \(\varphi\) is injective if and only if \(ker\varphi = \mathbb 1\).</h4>
+    </div>
+    <div>
+      <h4>The Second Isomorphism Theorem: If \(B\leq G\) is any subgroup and <i>A</i> is in its normalizer, then <i>AB</i> is a subgroup, and </h4>
+      <ol>
+        <li>
+          \(B\trianglelefteq AB\)
+        </li>
+        <li>
+          \(A\cap B\trianglelefteq A\)
+        </li>
+        <li>
+          The previous two make this make sense: \( AB/B \cong A/(A\cap B) \)
+        </li>
+      </ol>
+      <p>
+        Notice that this theorem may be useful either when we are trying to analyze the factor of a product, or when the factor is an intersection.
+      </p>
+      <p>
+        Now the proof.  That <i>AB</i> is a subgroup is the consequence of a previous theorem.
+      </p>
+      <p>
+        That \(B\trianglelefteq AB\) follows because \(A,B\leq N_G(B)\).
+      </p>
+      <p>
+        We will show \(A\cap B\trianglelefteq A\) and in fact, also show the third part, by showing that \(A\cap B = ker\varphi\) for some homomorphism \(\varphi: A\rightarrow AB/B\).  In fact it is just the natural projection.
+      </p>
+    </div>
+    <div>
+      <h4>The Third Isomorphism Theorem: Quotients of quotients cancel.</h4>
+      <p>
+        Stated only slightly more explicitly, the theorem claims that for two normal subgroups <i>H, K</i> and if \(H\leq K\) then \(K/H \trianglelefteq G/H\) and
+
+        $$ \frac{G/H}{K/H} \cong G/K $$
+      </p>
+      <p>
+        As is typical we'll try to give a homomorphism \(\varphi: G/H \rightarrow G/K\) such that \(ker\varphi = K/H\).  In fact it will be the obvious choice.
+      </p>
+    </div>
+    <div>
+      <h4>The Fourth Isomorphism Theorem: Groups and their quotients share subgroups, intersection groups, and normal subgroups.</h4>
+      <div class="sol">
+        <p>
+          More precisely if \(N\trianglelefteq G\) and \(N\leq A\) then for each \(B\leq G\):
+          <ul>
+            <li>\(A\leq B \quad \Leftrightarrow \quad A/N\leq B/N\)</li>
+            <li>\(\overline{(A\cap B)} = \overline A\cap \overline B\)</li>
+            <li>\(A\trianglelefteq B \quad \Leftrightarrow \quad A/N \trianglelefteq B/N\)</li>
+          </ul>
+        </p>
+        <p>
+          <i>Explanation:</i> Chase down details using the natural projection.
+        </p>
+      </div>
+    </div>
+    <h2>3.4 Composition Series and the Hölder Program</h2>
+    <div>
+      <p>
+        A group is called <b>simple</b> if it's not trivial and has no interesting normal subgroup.  An "interesting" normal subgroup is anything other than the trivial or improper subgroups.
+      </p>
+      <p>
+        A <b>composition series</b> is a sequence of subgroups
+
+        $$ \mathbb 1=N_0\leq N_1 \leq \dots \leq N_k = G $$
+
+        where \(N_i \trianglelefteq N_{i+1}\) and the quotient \(N_{i+1}/N_i\) is simple.  Each \(N_{i+1}/N_i\) is called a <b>composition factor</b>.
+      </p>
+      <h4>Jordan-Hölder Theorem: Every nontrivial group has a composition series, and the composition factors are unique up to isomorphism.</h4>
+      <p>
+        Note that the isomorphism between the composition factors may not occur in the same order in the series.
+      </p>
+    </div>
+    <div>
+      <p>
+        A group is <b>solvable</b> if there is a chain of subgroups
+
+        $$ \mathbb 1 \trianglelefteq G_0 \trianglelefteq G_1 \trianglelefteq \dots \trianglelefteq G_s = G $$
+
+        and \(G_{i+1}/G_i\) is abelian.
+      </p>
+      <p>
+        Note that a composition series may not be "solution series" because the factors may not be simple.
+      </p>
+    </div>
+    <h2>3.5 Transpositions and the Alternating Group</h2>
+    <div>
+      <h3>Transpositions and Generation of \(S_n\)</h3>
+      <div>
+        <p>
+          We've seen that permutations can be written (essentially) uniquely as a product of disjoint cycles.  They can also be written (very not-uniquely) as other products of cycles, especially as products of transpositions.  A <b>transposition</b> is a 2-cycle.  When written as a product of transpositions we are able to classify permutations into even and odd <b>parity</b>.  A cycle is of even parity if and only if it is a product of an even number of transpositions.
+        </p>
+        <p>
+          A theorem we will soon prove is that this is well-defined because every permutation can be written entirely of transpositions.  We will also see that, if it can be written as a product of an even number of permutations, then it can never be written as some product of an odd number of permutations.
+        </p>
+        <p>
+          Before proving the theorem, though, we see how to do this practically on small examples.  The trick really is to first write a permutation into some product of disjoint cycles, and then know how to transform a disjoint cycle into a product of permutations.  The formula below shows how to do this last step.
+
+          $$ (a_1 a_2 \ \dots a_n)  = (a_1 \ a_m)(a_1 \ a_{m-1}) \dots (a_1 \ a_2) $$
+        </p>
+        <p>
+          Notice that this establishes the existence of a transposition product representation, and therefore that the set of all transpositions generates \(S_n\).
+        </p>
+      </div>
+      <div>
+        <h3>The Alternating Group</h3>
+        <p>
+          We now prove that parity is well-defined. The proof is long and extended, so we start with some introduction to the polynomial \(\Delta\) and the sign function.  Then we prove some theorems about the sign function which will ultimately help us show that parity is well-defined.
+        </p>
+        <p>
+          Intuitively every permutation causes a flip, and there is some sense in which this is related to negatives in algebraic expressions.  In particular if you flip two terms in a difference, it's equivalent to a negative factor.
+
+          $$ x-y = -(y-x) $$
+        </p>
+        <p>
+          To try to capture this idea, we make a polynomial with <i>n</i> variables, where <i>n</i> is also the index for \(S_n\).  The variables we write as
+
+          $$ x_1, x_2, ..., x_n $$
+
+          We will call the polynomial that we build \(\Delta\).  Ultimately the polynomial that we build up will be
+
+          $$ \Delta = \Pi_{1 \leq i < j \leq n} (x_i-x_j) $$
+        </p>
+        <p>
+          But to explain why we would ever think to construct this polynomial let's think of it in steps.  It should have a factor for every pair of indices, so that every possible transposition of the terms causes a negative to occur.  This leads us to include in the polynomial a factor for every pair of variables.  That is to say for every \(x_i,x_j\) we include the factor \(x_i-x_j\) in \(\Delta\).  That way if \(\sigma\) exchanges <i>i</i> and <i>j</i> then \(\sigma (x_i-x_j)  = x_j-x_i\).
+        </p>
+        <p>
+          But we want to be careful, if you have every such factor then you're including \(x_1-x_1\) for instance, and this definitely doesn't introduce negatives upon permuting.  Similarly, if you allow repeats then \((x_1-x_2)(x_2 - x_1)\) generates two negatives and they cancel, so we want to avoid this also.  We want a polynomial where each transposition tracks in a well-behaved way with these swaps and the equivalent negative sign.  So we only allow \(x_1 - x_2\) in and not \(x_2-x_1\).  And in general we let in \(x_i - x_j\) if and only if <i>i < j</i>.  Hence we have constructed \(\Delta\).
+        </p>
+        <p>
+          And to be explicit about how \(\sigma\) acts on \(\Delta\),
+
+          $$ \sigma(\Delta) = \Pi_{1\leq i < j\leq n}  (x_{\sigma(i)}-x_{\sigma(j)}) $$
+
+          Clearly \(\sigma(\Delta) = \pm \Delta\).  For each \(\sigma\in S_n\) we define the <b>sign</b> function
+
+          $$ \epsilon(\sigma) = \begin{cases} +1 & \text{ if } \sigma(\Delta) = \Delta \\ -1 & \text{ if } \sigma(\Delta) = -\Delta \end{cases} $$
+        </p>
+        <h4>Theorem: The sign function is a homomorphism.</h4>
+        <div class="sol">
+          <p>
+            <i>Explanation: </i> We need to show \(\epsilon(\tau\sigma)=\epsilon(\tau)\epsilon(\sigma)\).  We assume \(\sigma\) causes <i>k</i> flips, so that \(\epsilon(\sigma) = (-1)^k\) and try to show that this essentially factors out of \((\tau\sigma)(\Delta)\) so that what you're left with is \((-1)^k \tau(\Delta)\) and then \(\epsilon(\tau\sigma) = (-1)^k\epsilon(\tau) = \epsilon(\sigma)\epsilon(\tau)\).
+          </p>
+          <p>
+            So for \((\tau\sigma)(\Delta) = \Pi_{1\leq i < j \leq n}(x_{(\tau\sigma)(i)}-x_{(\tau\sigma)(j)}) \) how do we show that the \((-1)^k\) factors out?  We can observe that \((\tau\sigma)(\Delta)\) has <i>k</i> factors \(x_{\tau(j)-\tau(i)}\) with <i>i < j</i>.  We then express these as negative multiples and move the negatives outside.
+          </p>
+        </div>
+        <div>
+          <h4>Theorem: Transpositions are odd.</h4>
+          <div class="sol">
+          <p>
+            Clearly (1 2) is odd.  We will the use the homomorphism property to give a very nice proof that any other transposition can be related to this one.  In particular it's the old trick of translating our problem to this problem, doing the calculation, and translating back out.  If \(\sigma\) is any transposition (<i>i, j</i>), then we build a translation permutation \(\lambda\) such that \( (i \ j) = \lambda^{-1}(1 \ 2) \lambda\).  If we then know how to compute the sign of \(\lambda\) and its inverse, we'll be done.  But in fact, we won't compute the sign of \(\lambda\) but just show that it equals the sign of \(\lambda^{-1}\) and therefore this forms a square number and so must be 1.
+          </p>
+          <p>
+            To then construct \(\lambda\), intuitively, we basically want to map <i>i</i> and <i>j</i> to 1 and 2.  So you just build the permutation which does exactly that.  And then it's easy to see that \(\lambda^{-1}=\lambda\) and that \((i \ j) = \lambda (1\ 2)\lambda\).
+          </p>
+          </div>
+        </div>
+        <div>
+          <p>
+            It's worth noting that, as soon as we knew that one permutation is odd, we knew that the sign function is surjective.
+          </p>
+          <p>
+            It's also worth noting that we can now easily argue that the parity is well-defined.  Take any permutation, write it as a product of transpositions, apply \(\epsilon\) and the value is uniquely determined by the number of transpositions.  Any other way of expressing it as transpositions must give the same sign and therefore share the parity.
+          </p>
+        </div>
+      </div>
+      <div>
+        <p>
+          We call the set of all even permutations the <b>alternating group</b> and write it as \(A_n\).  We will want a proof that in fact this set is a group. But it is easy: It is the kernel of the homomorphism \(\epsilon\).  But also since it's normal we know that \(S_n/A_n \cong \epsilon(S_n) = \{\pm 1\}\) so that the order of \(A_n\) is half that of \(S_n\).  Moreover, due to this factor group, it's easy to see that all other permutations are odd, and the factor group obeys the regular laws of even-odd multiplication.  This shows that an even permutation times an even is even, and so on.
+        </p>
+        <h4>Theorem: An <i>m</i>-cycle is odd if and only if its length is even.  A permutation is odd if and only if it contains an odd number of even-length cycles in its cycle decomposition.</h4>
+        <div class="sol">
+          <p>
+            We know the first claim by knowing at least one way of writing a cycle as a product of transpositions, from before.  There is an odd number of them in this representation, so the number is always odd.
+          </p>
+          <p>
+            For the second claim, again use the homomorphism property.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

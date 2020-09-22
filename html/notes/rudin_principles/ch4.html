@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - Rudin Principles Ch3</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="../notes.css">
+  </head>
+  <body>
+    <h1>Chapter 4</h1>
+    <h1>Continuity</h1>
+
+    <h2>Section 1</h2>
+    <h2>Limits of Functions</h2>
+
+    <div>
+      <p>
+        We suppose we have metric spaces <i>X</i> and <i>Y</i>, and \(f:X\rightarrow Y\).  <i>q</i> is the <b>limit of the function</b> <i>f</i> at <i>p</i> if \( (\forall \varepsilon\in\mathbb R^+)(\exists \delta\in\mathbb R^+)(\forall x\in X) \) we have
+
+        $$ d(x,p) <\delta \Longrightarrow d(f(x),q) < \varepsilon $$
+      </p>
+      <h3>Theorem: The limit of a function at a point is the same as the limit of function values, on any sequence of domain values converging to the correct point.</h3>
+      <div class="sol">
+        <p>
+          <i>Explanation:</i> The theorem claims that  \(\displaystyle\lim_{x\rightarrow p}f(x) = q\) if and only if for every \(p_n\rightarrow p\) we have
+
+          $$ \lim_{n\rightarrow\infty}f(p_n) = q $$
+        </p>
+        <p>
+          The proof going left-to-right takes any \(\varepsilon\in\mathbb R^+\) and finds a \(\delta\).  But by the convergence of \(P_n\) we can find an <i>N</i> corresponding to \(\delta\).
+        </p>
+        <p>
+          In the right-to-left direction, we prove the contrapositive and suppose there is some \(\varepsilon\in\mathbb R^+\) for which every \(\delta\in\mathbb R^+\) does what it does.  We can then build a specific sequence of \(\delta\)s like \(\delta_n = 1/n\) to construct a sequence converging to <i>p</i> but the function values staying out of range.
+        </p>
+      </div>
+      <h3>Corollary: Limits of functions are unique.</h3>
+      <div class="sol">
+        <p>
+          <i>Explanation:</i> Since limits of sequences are unique.  Limits of functions are some limits of sequences, so they too must be unique.
+        </p>
+      </div>
+      <h3>Theorem: Limits of functions distribute over sums, products, and quotients.</h3>
+      <div class="sol">
+        <p>
+          <i>Explanation:</i> These all inherit from theorems about limits of sequences.
+        </p>
+      </div>
+    </div>
+    <h2>Section 2</h2>
+    <h2>Continuous Functions</h2>
+    <div>
+      <p>
+        A function <i>f</i> between metric spaces is <b>continuous at <i>p</i></b> if for every neighborhood of \(f(p)\) there is a neighborhood of <i>p</i> which maps into it.
+      </p>
+    </div>
+    <h3>Theorem: Being continuous at <i>p</i> is the same as the limit and function value agreeing at <i>p</i>.</h3>
+    <div class="sol">
+      <p>
+        <i>Expalantion:</i> The only difference between the definitions of limit and continuity is the specification the function value.  When the limit point is specified to be <i>f(p)</i>, the two defintions collapse into the same.
+      </p>
+    </div>
+    <h3>Theorem: Compositions of continuous functions are continuous.</h3>
+    <div class="sol">
+      <p>
+        <i>Expalantion:</i> More precisely the theorem states that if <i>f</i> is continuous at <i>p</i>, and <i>g</i> is continuous at <i>f(p)</i>, then the function \(h=g\circ f\) is continuous at <i>p</i>.
+      </p>
+      <p>
+        Let \(\varepsilon\in\mathbb R^+\) be given, get \(\delta\in\mathbb R^+\) for <i>g</i>.  Use \(\delta\) for the "\(\varepsilon\)" bound on <i>f</i>.
+      </p>
+    </div>
+    <h3>Theorem: Continuous functions are precisely those which inverse-map open sets to open sets.</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> Suppose <i>f</i> is continuous and <i>V</i> is an open subset of the range.  We directly show that the inverse image is open by showing every point \(x\in f^{-1}(V)\) is interior.  In particular, because <i>V</i> is open, we can find an \(\varepsilon\) neighborhood of \(f(x)\), and then find a \(\delta\) neighborhood of <i>x</i> which maps into <i>V</i>.  But therefore this is a neighborhood of <i>x</i> fitting entirely inside the inverse image.
+      </p>
+      <p>
+        Now suppose <i>f</i> inverse-maps open sets to open sets, and we show that <i>f</i> is continuous everywhere. So let \(x\in X\), and take an \(\varepsilon\) neighborhood of <i>f(x)</i>.  The inverse image is an open set, so put a neighborhood of <i>x</i> fitting inside this inverse image.  Say the radius is \(\delta\).
+      </p>
+    </div>
+    <h3>Corollary: Continuous functions are also those which inverse-map closed sets to closed sets.</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> Complements of open sets are closed.
+      </p>
+    </div>
+    <h3>Theorem: Sums, products, and quotients of complex continuous functions are continuous (except where the denominator is 0).</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> This is not very different from the analogous claim for limits of functions.  The only difference is the possibility of isolated points, but here there is nothing to prove since all functions are continuous at any isolated point.
+      </p>
+    </div>
+    <h3>Theorem: If \(f: X \rightarrow \mathbb R^k\) by \(f(\vec x) = (f_1(x_1), \dots, f_k(x_k))\) then <i>f</i> is continuous if and only if each component function is.  Sums and dot-products of continuous functions are continuous.</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> Suppose <i>f</i> is continuous at \(x\in X\).  Then with the \(\varepsilon,\delta\) you get, use in the codomain the fact that projections are always smaller in magnitude.  For the converse, you can either bound each component by \(\varepsilon/k\) or prove the contrapositive.
+      </p>
+      <p>
+        The second claim comes from the first and the closure of continuous functions under sums and products.
+      </p>
+    </div>
+    <h2>Section 3</h2>
+    <h2>Continuity and Compactness</h2>
+    <div>
+      <p>
+        A function is called <b>bounded</b> if its image is a bounded set.
+      </p>
+    </div>
+    <h3>Theorem: Continuous functions on a compact metric space have a compact image.</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> Take any open cover of the image.  The inverse image on each open set forms an open cover of the compact set.  Follow your nose.
+      </p>
+    </div>
+    <h3>Theorem: If \(f: X\rightarrow\mathbb R^k\) is continuous and <i>X</i> is compact, then the image is closed and bounded, hence the function is bounded.</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> Given that the image is compact, and compactness in \(\mathbb R^k\) is equivalent to closed and bounded, this all just falls right out.
+      </p>
+    </div>
+    <h3>Theorem: Continuous functions on compact spaces achieve their max and min.</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> Let's talk about the max; the story for the min is essentially the same.  We know the image is bounded, by the previous theorem.  And we know the image has a sup.  We want to show that there is some point in the domain which maps to this sup, otherwise, the function might not even have a max. (I.e. if the function has no max, you could keep picking points in the domain which get you ever larger but never actually arrive at the sup).
+      </p>
+      <p>
+        The proof is immediate from the fact that the image is closed and bounded and therefore comtains its sup.
+      </p>
+    </div>
+    <h3>Theorem: Inverses of invertible continuous functions are continuous.</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> We can show that images of open sets are open sets.  If \(y\in f(V)\) where <i>V</i> is open, then fit a neighborhood around <i>x</i> where <i>f(x) = y</i>.
+      </p>
+    </div>
+    <div>
+      <p>
+        A function is called <b>uniformly continuous</b> if for any error in the image, it's never exceeded by two points in the domain sufficiently close.
+      </p>
+    </div>
+    <h3>Theorem: Continuity on a compact space implies uniform continuity.</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> Around every point in the domain we put a neighborhood which is implied to exist by continuity.  Clearly this is an open cover and we can select a finite subcover.  Of this finite list of neighborhoods we select the least radius.  Now intuitively we'd hope that this would be \(\delta\) and everything would work out from there to show uniform continuity.  When we have some <i>p</i>, <i>q</i> with \(d(p,q) < \delta\) we want it to fall out that <i>p</i> and <i>q</i> must have been in the same open covering set, and therefore the images must be within \(\varepsilon\).  Unfortunately it doesn't work, the two points may not be in the same neighborhood.
+      </p>
+      <p>
+        We need to pick a tigher \(\delta\), but even that alone doesn't work out.  But if we pick the neighborhoods half as small as continuity requires, and \(\delta\) half as small as the minimum available choice, then these bounds become tight enough.  Because if we're in <i>p</i>'s neighborhood, the distance from the center of the neighborhood to <i>q</i> splits up on <i>p</i> by the triangle inequality, and with each part being less than half the bound from continuity, then we get what we want.
+      </p>
+    </div>
+    <h3>Theorem: Compactness is a necessary condition for the theorems above that assumed it.</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> We start by showing that if <i>E</i> is a non-compact set in \(\mathbb R\) then there always is a continuous function which is not bounded.  This is clear because <i>E</i> is either not closed or not bounded.  If it's not bounded, we can form a function which goes to infinity.  If it's not closed then it fails to contain a limit point, so we can build a sequence in the domain going to it, and function values that fly off to infinity as they approach.
+      </p>
+      <p>
+        Next we show that if <i>E</i> is non-compact then there is a continuous function which does not attain its maximum.  The exact same remarks above demonstrate this.  Next we show that the image is not compact, but again the same reasoning accomplishes this.
+      </p>
+      <p>
+        I find it hard to parse Rudin's language when it comes to the claim about uniform continuity.  Since it's not too important, I'm going to skip it.
+      </p>
+    </div>
+    <h2>Section 4</h2>
+    <h2>Continuity and Connectedness</h2>
+    <h3>Theorem: A continuous function maps connected sets to connected sets.</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> Suppose the image of a set is separated by <i>A</i> and <i>B</i>.  Intersect the set with the preimage of <i>A</i> and <i>B</i>.  Through some steps about preimages and closures, and continuous functions maping closed set to closed sets, you can show that the image of the closure of these is in the closures of <i>A</i> and <i>B</i>.  From here, using facts about <i>A</i> and <i>B</i> being separated, you can show these intersected sets separate the domain.
+    </div>
+    <h3>Theorem: The Intermediate Value Theorem (IVT).</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> The theorem states that a continuous real function on a closed interval always takes every value in-between.  That is to say, more formally, let <i>f</i> be a continuous function on the interval [<i>a,b</i>].  Suppose <i>f(a) < f(b)</i> and moreover <i>f(a) < c < f(b)</i> for some <i>c</i>.  Then there exists an \(x\in[a,b]\) such that <i>f(x) = c</i>.
+      </p>
+      <p>
+        We already know [<i>a,b</i>] is connected and so the image is.  And we know that for a connected set of real numbers they contain all intermediate values.
+      </p>
+    </div>
+    <h2>Section 5</h2>
+    <h2>Discontinuities</h2>
+    <div>
+      <p>
+        The <b>left-handed limit</b> at a point <i>x</i> is defined by limits to <i>x</i> taking only values less than <i>x</i>.  We denote the left-handed limit by <i>f(x-)</i> and the right-handed by <i>f(x+)</i>.
+      </p>
+    </div>
+    <h3>Theorem: The limit exists if and only if it is equal to both the left- and right-handed limits.</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> Part of this theorem is a cheat.  Namely in the right-to-left direction, part of the assumption is that the limit exists.  So of course from that we infer the limit exists.  Dumb.
+      </p>
+      <p>
+        The interesting part is left-to-right, but even that's not so interesting.  We already know that if the limit exists, every sequence converging to <i>x</i> makes function values converge to <i>f(x)</i>.
+      </p>
+    </div>
+    <div>
+      <p>
+        A <b>simple discontinuity</b> is one in which both handed limits exist.  A discontinuity is <b>of the second kind</b> if it's not simple.
+      </p>
+    </div>
+    <h3>Section 6</h3>
+    <h3>Monotonic Functions</h3>
+    <div>
+      <p>
+        A function is <b>monotonically increasing</b> if it weakly preserves order.
+      </p>
+    </div>
+    <h3>Theorem: For a monotonically increasing function, at any point the left-handed limit exist.  And it is the sup of function values over the left side of the domain.  Similar for right-handed limits.  Also the handed limits surround the function value.</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> The intuition is clear from any arbitrary picture of a monotonically increasing function and a point on it.  If you follow the curve from the left, up to the point, then you're tracing a path to the left-handed limit.  And you're just getting closer to the sup of the left-handed values.  Because if you look anywhere other than the point, you're getting smaller values and so not the sup.  I feel like this explanation is going in circles, but maybe ultimately it's ok because you still end up getting the picture.
+      </p>
+      <p>
+        For the proof we first establish the sup exists, but clearly it's non-empty and bounded by <i>f(x)</i>.  Call <i>A</i> the sup over the left-handed function values.  We can argue that <i>A = f(x-)</i> by considering any sequence approaching <i>x</i> consisting only of values less than <i>x</i>, call this \(x_n\).  We need to show that \(\displaystyle\lim_{n\rightarrow\infty}x_n=A\).  Of course if we go down from <i>A</i> a little bit, by \(\varepsilon\), there must be a left-handed function value above \(A-\varepsilon\).  Because it's left-handed it's at some \(x-\delta\), and because the function is increasing, this is the \(\delta\) we needed for the given \(\varepsilon\).
+      </p>
+    </div>
+    <h3>
+      Theorem: With reasonable conditions on an increasing function, even right-handed limits at left points are smaller than left-handed limits at right points.
+    </h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> Put more formally, suppose the real function <i>f</i> is monotonically increasing on (<i>a,b</i>), and <i>a < x < y < b</i>.  Then we claim \(f(x+)\leq f(y-)\).
+      </p>
+      <p>
+        From the previous theorem, generalized in the obvious way, we know that <i>f(x+)</i> is the inf over all right-handed values at <i>x</i>.  A similar statement holds for <i>f(y-)</i>. Since infs are less than sups, and these can be taken over (<i>x,y</i>), the inequality holds.
+      </p>
+    </div>
+    <h3>Theorem: Monotonically increasing functions have at most a countable number of discontinuities.</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> We will map the set of discontinuities injectively into the rationals.  First note that, from the previous theorems, increasing functions always have both handed limits at every point.  So for every discontinuity there is a left- and right-handed limit, and these can't be equal otherwise it wouldn't be a discontinuity.  Because the function is increasing, the left-handed limit is below the right-, so we can find a rational in-between.
+      </p>
+      <p>
+        This association of each discontinuities with rationals is injective because the function is increasing.
+      </p>
+    </div>
+    <h2>Section 7</h2>
+    <h2>Infinite Limits and Limits at Infinity</h2>
+    <div>
+      <p>
+        A <b>neighborhood of \(+\infty\)</b> is any \((c,\infty)\).  We redefine the limit of a function as \(t\rightarrow x\) as a value such that for any neighborhood of the value, there is a neighborhood of the point which maps into it.
+      </p>
+    </div>
+    <h3>Theorem: All the fundamental limit laws still hold. I.e. limits are unique, distribute over sums, products, and quotients when the denominator doesn't got to 0 \dots Provided that these are defined!  Undefined forms are \(\infty-\infty, 0\cdot \infty\), etc.</h3>
+    <div class="sol">
+      <p>
+        <i>Explanation:</i> The proofs are nearly identical to the narrower version fo the theorem, and easy when infinity is involved.
+      </p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

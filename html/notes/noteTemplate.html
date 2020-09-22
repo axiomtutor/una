@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="../../css/notes.css">
+    <title>Author - Book Title - Chapter n</title>
+  </head>
+  <body>
+    <div id="header">
+      <div id="logo">
+        <h1>How Do You Ask a Question?</h1>
+      </div>
+      <div class="fixedlinks">
+          <a href="notes/index.html">Notes</a> <a href="community/">Community</a>
+      </div>
+      <nav id="treeNavContainer">
+        <ul class="treeNavUL">
+          <li class="treeNavLI">
+            <a href="../main.html">Home</a>
+            <ul class="treeNavUL">
+              <li class="treeNavLI">About</li>
+              <li class="treeNavLI">Concept Maps</li>
+              <li class="treeNavLI">Notes</li>
+            </ul>
+          </li>
+          <li class="treeNavLI">
+            <a href="prehistory/prehistory.html">Prehistory ⇒ </a>
+            <ul class="treeNavUL">
+            	<li class="treeNavLI">Prehuman</li>
+            	<li class="treeNavLI">Early Human</li>
+            	<li class="treeNavLI">Early Civilization</li>
+            </ul>
+          </li>
+          <li class="treeNavLI">
+            Ancient ⇒
+            <ul class="treeNavUL">
+            	<li class="treeNavLI">Sumeria</li>
+            	<li class="treeNavLI">Egypt</li>
+            	<li class="treeNavLI">Greece</li>
+            </ul>
+          </li>
+          <li class="treeNavLI">
+            Classical ⇒
+            <ul class="treeNavUL">
+            	<li class="treeNavLI">Greece</li>
+            	<li class="treeNavLI">China</li>
+            	<li class="treeNavLI">India</li>
+            </ul>
+          </li>
+          <li class="treeNavLI">Post-classical ⇒</li>
+          <li class="treeNavLI">Early Modern ⇒</li>
+          <li class="treeNavLI">Late Modern ⇒ ?</li>
+        </ul>
+      </nav>
+    </div>
+    <div id="mainContainer">
+      <div id="mainContent">
+        <h1>Chapter n</h1>
+        <h2>Chapter Title</h2>
+
+        <div class="zoomInterface">
+          <button aria-expanded="false" class="zoomButton" id="1.1button" aria-controls="1.1content">
+            Section 1 <br>
+            Section Title
+          </button>
+        </div>
+        <div class="zoomContent" id="1.1content">
+          <p>
+            Section content.
+          </p>
+
+          <div class="zoomInterface">
+            <button aria-expanded="false" class="zoomButton" id="1.1.thing.button" aria-controls="1.1.thing.content">
+              Definition of a <b>thing</b>.
+            </button>
+          </div>
+          <div class="zoomContent sol question" id="1.1.thing.content">
+            <p>
+              A <b>thing</b> is anything. <br>
+              Here's some inline math: \(e^{i\pi}\).  And here's some display math:
+
+              $$ \oint \frac{dz}{z} $$
+            </p>
+          </div>
+
+        </div>
+
+    </div>
+
+    <script src="../../js/zooms.js"></script>
+  </body>
+</html>

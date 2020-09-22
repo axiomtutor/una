@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Notes - Purcell Ch1</title>
+    <script id="MathJax-script" async src="../../../MathJax-master/es5/tex-chtml.js">
+    </script>
+    <link rel="stylesheet" href="../notes.css">
+  </head>
+  <body>
+    <div class="note">
+      <p>
+        The brief story of this chapter is: There's Coulomb's law which tells you how to find the field from the charge distributions.  Commit the formula to memory.  With this you can find the self-energy, which is the work required to assumble the system by brining in points from infinity.  The formula is an easy consequence of definitions of work and Coulomb's law--you should be able to reconstruct it quickly as needed.  The electric field is the force per unit charge at any point in space due to electric forces, and is given by 
+        $$k\frac{\rho\hat{r}\ dx'\ dy'\ dz'}{r^2}$$ where the integral is taken over all of space and we require \(\rho\) to be non-zero only in a bounded region.  The variables on the left-hand side (not variables of integration) are present in \(\hat{r}/r^2\).  The flux is defined as the surface vector integral.  Gauss's law states that the flux through any closed surface is the amount of charge enclosed over \(\epsilon_0\).  Gauss's law allows us to easily derive the field strength at a distance <i>r</i> from a sphere:
+        $$E_{sphere}= kQ/r^2$$
+        from  a line 
+      </p>
+    </div>
+    <h1>1.0 Electrostatics: charges and fields</h1>
+    Two important features of charges are <i>conservation</i> and <i>quantization</i>.  The electric force between two charges is given by <i>Coulomb's law</i>, which tells us the force is proportionate to \(1/r^2\).  The force law is conservative in the sense of path independence, so we can talk about potential energy.  A useful concept is the <i>electric field</i> which is <i>force per unit charge at each point in space.</i> The <i>flux</i> of the field through a surface is defined in this chapter, and leads to <i>Gauss's law</i>. Finally we discuss <i>energy density</i>.
+
+    <h2>1.1 Electric charge</h2>
+
+    <h2>1.2 Conservation of charge</h2>
+
+    <h2>1.3 Quantization of charge</h2>
+
+    <h2>1.4 Coulomb's Law</h2>
+    <p>
+      $$\vec{F}_2 = k\frac{q_1q_2\hat{r}_{21}}{r^2}$$
+
+      where
+
+      <ul>
+        <li>\(\vec{F}_2\) is the force acting on charge 2</li>
+        <li>\(\hat{r}_{21}\) is the unit vector from 1 to 2</li>
+        <li>\(r\) is the distance from 1 to 2</li>
+      </ul>
+    </p>
+
+    <p>
+      We also call \(\epsilon_0\) the <i>permitivity of free space</i> and $$k=\frac{1}{4\pi\epsilon_0}$$
+    </p>
+
+    In the SI unit system <i>k</i> has units \(Nm^2C^{-2}\). The <i>N</i> is the symbol for a Newton of force, <i>m</i> for meter.  We will take <i>C</i> to be the Coulomb, our unit of electrical "charge" analogous to how mass is our unit of gravitational "charge".<br><br>
+
+    <div class="note">
+      <p>
+        Note that we can infer nothing about the Coulomb unit from just this.  By dimensional analysis of Coulomb's law
+
+        $$[N]=[Nm^2C\ ^{-2}][C\ ^2m^{-2}]$$
+
+      which simplifies to a trivial equality.  The units of <i>k</i> are simply a re-statement of what dimensional analysis would tell us is required given the quantities involved.
+      </p>
+    </div>
+
+    <p>
+      The <i>Gaussian</i> system is one of several that uses cgs (centimeters, grams, seconds).  In it <i>k</i> is exactly 1, dimensionless, where \(\vec{F}\) measured in <i>dynes</i> and <i>q</i> in <i>esu</i>.
+    </p>
+    <div class="note">
+      <p>
+        Note that we can already relate dynes to Newtons.
+
+        $$N = \frac{kg\cdot m}{s^2} = \frac{10^3g\cdot 100cm}{s^2}$$
+        $$=\ 10^5dyne$$
+      </p>
+    </div>
+
+    <div class="example">
+      <p>
+        <b>Example (relate Coulombs and esu)</b>
+      </p>
+      <p>
+        What is the relationship between Coulombs and <i>esu</i>s?  A good start is to pick some simple numbers using each unit.  If you have two 1 <i>C</i> charges 1 <i>m</i> apart Coulomb's law implies the force magnitude is
+
+        $$F[N] = kN \approx 9 \times 10^9N$$
+        $$=9\times 10^{14}dyne$$
+      </p>
+
+      <p>
+        To do it again in the Gaussian system
+
+        $$F[dyne] = q_1[esu]q_2[esu]/(100cm)^2 = q^2esu^2/(10^4cm^2)$$
+      </p>
+      <p>
+        Since we are taking \( q[esu] = 1C\) then effectively <i>q</i> is the coefficient of proportionality, and therefore the thing we want to solve for.
+      </p>
+      <p>
+        Since we already know the force measure in dynes we can say
+
+        $$9\times 10^{14} dyne = q^2esu^2/(10^4cm^2)$$
+
+        and since the units must cancel, we focus on the numbers which tell us
+
+        $$q^2 = 9\times 10^{18} \Rightarrow q = 3\times 10^9$$
+      </p>
+    </div>
+    <p>
+      Forces are additive which we call the principle of <i>superposition</i>.
+    </p>
+    <div class="question">
+      <p>
+        The book makes mention of some experiements and inferences, but these aren't clear to me.  Should I concern myself with them?
+      </p>
+    </div>
+    <h2>1.5 Energy of a system of charges</h2>
+    <p>
+      We can define work by
+
+      $$W = \int (applied force)\cdot(displacement)$$
+    </p>
+    <div class="example">
+      <b>Example (bring together particles)</b> <br><br>
+      <p>
+        Suppose we bring charges \(q_1,q_2\) within a distance <i>r</i> of each other.  Then the work done is
+
+        $$\int_\infty^r (-kq_1q_2/r^2)dr$$
+      </p>
+    </div>
+
+    <p>
+      This is the work done to assemble the arrangement and it is also the <i>potential energy</i> stored in the system.  The potential energy of a system can be shown to be
+
+      $$U = \frac{1}{2}\sum\sum_{i\ne j} k\frac{q_iq_j}{r_{ij}}$$
+
+      where it is worth emphasizing the lack of a minus, or a square on the distance.
+    </p>
+    <h2>1.6 Electrical energy in a crystal lattice</h2>
+    <p>
+      Salt crystals are lattices of Na<sup>+</sup> and Cl<sup>-</sup>.  We want to know the potential energy per unit volume or mass.  We may start with a single positive ion, consider the energy required to bring in all the others around just it, then simply repeat taking each other particle as the center.  Since every pair is double-counted in the process, we divide by 2.  Since the calculation per ion will be identical, we may instead multiply by <i>N</i>.  An expression for the total potential energy is
+
+      $$U = \frac{N}{2}\sum_{k=2}^N kq_1q_k/r_{1k}$$
+    </p>
+    <p>
+      We can group elements by equal radii.  If we diagram the point particles by <br>
+
+      <canvas id="crystal" width="150" height="150"></canvas> <br>
+
+      then the faces of the cube contain the nearest points.  Say they are of radius <i>r</i>, of which there are six equivalent particles.  The corners of the cube contain eight equivalent points of radius \(\sqrt{3}r\).  As we expand out, the <i>i</i>th shell will be a distance of \(\sqrt{i+1}r\) away from the center.  We can infer that the potential energy is
+
+      $$\frac{Nk}{2}\left(\frac{-6e^2}{r} + \frac{8e^2}{\sqrt{2}r} - \frac{6e^2}{\sqrt{3}r}+...\right)$$
+    </p>
+    <p>
+      The exact value of this is not easy to obtain, but the only important feature is that it's negative.  This indicates that work must be <i>done</i> to disassemble the arrangement, i.e. it's sticky.  Contrast this with bringing positive particles together:  The potential energy is positive.  Merely letting go of them after arranging them, will send them apart.
+    </p>
+    <p>
+      But since objects seek low-energy states, this would imply that the particles would collapse into each other to reduce <i>r</i> and thereby send <i>U</i> to \(-\infty\).  Quantum physics gives the answer to why this doesn't happen.  Even without quantum physics, this computed quantity of <i>U</i> is meaningful, which we will see later.
+    </p>
+
+    <h2>1.7 The electric field</h2>
+
+    <p>
+      We may generalize Coulomb's law into an expression for the force exerted by a system at each point in space, were a "test charge" placed at the point.  If we call this test charge <i>q</i> then it is a factor of each. term in the superposition expression.  <i>q</i> can therefore be factored out.  From this we define the electric field \( \vec{E}(p) \) at a point <i>p</i> in space by
+
+      $$\vec{F}(p) = q\vec{E}(p)$$
+    </p>
+    <p>
+      By dimensional analysis we can say that the units of the electric field are N/C.
+    </p>
+    <h2>1.8 Charge distributions</h2>
+    <p>
+      We can also generalize to charge distributions, \( \rho(p) \) and then
+
+      $$\vec{E}(p) = k\iiint_R \frac{\rho(p)\hat{r}}{r^2}dV$$
+    </p>
+    <div class="example">
+      <b>Example (Field due to a hemisphere)</b>
+      <p>How do I do this integral and complete this example?</p>
+      <p>
+        Suppose a solid hemisphere has radius <i>R</i> and uniform charge density \(\rho\).  What is the electric field at the center?
+      </p>
+      <p>
+        The radius is the constant <i>R</i>, and the charge density \(\rho\) is constant, so
+
+        $$ E(p) = k\rho\iiint_V \frac{\hat{r}}{r^2} \cdot dV $$
+      </p>
+      <p>
+        To integrate over the region we need to parameterize it.  The most natural parameterization is spherical.  First let's agree on a coordinate system, using that which you find in mathematics.  Here <i>x, y, z</i> are used for rectangular coordinates.  Physics does the same but the labels are on different axes.  In Math, <i>x</i> controls the forward-backward axis (the "perspective axis"). <i>y</i> controls the left-right axis.  <i>z</i> controls the up-down axis.  
+        
+        <canvas id="coordinates" width=150 height=150></canvas>
+      </p>
+      <p>
+        In the diagram the text labels are on the positive end of the axis.  So the positive <i>y</i> values are to the right, the positive <i>z</i> values are up.  Importantly, the positive <i>x</i> direction is toward the viewer, which is labeled on the lower-left-hand portion of the diagram. This choice satisfies the so-called "right-hand rule" whereby you use your right hand to do the following:  Point your index finger toward the positive <i>x</i> axis.  Now stick your middle finger out at a 90-degree angle from your palm.  Now point that middle finger toward the positive <i>y</i> direction.  Now point your thumb up.  Your thumb should point straight up in the direction of the positive <i>z</i> axis.  We could have re-labeled the axes but whatever the re-labeling is, it must satisfy the right-hand rule.  So although there are \(6\cdot 4\cdot 2\) possible axis labelings, only half of these satisfy the right-hand rule and are permissible.  Physicists use <i>x</i> to control the left-right, <i>y</i> to control the up-down, and <i>z</i> controls the perspective axis with the positive direction toward the viewer.  This system also satisfies the right-hand rule.
+      </p>
+      <p>
+        In mathematics we use \(\rho,\theta,\varphi \) to specify a point in the space spherically.  The physicist's use of \(\theta\) and \(\varphi\) is the reverse of their roles for mathematicians, and the physicist uses \(\rho\) for density and therefore uses something else like <i>r</i> or some other not-yet-reserved symbol for radius.  For mathematicians \(\theta\) controls the rotation through the the <i>x-y</i> plane.  Note that we only need the angles between 0 and \(2\pi\); more values are possible but redundant.  \(\phi\) controls a rotation which starts at the top of the <i>z</i> axis and rotates down.  Note that to uniquely identify a point anywhere in space, we only need the angles between 0 and \(\pi\).  Allowing values between 0 and \(2\pi\) is already redundant because points beyond \(\pi\) could be captured by moving \(\theta\) by a half-rotation around its axis.
+      </p>
+      <p>
+        We should note that to integerate in spherical coordinates, we need a special expression for a volume element.  Rather than \(dx\ dy\ dz\) representing an infinitesimal volume element in rectangular coordinates, we use \( \rho^2\sin\varphi\ d\rho\ d\varphi\ d\theta\).  As you can see this involves multiplying by values, \(\rho^2\sin\varphi\), due to the transformation of coordinates.  
+      </p>
+      <p>
+        Now to get back to the problem, we integrate 
+        
+        $$E(p) = k\rho\int_0^{2\pi}\int_{\pi/2}^\pi\int_0^R \frac{\hat{r}}{r^2}r^2\sin\varphi\ dr\ d\varphi\ d\theta$$
+        
+        where we choose <i>r</i> for the variable radius because \(\rho\) and <i>R</i> are already reserved for density and the fixed radius.
+        The outer integral encodes a full rotation, the middle integral starts at the angle \(\pi\) rather than 0 because it is a hemisphere.  The radius parameter ranges out to the radius of the hemisphere.
+      </p>
+      <p>
+        We need to understand what \(\hat{r}\) is. But it's direction is easy to determine: it's just the vector pointing from a parameterized point back to the origin, so some familiar equations due to spherical geometry tell us the vector is
+        
+        $$ -\langle x,y,z\rangle = -\langle r\sin\varphi\cos\theta, r\sin\varphi\sin\theta, r\cos\varphi\rangle $$
+        
+        We divide by its length to get the unit vector.  One should find that the length is <i>r</i>, so the vector we want is in fact 
+        
+        $$-\langle \sin\varphi\cos\theta,\sin\varphi\sin\theta,\cos\varphi\rangle$$
+      </p>
+      <p>
+        So the integral becomes 
+        
+        $$ k\rho\int_0^{2\pi} \int_{\pi/2}^\pi \int_0^R -\langle \sin\varphi\cos\theta, \sin\varphi\sin\theta, \cos\varphi\rangle\sin\varphi \ dr\ d\varphi\ d\theta$$
+        
+        $$=\quad -k\rho R \left\langle 0, 0, 2\pi \int_{\pi/2}^\pi \cos\varphi\sin\varphi \ d\varphi \right\rangle$$
+        
+        $$=\quad -k\rho R \left\langle 0, 0, 2\pi \int_{\pi/2}^\pi \frac{1}{2}\sin(2\varphi) \ d\varphi \right\rangle$$
+        
+        $$=-\frac{k\rho R\pi}{2}\left\langle 0,0, \left[-\cos(2\varphi)\right]_{\pi/2}^\pi\right\rangle$$
+        
+        $$= \frac{k\rho R\pi}{2}\left\langle 0,0, 1-(-1) \right\rangle$$
+        
+        $$=k\rho R \pi \langle 0,0,1\rangle$$
+      </p>
+    </div>
+    <h2>1.9 Flux</h2>
+    <p>
+      In the previous section we imagined that we knew the charges and infered the electric field from it.  Suppose now that we already know the electric field <i>E(p)</i> and wish to learn about the charges which generate the field.  To do so we consider a closed surface in space.  Any point on this surface, because it is in the electric field, has a force vector pointing in some direction.  The component of that vector pointing normal to the surface is the amount of force exerted on the surface element.  If we aggregate all of these values, we define the quantity as <i>flux</i>.
+      
+      $$ \text{flux} = \Phi = \iint_S \vec{E}\cdot d\vec{A}$$
+    </p>
+    <p>
+      Note that flux can be defined for any vector field.  Not only does it generalize from electricity to other forces, but it also generalizes to vector fields that do not model force at all.  For instance we could take the velocity vector field for a stream of water, and the flux would measure the rate at which water flows through a membrane.  
+    </p>
+    <h2>1.10 Gauss's law</h2>
+    <p>
+      To deliver on the promise that studying flux would help us learn about the charges given information about the electric field:  First we claim that 
+      $$ \Phi = EA$$
+      where \(\Phi\) is the flux through a sphere caused by a single point charge at the center.  <i>E</i> is the strength of the field at the surface, which is of course constant in this setting.  <i>A</i> is the area of the sphere.
+    </p>
+    <p>
+      One can moreover demonstrate that the shape and size of the enclosing surface does not change the flux.  Therefore any enclosing surface may be chosen.  This gives us Gauss's law, that if <i>S</i> is any surface enclosing any charge with density \(\rho\), 
+      
+      $$\Phi = 4\pi q = \frac{1}{\epsilon_0}\iiint_R \rho\ dV$$
+      
+      where <i>q</i> is the net enclosed charge.  
+    </p>
+    <h2>1.11 Field of a spherical charge distribution</h2>
+    <p>
+      Let's investigate how a point charge differs from the charge inside of a sphere.  Suppose we want to find the field due to a spherically symmetric distribution of charge, i.e. \(\rho\) is only a function of the radius from the center of the charge distribution.  We consider any point outside the charge distribution, <i>p</i>.  Using Coulomb's law we could integrate over the charge distribution.  
+    </p>
+    <p>
+      But we can wrangle Gauss's law into the picture.  If we choose any sphere enclosing the charge, merely from symmetry we can say that each point on the sphere must have equal force from the electric field.  That means the integral is just the area of the sphere times the strength of the field.
+      
+      $$\Phi = 4\pi r^2 E$$
+      
+      But also from Gauss's law we can reason that the flux is the net charge over the permitivity of free space
+      
+      $$\Phi = \frac{\text{net charge}}{\epsilon_0}$$
+      
+      which implies 
+      
+      $$E = \frac{\text{net charge}}{4\pi\epsilon_0 r^2}$$
+      
+      which is just the expression you would get for a point charge.  
+    </p>
+    <div class="example">
+      <p>
+        <b>Example (uniform sphere): </b> <br>
+        If the charge distribution in a sphere is uniform we can easily show with the techniques from before that, for a point outside the distribution, the field strength satisfies 
+        
+        $$E(r)=\frac{\rho\cdot4\pi R^3/3}{4\pi\epsilon_0 r^2}$$
+        
+        and if the point is inisde the distribution 
+        
+        $$E(r)=\frac{\rho r}{3\epsilon_0}$$
+      </p>
+    </div>
+    <h1>1.12 Field of a line charge</h1>
+    <p>
+      This section is an extended example to find the field due to a "long, thin" wire (read: infinitely long, infinitesimally thin).  We let \(\lambda\) be the linear charge density.  We will directly use Coulomb's law and integrate over the field.  
+    </p>
+    <p>
+      It seems like a good idea to put the wire in the direction of one of the axes, say the <i>x</i>-axis, so that we can integrate over <i>x</i> from \(-\infty\) to \(\infty\).  Since we want to know the field's exertion on a point, we can also choose other axes such that the point is represented by \( (0,y_0,0 )\).  This makes the force parallel to \( \langle -x, y_0, 0\rangle\) and so 
+      
+      $$\hat{r} = \frac{\langle -x,y_0,0\rangle}{\sqrt{x^2+y_0^2}}$$
+    </p>
+    <p>
+      In the <i>x</i>-coordinate this is an odd function so that due to symmetry it must integrate to 0.  For the <i>y</i>-coordinate we want to know the value of the integral 
+      
+      $$\int_{-\infty}^\infty (x^2+y_0^2)^{-3/2}dx$$
+      
+      This may be solved with a trigonometric substitution like \(x = y_0\tan\theta\) which implies \(dx = y_0\sec^2\theta\ d\theta\).  The bounds of integration now range from \(-\pi\) to \(\pi\) so that <i>x</i> ranges from \(-\infty\) to \(\infty\).  
+      
+      $$\int_{-\pi}^\pi (y_0^2\tan^2\theta+y_0^2)^{-3/2}y_0\sec^2\theta\ d\theta = y_0^{-2}\int_{-\pi}^\pi (sec^2\theta)^{-3/2}\sec^2\theta\ d\theta$$
+      
+      $$=\frac{\int_{-\pi}^\pi\cos\theta\ d\theta}{y_0^2} = 2/y_0^2$$
+    </p>
+    <p>
+      This then implies that 
+      
+      $$\vec{E}(p) = k\lambda \langle 0, 2/y_0, 0\rangle $$
+    </p>
+    <p>
+      If we had instead solved this by Gauss's law we would surround the charge by a closed surface, naturally a cylinder of length <i>L</i> which we will grow to infinity.  The radius is best chosen as <i>y<sub>0</sub></i> so that the force of the electric field is constant, flux is equal to the area of the surface times the field strength, and the surface passes through the point we're studying.  Then 
+      
+      $$2\pi y_0 L E(p) = \Phi = \lambda L / \epsilon_0$$
+      
+      This gives the same field magnitude that the earlier answer gives.  We can use physical symmetry arguments to judge the direction of the vector.
+    </p>
+    <h1>1.13 Field of an infinite flat sheet of charge</h1>
+    <p>
+      If we have a sheet of charge with constant density (sigma) then consider a point <i>p</i>.  We select axes such that the sheet is the <i>x-y</i>-plane and <i>p(0,0,z<sub>0</sub>)</i>.  If we place a cylinder through the sheet with its end containing <i>p</i>, we can reason that the flux through the sides is zero by symmetry.  For the ends, the area is \(2\pi R^2\cdot 2\) so 
+      
+      $$4\pi R^2E(p) = \Phi = 2\pi R^2\sigma/\epsilon_0$$
+    </p>
+    <p>
+      Importantly the strength of the field was independent of the distance from the sheet.
+    </p>
+    <p>
+      Now if there is a field generated by charges elsewhere, and the field is constant, the field will be entirely constant on one side of the sheet and the other.  However, the sheet will constitute a discontinuity of the field.  However, if we decompose the forces into those due to the constant field and those due to the sheet, we will find that the change in the field from one side to the other is 
+      
+      $$\vec{E}_\Delta = 2E\hat{n} = \frac{\sigma}{\epsilon_0}\hat{n}$$
+      
+      where \(\hat{n}\) is perpendicular to the sheet.  This is effectively because the external field is constant and cancels in the difference, whereas the field due to the sheet on one side is precisely its negative on the other, thereby doubling in the difference.
+    </p>
+    <h1>1.14 The force on a layer of charge</h1>
+    <p>
+      Consider a hollow spherical charge distribution.  If we choose a point inside the sphere the field is 0.  If we choose a point outside the sphere the field is \(kQ/r^2\) and \(Q = 4\pi r_0^2\sigma\).  If we choose a point just outside the sphere the strength is very nearly \(\sigma/\epsilon_0\), consistent with what we found in the previous section about a difference between the external and internal fields.  
+    </p>
+    <p>
+      What about a point on the sphere?  That is to say, what about the force experienced by a charge element on the sphere?  
+    </p>
+    <p>
+      We will consider the change in the field from one side of the element to the other in two ways.  First, iff we imagine it is a volume element with area <i>A</i> amd thickness <i>dx</i> then the force on this element is 
+      
+      $$dF = E\rho A\ dx$$
+      
+      which we need to aggregate from the point <i>x=0</i> to the width of the wall <i>x<sub>0</sub></i>.  From this we can derive an expression for the pressure 
+      
+      $$F/A = \int_0^{x_0}E\rho\ dx$$
+      
+      But using Gauss's law we can  argue 
+      
+      $$EA = \Phi = \frac{\rho A \ dx}{\epsilon_0}$$
+      
+      so that 
+      
+      $$\epsilon_0 \ dE = \rho \ dx$$ 
+      
+      and then we can change variables in the equation 
+      
+      $$F/A = \int_{E_1}^{E_2}\epsilon_0 E\ dE = \frac{\epsilon_0}{2}(E_2-E_1)$$
+      
+      If we then use the results from before that 
+      
+      $$E_2-E_1=\sigma/\epsilon_0$$
+      
+      then after algebra manipulations we get 
+      
+      $$F/A = \frac{E_2+E_1}{2}\sigma$$
+      
+      which is to say that the pressure is the average of the force inside and outside, times the charge density.  
+    </p>
+    <p>
+      To finally return to the original quesiton, since we know the charge inside is 0 and outside is \(\sigma/\epsilon_0\), we get 
+      
+      $$\frac{F}{A} = \frac{\sigma/\epsilon_0+0}{2}\sigma = \frac{\sigma^2}{2\epsilon_0}$$
+    </p>
+    <h1>1.15 Energy associated with the electric field</h1>
+    <p>
+      Suppose a hollow sphere with initial radius <i>r<sub>0</sub></i> is compressed by <i>dr</i> and we want to know the change in energy, i.e. the work done.  From the previous section we know that the field strength at each point during the compression is \(\frac{\sigma^2}{2\epsilon_0}\) which we exert over an infinitesimal distance <i>dr</i> and since this occurs at every point along the surface of measure \(4\pi r_0^2\) then the total work done is 
+      
+      $$U = \int_{r_0}^{r_0-dr} \frac{2\pi r^2_0\sigma^2}{\epsilon_0}dr$$
+    </p>
+    <p>
+      We will not prove now, but a more general fact is that, if \(\Omega\) is the entire space, 
+      
+      $$U = \frac{\epsilon_0}{2}\int_{\Omega}E^2\ dv$$
+      
+      where \(E^2 = \vec{E}\cdot\vec{E}\)
+    </p>
+    <div class="example">
+      <p>
+        <b>Example (Potential energy of a uniform sphere)</b> <br>
+        What is the potential energy in a sphere of radius <i>R</i> with charge <i>Q</i> distributed uniformly through the sphere?
+      </p>
+      <p>
+        Using the equation from before and parameterizing the entire space as a collection of shells of radius <i>r</i>, then the field strength differs if we are inside or outside the sphere.  Outside the sphere the field strength is \(\frac{Q}{4\pi\epsilon_0 r^2}\) and because it is constant, integrating over the shell is just multiplying by the surface area \(4\pi r^2\).  Inside the sphere the field strength is \(\frac{Qr}{4\pi\epsilon_0 R^3}\).  Then 
+        
+        $$U = \frac{\epsilon_0}{2}\left( \int_0^R \left(\frac{Qr}{4\pi\epsilon_0 R^3}\right)^2 4\pi r^2\ dr + \int_R^\infty \left( \frac{Q}{4\pi\epsilon_0r^2} \right)^24\pi r^2\ dr \right)$$
+      </p>
+    </div>
+    <h1>Problems</h1>
+    <h2>1.2 Zero force from a triangle</h2>
+    <p>
+      Say we place the triangle with the positive ions at -1 and 1 on the <i>x</i>-axis, and the negative at \(\sqrt{3}/2\) on the <i>y</i>-axis.  For all points along the <i>y</i>-axis the horizontal forces cancel.  
+    </p>
+    <p>
+      The unit vector in the direction of the point from the negative ion at (-1,0) is 
+      
+      $$\langle 1,y_0\rangle/\sqrt{1+y_0^2}$$
+      
+      and therefore the force vector is 
+      
+      $$\frac{\langle 1, y_0\rangle}{\sqrt{1+y_0^2}}\frac{(-kq^2)}{1+y_0^2} = -\frac{kq^2\langle 1,y_0\rangle}{(1+y_0)^{3/2}}$$
+      
+      By symmetry the vertical component of the vector from the other negative ion is the same, so we can multiply this by two.  Finally the force from the positive ion is 
+      
+      $$kq^2\frac{\langle 0,-\sqrt{3}/2-y_0\rangle}{(\sqrt{3}/2-y_0)^{3/2}}$$
+      
+      If we sum the vertical components and equate this with 0, we can solve for <i>y<sub>0</sub></i> and find a unique solution.
+    </p>
+    <h2>1.3 Force from a cone.</h2>
+    <p>
+      <b>(a)</b> We approach this with Coulomb's law.  If we locate our axes at the tip of the cone, we can parameterize the surface with <i>r</i> for the radial parameter, and a parameter \(\varphi\) which determines the rotation through the <i>x-y</i> axes.
+    </p>  
+    <p>
+      But because in spherical coordinates we are keeping the azimuthal angle at \(\pi-\theta\) then an area element is not just \(dr\ d\varphi\).  We can imagine a point at \((r,\varphi)\) is on a 2-dimensional right triangle with one edge on the <i>z</i>-axis, the other parallel to the <i>x-y</i> plane.  The edge parallel to the <i>x-y</i> plane is what's rotated by \(\varphi\), so we need to know the length of this arm of rotation so we may multiply by \(d\varphi\).  Looking at the right triangle, it is easy to see that this length is \(r\sin\theta\).  So we conclude that an area element is \(r\sin\theta\ dr\ d\varphi\).  
+    </p>
+    <p>
+      As further preparation for computing the integral we find a vector in the direction of the force and take its vertical component (the rest will cancel by symmetry).  The vertical component of the position vector is familiar from spherical coordinates, \(r\cos(\pi-\theta) = -r\cos\theta\).  Since the force is directed exactly in the opposite direction from the direction vector, the vertical component of the vector parallel to force is \(r\cos\theta\).  We would then divide by <i>r</i> to get the unit vector so that we have only \(\cos\theta\).  
+    </p>
+    <p>
+      Putting all this together in Coulomb's law, 
+      
+      $$\vec{E}(p)=\left\langle 0,0,\int_0^{2\pi}\int_0^L \frac{\sigma r\sin\theta\cos\theta\ dr\ d\varphi}{r^2}\right\rangle$$
+      $$=\left\langle 0,0,2\pi\sigma\cos\theta\sin\theta \int_0^L\frac{dr}{r}\right\rangle$$
+    </p>
+    <p>
+      The integral diverges because the lower bound of the integral would involve \(\lim_{a\rightarrow 0^+}\ln a\).
+    </p>
+    <p>
+      <b>(b)</b> Now because we integrate from <i>L/2</i> and the same process as above applies, yielding 
+      
+      $$2\pi\sigma\cos\theta\sin\theta\langle 0,0,\ln(L)-\ln(L/2)\rangle = 2\pi\sigma\cos\theta\sin\theta\langle 0,0,\ln 2\rangle$$
+    </p>
+    <h2>1.20 Thundercloud</h2>
+    <p>
+      <b>(a)</b> We model this as an infinite sheet of charge and therefore the equation \(E=\frac{\sigma}{2\epsilon_0}\).  Setting this equal to the chance in charge we derive the value of \(\sigma\).  
+    </p>
+    <p>
+      <b>(b)</b> Each drop has the same surface density as found above.  Multiply by surface area.  
+    </p>
+    <h2>1.22 Field from a spherical shell, right and wrong</h2> 
+    <div>
+      <p>The issue is the approximation used for the distance of a ringe element to the point, which becomes poor as the ring is taken near the point.</p>
+    </div>
+    <h2>1.24 Potential Energy of a cylinder</h2>
+    <div>
+      <p>
+        Imagine that we have a cylindrical surface of radius <i>R>a</i> containing all the charge that will ultimately displace onto the solid cylinder.  We focus only on a unit-length segment of these distributions, so that <i>L=1</i>.  We also imagine taking a "differential portion" of the charge, <i>dq</i>.  This portion of the surface is, just like the surface itself, distributed about the cylindrical surface of radius <i>R</i>.  We will move this surface down to a radius <i>r</i> and then do likewise from <i>0 < r < a </i>.  
+      </p>
+      <p>
+        To prepare for the integration first observe that the total charge in the solid cylinder is \(\rho \pi a^2 L = \rho\pi a^2\).  Likewise if we have already constructed the solid cylinder of radius <i>r</i> and need to bring down a new differential element, the cylinder has charge \(\rho \pi r^2\).  As the hint indicates, this cylinder acts like a line charge for the purposes of the surface we'll bring down.  What is the density of this line charge?  The total charge on the line must equal the total charge in the cylinder so \(\lambda_r L = \rho \pi r^2L\) which implies \(\lambda_r = \rho\pi r^2\).  
+      </p>
+      <p>
+        Then the field strength is given by \(E_r = \frac{\lambda_r}{2\pi\epsilon_0 r'}\) where <i>r'</i> is a given distance from the line.  We move <i>dq</i> through this field and the work needed to do so is given by 
+        $$ dW = -\int_R^r \frac{\rho\pi r^2\ dq\ dr'}{2\pi \epsilon_0 r'} = $$
+        $$ -\frac{\rho r^2\ dq}{2\epsilon_0} \ln(r/R) = \frac{\rho r^2\ dq}{2\epsilon_0}\ln(R/r) $$
+      </p>
+      <p>
+        To integrate of all <i>dq</i> we must relate this to <i>dr</i>.  If we imagine a cylindrical annulus of width <i>dr</i> its charge is \(dq = \rho 2\pi r \ dr\ L\).  Then the work is 
+        $$ W = \int dW = \frac{\rho}{2\epsilon_0}\int_0^a r^2 \ln(R/r) dq = $$
+        $$\frac{\rho}{2\epsilon_0} \int_0^a r^2\ln(R/r) 2\pi \rho r\ dr= \frac{\pi\rho^2}{\epsilon_0}\int_0^a r^3\ln(R/r)\ dr$$
+      </p>
+      <p>
+        From here we can expand the logarithm and use integration by parts.  But this is math, and not really our interest.
+      </p>
+    </div>
+    <h2>1.27 Uniform field in a cavity</h2>
+    <div>
+      <p>
+        Earlier in the chapter we found that the field due to a charged sphere obeys \(E = \frac{\rho r}{3\epsilon_0}\).  Since we have a spherical cavity, we may regard the cavity as the superposition of the larger sphere of density \(\rho\) together with a smaller sphere of density \(-\rho\) and then the smaller sphere obeys the same law as before.  The two spheres acting together is then determined by superpositions of forces.
+      </p>
+      <p>
+        If \(\vec{r}\) is any point inside the cavity then we may first draw displacement vectors from the centers of the larger and smaller spheres, which are parallel to the respective force vectors.  Call these displacement vectors \(\vec{r}_1,\vec{r}_2\) and then the corresponding force vectors are \(\frac{\rho}{3\epsilon_0}\vec{r}_1, \frac{-\rho}{3\epsilon_0}\vec{r}_2\).  Then the force acting on the point is 
+        
+        $$\frac{\rho}{3\epsilon_0}(\vec{r}_1-\vec{r}_2)$$
+        
+        This will be a constant vector if for any point in the cavity \(\vec{r}_1-\vec{r}_2\) is constant, where again \(\vec{r}_1\) is the displacement vector from the center of the larger sphere and \(\vec{r}_2\) is from the center of the smaller.  Vector geometry shows that \(\vec{r}_1-\vec{r}_2\) is just the displacement vector from the center of the larger sphere to the center of the smaller, so it must be constant.
+      </p>
+    </div>
+    <h2></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript" src="ch1.js"></script>
+  </body>
+</html>
