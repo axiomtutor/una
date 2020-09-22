@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.14)  21 SEP 2020 19:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.14)  21 SEP 2020 23:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -282,67 +282,62 @@ File: uboondox-ds.fd 2011/04/26 Fontinst v1.933 font definitions for U/BOONDOX-
 ds.
 ) [1
 
-{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 128--129
-
- []
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 133--134
+{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 155--156
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--139
+Underfull \hbox (badness 10000) in paragraph at lines 160--161
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--144
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--154
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 158--159
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 163--164
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 168--169
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 173--174
+Underfull \hbox (badness 10000) in paragraph at lines 180--181
 
  []
 
 [3]
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 190--191
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
+
+ []
+
+[4]
 This exam contains 15 questions with 0 parts, 0 subparts, and 0 subsubparts.
 (./aa_adamfrank_hw3.aux) ) 
 Here is how much of TeX's memory you used:
- 3793 strings out of 480876
- 49992 string characters out of 5907582
+ 3794 strings out of 480876
+ 50000 string characters out of 5907582
  307183 words of memory out of 5000000
- 19405 multiletter control sequences out of 15000+600000
+ 19406 multiletter control sequences out of 15000+600000
  538525 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,15n,33p,538b,325s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,15n,33p,828b,325s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2020/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/
@@ -354,12 +349,13 @@ ts/cm/cmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmsy7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symb
-ols/msam10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/boondox/z
-xxrl8a.pfb>
-Output written on aa_adamfrank_hw3.pdf (3 pages, 127952 bytes).
+ols/msam10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/
+symbols/msbm10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/boond
+ox/zxxrl8a.pfb>
+Output written on aa_adamfrank_hw3.pdf (4 pages, 134739 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
- 44 compressed objects within 1 object stream
+ 69 PDF objects out of 1000 (max. 8388607)
+ 49 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
