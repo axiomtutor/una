@@ -179,11 +179,15 @@ Let $H\leq G$.  Prove that the map $x\mapsto x^{-1}$ sends each left coset of $H
 
   \vspace{1cm}
 
-  Now we use this to build a bijection between the set of left cosets, $G/H$, and the set of right cosets, $H\backslash G$.  Namely, let $\varphi(g_iH)=Hg_i^{-1}$.  We first need to see that this map is well-defined, then that it's a bijection.  To see that it's well-defined suppose that $g_iH = g_jH$.  Then
+  Now we use this to build a bijection between the set of left cosets, $G/H$, and the set of right cosets, $H\backslash G$.  Namely, let $\varphi(g_iH)=Hg_i^{-1}$.  We first need to see that this map is well-defined, then that it's a bijection.  To see that it's well-defined suppose that $g_iH = g_jH$ and note that this is equivalent to $g_j^{-1}g_i\in H$.  Therefore we have $(g_j^{-1}g_i)^{-1}\in H$, which is the same as $g_i^{-1}g_j\in H$.  But this entails $Hg_i^{-1}g_j = H$ so that $Hg_i^{-1}=Hg_j^{-1}=\varphi(g_iH)=\varphi(g_jH)$, and this shows $\varphi$ is well-defined.
+
+  Next we show that $\varphi$ is injective.  If
 
   \begin{align*}
-    \varphi(g_iH) = Hg_i^{-1}
+    \varphi(g_iH) = \varphi(g_jH) = Hg_i^{-1} = Hg_j^{-1}
   \end{align*}
+
+  then 
 \end{proof}
 
 \question(3.2.16)\\
