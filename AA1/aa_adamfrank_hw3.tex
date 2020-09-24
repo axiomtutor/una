@@ -179,30 +179,51 @@ Let $H\leq G$.  Prove that the map $x\mapsto x^{-1}$ sends each left coset of $H
 
   \vspace{1cm}
 
-  Now we use this to build a bijection between the set of left cosets, $G/H$, and the set of right cosets, $H\backslash G$.  Namely, let $\varphi(g_iH)=Hg_i^{-1}$.  We first need to see that this map is well-defined, then that it's a bijection.  To see that it's well-defined suppose that $g_iH = g_jH$ and note that this is equivalent to $g_j^{-1}g_i\in H$.  Therefore we have $(g_j^{-1}g_i)^{-1}\in H$, which is the same as $g_i^{-1}g_j\in H$.  But this entails $Hg_i^{-1}g_j = H$ so that $Hg_i^{-1}=Hg_j^{-1}=\varphi(g_iH)=\varphi(g_jH)$, and this shows $\varphi$ is well-defined.
+  Now we use this to build a bijection between the set of left cosets, $G/H$, and the set of right cosets, $H\backslash G$.  Namely, let $\varphi(gH)=Hg^{-1}$.  We first need to see that this map is well-defined, then that it's a bijection.  To see that it's well-defined suppose that $g_1H = g_2H$ and note that this is equivalent to $g_2^{-1}g_1\in H$.  Therefore we have $(g_2^{-1}g_1)^{-1}\in H$, which is the same as $g_1^{-1}g_2\in H$.  But this entails $Hg_1^{-1}g_2 = H$ so that $Hg_1^{-1}=Hg_2^{-1}=\varphi(g_1H)=\varphi(g_2H)$, and this shows $\varphi$ is well-defined.
 
   Next we show that $\varphi$ is injective.  If
 
   \begin{align*}
-    \varphi(g_iH) = \varphi(g_jH) = Hg_i^{-1} = Hg_j^{-1}
+    \varphi(g_1H) = \varphi(g_2H) = Hg_1^{-1} = Hg_2^{-1}
   \end{align*}
 
-  then 
+  then $g_2^{-1}g_1\in H$ so $(g_2^{-1}g_1)^{-1}=g_1^{-1}g_2\in H$.  So $g_1H=g_2H$ and thus $\varphi$ is injective.  To see that it's surjective, note that for any $Hg$ we have $\varphi(g^{-1}H)=Hg$.
+
+  Since this is a bijection between $G/H$ and $H\backslash G$ then the number of right cosets is the number of left cosets.
 \end{proof}
 
-\question(3.2.16)\\
+\question(3.2.16)\\ Use Lagrange's Theorem in the multiplicative group $(\mathbb Z/p\mathbb Z)^\times$ to prove Fermat's Little Theorem: if $p$ is a prime then $a^p\equiv a \mod p$ for all $a\in \mathbb Z$.
 
 \begin{proof}
+  First note that the result holds trivially if $a\equiv 0\mod p$.  So for the rest of the proof assume $a\not\equiv 0\mod p$.
+
+  Now we show that $a^{p-1}\equiv 1\mod p$.  Since $a\not\equiv 0\mod p$ then $\overline a\in (\mathbb Z/p\mathbb Z)^\times$.  Moreover $|(\mathbb Z/p\mathbb Z)^\times|=p-1$, and any element to the order of the group is the identity.  Hence $\overline a^{p-1}=\overline {\mymathbb 1}$ and so $a^{p-1}\equiv 1\mod p$.  This of course implies the desired $a^p\equiv a\mod p$.
 \end{proof}
 
 \question(3.3.3)\\
+Prove that if $H\trianglelefteq G$ and $|G:H| = p$ where $p$ is prime, then for all $K\leq G$ either
+
+(i) $K\leq H$ or
+
+(ii) $G=HK$ and $|K:K\cap H|=p$.
 
 \begin{proof}
+  Since $H\trianglelefteq G$ then $HK$ is a subgroup by corollary 15.  Also since $H\trianglelefteq G$ then $G/H$ is a group and has order $p$.  If (i) does not hold then there is some $k\in K\smallsetminus H$ and therefore $H < HK$.  Now due to the Fourth Isomorphism Theorem $HK/H \leq G/H$ and therefore $|HK/H|$ divides $p$ by Lagrange's Theorem.  Since $|HK/H|\leq p$ then $|HK/H|$ must be either 1 or $p$.  It cannot be 1 since that would entail $HK = H$ which entails $K\leq H$.  Therefore $|HK/H|=p$ but then $HK/H=G/H$ so again by the Fourth Isomorphism Theorem (using $\leq$ in both directions) we have $G=HK$.
+
+  And since $|G:H|=p=|HK:H|=|K:K\cap H|$ then we have the second part immediately.
 \end{proof}
 
 \question(3.3.8)\\
+Let $p$ be a prime and $G$ the group of $p$-power roots of 1 in $\mathbb C$.  Prove that the map $z\mapsto z^p$ is a surjective homomorphism.  Deduce that $G$ is isomorphic to a proper quotient of itself.
 
 \begin{proof}
+  Let the $p$-power roots of 1 be 1, $a, \dots, a^{p^\alpha-1}$.  This implies for instance that $(a^i)^{p^\alpha}=1$.  First let's show this is a homomorphism.  Call the mapping $\varphi$ so that
+
+  \begin{align*}
+    \varphi(a^ia^j) = \varphi(a^{i+j}) = a^{(i+j)p} = a^{ip}a^{jp} = \varphi(a^i)\varphi(a^j)
+  \end{align*}
+
+  Next we show that it's surjective.  If $a^i\in G$ 
 \end{proof}
 
 \question(3.3.9)\\

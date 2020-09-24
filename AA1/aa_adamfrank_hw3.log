@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.16)  22 SEP 2020 13:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.16)  24 SEP 2020 14:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -284,41 +284,27 @@ ds.
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--194
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 229--230
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
+Underfull \hbox (badness 10000) in paragraph at lines 234--235
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 203--204
+Underfull \hbox (badness 10000) in paragraph at lines 239--240
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 208--209
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 213--214
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 218--219
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 223--224
-
- []
-
-[4] [5]
+[5]
 This exam contains 15 questions with 0 parts, 0 subparts, and 0 subsubparts.
 (./aa_adamfrank_hw3.aux) ) 
 Here is how much of TeX's memory you used:
@@ -328,25 +314,26 @@ Here is how much of TeX's memory you used:
  19407 multiletter control sequences out of 15000+600000
  538525 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,15n,33p,606b,325s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,15n,33p,659b,325s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2020/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symb
-ols/msam10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/
-symbols/msbm10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/boond
-ox/zxxrl8a.pfb>
-Output written on aa_adamfrank_hw3.pdf (5 pages, 138549 bytes).
+sfonts/cm/cmmi5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+ti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbol
+s/msam10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/sy
+mbols/msbm10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/boondox
+/zxxrl8a.pfb>
+Output written on aa_adamfrank_hw3.pdf (5 pages, 151049 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
- 51 compressed objects within 1 object stream
+ 76 PDF objects out of 1000 (max. 8388607)
+ 54 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
