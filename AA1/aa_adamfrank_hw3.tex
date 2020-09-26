@@ -223,30 +223,90 @@ Let $p$ be a prime and $G$ the group of $p$-power roots of 1 in $\mathbb C$.  Pr
     \varphi(a^ia^j) = \varphi(a^{i+j}) = a^{(i+j)p} = a^{ip}a^{jp} = \varphi(a^i)\varphi(a^j)
   \end{align*}
 
-  Next we show that it's surjective.  If $a^i\in G$ 
+  Next we show that it's surjective.  If $a^i\in G$
 \end{proof}
 
 \question(3.3.9)\\
+Let $p$ be a prime and let $G$ be a group of order $p^\alpha m$ where $p\nmid m$.  Assume $P$ is a subgroup of $G$ of order $p^\alpha$ and $N$ is a normal subgroup of $G$ of order $p^bn$ where $p\nmid n$.  Prove that $|P\cap N|=p^b$ and $|PN/N|=p^{a-b}$.
 
 \begin{proof}
+  Since $P\cap N\leq P$ we must have $|P\cap B|$ divides $p^\alpha$.  Therefore $|P\cap N|=p^x$ for some non-negative integer $x$.  Moreover since $P\cap N \leq N$ then $p^{x}|p^{b}n$.  Since $p$ is prime and $p\nmid n$ then we have that $p^x | p^b$ and so $x \leq b$.
+
+  Now since $N\trianglelefteq G$ then $NP \leq G$ and therefore $|NP|$ divides $|G|=p^\alpha m$.  But also $|NP|=|N||P|/|P\cap N|=p^{\alpha+b}n/p^x$ and hence $p^{\alpha+b-x}n$ divides $p^\alpha m$.  In particular this implies that $p^{\alpha+b-x}$ divides $p^\alpha$ and so $p^{b-x} | 1$.  Hence $b=x$, that is to say $|P\cap N|=p^b$.
+
+  Finally due to the Second Isomorphism Theorem $|PN/N| = |P|/|P\cap N|=p^\alpha / p^b = p^{\alpha-b}$.
 \end{proof}
 
 \question(3.4.1)\\
+Show that every simple abelian group is isomorphic to $Z_p$ for some prime $p$.
 
 \begin{proof}
+  Let $x\in G$ be any non-identity element and consider the subgroup it generates, $\langle x\rangle \leq G$.  Since $G$ is abelian every subgroup is normal, so $G = \langle x\rangle$.  Now if the order of $x$ is not prime, then there is a subgroup of $\langle x\rangle$ of order this divisor, and this subgroup would be normal.  Since that cannot exist, the order of $x$ is some prime $p$.  Then under the explicit bijection with $Z_p$ given by $x\mapsto 1$ we see that these groups are isomorphic.
 \end{proof}
 
 \question(3.4.11)\\
+Prove that if $H$ is a non-trivial normal subgroup of the solvable group $G$ then there is a non-trivial subgroup $A\leq H$ and further $A\trianglelefteq G$, and $A$ abelian.
 
 \begin{proof}
+  Since there is a non-trivial normal subgroup, then in the chain of normal subgroups
+
+  \begin{align*}
+    1=G_0\trianglelefteq G_1 \trianglelefteq \dots \trianglelefteq G_s=G
+  \end{align*}
+
+  we can construct the ``solution series'' for $H$:
+
+  \begin{align*}
+    1=G_0\cap H \trianglelefteq G_1\cap H \trianglelefteq \dots \trianglelefteq G_s\cap H
+  \end{align*}
+
+  To see that this is a solution series for $H$, we first show that $G_i\cap H \trianglelefteq G_{i+1}\cap H$ for each $i=0,\dots,s-1$.  First note that if $y\in G_{i+1}\cap H$ and $x\in G_i\cap H$ then $yxy^{-1}\in G_i$ because $G_i\trianglelefteq G_{i+1}$.  Also $yxy^{-1}\in H$ because $H\trianglelefteq G$.  So $yxy^{-1}\in G_i\cap H$ which shows that $G_i\cap H\trianglelefteq G_{i+1}\cap H$.
+
+  Next we see that $(G_{i+1}\cap H)/(G_i\cap H)$ is abelian.  The Second Isomorphism Theorem guarantees that if subgroups satisfy $X\leq N_G(Y)$ then
+
+  \begin{align*}
+    XY/Y \cong X/(X\cap Y)
+  \end{align*}
+
+  Here we can set $X = G_{i+1}\cap H$ and $Y = G_i$.  Since $G_i\subseteq G_{i+1}$ then $X\cap Y = (G_{i+1}\cap H)\cap G_i = G_i\cap H$.  From this we get the isomorphism
+
+  \begin{align*}
+    \frac{G_{i+1}\cap H}{G_i\cap H}\cong \frac{(G_{i+1}\cap H)(G_i\cap H)}{G_i} = \frac{G_{i+1}G_i\cap H}{G_i} = \frac{G_{i+1}\cap H}{G_i}
+  \end{align*}
+
+  Now $(G_{i+1}\cap H)/G_i$ is a subgroup of $G_{i+1}/G_i$, and the latter is an abelian subgroup.  Therefore $(G_{i+1}\cap H)/G_i$ is abelian, and as this is isomorphic to $\frac{G_{i+1}\cap H}{G_i\cap H}$ then this too is abelian, as desired.
+
+  Now that we know that the above is a solution series, we may take the least index $i$ such that $G_i\cap H$ is not the trivial group.  This must exist since $G_s\cap H = H$ is assumed to be nontrivial.  Since $G_{i-1}\cap H=\mymathbb 1$, we are now guaranteed that $(G_s\cap H)/\mymathbb 1$ is abelian, which is trivially isomorphic to $G_1\cap H$.  Moreover, $G_1\cap H \leq H$. All that remains is to confirm that $G_i\cap H\trianglelefteq G$.
+
+
 \end{proof}
 
 \question(3.5.12)\\
+Prove that $A_n$ contains a subgroup isomorphic to $S_{n-2}$ for each $n\geq 3$.
 
 \begin{proof}
+  
 \end{proof}
 
 
 \end{questions}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
