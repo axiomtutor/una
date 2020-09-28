@@ -1,0 +1,150 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage, amsfonts, amsmath, amsthm, amssymb, array, enumerate, systeme, wasysym, mathrsfs}
+\usepackage{geometry}
+\def\Z{{\mathbb{Z}}}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\def\Q{{\mathbb{Q}}}
+\def\R{{\mathbb{R}}}
+\DeclareMathOperator{\Null}{N}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\spn}{span}
+\DeclareMathOperator{\Aut}{Aut}
+
+\begin{document}
+\pagestyle{empty}
+
+ {\noindent \textbf{\large MA 630 - Homework 4 (Module 2 - Section 2)}
+\vspace{.25in}
+
+\noindent Solutions must be typeset in \LaTeX \ and submitted to Canvas as a .pdf file. When applicable, write in complete sentences.
+\vspace{.25in}
+
+Use mathematical induction to solve each problem below.
+
+\begin{enumerate}
+
+
+\item Prove that
+\[1^3 + 2^3 + 3^3 + \dotsb + n^3 = \frac{n^2(n+1)^2}{4}\]
+for all natural numbers $n$.
+
+{\it Proof:} Define $S=\left\{n\in \mathbb N| \sum_{i=1}^n i^3 = \frac{n^2(n+1)^2}{4}\right\}.$  For the base-case, notice that since $1^3 = 1 = \frac{1^2(1+1)^2}{4}$ this is the condition which ensures $1\in S$.
+
+For the inductive case, assume that $n\in\mathbb{N}$ and that $n\in S$.  Then consider
+
+\begin{align*}
+  \sum_{i=1}^{n+1} i^3 &= \left(\sum_{i=1}^n i^3\right)+(n+1)^3 \\[.3cm]
+  &= \frac{n^2(n+1)^2}{4} + \frac{4(n+1)^3}{4} \\[.3cm]
+  &= \frac{(n+1)^2(n^2+4(n+1))}{4} \\[.3cm]
+  &= \frac{(n+1)^2(n^2+4n+4)}{4} \\[.3cm]
+  &= \frac{(n+1)^2(n+2)^2}{4}. \\
+\end{align*}
+
+The second equality follows from the inductive hypothesis.  The above chain of equalities then shows that $n+1\in S$.  Hence by the Principle of Mathematical Induction $S=\mathbb N$, which is to say that for all $n\in \mathbb N$ we have $1^3+\dots+n^3 = \frac{n^2(n+1)^2)}{4}$. \qed
+
+\item Prove that $3^{4n+1} - 5^{2n-1}$ is divisible by 7 for all $n \in \mathbb{N}$. \emph{Hint: It may be helpful to note that 81 = 77 + 4, and that 25 = 21 + 4.}
+
+{\it Proof:} Define $S=\left\{n\in\mathbb{N}|3^{4n+1}-5^{2n-1}\right\}$.  For the base-case notice that $3^{4(1)+1}-5^{2(1)-1} = 3^5-5 = 243-5=238 = 7\cdot 34$.  Hence this is divisible by 7 and so $1\in S$.
+
+Now suppose for the inductive hypothesis that $n\in \mathbb{N}$ and $n\in S$.  Since $n\in S$ we can infer that there is some $k\in \mathbb{Z}$ such that $3^{4n+1} - 5^{2n-1} = 7k$.  Hence
+
+\begin{align*}
+  3^{4(n+1)+1}-5^{2(n+1)-1} &= 3^{4n+5} - 5^{2n+1} \\[.3cm]
+  &= 3^4\cdot 3^{4n+1}-5^2\cdot 5^{2n-1} \\[.3cm]
+  &= (77+4)3^{4n+1} + (21+4)5^{2n-1} \\[.3cm]
+  &= 77\cdot 3^{4n+1}-21\cdot 5^{2n-1}+4(3^{4n+1}-5^{2n-1}) \\[.3cm]
+  &= 7(11\cdot 3^{4n+1}-3\cdot 5^{2n-1})+4\cdot 7k \\[.3cm]
+  &= 7(11\cdot 3^{4n+1}-3\cdot 5^{2n-1}+28). \\
+\end{align*}
+
+Therefore $3^{4(n+1)+1}-5^{2(n+1)-1} = 3^{4n+5} - 5^{2n+1}$ is divisible by 7, which is the condition for $n+1\in S$.  So by the Principle of Mathematical Induction we have $S=\mathbb{N}$, which is to say that for every $n\in\mathbb{N}$ we have that $3^{4n+1}-5^{2n-1}$ is divisible by 7. \qed
+
+\item Prove that $\displaystyle \left(1 + \frac{1}{n}\right)^n < n$ for all natural numbers $n \geq 3$.
+
+{\it Proof:} Define $S=\left\{n\in\mathbb{N}|\left(1+\frac 1 n\right)^n<n\right\}$.  Since $\left(1+\frac 1 3\right)^3 = \left(\frac{4}{3}\right)^3 = \frac{64}{27}$ and since $3 = \frac{81}{27}$, then we have $(1+\frac 1 3)^3 < 3$.  This establishes the base-case that $3\in S$.
+
+Now suppose for the inductive hypothesis that $n\in S$ and $n\geq 3$.  Then
+
+\begin{align*}
+  \left(1+\frac 1 {n+1}\right)^{n+1} & = \left(1+\frac 1 {n+1}\right)^{n}\left(1+\frac 1 {n+1}\right) \\[.3cm]
+  &< \left(1+\frac 1 {n}\right)^{n} \left(1+\frac 1 {n+1}\right) \\[.3cm]
+  &< n\left(1+\frac{1}{n+1}\right) \\[.3cm]
+  &= n+\frac{n}{n+1} \\[.3cm]
+  &< n+1.\\
+\end{align*}
+
+The third line above is justified by the inductive hypothesis, and the last line follows from $\frac{n}{n+1} < 1$, as this is equivalent to $n < n+1$.  We then have that $n+1\in S$ and therefore by the Principle of Mathematical Induction, $S = \mathbb{N}\smallsetminus\{1,2,3\}.$ \qed
+
+(Note: By a direct and tedious calculation we could confirm that indeed $1,2,3\not\in S$.)
+
+\item 	\begin{enumerate}
+		\item For which natural numbers $n$ is $n^3 < 2^n$?
+		\item Prove your result. \emph{Hint: It may be helpful to note that \\$(n+1)^3 = n^3 + 3n^2 + 3n + 1$. Then, to find a useful upper bound for this expression, note that $n^2$ is greater than both $n$ and 1 whenever $n > 1$.}
+		\end{enumerate}
+
+(a) It is true for 1 but not for 2 through 9.  It is again true for 10 and every number after that.
+
+(b) {\it Proof:} Define $S=\left\{n\in\mathbb{N}|n^3\geq 2^n\right\}$.  For the base-case, notice that $10^3 = 1000\geq 1024 = 2^{10}$.  Hence $10\in S$.
+
+For the inductive hypothesis suppose that $n\in S$ and $n\geq 10$.  Then
+
+\begin{align*}
+  (n+1)^3 &= n^3 + 3n^2+3n+1\\[.3cm]
+  &< 2^n + 3n^2 + 3n^2 + n^2 \\[.3cm]
+  &= 2^n + 7n^2.
+\end{align*}
+
+From here we need to prove that $2^n + 7n^2 < 2^{n+1}$.  This inequation is equvalent to $7n^2<2^{n+1}-2^n = 2^n(2-1)=2^n$.  To prove this inequation is true, we begin another proof by induction.  Let $T = \left\{n\in\mathbb{N}|7n^2<2^n\right\}$.  First note that $10\in T$ because $7(10^2)=700<1024=2^{10}$.  Now for the inductive hypothesis suppose that $m\in T$ and $m\geq 10$.  First note that since $m\geq 10$ we have that $7 < 2^m$.  Then we have
+
+\begin{align*}
+  7(m+1) &= 7m + 7 \\[.3cm]
+  &< 2^m + 2^m \\[.3cm]
+  &= 2^{m+1}.\\
+\end{align*}
+
+This establishes the inductive case and therefore $\{n\in\mathbb{N}|n\geq 10\}\subseteq T$.  Since $n\geq 10$ from before, then we have that $7n^2 < 2^{n}$ and therefore $2^n+7n^2 < 2^{n+1}$ as desired.
+
+This now completes the inductive proof that began at the start, so that by the Principle of Mathematical Induction, $\{n\in\mathbb{N}|n\geq 10\}\subseteq S$.  Moreover, since we directly confirmed the remaining cases, we can say that $S = \{n\in\mathbb{N}|n=1 \text{ or } n\geq 10\}$. \qed
+
+\item \begin{enumerate}
+		\item Let $n$ be a natural number. Prove that $2\sqrt{n^2 + n} + 1 \leq 2(n+1)$. You do not need to use induction. \emph{Hint: First, consider $4(n^2 + n)$ and $(2n + 1)^2$.}
+		\item Let $n$ be a natural number. Use induction to prove that
+		\[\frac{1}{\sqrt{1}} + \frac{1}{\sqrt{2}} + \cdots + \frac{1}{\sqrt{n}} \leq 2\sqrt{n} - 1.\]
+	  \end{enumerate}
+
+(a) First note that $2\sqrt{n^2+n}+1\leq 2(n+1)$, if we distribute and subtract 1, is equivalent to
+
+\begin{align*}
+  2\sqrt{n^2+n}\leq 2n+1.
+\end{align*}
+
+Since all quantities are positive, this is true if and only if $4(n^2+n)\leq (2n+1)^2$ which we get from squaring both sides.  This is the same as $4n^2+4n \leq 4n^2+4n+1$.  Since the right-hand side is one more than the left, this is clearly a true inequality.  Hence we have shown that
+
+\begin{align*}
+  2\sqrt{n^2+n}+1\leq 2(n+1).
+\end{align*}
+
+(b) Define $S=\{n\in\mathbb{N}|\sum_{i=1}^n\frac 1 {\sqrt i} \leq 2\sqrt n-1\}$.  For the base case note that $\frac 1 {\sqrt 1} = 1 = 2\sqrt 1 -1$.  Hence $1\in S$.  For the inductive hypothesis suppose that $n\in\mathbb N$ and $n\in S$.  Then
+
+\begin{align*}
+  \sum_{i=1}^{n+1}\frac 1 {\sqrt i} &= \left(\sum_{i=1}^n \frac 1 {\sqrt i}\right)+\frac 1 {\sqrt{n+1}} \\[.3cm]
+  &\leq 2\sqrt n - 1 + \frac 1 {\sqrt{n+1}} \\[.3cm]
+  &= \frac{(2\sqrt n -1)\sqrt{n+1}+1}{\sqrt{n+1}} \\[.3cm]
+  &= \frac{2\sqrt{n^2+n}-\sqrt{n+1}+1}{\sqrt{n+1}} \\[.3cm]
+  &\leq \frac{2(n+1)-\sqrt{n+1}}{\sqrt{n+1}} \\[.3cm]
+  &= 2\sqrt{n+1}-1.\\
+\end{align*}
+
+This shows that the inductive case holds, and therefore by the Principle of Mathematical Induction $S=\mathbb{N}$.  That is to say,
+
+\begin{align*}
+  \sum_{i=1}^{n}\frac 1 {\sqrt i} \leq 2\sqrt n - 1.
+\end{align*}
+\qed
+
+\end{enumerate}
+\end{document}

@@ -285,7 +285,29 @@ Prove that if $H$ is a non-trivial normal subgroup of the solvable group $G$ the
 Prove that $A_n$ contains a subgroup isomorphic to $S_{n-2}$ for each $n\geq 3$.
 
 \begin{proof}
-  
+  We build an injective homomorphism $\varphi: S_{n-2}\rightarrow A_n$.  For any even permutation $\sigma\in S_n$ we assign $\varphi(\sigma)=\sigma$.  That is to say, if $\sigma(i)=j$ in $S_{n-2}$, then $\varphi(\sigma)(i)=j$ in $A_n$ for each $i=1,\dots,n-2$ and $\varphi(\sigma)(n-1)=n-1$ and $\varphi(\sigma)(n)=n$.  For any odd permutation $\sigma\in S_{n-2}$, we assign $\varphi(\sigma) = \sigma(n-1\ n)$.  That is to say, for each $i=0,\dots,n-2$ we have $\varphi(\sigma)(i) = \sigma(i)$, and $\varphi(\sigma)(n-1) = n$ and $\varphi(\sigma)(n)=n-1$.
+
+  First let's see that this is a homomorphism.  We proceed by cases.  If $\sigma,\tau\in S_{n-2}$ are both even then
+
+  \begin{align*}
+    \varphi(\sigma\tau) = \sigma\tau = \varphi(\sigma)\varphi(\tau)
+  \end{align*}
+
+  If one of $\sigma$ or $\tau$ are odd, without loss of generality suppose it's $\sigma$.  Then since the product of an even and odd permutation is odd,
+
+  \begin{align*}
+    \varphi(\sigma\tau) = \sigma\tau(n-1\ n) = (\sigma(n-1\ n))\tau = \varphi(\sigma)\varphi(\tau)
+  \end{align*}
+
+  where $(n-1\ n)$ commutes because it is disjoint from $\sigma,\tau\in S_{n-2}$.  If both $\sigma,\tau$ are odd then their product is even and
+
+  \begin{align*}
+    \varphi(\sigma\tau) = \sigma\tau = \sigma(n-1\ n)(n-1\ n)\tau = \varphi(\sigma)\varphi(\tau)
+  \end{align*}
+
+  So we now have that $\varphi$ is a homomorphism.  To see that it's injective, suppose $\varphi(\sigma)=\varphi(\tau)$ and consider the case that $\varphi(\sigma)$ fixes $n-1$ and $n$.  Then $\varphi(\sigma) = \sigma = \varphi(\tau)=\tau$.  On the other hand suppose $\varphi(\sigma)$ transposes $n-1$ and $n$.  Then $\varphi(\sigma) = \sigma(n-1\ n) = \varphi(\tau) = \tau(n-1\ n)$ and therefore $\sigma=\tau$.  In all cases $\varphi(\sigma)=\varphi(\tau)$ entails $\sigma=\tau$ and so $\varphi$ is injective.
+
+  Then since $S_{n-2}$ is embedded in $A_n$, we have that the image of this embedding is a subgroup of $A_n$ which is isomorphic to $S_{n-2}$.
 \end{proof}
 
 
