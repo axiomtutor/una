@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.16)  26 SEP 2020 19:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.14)  28 SEP 2020 15:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -254,16 +254,11 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 23
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-Overfull \hbox (2.8914pt too wide) in paragraph at lines 51--52
-[]\OT1/cmr/m/it/12 Proof: \OT1/cmr/m/n/12 De-fine $\OML/cmm/m/it/12 S \OT1/cmr/
-m/n/12 = []$. For the base-case no-tice that $3[] \OMS/cmsy/m/n/12 ^^@
- []
+) [1
 
-[1
-
-{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] [3] [4] [5] (./hw4.aux) )
+{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
+ [4]
+[5] (./hw4.aux) )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 20 ({)
@@ -271,11 +266,11 @@ m/n/12 = []$. For the base-case no-tice that $3[] \OMS/cmsy/m/n/12 ^^@
 Here is how much of TeX's memory you used:
  2899 strings out of 480876
  38197 string characters out of 5907582
- 290559 words of memory out of 5000000
+ 291559 words of memory out of 5000000
  18504 multiletter control sequences out of 15000+600000
  541845 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,9n,33p,468b,218s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,9n,33p,496b,218s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/c
@@ -288,7 +283,7 @@ b></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><
 /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.p
 fb>
-Output written on hw4.pdf (5 pages, 121168 bytes).
+Output written on hw4.pdf (5 pages, 119843 bytes).
 PDF statistics:
  64 PDF objects out of 1000 (max. 8388607)
  45 compressed objects within 1 object stream
