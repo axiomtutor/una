@@ -217,14 +217,24 @@ Prove that if $H\trianglelefteq G$ and $|G:H| = p$ where $p$ is prime, then for 
 Let $p$ be a prime and $G$ the group of $p$-power roots of 1 in $\mathbb C$.  Prove that the map $z\mapsto z^p$ is a surjective homomorphism.  Deduce that $G$ is isomorphic to a proper quotient of itself.
 
 \begin{proof}
-  Let the $p$-power roots of 1 be 1, $a, \dots, a^{p^\alpha-1}$.  This implies for instance that $(a^i)^{p^\alpha}=1$.  First let's show this is a homomorphism.  Call the mapping $\varphi$ so that
+  Let $a$ and $b$ be any $p$-power root of 1, that is to say, there is some $m,n\in \mathbb N$ such that $a^{p^m}=1=b^{p^n}$.  First let's show the given map is a homomorphism.  Call the mapping $\varphi$ so that
 
   \begin{align*}
-    \varphi(a^ia^j) = \varphi(a^{i+j}) = a^{(i+j)p} = a^{ip}a^{jp} = \varphi(a^i)\varphi(a^j)
+    \varphi(ab) = (ab)^p = a^pb^p = \varphi(a)\varphi(b)
   \end{align*}
 
-  Next we show that it's surjective.  If $a^i\in G$
-\end{proof}
+  where the power distributes because complex numbers commute.
+
+  Next we show that it's surjective by finding a $p$-power root which maps to $a$.  First we note that $(a^{1/p})^{p^{n+1}}=1$ then this shows that $a^{1/p}\in G$.  Then of course $\varphi(a^{1/p})=a$.
+
+  Finally to deduce that $G$ is isomorphic to a proper quotient of itself, we appeal to the First Isomorphism Theorem.  This guarantees that the image of the map is isomorphic to the $G/\ker\varphi$.  Then
+
+  \begin{align*}
+    \text{Im}\varphi=G\cong G/\ker\varphi
+  \end{align*}
+
+  all that remains to show is that $\ker\varphi\ne \mymathbb 1$. But since $1\mapsto 1$ and $e^{i2\pi/p}\mapsto 1$ then we are done.
+  \end{proof}
 
 \question(3.3.9)\\
 Let $p$ be a prime and let $G$ be a group of order $p^\alpha m$ where $p\nmid m$.  Assume $P$ is a subgroup of $G$ of order $p^\alpha$ and $N$ is a normal subgroup of $G$ of order $p^bn$ where $p\nmid n$.  Prove that $|P\cap N|=p^b$ and $|PN/N|=p^{a-b}$.
@@ -276,9 +286,9 @@ Prove that if $H$ is a non-trivial normal subgroup of the solvable group $G$ the
 
   Now $(G_{i+1}\cap H)/G_i$ is a subgroup of $G_{i+1}/G_i$, and the latter is an abelian subgroup.  Therefore $(G_{i+1}\cap H)/G_i$ is abelian, and as this is isomorphic to $\frac{G_{i+1}\cap H}{G_i\cap H}$ then this too is abelian, as desired.
 
-  Now that we know that the above is a solution series, we may take the least index $i$ such that $G_i\cap H$ is not the trivial group.  This must exist since $G_s\cap H = H$ is assumed to be nontrivial.  Since $G_{i-1}\cap H=\mymathbb 1$, we are now guaranteed that $(G_s\cap H)/\mymathbb 1$ is abelian, which is trivially isomorphic to $G_1\cap H$.  Moreover, $G_1\cap H \leq H$. All that remains is to confirm that $G_i\cap H\trianglelefteq G$.
+  Now that we know that the above is a solution series, we may take the least index $i$ such that $G_i\cap H$ is not the trivial group.  We call this index $j$.  This must exist since $G_s\cap H = H$ is assumed to be nontrivial.  Since $G_{j-1}\cap H=\mymathbb 1$ by minimality, we are now guaranteed that $(G_j\cap H)/\mymathbb 1$ is abelian, which is trivially isomorphic to $G_j\cap H$.  Moreover, $G_j\cap H \leq H$. All that remains is to confirm that $G_j\cap H\trianglelefteq G$.
 
-
+  For this part we proceed by induction.  Since $G_j\trianglelefteq G_{j+1}$ and $H\trianglelefteq G_{j+1}$ because $H\trianglelefteq G$, then it follows that $G_{j}\cap H\trianglelefteq G_{j+1}$, which is our base-case.  For the inductive case suppose that $G_j\cap H\trianglelefteq G_{j+k}$.  If $x\in G_{j+k+1}$ and $y\in G_j\cap H$ then we have $xyx^{-1}\in G_{j+k}\cap H$.  
 \end{proof}
 
 \question(3.5.12)\\
