@@ -1,5 +1,9 @@
 # Fdb version 3
+<<<<<<< HEAD
 ["pdflatex"] 1601647854 "aa_adamfrank_exam1.tex" "aa_adamfrank_exam1.pdf" "aa_adamfrank_exam1" 1601647854
+=======
+["pdflatex"] 1601625066 "aa_adamfrank_exam1.tex" "aa_adamfrank_exam1.pdf" "aa_adamfrank_exam1" 1601625066
+>>>>>>> 621a89a6611548ea068c39fa2fbb6ec14643f280
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -68,6 +72,7 @@
   "/usr/local/texlive/2020/texmf-dist/tex/latex/marvosym/umvs.fd" 1169658918 111 395c88825a74c0d7a4afff69645f4d03 ""
   "/usr/local/texlive/2020/texmf-dist/tex/latex/preprint/fullpage.sty" 1137110595 2789 05b418f78b224ec872f5b11081138605 ""
   "/usr/local/texlive/2020/texmf-dist/web2c/texmf.cnf" 1598393674 39451 15a3ebee027466ecb89701aa91dfebaf ""
+<<<<<<< HEAD
   "/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1600299790 5016537 c051d44de8dace80eef9c5d98ac989db ""
   "/usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1600299844 2445081 cf26567248199921cd6061c15ba60837 ""
   "/usr/local/texlive/2020/texmf.cnf" 1600299785 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
@@ -77,3 +82,14 @@
   "aa_adamfrank_exam1.log"
   "aa_adamfrank_exam1.pdf"
   "aa_adamfrank_exam1.aux"
+=======
+  "/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1600112287 5017515 cda448939f10490cd3481e918e3405bc ""
+  "/usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1600112342 2445080 1a02d9fbb68580c6aed1b93da2c9892b ""
+  "/usr/local/texlive/2020/texmf.cnf" 1600112283 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
+  "aa_adamfrank_exam1.aux" 1601625066 1365 71daae6681803d2ce2930516451dd8c8 "pdflatex"
+  "aa_adamfrank_exam1.tex" 1601625066 6493 eddd405d55bc77dccf32c642b219f612 ""
+  (generated)
+  "aa_adamfrank_exam1.aux"
+  "aa_adamfrank_exam1.log"
+  "aa_adamfrank_exam1.pdf"
+>>>>>>> 621a89a6611548ea068c39fa2fbb6ec14643f280
