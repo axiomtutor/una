@@ -1,0 +1,219 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage, amsfonts, amsmath, amsthm, amssymb, array, enumerate, systeme, wasysym, mathrsfs}
+\usepackage{geometry}
+
+\begin{document}\pagestyle{empty} 
+\begin{center}\noindent \textbf{\large MA 630 - Quiz 4 Group 3} \\[3mm]
+
+\textbf{Authors: }Jenna Dula, Adam Frank, Lee Hill, \\
+Phat Nguyen, Ronny Russell, Toneria Thigpen
+\end{center}
+\vspace{.1in}
+
+
+%1
+\begin{enumerate}
+\item Let $x$ be an integer, and set $S = \{n \in \mathbb{N} \ : \ x \text{ is odd if and only if } x^n \text{ is odd}\}$.
+	\begin{enumerate}
+	\item Prove that $1 \in S$.
+	\item Suppose that $n \in S$. Prove that if $x$ is odd, then $x^{n+1}$ is odd.
+	\item Suppose that $n \in S$. Prove that if $x^{n+1}$ is odd, then $x$ is odd.
+	\item Suppose that $n \in S$. The results of parts (b) and (c) imply that what other integer is an element of $S$? Explain.
+	\item Combining parts (a)-(d) with the Principle of Mathematical Induction, what result has been proved?
+	\end{enumerate}
+	
+	% Solution by Adam Frank
+	(a) {\it Proof:} To show that $1\in S$ we need to show that $x$ is odd if and only if $x^1$ is odd.  But this is trivial since $x^1=x$ for all integers $x$.  So the statement is equivalent to ``$x$ is odd if and only if $x$ is odd'', and all sentences of the form ``$P$ if and only if $P$'' are tautologically true.  Hence $1\in S$. \qed
+	
+	(b) {\it Proof:} Assume that $n\in S$ and we will show that if $x$ is odd then $x^{n+1}$ is odd.  So also assume $x$ is odd and we'll show that $x^{n+1}$ is odd.  
+	
+	Since we have assumed $n\in S$ then we have by definition of $S$ that $x$ is odd if and only if $x^{n}$ is odd.  Since we are also assuming $x$ is odd, then we actually have that $x^n$ is odd.  Since $x$ and $x^n$ are both odd there must exist integers $a,b$ such that $x=2a+1$ and $x^n = 2b+1$.  Hence,
+	\begin{align*}
+	    x^{n+1} &= x\cdot x^n \\[.3cm]
+	    &= (2a+1)(2b+1) \\[.3cm]
+	    &= 4ab + 2a + 2b + 1 \\[.3cm]
+	    &= 2(2ab+a+b)+1.
+	\end{align*}
+	
+	Now since $t = 2(2ab+a+b)$ is an integer, then $x^{n+1}=2t+1$ is odd. \qed
+	
+	(c) Suppose $n\in S$ and we will show that if $x^{n+1}$ is odd then $x$ is odd.  We will prove this by showing the converse, so suppose $x$ is even and we will show that $x^{n+1}$ is even.  Since $x$ is even then there is some integer $k$ such that $x=2k$.  Now we have 
+	\begin{align*}
+	    x^{n+1} = x\cdot x^n = 2kx^n.
+	\end{align*}
+	
+	Since $t=kx^n$ is an integer then $x^{n+1}=2t$ is even. \qed
+	
+	(d) {\it Explanation:}  Parts (b) and (c) together show that if $n\in S$ then $x$ is odd if and only if $x^{n+1}$ is odd.  This consequent is the same thing as the condition for $n+1\in S$.  Hence parts (b) and (c) show that if $n\in S$ then $n+1\in S$. \qed
+	
+	We may choose to set $n=1$ since the above holds for every natural number.  Then we have that if $1\in S$ then $2\in S$.  From part (a) we know that $1\in S$.  Therefore we conclude that $2\in S$. 
+	
+	(e) {\emph Explanation:} Part (a) establishes the base-case.  Parts (b) and (c) together establish the inductive case.  Hence by the Principle of Mathematical Induction, we have that $S=\mathbb N$.  That is to say, for every natural number $n$, and for every integer $x$, we have that $x$ is odd if and only if $x^n$ is odd. \qed \\
+
+	
+%2a	
+\item Let $S = \{n \in \mathbb{N} \ : \ 12 \text{ does not divide } n^4 - n^2 \}$.
+	\begin{enumerate}
+	\item Explain why $1, 2, 3, 4, 5, 6 \not\in S$. \\
+	
+	\emph{Proof/Explanation.}  Since $1^4-1^2=0$ and 12 divides 0, then $1\not\in S$.  By the same logic, 12 divides each of the following 
+	
+	\begin{align*}
+	    2^4-2^2 &= 12,\\
+	    3^4-3^2 &= 72=12\cdot 6,\\
+	    4^4-4^2 &= 240 = 12\cdot 20,\\
+	    5^4-5^2 &= 600 = 12\cdot 50, \\
+	    6^4-6^2 &= 1260 = 12\cdot 105,
+	\end{align*}
+	and hence $2,3,4,5,6\not\in S$. \qed \\
+	
+	%\[\text{Let } S = \bigg \{n \in \mathbb{N}: 12 \text{ does not divide } n^4 - n^2 \bigg \}\text{, and } 1, 2, 3, 4, 5, 6 \notin S. \]
+	
+	%We will prove and explain by contradiction. Suppose \[\text{Let } S = \bigg \{n \in \mathbb{N}: 12 \text{ does divide } n^4 - n^2 \bigg \}\text{, and } 1, 2, 3, 4, 5, 6 \notin S. \]
+	
+	%First we show that $1 \in S$: If $n=1$, then
+    %\[n^4-n^2 = 1^4-1^2 = 1-1 = 0.\]
+    %Since $12$ divides $0$, $1 \in S$. \\
+    %Suppose that $n \in S$. Then $12$ divides $n^4-n^2$. \\
+    %We want to use this fact to prove that $n+1 \in S$. Note that $n+1 \in S$ if and only if $12$ divides $(n+1)^4-(n+1)^2$.
+    %\begin{align*}
+    %    (n+1)^4 &= n^4+4n^3+6n^2+4n+1 \\
+    %    &= 2n(2n^2+3n+2)+1,
+    %\end{align*}
+    %and
+    %\begin{align*}
+    %    (n+1)^2 &= n^2+2n+1.
+    %\end{align*}
+   
+    %It follows that
+    %\begin{align*}
+%         (n+1)^4-(n+1)^2 &= n^4+4n^3+5n^2+2n \\
+%         &= n^4+4n^3+6n^2-n^2+2n \\
+%         &= (n^4-n^2)+4n^3+6n^2+2n \\
+%         &= (n^4-n^2)+2n(n+1)(2n+1) \\
+%         &= 6(n^4-n^2)+12n(n+1)(2n+1).
+%     \end{align*}
+% Thus, $12n(n+1)(2n+1)=12k$ for some integer $k$, namely $k=n(n+1)(2n+1)$ and as proven previously, $12$ also divides $n^4-n^2$, and so $n+1 \in S$. By the Principle of Mathematical Induction, $S=\mathbb{N}$, implying that $1, 2, 3, 4, 5, 6 \in S$. But, this creates a contradiction from our original assumption that 
+% \[S = \bigg \{n \in \mathbb{N}: 12 \text{ does not divide } n^4 - n^2 \bigg \}\text{, and } 1, 2, 3, 4, 5, 6 \notin S. \]
+% Therefore, \[S' = \bigg \{n \in \mathbb{N}: 12 \text{ does divide } n^4 - n^2 \bigg \}\text{, and } 1, 2, 3, 4, 5, 6 \in S'. \] 
+% And by definition, if $x \in S'$, then $x \notin S$. Hence, this also proves that $S = \varnothing$. \qed \\
+
+%2b
+	\item Suppose (for the sake of contradiction) that $S \neq \varnothing$. The Least Natural Number Principle implies that $S$ has a smallest element, say $k$. Then, by part (a), $k \geq 7$ and thus, there exists a natural number $m$, $1 \leq m < k$ such that $k = m + 6$. What must be true about $m^4 - m^2$ and $k^4 - k^2$? Explain. \\
+	
+	\emph{Proof/Explanation.}
+	If we suppose that $S \neq \varnothing$ and that $1 \leq m < k$ such that $k = m + 6$, then it must be true that there is an integer $r$ such that 
+	
+	\[m^4-m^2 = 12r.\]
+	
+	Also by definition of $k$ we have 
+	
+	\[k^4-k^2 \neq 12t \text{, for any integer } t.\] \qed
+	
+%2c
+	\item Notice that
+		\begin{align*}
+		k^4 - k^2 &= (m+6)^4 - (m+6)^2 \\
+		&= m^4 + 24m^3 + 215m^2 + 852 m + 1260 \\
+		&= m^4 + 24m^3 + (216m^2 - m^2) + 852 m + 1260 \\
+		&= (m^4 - m^2) + (24m^3 + 216m^2 + 852 m + 1260).
+		\end{align*}
+		Where is the contradiction? \\
+	
+	\emph{Proof/Explanation.} \\
+	
+	Since 
+	
+	\begin{align*}
+	    k^4-k^2 &= (m^4 - m^2) + (24m^3 + 216m^2 + 852 m + 1260) \\
+	    &= 12r + 12(2m^3+18m^2+71m+105) \\
+	    &= 12(r + 2m^3+18m^2+71m+105)\\
+	\end{align*}
+	
+	hence $k^4-k^2$ is divisible by 12.  This contradicts the fact that $k^4-k^2$ is not divisible by 12, from part (b). \qed \\
+	
+% 	The contradiction is in the fact that for $m \geq 1$ and for some integers $v$, $w$, and $y$, 
+% 	\begin{align*}
+% 	    12v &= k^4-k^2 \\
+% 	    12w &= m^4 - m^4 \\
+% 	    12y &= 24m^3 + 216m^2 + 852 m + 1260,
+% 	\end{align*}
+% 	although as shown by the Least Natural Number Principle in (b) above, $k^4-k^2$ is defined as the smallest element of $S$. \qed \\ \\
+
+%2d		
+	\item What result has been proved? \\
+	
+	\emph{Proof/Explanation.} \\
+	It has been proven that $S = \varnothing$. \qed \\
+	\end{enumerate}
+
+
+%3
+\item Use induction to prove that
+\[1^2 + 2^2 + 3^2 + \dotsb + n^2 = \frac{n(n+1)(2n+1)}{6}\]
+for all natural numbers $n$.\\
+\textit{Proof:} Let 
+\[ S = \bigg \{n \in \mathbb{N}:1^2 + 2^2 + 3^2 + \dotsb + n^2 = \frac{n(n+1)(2n+1)}{6} \bigg \} \] .\\
+We first show that $1 \in S$. Since
+\[1^2 = \frac{1(1+1)(2\cdot 1+1)}{6},\]
+it follows that $1 \in S$.\\
+Now, let $n \in S$. Thus,
+\[1^2 + 2^2 + 3^2 + \dotsb + n^2 = \frac{n(n+1)(2n+1)}{6}.\]
+We must show that $n+1 \in S$. That is, we will show that
+\[1^2 + 2^2 + 3^2 + \dotsb + n^2 +(n+1)^2 = \frac{(n+1)(n+2)[2(n+1)+1]}{6}.\]
+We have
+\begin{align*}
+    1^2 + 2^2 + 3^2 + \dotsb + n^2 +(n+1)^2 &= (1^2 + 2^2 + 3^2 + \dotsb + n^2) +(n+1)^2\\
+    &= \frac{n(n+1)(2n+1)}{6} +(n+1)^2\\
+    &= \frac{n(n+1)(2n+1) + 6(n+1)^2}{6}\\
+    &= \frac{(n+1)[n(2n+1)+6(n+1)]}{6}\\
+    &= \frac{(n+1)(2n^2+n+6n+6)}{6}\\
+    &= \frac{(n+1)[2(n^2 + 3n +2)+(n+2)]}{6}\\
+    &= \frac{(n+1)[2(n+1)(n+2) + (n+2)]}{6}\\
+    &= \frac{(n+1)(n+2)[2(n+1)+1]}{6}.
+\end{align*}
+Thus, $n+1 \in S$. By the Principle of Mathematical Induction, $S=\mathbb{N}$.\\ Therefore, \[1^2 + 2^2 + 3^2 + \dotsb + n^2 = \frac{n(n+1)(2n+1)}{6}\]
+for all natural numbers $n$. \qed \\
+
+
+%4
+\item Use induction to prove that $2^n + 1 < 2^{n+1} - 1$ for all natural numbers $n \geq 2$.
+\emph{Proof: }
+ Let \[ S = \bigg \{n \in \mathbb{N}:\forall{n} \geq2,   (2^n + 1) < (2^{n+1} - 1) \bigg \} \]
+First, we shall show $2^n + 1 < 2^{n+1} - 1$ is valid for $n=2$.
+\begin{align}
+    2^2+1&<2^{2+1}-1\notag\\
+    4+1&<8-1\notag\\
+    5&<7.\notag
+\end{align}
+Therefore we know that $2 \in S$.  Now suppose that $n \in S$.  We must show that $n+1 \in S$. So considering the inequality for $n+1$, we get that
+\begin{align*}
+    2^{n+1}+1 &< 2^{(n+1)+1}-1\\
+    2^{n+1} +1 &< 2^{n+2}-1\\
+    2(2^n)+1 &< 4(2^n)-1\\
+    2 &< 2(2^n)\\
+    1 &< 2^n.
+\end{align*}
+
+Then, since $n$ is a natural number, $2^n$ must be greater than 1. Thus, we have shown that the inequality holds for $n+1$, and therefore that $n+1\in S$.  Now, by the Principle of Mathematical Induction, we have shown that $2^n + 1 < 2^{n+1} - 1$ for all natural numbers $n \geq 2$. \qed\\
+
+
+%5
+\item Use induction to prove that $5^n - 2^n$ is divisible by 3 for all natural numbers $n$. \emph{It may be helpful to note that $5^{n+1} = 5\cdot 5^n = (3+2)5^n$.} \\
+
+\emph{Proof.}  \[\text{Let } S = \bigg \{n \in \mathbb{N}: 3 \text{ divides } 5^n-2^n \bigg \}. \]
+    
+    First we show that $1 \in S$: If $n=1$, then
+    \[5^n-2^n = 5^1-2^1 = 5-2 = 3.\]
+    Since $3$ divides $3$, $1 \in S$. \\ \\
+    Suppose that $n \in S$. Then $3$ divides $5^n-2^n$. We want to use this fact to prove that $n+1 \in S$. Note that $n+1 \in S$ if and only if $3$ divides $5^{n+1}-2^{n+1}$. And we have,
+    \begin{align*}
+        5^{n+1}-2^{n+1} &= 5(5^n)-2(2^n) \\
+        &= (3+2)5^n-(2)2^n \\
+        &= (3)5^n+(2)5^n-(2)2^n \\
+        &= 2(5^n-2^n)+(3)5^n.
+    \end{align*}
+    Thus, $(3)5^n=3k$ for some integer $k$, namely $k=5^n$, proving that $3$ divides $(3)5^n$. As we have previously shown, $3$ also divides $5^2-2^n$, and so $n+1 \in S$. By the Principle of Mathematical Induction, $S=\mathbb{N}$. \qed
+
+\end{enumerate}
+\end{document}
