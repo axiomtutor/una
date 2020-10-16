@@ -237,12 +237,12 @@ Let $p$ be a prime and $G$ the group of $p$-power roots of 1 in $\mathbb C$.  Pr
   \end{proof}
 
 \question(3.3.9)\\
-Let $p$ be a prime and let $G$ be a group of order $p^\alpha m$ where $p\nmid m$.  Assume $P$ is a subgroup of $G$ of order $p^\alpha$ and $N$ is a normal subgroup of $G$ of order $p^bn$ where $p\nmid n$.  Prove that $|P\cap N|=p^b$ and $|PN/N|=p^{a-b}$.
+Let $p$ be a prime and let $G$ be a group of order $p^\alpha m$ where $p\nmid m$.  Assume $P$ is a subgroup of $G$ of order $p^\alpha$ and $N$ is a normal subgroup of $G$ of order $p^bn$ where $p\nmid n$.  Prove that $|P\cap N|=p^b$ and $|PN/N|=p^{\alpha-b}$.
 
 \begin{proof}
   Since $P\cap N\leq P$ we must have $|P\cap B|$ divides $p^\alpha$.  Therefore $|P\cap N|=p^x$ for some non-negative integer $x$.  Moreover since $P\cap N \leq N$ then $p^{x}|p^{b}n$.  Since $p$ is prime and $p\nmid n$ then we have that $p^x | p^b$ and so $x \leq b$.
 
-  Now since $N\trianglelefteq G$ then $NP \leq G$ and therefore $|NP|$ divides $|G|=p^\alpha m$.  But also $|NP|=|N||P|/|P\cap N|=p^{\alpha+b}n/p^x$ and hence $p^{\alpha+b-x}n$ divides $p^\alpha m$.  In particular this implies that $p^{\alpha+b-x}$ divides $p^\alpha$ and so $p^{b-x} | 1$.  Hence $b=x$, that is to say $|P\cap N|=p^b$.
+  Now since $N\trianglelefteq G$ then $NP \leq G$ and therefore $|NP|$ divides $|G|=p^\alpha m$.  But also $|NP|=|N||P|/|P\cap N|=p^{\alpha+b}n/p^x$ and hence $p^{\alpha+b-x}n$ divides $p^\alpha m$.  In particular this implies that $p^{\alpha+b-x}$ divides $p^\alpha$.  Hence $b-x\leq 0$, which is the same as $b\leq x$.  Together with the inequality from earlier, we now have $b=x$, that is to say $|P\cap N|=p^b$.
 
   Finally due to the Second Isomorphism Theorem $|PN/N| = |P|/|P\cap N|=p^\alpha / p^b = p^{\alpha-b}$.
 \end{proof}
@@ -251,7 +251,7 @@ Let $p$ be a prime and let $G$ be a group of order $p^\alpha m$ where $p\nmid m$
 Show that every simple abelian group is isomorphic to $Z_p$ for some prime $p$.
 
 \begin{proof}
-  Let $x\in G$ be any non-identity element and consider the subgroup it generates, $\langle x\rangle \leq G$.  Since $G$ is abelian every subgroup is normal, so $G = \langle x\rangle$.  Now if the order of $x$ is not prime, then there is a subgroup of $\langle x\rangle$ of order this divisor, and this subgroup would be normal.  Since that cannot exist, the order of $x$ is some prime $p$.  Then under the explicit bijection with $Z_p$ given by $x\mapsto 1$ we see that these groups are isomorphic.
+  Let $x\in G$ be any non-identity element and consider the subgroup it generates, $\langle x\rangle \leq G$.  Since $G$ is abelian every subgroup is normal, so $G = \langle x\rangle$.  Now if the order of $x$ is not prime, then there is a subgroup of $\langle x\rangle$ of order this divisor, and this subgroup would be normal.  Since that cannot exist, the order of $x$ is some prime $p$.  Then under the explicit bijection with $Z_p$ determined by $x\mapsto \mymathbb 1$ we see that these groups are isomorphic.
 \end{proof}
 
 \question(3.4.11)\\
