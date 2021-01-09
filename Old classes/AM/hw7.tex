@@ -1,0 +1,135 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage, amsfonts, amsmath, amsthm, amssymb, array, enumerate, systeme, wasysym, mathrsfs}
+\usepackage{geometry}
+
+
+\begin{document}
+\pagestyle{empty}
+
+ {\noindent \textbf{\large MA 630 - Homework 7 (Module 4 - Section 1)}
+\vspace{.25in}
+
+\noindent Solutions must be typeset in \LaTeX \ and submitted to Canvas as a .pdf file. When applicable, write in complete sentences. Use only results which have been discussed in our class.
+\vspace{.25in}
+
+\begin{enumerate}
+\item Let $A$, $B$, and $C$ be sets. For each statement below, either prove or provide a counterexample.
+	\begin{enumerate}
+	\item $A \times (B \cup C) = (A \times B) \cup (A \times C)$
+	\item $A \times (B \cap C) = (A \times B) \cap (A \times C)$
+	\end{enumerate}
+
+(a)
+
+  \begin{proof}
+      If $A\times (B\cup C)=\emptyset$ then the result holds trivially, so let $(a,x)\in A\times (B\cup C)$ with $a\in A$ and $x\in B\cup C$.  Without loss of generality suppose $x\in B$.  Then $(a,x)\in A\times B$ and therefore $(a,x)\in (A\times B)\cup (A\times C)$.  So we have shown $A \times (B \cup C) \subseteq (A \times B) \cup (A \times C)$.
+
+      Conversely, again, if the set is empty then the result is trivial.  So let $(a,x)\in (A\times B)\cup (A\times C)$.  Then either $(a,x)\in A\times B$ or $(a,x)\in A\times C$.  Without loss of generality suppose $(a,x)\in A\times B$.  Then $a\in A$ and $x\in B$ hence $x\in B\cup C$.  Therefore $(a,x)\in A\times (B\cup C)$.  So we have shown $A \times (B \cup C) \supseteq (A \times B) \cup (A \times C)$.
+
+      By mutual containment we have $A \times (B \cup C) = (A \times B) \cup (A \times C)$.
+  \end{proof}
+
+  (b)
+
+  \begin{proof}
+    We will show that $z$ is an element of $A\times (B\cap C)$ if and only if $z$ is an element of $(A\times B)\cap (A\times C)$.  This will then immediately imply that $A\times (B\cap C)=(A\times B)\cap (A\times C)$.
+
+    Let $(a,x)\in A\times (B\cap C)$.  This holds if and only if $a\in A$ and $x\in B\cap C$.  This is true if and only if $a\in A$ and $x\in B$ and $x\in C$.  This is true if and only if $(a,x)\in A\times B$ and $(a,x)\in A\times C$.  This is true if and only if $(a,x)\in (A\times B)\cap (A\times C)$.  Since every step is a biconditional then in fact we have show that $(a,x)\in A\times (B\cap C)$ if and only if $(a,x)\in (A\times B)\cap (A\times C)$.
+
+    Therefore $A\times (B\cap C)=(A\times B)\cap (A\times C)$.
+  \end{proof}
+
+\item Define a relation $\sim$ on $\mathbb{R}$ as follows: given $x, y \in \mathbb{R}$, $x \sim y$ if and only if $\sin^2 x + \cos^2 y = 1$. Prove or disprove each of the following. Of course, you may assume the standard trigonometric identities.
+	\begin{enumerate}
+	\item $\sim$ is reflexive.
+	\item $\sim$ is symmetric.
+	\item $\sim$ is transitive.
+	\end{enumerate}
+
+  \begin{proof}
+    It is reflexive because, famously, for all real numbers $x$ we have $\sin^2 x+\cos^2 x = 1$.  It is symmetric because, if $x\sim y$ then $\sin^2x+\cos^2y=1$ but then
+
+    \begin{align*}
+      (1-\cos^2 x)+(1-\sin^2 y) &= 1\\
+      2-\cos^2 x - \sin^2 y &= 1\\
+      1 &= \cos^2 x + \sin^2 y
+    \end{align*}
+
+    so $y\sim x$.  It is also transitive since if $x\sim y$ and $y\sim z$ then
+
+    \begin{align*}
+      \sin^2x+\cos^2y &= 1\\
+      \sin^2y+\cos^2z &= 1\\
+      1-\cos^2y + \cos^2 z &=1
+    \end{align*}
+
+    so that by adding the first and last equation above, we have $\sin^2x+1+\cos^2 z = 2$ which then implies $\sin^2x+\cos^2z=1$.
+  \end{proof}
+
+
+\item Define a relation $\simeq$ on $\mathbb{R} \times \mathbb{R}$ as follows: given $(a,b), (c,d) \in \mathbb{R} \times \mathbb{R}$, $(a,b) \simeq (c,d)$ if and only if $a^2 + b^2 = c^2 + d^2$.
+\begin{enumerate}
+\item Prove that $\simeq$ is an equivalence relation.
+\item Describe each equivalence class geometrically as a set of points in the plane.
+\end{enumerate}
+
+(a)
+
+\begin{proof}
+  To show that $\simeq$ is reflexive consider any $(a,b)\in \mathbb R\times \mathbb R$.  Since $a^2+b^2=a^2+b^2$ trivially then $(a,b)\simeq (a,b)$.
+
+  To show that $\simeq$ is symmetric let $(a,b)\simeq (c,d)$.  Then $a^2+b^2=c^2+d^2$ and by the symmetry of $=$ we have that $c^2+d^2=a^2+b^2$.  Then $(c,d)\simeq (a,b)$.
+
+  To show that it is transitive let $(a,b)\simeq (c,d)$ and $(c,d)\simeq (e,f)$.  Then
+
+  \begin{align*}
+    a^2+b^2=c^2+d^2=e^2+f^2
+  \end{align*}
+
+  which shows that $(a,b)\simeq (e,f)$.
+
+  Since the relation is reflexive, symmetric, and transitive then it's an equivalence relation.  (Indeed any relation defined in terms of equality like this will be an equivalence relation, since reflexivity, symmetry, and transitivity all inherit from the properties of the equality!)
+\end{proof}
+
+(b)
+
+  If $a^2+b^2=r^2$ for some real number $r$, and also $c^2+d^2=r^2$ then these are two points on the circle of radius $r$ centered at the origin.  The equivalence class of $(a,b)$ is then the circle of radius $\sqrt{a^2+b^2}$.
+
+\item Define a relation $\simeq$ on $\mathbb{Z}$ as follows: Given $a, b \in \mathbb{Z}$, $a \simeq b$ if and only if $2a + 4b$ is divisible by 6.
+\begin{enumerate}
+\item Prove that $\simeq$ is an equivalence relation on $\mathbb{Z}$.
+\item Calculate the distinct equivalence classes.
+\end{enumerate}
+
+(a)
+
+\begin{proof}
+  To show that it's reflexive note that for any $a\in \mathbb Z$ we have $2a+4a=6a$ which is divisible by 6 from the definition.  For symmetry, suppose $a\simeq b$ so that there exists a $k\in\mathbb Z$ such that $2a+4b=6k$.  Then $4a+8b=12k$ and therefore $2b+4a=12k-6b=6(2k-b)$ which is divisible by 6.  Hence $b\simeq a$.
+
+  Finally, to show that it's transitive let $2a+4b=6m$ and $2b+4c=6n$.  Then
+
+  \begin{align*}
+    2a+6b+4c &= 6m+6n \\
+    2a+4c &= 6(m+n-b).
+  \end{align*}
+
+  Since this is divisible by 6 we have $a\simeq c$.
+
+  Since the relation is reflexive, symmetric, and transitive then it is an equivalence relation.
+\end{proof}
+
+(b) First we observe that if $a\simeq b$ then $a\simeq b+3$.  This is because if $2a+4b=6k$ for some integer $k$, then $2a+4(b+3)=2a+4b+12 = 6(k+2)$ which is also divisible by 6.  This shows that $0\simeq 3\simeq \dots$, which is to say that the equivalence class [0] is all multiples of 3.  Likewise $[1]=\{\dots, -2,1,4,\dots\}$ and $[2]=\{\dots,-1,2,5,\dots\}$.  That is to say $[0]$ is the set of all integers congruent to 0 mod 3, and [1] is the set of all integers congruent to 1 mod 3, and so on.
+
+\item A relation $\sim$ on a set $S$ is said to be \emph{circular} if whenever $x, y, z \in S$ such that $x \sim y$ and $y \sim z$, then $z \sim x$.
+
+Prove that a relation $\sim$ on a set $S$ is an equivalence relation if and only if $\sim$ is reflexive and circular.
+
+\begin{proof}
+  Suppose $\sim$ is an equivalence relation.  Then immediately we know that it is reflexive, so all that remains is to show that it's circular.  If $x\sim y$ and $y\sim z$ then we need already know by transitivity that $x\sim z$.  But now $z\sim x$ follows by symmetry.  Hence the relation is circular.
+
+  For the converse, suppose $\sim$ is reflexive and circular.  Then to prove that $\sim$ is an equivalence relation we already have that it's reflexive, and only need to show symmetry and transitivity.  For symmetry, suppose $x\sim y$.  We already know that $y\sim y$ since the relation is assumed to be reflexive.  If we use $x$ and $y$ in the statement of circularity, we have $x\sim y$ and $y\sim y$ therefore $y\sim x$.
+
+  For transitivity, suppose $x\sim y$ and $y\sim z$, hence $z\sim x$ by circularity.  But since we already know the relation is symmetric it also follows that $x\sim z$. Hence the relation is an equivalence relation.
+\end{proof}
+\end{enumerate}
+\end{document}

@@ -1,0 +1,203 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+\usepackage[dvipsnames]{xcolor}
+
+\DeclareMathAlphabet{\mymathbb}{U}{BOONDOX-ds}{m}{n}
+
+\begin{document}
+  \begin{center} \Large
+    MA-652 Advanced Calculus\\
+    Homework 1, Jan. 9 \\
+    Adam Frank
+  \end{center}
+
+  \vspace{1cm}
+
+  {\Large \color{Sepia} Problem 1.  Let $f:[a,b]\to \mathbb R$ be differentiable at $x\in (a,b)$ and $k\in \mathbb R$.  Prove that $(kf)'(x) = kf'(x)$.}
+
+  \vspace{1cm}
+
+  If we define the difference quotient at $x\in (a,b)$,
+
+  \begin{align*}
+    \phi(x) = \frac{(kf)(t)-(kf)(x)}{t-x}
+  \end{align*}
+
+  then our task is to find $\displaystyle\lim_{t\to x}\phi(x)$.  But since
+
+  \begin{align*}
+    \lim_{t\to x}\phi = \lim_{t\to x}\frac{kf(t)-kf(x)}{t-x}
+  \end{align*}
+
+  by definition of multiplying functions, then this is
+
+  \begin{align*}
+    \lim_{t\to x}k\frac{f(t)-f(x)}{t-x} = k\lim_{t\to x}\frac{f(t)-f(x)}{t-x} = kf'(x)
+  \end{align*}
+
+  where this limit is guaranteed to exist by the differentiability of $f$ in this interval.
+
+  \pagebreak
+
+  %%%
+
+  {\Large \color{Sepia} Problem 2.  Let $f,g:[a,b]\to \mathbb R$ be differentiable at $x\in (a,b)$.
+
+  (a). Prove the quotient rule using the limit definition, wherever the denominator isn't 0.}
+
+  \vspace{1cm}
+
+  For any $x\in (a,b)$ such that $g(x)\ne 0$ we will show that $\left(\frac{f}{g}\right)'(x) = \frac{f'(x)g(x)-f(x)g'(x)}{[g(x)]^2}$.  We define the difference quotient
+
+  \begin{align*}
+    \phi(t) = \frac{f(t)/g(t)-f(x)/g(x)}{t-x} = \frac{\frac{f(t)g(x)-f(x)g(t)}{g(t)g(x)}}{t-x}
+  \end{align*}
+
+  Therefore
+
+  \begin{align*}
+    \left(\frac f g\right)'(t) &= \lim_{t\to x}\frac{f(t)g(x)-f(x)g(t)}{[g(t)g(x)](t-x)} \\\\
+    &= \frac{1}{g(x)}\lim_{t\to x}\frac{1}{g(t)}\left(\frac{f(t)g(x)-f(x)g(x)+f(x)g(x)-f(x)g(t)}{t-x}\right) \\\\
+    &= \frac{1}{g(x)}\lim_{t\to x}\frac{1}{g(t)}\cdot \lim_{t\to x}\left(\frac{f(t)-f(x)}{t-x}\cdot g(x) - f(x)\frac{g(t)-g(x)}{t-x}\right) \\\\
+    &= \frac{1}{[g(x)]^2}(f'(x)g(x)-f(x)g'(x))
+  \end{align*}
+
+  The final equation follows because we assumed that $g(x)\ne 0$ and therefore $\displaystyle\lim_{t\to x}\frac{1}{g(t)}=\frac{1}{g(x)}$.  Also we assumed both functions are differentiable in the interval and hence $\displaystyle\lim_{t\to x}\frac{f(t)-f(x)}{t-x}=f'(x)$ and also $\displaystyle\lim_{t\to x}\frac{g(t)-g(x)}{t-x}=g'(x)$.  The proof is then complete.
+
+  \vspace{1cm}
+
+  {\Large (b).  Use the limit definition to find the derivative of $\frac{1}{x}$.}
+
+  \vspace{1cm}
+
+  \begin{align*}
+    \lim_{t\to x} \frac{\frac{1}{t}-\frac 1 x}{t-x} &= \lim_{t\to x}\frac{\frac{x-t}{tx}}{t-x}\\\\
+    &= -\lim_{t\to x}\frac{1}{tx} \\\\
+    &= -\frac{1}{x^2}
+  \end{align*}
+
+  \vspace{1cm}
+
+  {\Large (c).  Use (b) with the chain rule to derive the quotient rule.}
+
+  \vspace{1cm}
+
+  \begin{align*}
+    \left(\frac f g \right)'(x) &= \left(f(x)\cdot \frac{1}{g(x)}\right)' \\\\
+    &= f'(x)\cdot \frac{1}{g(x)} + f(x)\left[\frac{1}{g(x)}\right]'
+  \end{align*}
+
+  by the product rule.  Now by the chain rule
+
+  \begin{align*}
+    \left[\frac 1 {g(x)} \right]' = -\frac{1}{[g(x)]^2}g'(x)
+  \end{align*}
+
+  So we can infer from these two equations that
+
+  \begin{align*}
+    \left(\frac f g \right)'(x) &= \frac{f'(x)}{g(x)}-f(x)\frac{g'(x)}{[g(x)]^2} \\\\
+    &= \frac{f'(x)g(x)-f(x)g'(x)}{[g(x)]^2}
+  \end{align*}
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 3.  }
+
+  \vspace{1cm}
+
+  First we need to show that based on these assumptions, $(kf)'(x)$ exists.
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 4.  }
+
+  \vspace{1cm}
+
+  First we need to show that based on these assumptions, $(kf)'(x)$ exists.
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 5.  }
+
+  \vspace{1cm}
+
+  First we need to show that based on these assumptions, $(kf)'(x)$ exists.
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 6.  }
+
+  \vspace{1cm}
+
+  First we need to show that based on these assumptions, $(kf)'(x)$ exists.
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 7.  }
+
+  \vspace{1cm}
+
+  First we need to show that based on these assumptions, $(kf)'(x)$ exists.
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 8.  }
+
+  \vspace{1cm}
+
+  First we need to show that based on these assumptions, $(kf)'(x)$ exists.
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 9.  }
+
+  \vspace{1cm}
+
+  First we need to show that based on these assumptions, $(kf)'(x)$ exists.
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 10.  }
+
+  \vspace{1cm}
+
+  First we need to show that based on these assumptions, $(kf)'(x)$ exists.
+
+  \pagebreak
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

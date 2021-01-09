@@ -1,0 +1,160 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage, amsfonts, amsmath, amsthm, amssymb, array, enumerate, systeme, wasysym, mathrsfs}
+\usepackage{geometry}
+
+\begin{document}
+\pagestyle{empty}
+
+ {\noindent \textbf{\large MA 630 - Homework 6 (Module 3 - Section 2)}
+\vspace{.25in}
+
+\noindent Solutions must be typeset in \LaTeX \ and submitted to Canvas as a .pdf file. When applicable, write in complete sentences. Use only results which have been discussed in our class.
+\vspace{.25in}
+
+\begin{enumerate}
+\item Use the Chinese remainder theorem to solve the system of linear congruences
+\[\begin{cases}
+x \equiv 2 \pmod{3}\\
+x \equiv 3 \pmod{5}\\
+x \equiv 4 \pmod{7}
+\end{cases}.\]
+Express your answer as a congruence class.
+
+\vspace{1cm}
+
+{\it Solution: } In the expression
+
+\begin{align*}
+  x_0 = a_1y_1N_1 + a_2y_2N_2 + a_3y_3N_3
+\end{align*}
+
+we have
+
+\begin{align*}
+  a_1 &= 2\\
+  a_2 &= 3\\
+  a_3 &= 4.
+\end{align*}
+
+Next we compute $y_1$ as the multiplicative inverse of $5\cdot 7=35\mod 3$, which is the same as $2\mod 3$.  Normally we would use the Extended Euclidean Algorithm to find $y_1$ but here it is immediately obvious that this is 2.  This is because $2\cdot 2 = 4\equiv 1\mod 3$.
+
+Next to find $y_2$ we find the multiplicative inverse of $3\cdot 7 = 21 \mod 5$.  This time it's even more trivial since already $21\equiv 1\mod 5$, so already we have $y_2=1$. Next we find $y_3$ as the inverse of $15 \mod 7$.  Again since this is the same as $1\mod 7$ then $y_3=1$.
+
+Next we find that
+
+\begin{align*}
+  N_1 &= 5\cdot 7 = 35 \\
+  N_2 &= 3\cdot 7 = 21 \\
+  N_3 &= 3\cdot 5 = 15.
+\end{align*}
+
+We are now able to compute
+
+\begin{align*}
+  x_0 &= 2\cdot 2\cdot 35 + 3\cdot 1 \cdot 21 + 4\cdot 1\cdot 15 \\
+  &= 263.
+\end{align*}
+
+The solution is then the congruence class of [263] mod $N=105$.
+
+\item
+\begin{enumerate}
+\item Suppose $x,y,z \in \mathbb{Z}$, and that $x$ and $y$ are relatively prime. Prove that if $x$ divides $z$ and $y$ divides $z$, then $xy$ divides $z$.
+
+{\it Proof:} Since $gcd(x,y)=1$ then there exist integers $m,n$ such that
+
+\begin{align*}
+  mx+ny=1.
+\end{align*}
+
+We let $z = ax$ and $z = by$.  Then we have
+
+\begin{align*}
+  zmx+zny&=z\\
+  bymx+axny&=z\\
+  xy(bm+an)&=z\\\\
+\end{align*}
+
+Since $bm+an\in\mathbb Z$ we have that $xy|z$.\qed
+
+\item Let $m, n \in \mathbb{N}$, and suppose that $m$ and $n$ are relatively prime. Prove that if $a, b \in \mathbb{Z}$ such that $a \equiv b \pmod m$ and $a \equiv b \pmod n$, then $a \equiv b \pmod{mn}$.
+
+{\it Proof:} By definition we have that $m$ and $n$ each divide $a-b$.  From the above theorem, since $gcd(m,n)=1$, we have that $mn|a-b$.  By definition then $a\equiv b\pmod {mn}$.\qed
+\end{enumerate}
+
+\item Let $n \in \mathbb{N}$, and let $a, b, c, d \in \mathbb{Z}$. Prove that if $a \equiv b \pmod n$ and \\ $c \equiv d \pmod n$, then $ac \equiv bd \pmod n$.
+
+{\it Proof:} We have that $a-b = nk_1$ for some integer, $k_1$.  Likewise for some integer $k_2$ we have $c-d=nk_2$.  Therefore
+
+\begin{align*}
+  ac &= (nk_1+b)(nk_2+d) \\
+  &= n^2k_1k_2+nk_1d+nk_2b+bd. \\
+\end{align*}
+
+From this we can infer that $ac-bd = n(nk_1k_2+k_1d+k_2b)$.  Therefore $ac-bd|n$ and so $ac\equiv bd\pmod n$.\qed
+
+\item Let $a, m \in \mathbb{Z}$.
+\begin{enumerate}
+\item Prove that $a^2 \equiv 0 \pmod 4$ or $a^2 \equiv 1 \pmod 4$.
+
+{\it Proof:} The proof is by cases: Either $a$ is even or $a$ is odd.
+
+{\it Case 1:}  If $a$ is even and $a=2k$ then $(2k)^2 = 4k^2$ and hence $a^2-0 | 4$.  This means that $a^2\equiv 0\pmod 4$.
+
+{\it Case 2:} If $a$ is odd and $a=2k+1$ then $(2k+1)^2 = 4k^2+4k+1$ and hence $a^2-1 = 4(k^2+k)$.  This means that $a^2\equiv 1\pmod 4$.
+
+Since in either case, we have either $a^2\equiv 0\pmod 4$ or $a^2\equiv 1\pmod 4$, then this holds for all integers $a$.
+
+\item Prove that if $m \equiv 3 \pmod 4$, then $m$ is not equal to the sum of two squares of integers.
+
+{\it Proof:} We prove the converse, so suppose that $a,b$ are integers such that $m=a^2+b^2$.  From the above we know that each are equivalent to 0 or 1 mod 4.  We can express this by saying that there are numbers $x,y$ such that each are either 0 or 1, and $a^2 - x= 4k_1$ and $b^2 - y= 4k_2$, for some integers $k_1,k_2$.
+
+Now $a^2+b^2 = 4(k_1+k_2)+x+y$ and $x+y<3$.  Hence $m\not\equiv 3\pmod 4$.
+
+\end{enumerate}
+
+\item Let $n$ be an odd integer. Prove that $n^2 \equiv 1 \pmod 8$. \emph{Hint: First, use the division algorithm to prove that $n$ can be written in the form $8k + 1$, $8k + 3$, $8k + 5$, or $8k + 7$ for some $k \in \mathbb{Z}$}.
+
+{\it Proof:}  By the division algorithm we have that $n$ can be written as $8k+r$ for some integer $k$ and integer $0\leq r<8$.  We also know that $r$ cannot be even, for if $r=2m$ then $n=8k+2m=2(4k+m)$.  This would contradict the assumption that $n$ is odd.  Hence $n$ can be written as $8k+r$ where $r$ is an odd number $1\leq r\leq 7$.
+
+Now we consider the square of $n$ in each of these four cases.
+
+{\it Case 1:} If $n = 8k+1$ then
+
+\begin{align*}
+  n^2 - 1 & = 64k^2+16k+1-1\\
+  &= 8(8k^2+2k)
+\end{align*}
+
+and so $n^2\equiv 1\pmod 8$.
+
+{\it Case 2:} If $n = 8k+3$ then
+
+\begin{align*}
+  n^2 - 1 & = 64k^2+48k+9-1\\
+  &= 8(8k^2+6k+1)
+\end{align*}
+
+and so $n^2\equiv 1\pmod 8$.
+
+{\it Case 3:} If $n = 8k+5$ then
+
+\begin{align*}
+  n^2 - 1 & = 64k^2+80k+25-1\\
+  &= 8(8k^2+10k+3)
+\end{align*}
+
+and so $n^2\equiv 1\pmod 8$.
+
+{\it Case 4:} If $n = 8k+7$ then
+
+\begin{align*}
+  n^2 - 1 & = 64k^2+112k+49-1\\
+  &= 8(8k^2+14k+6)
+\end{align*}
+
+and so $n^2\equiv 1\pmod 8$.
+
+
+\end{enumerate}
+\end{document}

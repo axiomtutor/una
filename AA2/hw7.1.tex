@@ -1,0 +1,214 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+\usepackage[dvipsnames]{xcolor}
+
+\DeclareMathAlphabet{\mymathbb}{U}{BOONDOX-ds}{m}{n}
+
+\begin{document}
+  \begin{center} \Large
+    MA-638 Rings and Fields\\
+    Homework for Section 7.1, Jan. 8 \\
+    Adam Frank
+  \end{center}
+
+  \vspace{1cm}
+
+  {\Large \color{Sepia} Problem 1.  Prove (3) and (4) of Proposition 7.1.}
+
+  Let $R$ be a ring.  Part (3) of Proposition 7.1 is that $(-a)(-b) = ab$ for all $a,b \in R$.
+
+  {\it Proof:} From part (2) of the same proposition we have that $(-a)(-b) = -(a(-b))$ and then that this equals $a(-(-b))$.  If we then show that $b=-(-b)$ the proposition will be proved.  This follows by observing that the ring is a group under the additive operation, and we already have that in a group $-(-b) = b$.  $\Box$
+
+  Part (4) of Proposition 7.1 is that if $\mymathbb 1 \in R$ then $-a = (-\mymathbb 1)a$.
+
+  {\it Proof:} For uniqueness, suppose that there are two identities $\mymathbb 1_a$ and $\mymathbb 1_b$.  Therefore
+
+  \begin{align*}
+    \mymathbb 1_a \mymathbb 1_b = \mymathbb 1_a = \mymathbb 1_b
+  \end{align*}
+
+  where the first equality follows from using the identity property of $\mymathbb 1_b$, and the second from using the identity property of $\mymathbb 1_a$.
+
+  To show that $-a = (-\mymathbb 1)a$, from part (2) again, we have that $(-\mymathbb 1)a = -(\mymathbb 1a) = -a$. $\Box$
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 2. The commutator of an element $a$ in a ring $R$ is defined as $ C(a) =\{r\in R|ra=ar \}$ i.e the set of all elements in $R$ that commute with a fixed element $a$.  Prove that $C(a)$ is a subring of $R$ containing $a$. Prove that the center of $R$ is the intersection of the subrings $C(a)$ over all $a \in R$.}
+
+  {\it Proof:} First we show the set is an abelian subgroup under addition.  That the addition operation commutes inherits because $R$ is a ring and its addition operation commutes. For closure of addition, if $r,s\in C(a)$ then
+
+  \begin{align*}
+    (r+s)a = ra+sa = ar+as = a(r+s).
+  \end{align*}
+
+  The first and third equalities are by distributivity, the second by definition of the commutator.  To see that the set is closed under additive inverses,
+
+  \begin{align*}
+    (-r)a = -(ra) = -(ar) = a(-r)
+  \end{align*}
+
+  where the first and last equality are due to Proposition 7.1 part (2).  The middle equality is due to the definition of the commutator.
+
+  Now that we have tha this set is a group under addition, we complete the proof by showing that the set is closed under multiplication.
+
+  \begin{align*}
+    rsa = ras = ars
+  \end{align*}
+
+  where each equality is by definition of the commutator.  Hence $rs\in C(a)$.  Therefore $C(a)$ is a subring of $R$.  To show that $a\in C(a)$ just note that $a^2 = a^2$.  $\Box$
+
+  \vspace{1cm}
+
+  Let's say that $Z$ is the center of $R$.  We want to show that $\displaystyle Z = \bigcap_{a\in R} C(a)$.  We start with showing that $Z \subseteq \displaystyle \bigcap_{a\in R} C(a)$ by showing that any element $x\in Z$ is contained in each $C(a)$ for any $a\in R$.  This is immediate since $x$ commutes with every ring element, i.e. for any $a\in R$
+
+  \begin{align*}
+    ax = xa.
+  \end{align*}
+
+  This satisfies the condition that $x\in C(a)$.
+
+  To show that $\displaystyle \bigcap_{a\in R} C(a) \subseteq Z$ we need to show that any two elements of the left-hand set commute with all ring elements.  So suppose that $x\in \displaystyle \bigcap_{a\in R}C(a)$ and $r\in R$.  Now therefore $x\in C(a)$ for every $a\in R$ and in particular this must hold for $r$.  Hence $x\in C(r)$ and by definition
+
+  \begin{align*}
+    xr = rx.
+  \end{align*}
+
+  Hence $x\in Z$ and so $\displaystyle \bigcap_{a\in R} C(a) \subseteq Z.$  So we have proved $\displaystyle Z = \bigcap_{a\in R} C(a)$. $\Box$
+
+
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 3.  Prove that if $R$ is an integral domain and $x^2= 1$ for some $x\in R$, then $x=\pm1$.}
+
+  {\it Proof:} Immediately we have
+
+  \begin{align*}
+    x^2 - 1 &= 0\\
+    (x+1)(x-1) &= 0
+  \end{align*}
+
+  where the second equality follows from the first by a routine application of distributivity (twice).  Now because $R$ is an integral domain then either $x+1=0$ or $x-1=0$.  The former implies $x=-1$ and the latter that $x=1$.  $\Box$
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 4.  Suppose that $x$ is a nilpotent element of a commutative ring $R$.
+
+  (a)  Prove that $x$ is either zero or a zero divisor.}
+
+  {\it Proof:} By the definition on page 231, we have that there is some smallest $m\in \mathbb Z^+$ such that $x^m = 0$.  If $x=0$ there is nothing to prove, so suppose $x\ne 0$ and hence $m>1$.  Then we may write $x^{m-1}x = 0$ with $m-1\in\mathbb Z^+$.  By the minimality of $m$ we must have $x^{m-1}\ne 0$ and so $x$ is a zero divisor.  $\Box$
+
+  \vspace{1cm}
+
+  {\Large \color{Sepia} (b)  Prove that $rx$ is nilpotent for every $r\in R$.}
+
+  {\it Proof:} Again let $m\in \mathbb Z$ be such that $x^m=0$.  Since the ring is commutative we have
+
+  \begin{align*}
+    (rx)^m = r^m x^m = r^m \cdot 0 = 0.
+  \end{align*}
+
+  $\Box$
+
+  \vspace{1cm}
+
+  {\Large \color{Sepia} (c)  Prove that $\mymathbb 1 +x$ is a unit in $R$.}
+
+  {\it Proof:} Again set $m\in\mathbb Z^+$ such that $x^m = 0$.  I don't know if there's a more concise proof, but we can observe that
+
+  \begin{align*}
+    x^{m-1}(1+x) = x^{m-1}+x^m=x^{m-1}.
+  \end{align*}
+
+  Then
+
+  \begin{align*}
+    x^{m-2}(1+x) =x^{m-2}+x^{m-1} &= x^{m-2}+x^{m-1}(1+x) \quad \Rightarrow\\
+    x^{m-2} &= (x^{m-2}-x^{m-1})(1+x)
+  \end{align*}
+
+  and then
+
+  \begin{align*}
+    x^{m-3}(1+x) = x^{m-3}+x^{m-2} &= x^{m-3} + (x^{m-2}-x^{m-1})(1+x) \quad \Rightarrow \\
+    x^{m-3} &= (x^{m-3}-x^{m-2}+x^{m-1})(1+x).
+  \end{align*}
+
+  If we continue in this way we eventually find that
+
+  \begin{align*}
+    x^0 = 1 = (1-x+x^2-\dots \pm x^{m-1})(1+x)
+  \end{align*}
+
+  which shows that $1+x$ is a unit.
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 5.  A ring is called a boolean ring if $a^2=a$ for all $a\in R$.  Prove that every Boolean ring is commutative.}
+
+  {\it Proof:} Since
+
+  \begin{align*}
+    (a+b)^2 = a^2 + ab + ba + b^2 = a+ab+ba+b = a+b
+  \end{align*}
+
+  then by cancelling and $a$ and $b$ we get
+
+  \begin{align*}
+    ab+ba &= 0 \quad \Rightarrow \\
+    ab &= -ba.
+  \end{align*}
+
+  Notice that if $x\in R$ is any ring element then this shows $x^2 = -x^2 = x = -x$ so that every element is its own additive inverse.  Hence
+
+  \begin{align*}
+    ab = -(-b)a = ba.
+  \end{align*}
+
+  $\Box$
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 6.  Let $X$ be any nonempty set and let $\mathcal P(X)$ be the set of all subsets of $X$ (the power set of $X$).  Define addition and multiplication on $\mathcal P(X)$ by $A+B= (A\smallsetminus B)\cup(B\smallsetminus A)$ and $A\times B=A\cap B$ i.e., addition is symmetric difference and multiplication is intersection.
+
+  (a)  Prove that $\mathcal P(X)$ is a ring under these operations ($P(X)$ and its subrings are often referred to as rings of sets).}
+
+  {\it Proof:} First we show that it's a commutative group with respect to addition.  Since
+
+  \begin{align*}
+    A+B = (A\smallsetminus B)\cup (B\smallsetminus A) = (B\smallsetminus A)\cup (A\smallsetminus B) = B+A
+  \end{align*}
+
+  the addition operation commutes.  Of course since $A+B \subseteq X$ then the operation is closed, and all that remains is to show that each element has an inverse.  Certainly the zero element of the ring is $\emptyset$ since
+
+  \begin{align*}
+    A+\emptyset = (A\smallsetminus\emptyset)\cup(\emptyset\smallsetminus A) = A\cup \emptyset = A.
+  \end{align*}
+
+  Therefore we can see that the inverse $-A$ for $A$ is itself.  That is to say $A+A=\emptyset$.  This follows since
+
+  \begin{align*}
+    A+A = (A\smallsetminus A) \cup (A\smallsetminus A) = \emptyset \cup \emptyset = \emptyset.
+  \end{align*}
+
+  Now that we have that this is a commutative subgroup for addition, we show that it is closed under multiplication.  However, this is trivial since $AB = A\cap B \subseteq X$.
+
+  \vspace{1cm}
+
+  {\Large \color{Sepia} (b)  Prove that this ring is commutative, has identity, and is a Boolean ring.}
+
+  {\it Proof:}  That the ring is commutative is trivial since the intersection is a commutative operation on sets: $A\cap B = B\cap A$.  The multiplicative identity of any element is the universal set $X$ since
+
+  \begin{align*}
+    AX = A\cap X = A.
+  \end{align*}
+
+  And the ring is boolean since
+
+  \begin{align*}
+    A^2 = A\cap A = A.
+  \end{align*}
+
+  $\Box$
+
+\end{document}

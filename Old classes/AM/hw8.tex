@@ -1,0 +1,97 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage, amsfonts, amsmath, amsthm, amssymb, array, enumerate, systeme, wasysym, mathrsfs}
+\usepackage{geometry}
+
+
+\begin{document}
+\pagestyle{empty}
+
+ {\noindent \textbf{\large MA 630 - Homework 8 (Module 4 - Section 2)}
+\vspace{.25in}
+
+\noindent Solutions must be typeset in \LaTeX \ and submitted to Canvas as a .pdf file. When applicable, write in complete sentences.
+\vspace{.25in}
+
+\begin{enumerate}
+\item Prove directly (i.e. using only the definitions of \emph{bijection}, {one-to-one}, and {onto}) that if $f:A \to B$ and $g: B \to C$ are bijections, then $g \circ f$ is a bijection.
+
+{\it Proof:} (One-to-one:)  Let $a,b\in X$ such that $g\circ f(a) = g\circ f(b)$.  Then $g(f(a))=g(f(b))$ and since $g$ is one-to-one then $f(a)=f(b)$.  Since $f$ is one-to-one then $a=b$.  Hence $g\circ f$ is one-to-one.
+
+(Onto:) Let $c\in C$, then since $g$ is onto there must exist some $b\in B$ such that $g(b)=c$.  Since $f$ is onto $B$ then there must exist some $a\in A$ such that $f(a)=b$.  Hence
+
+\begin{align*}
+  g\circ f(a) = g(f(a))=g(b)=c
+\end{align*}
+
+and therefore $g\circ f$ is onto.
+
+Hence $g\circ f$ is a bijection.  \qed
+
+\item Let $f:A \to A$ and $g:A \to A$ be one-to-one functions from $A$ onto $A$. Prove that \\ $(f \circ g)^{-1} = g^{-1} \circ f^{-1}$.
+
+\emph{Reminder: To prove that two functions, $h_1$ and $h_2$, are equal, it must be shown that $h_1$ and $h_2$ have the same domain, $X$, and that $h_1(x) = h_2(x)$ for all $x \in X$.}
+
+Let $a\in A$, then $(f\circ g)^{-1}(a)=b$ is that element such that $(f\circ g)(b)=a$.  This element is unique because $f\circ g$ is one-to-one as we demonstrated above.  This is the same as $f(g(b))=a$ and let's call $g(b)=c$.  Then by $g$ being one-to-one, we have that $b=g^{-1}(c)$.  In this notation we also have $f(c)=a$ and $c=f^{-1}(a)$.
+
+On the other hand
+
+\begin{align*}
+    (g^{-1}\circ f^{-1})(a)&=g^{-1}(f^{-1}(a)) \\
+    &=g^{-1}(c) \\
+    &= b.
+\end{align*}
+
+This shows that for every $a\in A$, the values $(f\circ g)^{-1}(a)$ and $(g^{-1}\circ f^{-1})(a)$ are both $b$.  Therefore $(f \circ g)^{-1} = g^{-1} \circ f^{-1}$. \qed
+
+
+\item Prove that the function $f:\mathbb{R} - \{2\} \to \mathbb{R} - \{5\}$ given by $f(x) = \displaystyle \frac{5x+1}{x-2}$ is a bijection.
+
+{\it Proof:} Suppose $a,b\in \mathbb R-\{2\}$ are such that $f(a)=f(b)$.  Then
+
+\begin{align*}
+  \frac{5a+1}{a-2}&=\frac{5b+1}{b-2} \\
+  (5a+1)(b-2)&= (5b+1)(a-2) \\
+  5ab -10a+b-2 &=5ab-10b+a-2 \\
+  -10a+b &= -10b+a \\
+  11b&=11a\\
+  b&=a\\
+\end{align*}
+
+which shows that $f$ is one-to-one.  To show $f$ is onto, let $y\in \mathbb R-\{5\}$.  Then the following are equivalent so long as $x\ne 2$.
+
+\begin{align*}
+  \frac{5x+1}{x-2} &= y\\
+  5x+1 &= xy-2y \\
+  5x-xy&=-2y \\
+  x(5-y)&=-2y \\
+  x &= -\frac{2y}{5-y}.\\
+\end{align*}
+
+Note that division by $5-y$ is valid since $y\ne 5$.  Therefore we have $f\left(-\frac{2y}{5-y}\right)=y$ which shows that $f$ is onto.
+
+\item Let $f:X \to Y$, and let $A \subseteq X$.
+\begin{enumerate}
+\item Prove that $A \subseteq f^{-1}(f(A))$.
+\item Prove that if $f$ is one-to-one, then $A = f^{-1}(f(A))$.
+\end{enumerate}
+
+(a) {\it Proof:} Let $a\in A$ and let $y=f(a)$.  Then $a\in f^{-1}(y)$.  Since $y\in f(A)$ then $f^{-1}(y)\subseteq f^{-1}(f(A))$ by definition.  But then $a\in f^{-1}(f(A))$ which shows $A\subseteq f^{-1}(f(A))$. \qed
+
+(b) {\it Proof:} We already have the inclusion $A\subseteq f^{-1}(f(A))$ from above.  To prove the reverse, let $a\in f^{-1}(f(A))$ so that by definition $f(a)\in f(A)$.  Hence also by definition there is some $a'\in A$ such that $f(a')=f(a)$.  But since $f$ is one-to-one, this requires $a=a'$ and then $a\in A$.  This shows $f^{-1}(f(A))\subseteq A$.  \qed
+
+\item Let $f:X \to Y$, and let $A, B \subseteq X$.
+\begin{enumerate}
+\item Prove that $f(A \cup B) = f(A) \cup f(B)$.
+\item Is it true that $f(A \cap B) = f(A) \cap f(B)$? Either prove or provide a counterexample.
+\end{enumerate}
+
+(a) {\it Proof:} Let $y\in f(A\cup B)$ so that there is some $c\in A\cup B$ such that $f(c)=y$.  Therefore $c\in A$ or $c\in B$, and therefore either $f(c)\in f(A)$ or $f(c)\in f(B)$.  Then $y=f(c)\in f(A)\cup f(B)$, so $f(A\cup B)\subseteq f(A)\cup f(B)$.
+
+Now let $y\in f(A)\cup f(B)$ so either $y\in f(A)$ or $y\in f(B)$.  Without loss of generality let $y\in f(A)$ so that there is some $a\in A$ such that $y=f(a)$.  Then $a\in A\cup B$ and therefore $y=f(a)\in f(A\cup B)$.  Hence $f(A)\cup f(B)\subseteq f(A\cup B)$.
+
+Since we have inclusion in both directions, $f(A\cup B)=f(A)\cup f(B)$. \qed
+
+(b) This is false, and a counterexample is $A=\{1\}$ and $B=\{2\}$ and $f(x)=1$, the constant function 1.  Then $A\cap B=\emptyset$ and $f(A\cap B)=\emptyset$.  However, $f(A)=f(B)=\{1\}$ and so $f(A)\cap f(B)=\{1\}$.  
+
+\end{enumerate}
+\end{document}
