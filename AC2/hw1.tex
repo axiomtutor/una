@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{amsmath, amssymb}
 \usepackage[dvipsnames]{xcolor}
+\usepackage{wasysym}
 
 \DeclareMathAlphabet{\mymathbb}{U}{BOONDOX-ds}{m}{n}
 
@@ -102,7 +103,113 @@
 
   \pagebreak
 
-  {\Large \color{Sepia} Problem 3.  }
+  {\Large \color{Sepia} Problem 3. Rudin page 114 problem 1. If $f$ is defined on $\mathbb R$ and $\forall x,y \in \mathbb R$ we have $|f(x)-f(x)|\leq (x-y)^2$, then prove that $f$ is constant.}
+
+  \vspace{1cm}
+
+  This feels like a complex analysis theorem---this sort of thing isn't supposed to be true for real functions! \smiley{}
+
+  To show that $f$ is constant we'll prove that the derivative is zero everywhere.  That is to say, we'll show that at every $x\in \mathbb R$
+
+  \begin{align*}
+    \left|\frac{f(t)-f(x)}{t-x}\right| < \varepsilon
+  \end{align*}
+
+  for each $\varepsilon\in\mathbb R^+$, whenever $|t-x|<\delta$ for some corresponding $\delta$.  Choose $\delta = \varepsilon$ in fact.  Then if $|t-x| < \delta$ we have
+
+  \begin{align*}
+    \left|\frac{f(t)-f(x)}{t-x}\right|<\frac{(t-x)^2}{\delta} < \frac{\delta^2}{\delta} = \varepsilon
+  \end{align*}
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 4. Rudin page 114 problem 2. Suppose $f'(x)>0$ in $(a,b)$.  Prove that $f$ is strictly increasing in $(a,b)$.  Let $g$ be its inverse.  Prove that $g$ is differentiable and
+
+  \begin{align*}
+    g'(f(x)) = \frac{1}{f'(x)}
+  \end{align*}
+  }
+
+  \vspace{1cm}
+
+  We already know that $f$ is monotonically increasing due to theorem 5.11.  Moreover, since $f'(x) >0$ we have that there can be no two values $c,d\in (a,b)$ such that $c < d$ and $f(c)=f(d)$.  If there were, by the mean-value theorem there would have to be a point $x_0\in (c,d)$ such that $f'(x) = \frac{f(d)-f(c)}{d-c} = 0$.
+
+  Since $f$ is strictly increasing it is one-to-one and has an inverse.  By definition if $g$ is the inverse then $f(g(y)) = y$ for all $y$ in the co-domain of $f$.  By the chain rule we have
+
+  \begin{align*}
+    f'(g(y))g'(y) = 1 \quad \Rightarrow\\\\
+    g'(y) = \frac{1}{f'(g(y))}
+  \end{align*}
+
+  If we regard $y = f(x)$ and hence $g(y) = x$ then we have
+
+  \begin{align*}
+    g'(f(x)) = \frac{1}{f'(x)}
+  \end{align*}
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 5. Rudin page 114 problem 4. If $C_0+\frac{C_1}{2}+\dots+\frac{C_n}{n+1}=0$ then
+
+  \begin{align*}
+    C_0+C_1x+\dots+C_nx^n = 0
+  \end{align*}
+  has at least one solution in [$0,1$].
+  }
+
+  \vspace{1cm}
+
+  Define $F(x) = C_0x + C_1x^2/2 + \dots + C_nx^n/(n+1)$ and observe that $F'(x) = C_0+\dots+C_nx^n$.  Now $F(0)=0$ and $F(1)=C_0+\dots+\frac{C_n}{n+1}=0$.  By the mean value theorem there is a point $c\in (0,1)$ such that $F'(c) = \frac{F(1)-F(0)}{1-0} = 0$.
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 6. Rudin page 114 problem 5. Suppose $f$ is defined and differentiable for every $x>0$, and $\displaystyle\lim_{x\to \infty}f'(x) = 0$.  Let $g(x)=f(x+1)-f(x)$.  Prove that $\lim_{x\to \infty}g(x)=0$.}
+
+  \vspace{1cm}
+
+  Let $M\in\mathbb R$ be such that $|f'(a)|<\varepsilon$ for all $a>M$.  We will show that, for this value of $M$, it follows that $|g(x)|<\varepsilon$ for all $x>M$.
+
+  Now for any such $x>M$ we have that $x+1>M$.  So on the interval $(x,x+1)$ we have that $\frac{f(x+1)-f(x)}{x+1-x} = f(x+1)-f(x) = f'(c)$ for some $c\in (x,x+1)$.  Therefore $|f(x+1)-f(x)| = |f'(c)|<\varepsilon$.  Since $x$ was chosen arbitrarily in $(M,\infty)$, we have shown
+
+  \begin{align*}
+    \lim_{x\to \infty}g(x)=0
+  \end{align*}
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 7. Rudin page 114 problem 6. Suppose (a) $f$ is continuous for $x\geq 0$, (b) $f'(x)$ exists for $x>0$, (c) $f(0)=0$, (d) $f'$ is monotonically increasing.  Put $g(x)=\frac{f(x)}{x}$ for $x>0$ and prove that $g$ is monotonically increasing.}
+
+  \vspace{1cm}
+
+  We show that the derivative is non-negative.  Since
+
+  \begin{align*}
+    g'(x) = \frac{f'(x)x-f(x)}{x^2}
+  \end{align*}
+
+  then it suffices to show that $f'(x)x-f(x)\geq 0$ for every $x\in\mathbb R^+$.  To leverage condition (d) we apply the mean value theorem.  There must exist a $0 < c < x$ such that
+
+  \begin{align*}
+    \frac{f(x)-f(0)}{x-0} = \frac{f(x)}{x} = f'(c)
+  \end{align*}
+
+  and hence $f(x) = f'(c)x$.  Since $x > 0$, and since $f'$ is increasing and $c<x$, we must have
+
+  \begin{align*}
+    f(x) = f'(c)x \leq f'(x)x
+  \end{align*}
+
+  which implies
+
+  \begin{align*}
+    0\leq f'(x)x-f(x)
+  \end{align*}
+
+  as desired.
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 8. Rudin page 117 problem 22 abc. }
 
   \vspace{1cm}
 
@@ -110,7 +217,7 @@
 
   \pagebreak
 
-  {\Large \color{Sepia} Problem 4.  }
+  {\Large \color{Sepia} Problem 9. Rudin page 119 problem 26. }
 
   \vspace{1cm}
 
@@ -118,47 +225,7 @@
 
   \pagebreak
 
-  {\Large \color{Sepia} Problem 5.  }
-
-  \vspace{1cm}
-
-  First we need to show that based on these assumptions, $(kf)'(x)$ exists.
-
-  \pagebreak
-
-  {\Large \color{Sepia} Problem 6.  }
-
-  \vspace{1cm}
-
-  First we need to show that based on these assumptions, $(kf)'(x)$ exists.
-
-  \pagebreak
-
-  {\Large \color{Sepia} Problem 7.  }
-
-  \vspace{1cm}
-
-  First we need to show that based on these assumptions, $(kf)'(x)$ exists.
-
-  \pagebreak
-
-  {\Large \color{Sepia} Problem 8.  }
-
-  \vspace{1cm}
-
-  First we need to show that based on these assumptions, $(kf)'(x)$ exists.
-
-  \pagebreak
-
-  {\Large \color{Sepia} Problem 9.  }
-
-  \vspace{1cm}
-
-  First we need to show that based on these assumptions, $(kf)'(x)$ exists.
-
-  \pagebreak
-
-  {\Large \color{Sepia} Problem 10.  }
+  {\Large \color{Sepia} Problem 10. Rudin page 119 problem 27. }
 
   \vspace{1cm}
 
