@@ -209,27 +209,178 @@
 
   \pagebreak
 
-  {\Large \color{Sepia} Problem 8. Rudin page 117 problem 22 abc. }
+  {\Large \color{Sepia} Problem 8. Rudin page 117 problem 22 abc. Suppose $f$ is a real function on $\mathbb R$.  (a) If $f$ is differentiable and $f'(t)\ne 1$ for all real $t$, prove that $f$ has at most one fixed point.}
 
   \vspace{1cm}
 
-  First we need to show that based on these assumptions, $(kf)'(x)$ exists.
+  Suppose $f(a)=a$ and $f(b)=b$ with $a<b$.  Then by the mean value theorem there is a point $a<c<b$ such that $f'(c) = \frac{f(b)-f(a)}{b-a}=\frac{b-a}{b-a}=1$.
+
+  \vspace{1cm}
+
+  {\Large \color{Sepia} (b) Show that the function $f$ defined by
+
+  \begin{align*}
+    f(t) = t+(1+e^t)^{-1}
+  \end{align*}
+
+  has no fixed point, although $0<f'(t)<1$ for all real $t$.
+
+  }
+
+  \vspace{1cm}
+
+  Suppose $f(a) = a = a+(1+e^a)^{-1}$ so that $(1+e^a)^{-1}=0$, which is impossible.  To see that $0<f'(t)<1$ note
+
+  \begin{align*}
+    f'(t)=1-(1+e^t)^{-2}e^t
+  \end{align*}
+
+  so that we need to show $0 < \frac{e^t}{(1+e^t)^2} < 1$.  The first inequality is clear.  The second is equivalent to
+
+  \begin{align*}
+    e^t &< 1+2e^t +e^{2t} \quad \Leftrightarrow \\\\
+    0 &< 1+e^t+e^{2t}
+  \end{align*}
+
+  where this last is clearly a sum of positive quantities for each real $t$.
+
+  \vspace{1cm}
+
+  {\Large \color{Sepia} (c) However, if there is a constant $A<1$ such that $|f'(t)|\leq A$ for all real $t$, prove that a fixed point $x$ of $f$ exists, and that $x=\lim x_n$ where $x_1$ is arbitrary, and $x_{n+1}=f(x_n)$ for $n=1,2,\dots$}
+
+  \vspace{1cm}
+
+  First we show that the sequence is Cauchy so that the limit exists.  Let $\varepsilon\in \mathbb R^+$.  We first establish that the sequence values get closer by showing that for any $n\geq 1$ we have
+
+  \begin{align*}
+    |x_{n+1}-x_n| \leq A^{n-1}|x_2-x_1|
+  \end{align*}
+
+  The proof is by induction on $n$.  The base-case is trivial since it's $|x_2-x_1|\leq |x_2-x_1|$.  Now if the claim holds for $n\geq 1$ then apply the mean value theorem to $x_{n}$ and $x_{n+1}$, so that there exists a $c$ between them such that
+
+  \begin{align*}
+    \frac{f(x_{n+1})-f(x_n)}{x_{n+1}-x_{n}} = f'(c)
+  \end{align*}
+
+  Therefore
+
+  \begin{align*}
+    |f(x_{n+1})-f(x_n)| &= |x_{n+2}-x_{n+1}| = |f'(c)||x_{n+1}-x_n| \\\\
+    &\leq A(A^{n-1})|x_2-x_1| = A^n|x_2-x_1|
+  \end{align*}
+
+  Now we can consider that, if $m,n\in\mathbb N$ with $m \leq n$ then
+
+  \begin{align*}
+    |x_n-x_m| &\leq |x_{m+1}-x_m|+\dots+|x_n-x_{n-1}| \\\\
+    &= (A^{m-1}+A^{m}+\dots+A^{n-2})|x_2-x_1| \\\\
+    &= \left(\frac{1-A^{n-1}}{1-A}-\frac{1-A^{m-1}}{1-A}\right)|x_2-x_1| \\\\
+    &= (A^{m-1}-A^{n-1})\frac{|x_2-x_1|}{1-A}
+  \end{align*}
+
+  So finally we can say, corresponding to $\varepsilon$, we choose $N\in\mathbb N$ such that $A^N < \left(\frac{1-A}{|x_2-x_1|}\right)\varepsilon$.  Then it follows from the above that
+
+  \begin{align*}
+    |x_n-x_m| &\leq (A^{m-1}-A^{n-1})\frac{|x_2-x_1|}{1-A} \\\\
+    &\leq A^N\frac{|x_2-x_1|}{1-A} \\\\
+    &< \left(\frac{1-A}{|x_2-x_1|}\right)\varepsilon \cdot \left(\frac{|x_2-x_1|}{1-A}\right) = \varepsilon
+  \end{align*}
+
+  Since we've now concluded that the sequence is Cauchy, we go on to compute its limit.
+
+  \begin{align*}
+    x = \lim_{n\to \infty}x_n = \lim_{n\to \infty}f(x_{n-1}) = f\left(\lim_{n\to \infty}x_{n-1}\right) = f(x)
+  \end{align*}
+
+  The third equation is due to the assumption that $f$ is differentiable and therefore continuous.  This demonstrates that $x$ is a fixed point of $f$.
 
   \pagebreak
 
-  {\Large \color{Sepia} Problem 9. Rudin page 119 problem 26. }
+  {\Large \color{Sepia} Problem 9. Rudin page 119 problem 26. Suppose $f$ is differentiable on $[a,b]$, $f(a)=0$, and there is a real number $A$ such that $|f'(x)|\leq A|f(x)|$ on $[a,b]$.  Prove that $f(x)=0$ for all $x\in[a,b]$.  {\it Hint:} Fix $x_0\in[a,b]$, let
+
+  \begin{align*}
+    M_0 = \sup|f(x)|, \quad M_1 = \sup |f'(x)|
+  \end{align*}
+
+  for $a\leq x\leq x_0$.  For any such $x$,
+
+  \begin{align*}
+    |f(x)|\leq M_1(x_0-a)\leq A(x_0-a)M_0
+  \end{align*}
+
+  Hence $M_0=0$ if $A(x_0-a)<1$.  That is, $f=0$ on $[a,x_0]$.
+
+  }
 
   \vspace{1cm}
 
-  First we need to show that based on these assumptions, $(kf)'(x)$ exists.
+  From the mean value theorem, for any $x\in [a,x_0]$, we have some $c\in (a,x)$ such that
+
+  \begin{align*}
+    \frac{f(x)-f(a)}{x-a} = f'(x)
+  \end{align*}
+
+  and so
+
+  \begin{align*}
+    \left|\frac{f(x)}{x-a}\right| = |f'(c)| \leq M_1
+  \end{align*}
+
+  and so
+
+  \begin{align*}
+    |f(x)|\leq M_1(x-a)\leq M_1(x_0-a)
+  \end{align*}
+
+  since $M_1\geq 0$ and $x_0>x$.  All that remains to show for the hint is that $M_1\leq AM_0$ but this follows from the properties of suprema, in particular that $\sup{cX}=c\sup X$ where $X$ is a set of real numbers and $c$ is a non-negative constant.  In this particular application we take $X$ to be the range of $f$ on $[a,x_0]$.
+
+  Now that we have proved the chain of inequalities in the hint, we have that $|f(x)|\leq A(x_0-a)M_0$.  We argue that $A(x_0-a)<1$ for some choice of $x_0$.  But since $A$ is constant then a choice of $x_0$ sufficiently close to $a$ clearly exists.  Therefore on this interval $|f(x)|\leq A(x_0-a)M_0\leq M_0$.  But also we have that $A(x_0-a)M_0$ is an upper bound on $|f(x)|$ for all $a < x < x_0$ so that $M_0\leq A(x_0-a)M_0$ and hence $A(x_0-a)M_0=M_0$.  Given that we have already established $A(x_0-a)<1$ this can only be true if $M_0=0$, and this immediately implies that $f=0$ on $[a,x_0]$.
+
+  Now given that this holds, we repeat the argument above, this time on the interval $[x_0,b]$.  We will again find that if $2x_0 \leq b$ then on $[x_0,2x_0]$ we have that $f=0$.  Proceeding likewise, we continue until $nx_0>b$ for some $n\in\mathbb N$.  But in this case, we repeat the proof but with $x_0$ replaced by $b$.  Here again we find that $f=0$ on $[(n-1)x_0,b]$.
+
+  The above then shows that on $[a,x_0]\cup[x_0,x_1]\cup\dots\cup[x_{n-1},b]=[a,b]$ we have $f=0$.
 
   \pagebreak
 
-  {\Large \color{Sepia} Problem 10. Rudin page 119 problem 27. }
+  {\Large \color{Sepia} Problem 10. Rudin page 119 problem 27. Let $\phi$ be a real function defined on a rectangle $R$ in the plane, given by $a\leq x\leq b$, $\alpha\leq y\leq \beta$.  A {\it solution} of the initial-value problem
+
+  \begin{align*}
+    y' = \phi(x,y), \quad y(a)=c, \quad (\alpha\leq c\leq \beta)
+  \end{align*}
+
+  is, by definition, a differentiable function $f$ on $[a,b]$ such that $f(a)=c$, $\alpha\leq f(x)\leq \beta$ and
+
+  \begin{align*}
+    f'(x)=\phi(x,f(x)) \quad (a\leq x\leq b)
+  \end{align*}
+
+  Prove that such a problem has at most one solution if there is a constant $A$ such that
+
+  \begin{align*}
+    |\phi(x,y_2)-\phi(x,y_1)|\leq A|y_2-y_1|
+  \end{align*}
+
+  whenever $(x,y_1)\in R$ and $(x,y_2)\in R$.
+
+  {\it Hint:} Apply exercise 26 to the difference of two solutions.  Note that this uniqueness theorem does not hold for the initial-value problem
+
+  \begin{align*}
+    y'=y^{1/2}, \quad y(0)=0
+  \end{align*}
+
+  which has two solutions: $f(x)=0$ and $f(x)=x^2/4$.  Find all other solutions.
+
+  }
 
   \vspace{1cm}
 
-  First we need to show that based on these assumptions, $(kf)'(x)$ exists.
+  Suppose $f_1, f_2$ are two solutions so that $(f_1(x)-f_2(x))' = \phi(x,f_1(x))-\phi(x,f_2(x))$.  Then
+
+  \begin{align*}
+    |(f_1-f_2)'(x)| = |\phi(x,f_1(x))-\phi(x,f_2(x))| \leq A|f_1(x)-f_2(x)|
+  \end{align*}
+
+  and so by the previous exercise, $f_1-f_2=0$ and so $f_1=f_2$.  This shows that there is at most one solution.
 
   \pagebreak
 

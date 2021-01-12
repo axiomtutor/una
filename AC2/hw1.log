@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.14)  9 JAN 2021 22:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.14)  11 JAN 2021 23:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -180,34 +180,35 @@ File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
  [4] [5]
-[6] [7] [8] [9] [10] [11] (./hw1.aux) ) 
+[6] [7] [8] [9] [10] [11] [12] [13] [14] (./hw1.aux) ) 
 Here is how much of TeX's memory you used:
- 2735 strings out of 480876
- 34034 string characters out of 5907582
+ 2737 strings out of 480876
+ 34057 string characters out of 5907582
  283162 words of memory out of 5000000
- 18376 multiletter control sequences out of 15000+600000
- 539209 words of font info for 47 fonts, out of 8000000 for 9000
+ 18377 multiletter control sequences out of 15000+600000
+ 539556 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,9n,37p,385b,156s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2020/texmf-dist/font
-s/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2020/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfont
-s/symbols/msbm10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/was
-y-type1/wasy10.pfb>
-Output written on hw1.pdf (11 pages, 144451 bytes).
+ 35i,10n,37p,610b,156s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2020/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2020/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2020/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2020/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2020/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/
+public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/texmf-dist/fonts/ty
+pe1/public/wasy-type1/wasy10.pfb>
+Output written on hw1.pdf (14 pages, 172132 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 110 PDF objects out of 1000 (max. 8388607)
+ 78 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

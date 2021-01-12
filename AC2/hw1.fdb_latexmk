@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1610250961 "hw1.tex" "hw1.pdf" "hw1" 1610250961
+["pdflatex"] 1610427250 "hw1.tex" "hw1.pdf" "hw1" 1610427250
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -12,6 +12,7 @@
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1136768653 1524 4414a8315f39513458b80dfc63bff03a ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1136768653 1124 6c73e740cf17375f03eec0ee63599741 ""
+  "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti12.tfm" 1136768653 1484 ed72f8f5cf654cda15ecc8e32bfcbee5 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/wasy/wasy10.tfm" 1579560596 908 375dcd194b89b9cc9481ab62f2da0667 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/wasy/wasy5.tfm" 1579560596 908 9b2ed8097703005e83b790aecb955a2f ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/wasy/wasy7.tfm" 1579560596 912 e43f3049348c6f2670d3b324e657c6e7 ""
@@ -27,6 +28,7 @@
   "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1248133631 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
+  "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1248133631 36118 fad905eba93cff5bce1e185fe980a177 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/wasy-type1/wasy10.pfb" 1579560704 33599 0bed01d43ee0675cf5ec1221acad6641 ""
   "/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -52,8 +54,8 @@
   "/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1600112287 5017515 cda448939f10490cd3481e918e3405bc ""
   "/usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1600112342 2445080 1a02d9fbb68580c6aed1b93da2c9892b ""
   "/usr/local/texlive/2020/texmf.cnf" 1600112283 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "hw1.aux" 1610250961 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
-  "hw1.tex" 1610250961 8104 5e4de0d8957bbc3955c4fc32e6e5952e ""
+  "hw1.aux" 1610427250 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
+  "hw1.tex" 1610427250 14627 e47d24f7d3fcd97df4c752e8ca91624f ""
   (generated)
   "hw1.log"
   "hw1.pdf"
