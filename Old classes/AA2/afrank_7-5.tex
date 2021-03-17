@@ -1,0 +1,180 @@
+\documentclass[11pt]{article}
+
+\usepackage{epsfig}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{paralist}
+%\usepackage{enumitem}
+\usepackage{array}
+\usepackage{enumerate}
+
+\pagestyle{headings} \setlength{\textwidth}{7.5in}
+\setlength{\textheight}{10.0in} \setlength{\topmargin}{-.5in}
+%\setlength{\headheight}{0in}
+%\setlength{\headsep}{0in}
+%\setlength{\topskip}{0in}
+%\setlength{\voffset}{0in} \setlength{\oddsidemargin}{-.5in} \setlength{\evensidemargin}{0in}
+%\setlength{\unitlength}{.5in}
+
+
+\newcommand{\st}{\rule[-0.25in]{0in}{0.5in}}
+\newcommand{\stt}{\rule[-0.5in]{0in}{1in}}
+\newcommand{\yn}{\makebox[1in]{\st\ YES} \makebox[1in]{\st\ NO}}
+\newcommand{\bl}{\framebox[1in]{\st \hfill}}
+\newcommand{\bll}{\framebox[2in]{\st \hfill}}
+\newcommand{\blll}{\framebox[3.5in]{\st \hfill}}
+\newcommand{\U}{\vspace{0.8in}}
+\newcommand{\V}{\vspace{1in}}
+\newcommand{\W}{\vspace{1.5in}}
+\newcommand{\R}{\rule{0in}{0.25in}\hrulefill\rule{0in}{0.25in}}
+\newcommand{\DS}{\displaystyle}
+\setlength{\textwidth}{7in} \setlength{\textheight}{10in}
+\setlength{\evensidemargin}{-.5in} \setlength{\oddsidemargin}{-0.5in}
+\setlength{\topmargin}{-1in} \setlength{\parindent}{24pt}
+\def\noin{\noindent}
+\def\ds{\displaystyle}
+\newcommand{\mysec}[1]{\centerline{\normalfont\Large\bfseries #1} \bigskip}
+\newenvironment{changemargin}[2]{%
+\begin{list}{}{%
+\setlength{\topsep}{0pt}%
+\setlength{\leftmargin}{#1}%
+\setlength{\rightmargin}{#2}%
+\setlength{\listparindent}{\parindent}%
+\setlength{\itemindent}{\parindent}%
+\setlength{\parsep}{\parskip}%
+}%
+\item[]}{\end{list}}
+
+\begin{document}
+\thispagestyle{empty}
+%
+%
+
+%\hspace{5.25in} \textbf{Version A}\\[-26pt]
+
+\large
+\noin \textbf{MA 638 - Section 7.5 Homework}\\
+
+
+\normalsize
+
+
+
+Throughout assume $R$ is a ring with identity $1\ne 0$.
+
+\begin{enumerate}
+
+\item Suppose that $R,D,$ and $Q$ are defined as in Theorem 7.15.  Use the equivalence relation along with the defined addition and multiplication defined in the proof of Theorem 7.15 to prove the following:
+
+  \begin{enumerate}
+    \item Prove that $Q$ is an abelian group under addition with additive identity $0/d$ for any $d\in D$.
+
+    {\it Proof:} We first remark that $R$ is assumed to be a commutative ring for this theorem and hence both addition and multiplication are commutative.  Also, throughout the problem, we let $r,s,t\in R$ be arbitrary, and $d,e,f\in D$ be arbitrary.
+
+    I next want to establish a few lemmas that I will use repeatedly in these proofs.  First, since we saw in class that $\frac d d$ is the unitary element of $Q$ regardless of the choice of $d\in D$, then it follows that
+
+    \begin{align*}
+      \frac{re}{de}=\frac r d\cdot \frac e e = \frac r d.
+    \end{align*}
+
+    The second lemma that I want to use throughout is that
+
+    \begin{align*}
+      \frac{r+s}{d}=\frac{r}{d}+\frac{s}{d}.
+    \end{align*}
+
+    The above follows from
+
+    \begin{align*}
+      \frac r d +\frac s d = \frac{rd+sd}{d^2} = \frac{(r+s)d}{d^2}=\frac{r+s}{d}.
+    \end{align*}
+
+    Now to begin the proof, we start with closure.  To show closure, let $\frac r d, \frac{s}{e} \in Q$.  Then $\frac r d +\frac{s}{e}=\frac{re+sd}{de}$.  By construction, $D$ is closed under multiplication and therefore $de\in D$.  So $\frac r d +\frac s e\in Q$.
+
+    We can see that $\frac 0 d$ is the additive identity since
+
+    \begin{align*}
+      \frac r e + \frac 0 d = \frac{rd+0e}{ed}=\frac{rd}{ed}=\frac r e.
+    \end{align*}
+
+    To see that $Q$ is closed under inverses, observe that
+
+    \begin{align*}
+      \frac r d + \frac{-r}{d} = \frac{rd-rd}{d^2} = \frac 0 {d^2}.
+    \end{align*}
+
+    Since $d\in D$ then $d^2\in D$.  And from the above we already know that $\frac 0 e$ is the additive identity for any $e\in D$.  Hence $\frac{-r}{d}$ is the additive inverse of $\frac r d$.
+
+    To show that addition is associative
+
+    \begin{align*}
+      \frac r d + \left(\frac{s}{e}+\frac{t}{f}\right)&= \frac r d + \frac{sf+te}{ef} \\\\
+      &= \frac{ref+d(sf+te)}{def}\\\\
+      &= \frac{(re+ds)f+dte}{def}\\\\
+      &= \frac{(re+ds)}{de}+\frac{t}{f}\\\\
+      &= \left(\frac r d +\frac{s}{e}\right)+\frac{t}{f}.
+    \end{align*}
+
+    Finally to show commutativity
+
+    \begin{align*}
+      \frac r d + \frac{s}{e}=\frac{re+sd}{de}=\frac{sd+re}{ed}=\frac{s}{e}+\frac r d.
+    \end{align*}
+
+    \item Prove that multiplication is associative, distributive, and commutative.
+
+    {\it Proof:} Associative:
+
+    \begin{align*}
+      \frac r d \cdot \left(\frac s e\cdot \frac t f\right)=\frac{r(st)}{d(ef)}=\frac{(rs)t}{(de)f}=\left(\frac{r}{d}\cdot \frac{s}{e}\right)\cdot \frac{t}{f}.
+    \end{align*}
+
+    Distributive:
+
+    \begin{align*}
+      \frac{r}{d}\cdot\left(\frac s e +\frac t f\right) &= \frac r d \cdot \frac{sf+te}{ef} \\\\
+      &= \frac{rsf+rte}{def} \\\\
+      &= \frac{rsf}{def}+\frac{rte}{def} \\\\
+      &= \frac{rs}{de}+\frac{rt}{df} \\\\
+      &= \frac r d \cdot \frac s e + \frac r d \cdot \frac t f.
+    \end{align*}
+
+    Commutative:
+
+    \begin{align*}
+      \frac r d \cdot \frac s e = \frac{rs}{de} = \frac{sr}{ed} = \frac s e \cdot \frac r d.
+    \end{align*}
+
+    \item Prove that the map $i:R \to Q$ where $i(r)=\frac{rd}{d}$ where $d\in D$ is an injective ring homomorphism.
+
+    Injective: Let $i(r)=i(s) = \frac{rd}{d} = \frac{sd}{d}$.  Then by definition of equality $rd^2 = sd^2$.  Since $d$ is not zero or a zero divisor, by Proposition 2 of section 7.1, $rd=sd$.  By the same principle, $r=s$ and therefore $i$ is injective.
+
+    The additive homomorphism property:
+
+    \begin{align*}
+      i(r+s)=\frac{(r+s)d}{d}=\frac{rd+sd}{d}=\frac{rd}{d}+\frac{sd}{d}=i(r)+i(s).
+    \end{align*}
+
+    The multiplicative homomorphism property:
+
+    \begin{align*}
+      i(r\cdot s)=\frac{rsd}{d} = \frac{rsd^2}{d^2}=\frac{rdsd}{d^2}=\frac{rd}{d}\cdot \frac{sd}{d}=i(r)\cdot i(s).
+    \end{align*}
+
+    Hence $i$ is an injective homomorphism.
+  \end{enumerate}
+
+  \item Show by example that $R[x]$ does not have a field of fractions if $R$ is not an integral domain.
+
+  Example: Let $R=\mathbb Z_4$ in which the number 2 is a zero-divisor since $2\cdot 2=0$.  Then the polynomial $2x^0\in R[x]$ is a zero-divisor because $(2x^0)(2x^0)=0x^0$.  Hence if we consider the ring of fractions of $R[x]$, with $D=\{1x^0,3x^0\}$, then $\frac{2x^0}{1x^0}$ is also a zero-divisor since
+
+  \begin{align*}
+    \frac{2x^0}{1x^0}\cdot \frac{2x^0}{1x^0}= \frac{0x^0}{1x^0}.
+  \end{align*}
+
+  Because $\frac{2x^0}{1x^0}$ is a zero-divisor it cannot be a unit, and therefore the ring of fractions is not a field.
+
+\end{enumerate}
+\end{document}

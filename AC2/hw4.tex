@@ -1,0 +1,336 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{wasysym}
+\usepackage{graphicx}
+\usepackage{mathrsfs}
+
+\DeclareMathAlphabet{\mymathbb}{U}{BOONDOX-ds}{m}{n}
+
+\begin{document}
+  \begin{center} \Large
+    MA-652 Advanced Calculus\\
+    Homework 4, Feb. 15 \\
+    Adam Frank
+  \end{center}
+
+  \vspace{1cm}
+
+  {\Large \color{Sepia} Problem 1. If $g$ is continuous on $[a,b]$, show that there is a point $c\in (a,b)$ where $g(c)=\frac{1}{b-a}\int_a^b g\ d\alpha$.}
+
+  \vspace{1cm}
+
+  Set $G(x)=\int_a^x g \ d\alpha$ for each $x\in[a,b]$.  By the fundmaental theorem of calculus, since $g$ is continuous throughout $(a,b)$ then $G$ is differentiable there, and $g(x)=G'(x)$.  By the mean-value theorem, there is some point $c\in(a,b)$ such that $G'(c)=g(c)=\frac{G(b)-G(a)}{b-a}$.  This tells us that
+
+  \begin{align*}
+    g(c)=\frac{1}{b-a}\left(\int_a^b g \ d\alpha - \int_a^a g \ d\alpha\right)=\frac{1}{b-a}\int_a^b g \ d\alpha
+  \end{align*}
+
+  where the last equality follows from the fact that $\int_a^a g \ d\alpha = 0$.
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 2. Let $f(x)=\int_x^{x+1} \sin(t^2)\ dt$.
+
+  (a.) Prove that $f(x)=\frac{\cos(x^2)}{2x}-\frac{\cos((x+1)^2)}{2(x+1)}-\int_{x^2}^{(x+1)^2}\frac{\cos u}{4u^{3/2}}\ du$.
+
+  }
+
+  \vspace{1cm}
+
+  Assuming $x\geq 0$ then using the change of variables theorem with $\phi(t)=\sqrt t$ then we have that 
+
+  \begin{align*}
+    f(x) = \int_{x^2}^{(x+1)^2} \sin (\phi^2) \  d\phi 
+  \end{align*}
+
+  We can now note that $[\phi(t)]^2 = t$, and $\phi'(t) = \frac{1}{2\sqrt t}$.  Then applying theorem 6.17 we have that 
+
+  \begin{align*}
+    f(x) = \int_{x^2}^{(x+1)^2}\sin ([\phi(y)]^2)\phi'(y) \ dy &= \int_{x^2}^{(x+1)^2} \sin y \left(\frac 1 {2\sqrt y}\right) \ dy \\\\
+    &= \frac 1 2 \int_{x^2}^{(x+1)^2} y^{-1/2}\sin y \ dy 
+  \end{align*}
+
+  Next we can apply integration by parts, setting $u = y^{-1/2}, dv = \sin y \ dy$ and therefore $du=-\frac 1 2 y^{-3/2}\ dy$ and $v=-\cos y$.  Then 
+
+  \begin{align*}
+    f(x) &= \frac 1 2 \left( uv\bigg|_{x^2}^{(1+x)^2} - \int_{x^2}^{(x+1)^2} v\ du \right) \\\\
+    &= \frac 1 2 \left( y^{-1/2}(-\cos y)\bigg|_{x^2}^{(1+x)^2} - \int_{x^2}^{(x+1)^2}(-\cos y)\left(-\frac 1 2 y ^{-3/2}\right)\ dy \right) \\\\
+    &= \frac 1 2 \Bigg(-\cos((1+x)^2)[(1+x)^2]^{-1/2} + \cos(x^2)(x^2)^{-1/2} \\
+    & \qquad \qquad - \frac 1 2 \int_{x^2}^{(x+1)^2} y ^{-3/2}\cos y\ dy \Bigg) \\\\
+    &= \frac{\cos(x^2)}{2x}-\frac{\cos((x+1)^2)}{2(x+1)}-\int_{x^2}^{(x+1)^2}\frac{\cos u}{4u^{3/2}}\ du
+  \end{align*}
+
+  \vspace{1cm}
+
+  {\Large \color{Sepia} (b.) Use the result from part (a.) to show that the improper integral $\int_0^\infty \sin(t^2)\ dt$ converges.}
+
+  \vspace{1cm}
+
+  First we compute $\int_0^N \sin t^2 \ dt$ for each integer $N\geq 1$.  
+
+  \begin{align*}
+    \int_0^N \sin t^2 \ dt &= \int_0^1 \sin t^2 \ dt + \int_1^4 \sin t^2 \ dt + \dots + \int_{(N-1)^2}^{N^2} \sin t^2 \ dt \\\\
+    &= f(0)+f(1)+\dots + f(N-1) \\\\
+    &= f(0) + \left(\frac{\cos(1^2)}{2}-\frac{\cos((1+1)^2)}{2(1+1)}-\int_{1^2}^{(1+1)^2}\frac{\cos u}{4u^{3/2}}\ du\right) + \dots  \\
+     & \qquad \qquad + \frac{\cos((N-1)^2)}{2(N-1)}-\frac{\cos(N^2)}{2N}-\int_{(N-1)^2}^{N^2}\frac{\cos u}{4u^{3/2}}\ du \\\\
+    &= f(0) + \frac{\cos 1}{2}-\frac{\cos (N^2)}{2N} \\
+    & \qquad \qquad - \left(\int_{1^2}^{2^2}\frac{\cos u}{4u^{3/2}}\ du + \dots + \int_{(N-1)^2}^{N^2}\frac{\cos u}{4u^{3/2}}\ du\right) \\\\
+    &= f(0) + \frac{\cos 1}{2}-\frac{\cos (N^2)}{2N} -\int_1^{N^2}\frac{\cos u}{4u^{3/2}} \ du
+  \end{align*}
+
+  
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 3. Rudin page 141 problem 15.  Suppose $f$ is a real, continuously differentiable function on $[a,b], \ f(a)=f(b)=0,$ and
+
+  \begin{align*}
+    \int_a^b f^2 (x) \ dx = 1
+  \end{align*}
+
+  Prove that
+
+  \begin{align*}
+    \int_a^b x f(x) f'(x) \ dx = -\frac 1 2
+  \end{align*}
+
+  and that
+
+  \begin{align*}
+    \int_a^b [f'(x)]^2\ dx \cdot \int_a^b x^2 f^2 (x) \ dx > \frac 1 4
+  \end{align*}
+
+  }
+
+  \vspace{1cm}
+
+  Using integration by parts with $u=xf(x)$ and $dv=f'(x)dx$ we then have that $du=(f(x)+xf'(x))dx$ and $v=f(x)$.  Then 
+
+  \begin{align*}
+    \int_a^b xf(x)f'(x) \ dx &= x[f(x)]^2\bigg|_a^b - \int_a^b f(x)(f(x)+xf'(x)) \ dx \\\\
+    &= b[f(b)]^2-a[f(a)]^2 - \int_a^b ([f(x)]^2+xf(x)f'(x)) \ dx \\\\
+    &= b\cdot 0 - a\cdot 0 - \int_a^b [f(x)]^2 \ dx - \int_a^b xf(x)f'(x) \ dx
+  \end{align*}
+
+  If we then add the final integral to the left-hand side at the start of these equations, we get 
+
+  \begin{align*}
+    2\int_a^b xf(x)f'(x) \ dx &= -\int_a^b [f(x)]^2 \ dx = -1 \ \quad \Rightarrow \\\\
+    \int_a^b xf(x)f'(x) \ dx &= -\frac 1 2
+  \end{align*}
+
+  \vspace{1cm}
+
+  To show the next part we apply Schwarz's inequality to the equation above.  
+
+  \begin{align*}
+    \sqrt{\left(\int_a^b [xf(x)]^2 \ dx \right)\left(\int_a^b [f'(x)]^2 \ dx\right)} &\geq \left|\int_a^b xf(x)f'(x) \ dx \right|=\frac 1 2 \quad \Rightarrow \\\\
+    \left(\int_a^b [xf(x)]^2 \ dx \right)\left(\int_a^b [f'(x)]^2 \ dx\right) &\geq \frac 1 4
+  \end{align*}
+
+  So it only remains to show that equality cannot hold.  For this I will re-derive the Cauchy-Schwarz inequality because I just don't understand any other way of doing this.  So let $g,h$ be continuous on $[a,b]$. Now consider 
+  
+  \begin{align*}
+    \int_a^b (tg-h)^2 \ d\alpha = t^2\int_a^b g^2 \ d\alpha - 2 t \int_a^b gh\ d\alpha + \int_a^b h^2 \ d\alpha \geq 0
+  \end{align*}
+
+  This can be viewed as a quadratic polynomial with coefficients $\int_a^b g^2 \ d\alpha,\allowbreak -2\int_a^b gh \ d\alpha, \allowbreak \int_a^b h^2 \ d\alpha$.  All of its coefficients clearly exist.  If $\int_a^b g^2 \ d\alpha = 0$ then we would have $g = 0$ which would make the Cauchy-Schwarz inequality trivial, so we assume otherwise.  But this then implies that the expression on the left-hand side above, as a quadratic with a positive leading coefficient, has a unique minimum. The minimum is at
+
+  \begin{align*}
+    \lambda = \frac{\int_a^b gh \ d\alpha}{\int_a^b g^2 \ d\alpha}
+  \end{align*}
+
+  and therefore the minimum of the quadratic is 
+
+  \begin{align*}
+    &\lambda^2\int_a^b g^2 \ d\alpha - 2 \lambda \int_a^b gh\ d\alpha + \int_a^b h^2 \ d\alpha \\\\
+    &= \left( \frac{\int_a^b gh \ d\alpha}{\int_a^b g^2 \ d\alpha} \right)^2 \int_a^b g^2 \ d\alpha - 2 \left( \frac{\int_a^b gh \ d\alpha}{\int_a^b g^2 \ d\alpha} \right) \int_a^b gh\ d\alpha + \int_a^b h^2 \ d\alpha \\\\
+    &= \frac{\left(\int_a^b gh \ d\alpha\right)^2 \left(\int_a^b g^2 \ d \alpha\right)-2\left(\int_a^b gh \ d\alpha\right)^2\left(\int_a^b g^2 \ d\alpha\right)}{\left(\int_a^b g^2 \ d\alpha\right)^2} + \int_a^b h^2 \ d\alpha \\\\
+    &= \int_a^b h^2 \ d\alpha - \frac{\left(\int_a^b gh \ d\alpha \right)^2\left(\int_a^b g^2 \ d\alpha\right)}{\left(\int_a^b g^2 \ d\alpha\right)^2} \\\\
+    &= \int_a^b h^2 \ d\alpha - \frac{\left(\int_a^b gh \ d\alpha \right)^2}{\int_a^b g^2 \ d\alpha}
+  \end{align*}
+
+  Now our whole goal is to consider the case where the equality holds.  In that case 
+
+  \begin{align*}
+    \left( \int_a^b gh \ d\alpha \right)^2 = \left( \int_a^b g^2 \ d\alpha\right)\left( \int_a^b h^2 \ d\alpha\right)
+  \end{align*}
+
+  and therefore the quantity above is equal to 
+
+  \begin{align*}
+    \int_a^b h^2 \ d\alpha - \frac{\left(\int_a^b gh \ d\alpha \right)^2}{\int_a^b g^2 \ d\alpha} = \int_a^b h^2 \ d\alpha - \frac{\left( \int_a^b g^2 \ d\alpha\right)\left( \int_a^b h^2 \ d\alpha\right)}{\int_a^b g^2 \ d\alpha} = 0
+  \end{align*}
+
+  But this shows that 
+
+  \begin{align*}
+    \int_a^b (\lambda g - h)^2 \ d\alpha =0
+  \end{align*}
+
+  and therefore 
+
+  \begin{align*}
+    \lambda g - h = 0 \quad \Rightarrow \quad \lambda g = h
+  \end{align*}
+
+  To summarize the result above, we have found that when the Cauchy-Schwarz inequality realizes equality, then $\lambda g = h$.  Therefore applying this general result to the case where $g(x)=xf(x)$ and $h=f'$ then we have that, when equality holds,
+
+  \begin{align*}
+    \lambda xf(x) = f'(x)
+  \end{align*}
+
+  Now as a differential equation 
+
+  \begin{align*}
+    \lambda xy = \frac{dy}{dx} \quad \Rightarrow \quad x\ dx = \frac{dy}{y} \quad \Rightarrow \\\\
+    \int x\ dx = \int \frac{dy}{y} = \frac{x^2}{2} + C = \ln y \quad \Rightarrow \\\\
+    \quad \Rightarrow y = \exp\left\{\frac{x^2}{2}+C\right\}
+  \end{align*}
+
+  However, we know that we cannot have $f(x)=y$ as above, because 
+
+  \begin{align*}
+    f(a) = 0 = e^C
+  \end{align*}
+
+  but this equation is not valid for any $C\in \mathbb R$.  Hence equality cannot hold, and we have shown 
+
+  \begin{align*}
+    \left(\int_a^b [xf(x)]^2 \ dx \right)\left(\int_a^b [f'(x)]^2 \ dx\right) &< \frac 1 4
+  \end{align*}
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 4. Rudin page 141 problem 19. Let $\gamma_1$ be a curve in $R^k$ defined on $[a,b]$; let $\phi$ be a continuous 1-1 mapping of $[c,d]$ onto $[a,b]$, such that $\phi(c)=a$; and define $\gamma_2(s)=\gamma_1(\phi(s))$.  Prove that $\gamma_2$ is an arc, a closed curve, or a rectifiable curve if and the same is true of $\gamma_1$.  Prove that $\gamma_2$ and $\gamma_1$ have the same length.}
+
+  \vspace{1cm}
+
+  In general $\gamma_2$ will be continuous since we know that $\gamma_1$ and $\phi$ are continuous, and that the composition of continuous functions is continuous.  We also note that since $\phi$ is one-to-one and onto, then $\phi^{-1}$ exists and is one-to-one and onto.  Moreover, we know that the inverse of any one-to-one continuous function is continuous, so $\phi^{-1}$ is continuous.  
+
+  Another fact about $\phi$ that we will repeatedly have use for is that it is an increasing function and $\phi(d)=b$.  To show this, suppose for contradiction that $c\leq x < y \leq d$ and that $\phi(y)<\phi(x)$. Since $\phi$ is continuous then it has the intermediate value property, and hence for each value $\beta \in [\phi(c),\phi(x)]$ there exists some $\alpha \in [c,x]$ such that $\phi(\alpha)=\beta$. But since $\phi(y)\in[\phi(c),\phi(x)]$ then there is some $\alpha\in[c,x]$ such that $\phi(\alpha)=\phi(y)$.  But since $\alpha\leq x < y$ then $\alpha\ne y$ and therefore $\phi$ is not one-to-one, contrary to assumption.  \lightning  
+  
+  Hence $\phi$ is increasing.  And since $\phi$ is onto then there exists some $x\in[c,d]$ such that $\phi(x)=b$.  Since $b$ is the maximum value of $\phi$ on $[c,d]$ and since $\phi$ is increasing, then we must have $x=d$.  
+
+  \vspace{1cm}
+
+  First suppose that $\gamma_1$ is an arc and therefore as a map $\gamma_1 : [a,b]\to \mathbb R^k$ it is a one-to-one function.  Since $\phi$ is one-to-one and since the composition of one-to-one functions are always one-to-one, then $\gamma_2 = \gamma_1\circ \phi$ is one-to-one.  Hence $\gamma_2$ is an arc.  Conversely suppose $\gamma_2$ is an arc.  Now 
+
+  \begin{align*}
+    \gamma_2 = \gamma_1\circ \phi \quad \Rightarrow \quad \gamma_2 \circ \phi^{-1} = \gamma_1\circ \phi\circ \phi^{-1} = \gamma_1
+  \end{align*}
+
+  Hence $\gamma_1$ is the composition of one-to-one functions and therefore is one-to-one, hence $\gamma_1$ is an arc.  
+
+  \vspace{1cm}
+
+  For the next part suppose $P=\{x_0=a,\dots,x_n=b\}$ is a partition of $[a,b]$ and set $P^{-1}=\{\phi^{-1}(x_0)=c,\dots,\phi^{-1}(x_n)=d\}$ which is a partition of $[c,d]$.  Now 
+  
+  \begin{align*}
+    \Lambda(P,\gamma_1) &= \sum_{i=1}^n |\gamma_1(x_i)-\gamma_1(x_{i-1})| \\\\
+    &= \sum_{i=1}^n |(\gamma_2\circ \phi^{-1})(x_i)-(\gamma_2\circ \phi^{-1})(x_{i-1})| \\\\
+    &= \sum_{i=1}^n |\gamma_2(\phi^{-1}(x_i))-\gamma_2(\phi^{-1}(x_{i-1}))| \\\\
+    &= \Lambda(P^{-1},\gamma_2)
+  \end{align*}
+
+  The construction above also runs in reverse.  If $Q=\{y_0=c,\dots,y_n=d\}$ is any partition of $[c,d]$ then $Q^{-1}=\{\phi(y_0)=a,\dots,\phi(y_n)=b\}$ is a partition of $[a,b]$ and 
+  
+  \begin{align*}
+    \Lambda(Q,\gamma_2) &= \sum_{i=1}^n |\gamma_2(y_i)-\gamma_2(y_{i-1})| \\\\
+    &= \sum_{i=1}^n |(\gamma_1\circ \phi)(x_i)-(\gamma_1\circ \phi)(x_{i-1})| \\\\
+    &= \sum_{i=1}^n |\gamma_1(\phi(x_i))-\gamma_1(\phi(x_{i-1}))| \\\\
+    &= \Lambda(Q^{-1},\gamma_1)
+  \end{align*}
+
+  The above therefore shows that 
+
+  \begin{align*}
+    \Lambda(\gamma_1) &= \sup_{P}\{\Lambda(P,\gamma_1)|P\text{ is a partition of } [a,b]\} \\\\
+    &= \sup_{Q}\{\Lambda(Q,\gamma_2)|Q \text{ is a partition of } [c,d]\} = \Lambda(\gamma_2)
+  \end{align*}
+
+  Hence $\gamma_1$ is rectifiable if and only if $\gamma_2$ is.  Moreover, this already shows that the length of $\gamma_1$ is the length of $\gamma_2$.  
+
+  \vspace{1cm}
+
+  For the final part, suppose $\gamma_1$ is closed and therefore $\gamma_1(a)=\gamma_1(b)$.  Then 
+  
+  \begin{align*}
+    \gamma_2(c) = \gamma_1(\phi(c)) = \gamma_1(a)=\gamma_1(b) = \gamma_1(\phi(d))=\gamma_2(d)
+  \end{align*}
+
+  and therefore $\gamma_2$ is closed.  Conversely if $\gamma_2$ is closed then $\gamma_2(c)=\gamma_2(d)$ and so 
+
+  \begin{align*}
+    \gamma_1(a) = \gamma_2(\phi^{-1}(a))= \gamma_2(c)=\gamma_2(d) = \gamma_2(\phi^{-1}(b))=\gamma_1(b)
+  \end{align*}
+
+  and so $\gamma_1$ is closed.  
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 5. Define curves $\gamma_1,\gamma_2:[0,1]\to \mathbb R^2$ by $\gamma_1(t)=\begin{cases}
+    (0,0), & \text{ if } t=0\\
+    \left(t,t\sin(1/t)\right) & \text{ otherwise }
+\end{cases}$
+
+Also let $\gamma_2(t) = \begin{cases}
+(0,0), & \text{ if } t=0\\
+(t,t^3\sin(1/t)) &\text{otherwise}\\
+\end{cases} $
+
+  (a.) Show that $\gamma_1$ is not rectifiable.}
+
+  \vspace{1cm}
+
+  Set for each $k\in\mathbb Z^+$
+  
+  \begin{align*}
+    P_k&=\bigg\{x_0=0,x_{1}=\frac{1}{\pi/2 + \pi k}, x_2=\frac{2}{\pi/2 + \pi k}, \dots, \\
+    &\qquad \qquad x_{n-1}=\frac{n-1}{\pi/2 +\pi k},x_n=1\bigg\}
+  \end{align*} 
+
+  where $n-1$ is the largest integer less than $\pi/2+2\pi k$.  Then we have $\gamma(x_i)=(x_i,\pm 1)$ and $\gamma(x_{i-1})=(x_{i-1},\mp 1)$ for each $1 < i < n$ and from that we obtain 
+
+  \begin{align*}
+    |\gamma_1(x_i)-\gamma(x_{i-1})| &= |(x_i,\pm 1)-(x_{i-1},\mp 1)| = \sqrt{(x_i-x_{i-1})^2+(\pm 2)^2} \geq 4
+  \end{align*}
+
+  Since every $|\gamma_1(x_i)-\gamma(x_{i-1})|\geq 0$ then we can infer 
+
+  \begin{align*}
+    \Lambda (P_k,\gamma_1) &= \sum_{i=1}^{n}|\gamma(x_i)-\gamma(x_{i-1})| \\\\
+    &\geq \sum_{i=2}^{n-1}|\gamma(x_i)-\gamma(x_{i-1})| \\\\
+    &\geq (n-2)(4)
+  \end{align*}
+
+  Letting $k\to \infty$ we see that $\Lambda(P_k,\gamma_1) \to \infty$ and hence $\gamma_1$ is not rectifiable.  
+
+  \vspace{1cm}
+
+  {\Large\color{Sepia} (b.) Show that $\gamma_2$ is rectifiable.}
+
+  \vspace{1cm}
+
+  We can compute the derivative of this curve at any $t\int (0,1]$ as $\gamma_2'(t) = (1,3t^2\sin(1/t) + t^2\sin(1/t))$.  Further we show that the derivative at 0 is equal to (1,1) by the following.
+
+  \begin{align*}
+    \lim_{t\to 0^+} \frac{\gamma_2(t)-\gamma_2(0)}{t-0} &= \left( \lim_{t\to 0^+}\frac t t, \lim_{t\to 0^+}\frac{t+t^3\sin(1/t)}{t}\right) \\\\
+    &= \left(1, 1+\lim_{t\to 0^+ } t^2\sin(1/t)\right)
+  \end{align*}
+
+  where the above is valid so long as we can show that $\displaystyle\lim_{t\to 0^+}t^2\sin(1/t)$ exists. We prove this fact by the squeeze theorem, noting that $-t^2 \leq t^2 \sin (1/t) \le t^2$.  Now since $\displaystyle\lim_{t\to 0^+}-t^2 = 0 = \lim_{t\to 0^+} t^2$ it follows that $\displaystyle\lim_{t\to 0^+}t^2\sin(1/t)=0$.  Hence 
+
+  \begin{align*}
+    \gamma'_2(0) = (1,1)
+  \end{align*}
+
+  From this we observe that $\gamma_2'$ is clearly continuous on $(0,1]$.  Moreover $\gamma_2'$ is continuous at 0 since $\displaystyle\lim_{t\to 0^+}\gamma_2'(t) = (1,1) = \gamma_2'(0)$.
+
+  Finally, because $\gamma_2$ is continuously differentiable then by theorem 6.27 of the textbook, $\gamma_2$ is rectifiable.  
+
+
+
+
+\end{document}

@@ -1,0 +1,337 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.14)  8 MAR 2021 14:53
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**/home/addem/Desktop/UNA/AA2/afrank_sec8.3.tex
+(/home/addem/Desktop/UNA/AA2/afrank_sec8.3.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-09-06> (/usr/local/texlive/2020/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/local/texlive/2020/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count168
+\c@section=\count169
+\c@subsection=\count170
+\c@subsubsection=\count171
+\c@paragraph=\count172
+\c@subparagraph=\count173
+\c@figure=\count174
+\c@table=\count175
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/epsfig.sty
+Package: epsfig 2017/06/25 v1.7b (e)psfig emulation (SPQR)
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/08/26 v1.2 Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen135
+\Gin@req@width=\dimen136
+)
+\epsfxsize=\dimen137
+\epsfysize=\dimen138
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count176
+\float@exts=\toks16
+\float@box=\box45
+\@float@everytoks=\toks17
+\@floatcapt=\box46
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen139
+)) (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen140
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count177
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count178
+\leftroot@=\count179
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count180
+\DOTSCASE@=\count181
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box47
+\strutbox@=\box48
+\big@size=\dimen141
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count182
+\c@MaxMatrixCols=\count183
+\dotsspace@=\muskip16
+\c@parentequation=\count184
+\dspbrk@lvl=\count185
+\tag@help=\toks19
+\row@=\count186
+\column@=\count187
+\maxfields@=\count188
+\andhelp@=\toks20
+\eqnshift@=\dimen142
+\alignsep@=\dimen143
+\tagshift@=\dimen144
+\tagwidth@=\dimen145
+\totwidth@=\dimen146
+\lineht@=\dimen147
+\@envbody=\toks21
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/usr/local/texlive/2020/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup6
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/paralist/paralist.sty
+Package: paralist 2017/01/22 v2.7 Extended list environments
+\pltopsep=\skip52
+\plpartopsep=\skip53
+\plitemsep=\skip54
+\plparsep=\skip55
+\pl@lab=\toks23
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/array.sty
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen148
+\ar@mcellbox=\box49
+\extrarowheight=\dimen149
+\NC@list=\toks24
+\extratabsurround=\skip56
+\backup@length=\skip57
+\ar@cellbox=\box50
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
+\@enLab=\toks25
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/wasysym/wasysym.sty
+Package: wasysym 2020/01/19 v2.4 Wasy-2 symbol support package
+\symwasy=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
+(Font)                  U/wasy/m/n --> U/wasy/b/n on input line 93.
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2020-09-11 L3 backend support: PDF output (pdfTeX)
+\l__kernel_color_stack_int=\count189
+\l__pdf_internal_box=\box51
+) (/home/addem/Desktop/UNA/AA2/afrank_sec8.3.aux)
+\openout1 = `afrank_sec8.3.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+ (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count190
+\scratchdimen=\dimen150
+\scratchbox=\box52
+\nofMPsegments=\count191
+\nofMParguments=\count192
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count193
+\MPscratchDim=\dimen151
+\MPnumerator=\count194
+\makeMPintoPDFobject=\count195
+\everyMPtoPDFconversion=\toks27
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
+
+ []
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 65.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 65.
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 65.
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 65.
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/wasysym/uwasy.fd
+File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
+) [1
+
+{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+/home/addem/Desktop/UNA/AA2/afrank_sec8.3.tex:108: Missing $ inserted.
+<inserted text> 
+                $
+l.108 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Runaway argument?
+ 
+/home/addem/Desktop/UNA/AA2/afrank_sec8.3.tex:110: Paragraph ended before \align* was complete.
+<to be read again> 
+                   \par 
+l.110 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+/home/addem/Desktop/UNA/AA2/afrank_sec8.3.tex:110: Missing $ inserted.
+<inserted text> 
+                $
+l.110 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+/home/addem/Desktop/UNA/AA2/afrank_sec8.3.tex:110: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.110 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/home/addem/Desktop/UNA/AA2/afrank_sec8.3.tex:110: Display math should end with $$.
+<to be read again> 
+                   \par 
+l.110 
+      
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+/home/addem/Desktop/UNA/AA2/afrank_sec8.3.tex:111: Misplaced \cr.
+\math@cr@@@ ->\cr 
+                  
+l.111 \end{align*}
+                  
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+/home/addem/Desktop/UNA/AA2/afrank_sec8.3.tex:111: Misplaced \noalign.
+\math@cr@@ ... \iffalse }\fi \math@cr@@@ \noalign 
+                                                  {\vskip #1\relax }
+l.111 \end{align*}
+                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+/home/addem/Desktop/UNA/AA2/afrank_sec8.3.tex:111: Misplaced \noalign.
+\black@ #1->\noalign 
+                     {\ifdim #1>\displaywidth \dimen@ \prevdepth \nointerlin...
+l.111 \end{align*}
+                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Overfull \hbox (276.95879pt too wide) detected at line 111
+[]
+ []
+
+/home/addem/Desktop/UNA/AA2/afrank_sec8.3.tex:111: Extra }, or forgotten \endgroup.
+\endalign ->\math@cr \black@ \totwidth@ \egroup 
+                                                \ifingather@ \restorealignst...
+l.111 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/home/addem/Desktop/UNA/AA2/afrank_sec8.3.tex:111: Missing $ inserted.
+<inserted text> 
+                $
+l.111 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/home/addem/Desktop/UNA/AA2/afrank_sec8.3.tex:111: Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.111 \end{align*}
+                  
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+[2] (/home/addem/Desktop/UNA/AA2/afrank_sec8.3.aux) ) 
+Here is how much of TeX's memory you used:
+ 2873 strings out of 480876
+ 37637 string characters out of 5907582
+ 285540 words of memory out of 5000000
+ 18464 multiletter control sequences out of 15000+600000
+ 542191 words of font info for 57 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 44i,10n,37p,685b,142s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on /home/addem/Desktop/UNA/AA2/afrank_sec8.3.pdf (2 pages, 76596 bytes).
+PDF statistics:
+ 39 PDF objects out of 1000 (max. 8388607)
+ 27 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

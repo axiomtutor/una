@@ -1,0 +1,416 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{wasysym}
+\usepackage{graphicx}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+
+\DeclareMathAlphabet{\mymathbb}{U}{BOONDOX-ds}{m}{n}
+
+\begin{document}
+  \begin{center} \Large
+    MA-652 Advanced Calculus\\
+    Homework 5, Feb. 24 \\
+    Adam Frank
+  \end{center}
+
+  \vspace{1cm}
+
+  {\Large \color{Sepia} Problem 1. Let $f_n(x)=\frac{nx}{1+nx^2}$.
+  
+  (a.) Find the pointwise limit of $\{f_n\}$ for all $x\in (0,\infty)$.}
+
+  \vspace{1cm}
+
+  For any fixed $x\in (0,\infty)$ we can use L'Hospital's Rule to show that $\displaystyle \lim_{n\to \infty} f_n(x) = \frac x {x^2} = \frac{1}{x}$.  
+
+   \pagebreak
+
+  {\Large \color{Sepia} (b.) Is the convergence uniform on $(0,\infty)$?}
+
+  \vspace{1cm}
+
+    No.  Suppose for contradiction that the convergence were uniform, then we could apply theorem 7.11 and use the point $0$ which is a limit point of $(0,\infty)$.  Then for each $n=1,2,\dots$ 
+
+    \begin{align*}
+        \lim_{t\to 0^+}f_n(t) = A_n = \lim_{t\to 0^+}\frac{nt}{1+nt^2} = 0
+    \end{align*}
+
+    Then 
+
+    \begin{align*}
+        \lim_{n\to \infty}A_n &= 0 \\\\
+        \lim_{t\to 0^+}\lim_{n\to \infty} f_n(t) &= \lim_{t\to 0^+}\frac 1 x = \infty
+    \end{align*}
+
+    The theorem implies that these two limits are equal, and yet we see that they are not, so we have a contradiction.  \lightning \ Hence the convergence is not uniform.  
+
+
+    \pagebreak
+
+  {\Large \color{Sepia} (c.) Is the convergence uniform on $(0,1)$?}
+
+  \vspace{1cm}
+
+    No.  Since the point $0$ is a limit point of $(0,1)$ then the exact same argument applies as above.  
+
+    \pagebreak
+
+  {\Large \color{Sepia} (d.) Is the convergence uniform on $(1,\infty)$?}
+
+  \vspace{1cm}
+
+    Yes.  Let $\varepsilon \in \mathbb R^+$ and consider 
+
+    \begin{align*}
+      \left| f_n(x)-\frac 1 x \right| &= \left| \frac{nx}{1+nx^2}-\frac 1 x\right| \\\\
+      &= \left| \frac{nx^2 - (1+nx^2)}{x(1+nx^2)} \right| \\\\
+      &= \left| \frac{1}{x(1+nx^2)} \right| \\\\
+      &< \frac 1 {1+n}
+    \end{align*}
+
+    where the final inequality is justified by the condition that $x > 1$.  Of course there exists an $N\in\mathbb N$ such that 
+
+    \begin{align*}
+      \frac{1}{\varepsilon}-1 < N
+    \end{align*}
+
+    and therefore 
+
+    \begin{align*}
+      \frac{1}{1+N} < \varepsilon
+    \end{align*}
+
+    Moreover for all $n\geq N$ we then have 
+
+    \begin{align*}
+      \frac 1 {1+n} < \varepsilon
+    \end{align*}
+
+    from which it follows that, for this $N$ and all $n\geq N$ we have 
+
+    \begin{align*}
+      \left|f_n(x)-\frac 1 x\right| < \varepsilon
+    \end{align*}
+
+    Therefore $f_n\xrightarrow[]{u}\frac 1 x$ on $(1,\infty)$.
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 2. Rudin page 166 problem 5. Let 
+  
+    \begin{align*}
+      f_n(x) = \begin{cases}
+        0 & \left(x<\frac{1}{n+1}\right) \\
+        \sin^2\left( \frac \pi x \right) & \left(\frac{1}{n+1} \le x \le \frac 1 n\right) \\
+        0 & \left(\frac 1 n < x\right)
+      \end{cases}
+    \end{align*}
+
+    Show that $\{f_n\}$ converges to a continuous function, but not uniformly.  Use the series $\sum f_n$ to show that absolute convergence, even for all $x$, does not imply uniform convergence.
+  
+  }
+
+  \vspace{1cm}
+
+  We define $f(x)$ to be the point-wise limit $\displaystyle\lim_{n\to \infty}f_n(x)$.  Clearly where $x\le 0$ we have $f_n(x)=0$ for all $n$ and hence $f(x)=0$ on the interval $(-\infty,0]$.  Next let $x>0$ and pick any $N\in\mathbb N$ such that $\frac 1 N < x$.  Then for all $n\geq N$ we have that $f_n(x)=0$ and therefore for all such $x$ we also have $f(x)=0$.  Therefore $\{f_n\}\xrightarrow{p.w.} 0$.
+
+  On the other hand the convergence is not uniform, since there is no $N\in\mathbb N$ such that $|f_n(x)-f(x)|<\varepsilon=1$ for all $x\in \mathbb R$ and all $n\geq N$.  This is because, for any $N$, we can always find a point $x\in(0,\frac{1}{1+N})$ such that $x=\frac{1}{1/2+2m}$ for some $m$.  Such a point $x$ must moreover lie within some interval $\left[\frac{1}{m},\frac{1}{1+m}\right]$ for a natural number $m\geq N$.  For these values we have 
+
+  \begin{align*}
+    |f_m(x)-f(x)|&=\left|\sin\left(\frac{\pi}{1/(1/2+2m)}\right)\right| \\\\
+    &= \left| \sin\left(\frac \pi 2 +2m\pi\right)\right| = 1
+  \end{align*}
+
+  Hence the convergence is not uniform.  
+
+  Next we show that $\sum f_n$ converges, and since each $f_n$ is non-negative then this is the same as demonstrating absolute convergence.  Again if $x \leq 0$ then each $f_n(x)=0$ and then $\sum_{n=1}^\infty f_n(x)=\sum_{n=1}^\infty 0 = 0.$  Now if $x>0$ then either $x$ falls within precisely one interval of the form $\left[ \frac{1}{1+N}, \frac 1 N \right]$, or it falls on an endpoint of one of these intervals.  In the former case $\sum_{n=0}^\infty f_n(x) = f_N(x) = \sin^2(\pi/x)$.  In the latter case, without loss of generality, suppose $x=\frac 1 N$ for some $N$.  Then 
+  
+  \begin{align*}
+    \sum_{n=1}^\infty f_n(x) = f_N(x)+f_{N+1}(x) = 2\sin^2\left(\frac{\pi}{1/N}\right) = 2\sin^2(N\pi) = 0
+  \end{align*}
+  
+  Note that in such a case $\sum f_n(x) = \sin^2(\pi/x)$.  Therefore 
+
+  \begin{align*}
+    \sum f_n \xrightarrow{p.w.} g(x) = \begin{cases}
+      0 & \text{ if } x \le 0 \text{ or } x \ge 1 \\
+      \sin^2(\pi/x) & \text{ otherwise }
+    \end{cases}
+  \end{align*}
+
+  We therefore can see that this is a case in which $\sum f_n$ pointwise converges absolutely.  Finally we show that this convergence is not uniform. Set $\varepsilon=1$ and let $N$ be any natural number.  Then set $x=\frac{1}{1/2 + 2m}$ such that $x < \frac{1}{1+N}$.  Then $\sum f_n(x) = 0$ for every $n\geq N$, hence 
+
+  \begin{align*}
+    \left| \sum f_n(x)-\sin^2(\pi/x) \right| = \sin^2\left(\frac{\pi}{1/(1/2+2m)}\right) = 1
+  \end{align*}
+
+  and so the convergence is not uniform.  
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 3. Rudin page 166 problem 6. Prove that the series 
+  
+    \begin{align*}
+      \sum_{n=1}^\infty (-1)^n \frac{x^2+n}{n^2}
+    \end{align*}
+
+    converges uniformly in every bounded interval, but does not converge absolutely for any $x$.  
+  
+  }
+
+  \vspace{1cm}
+
+  Consider any $[a,b]$ and we will prove uniform convergence on this.  First note that $M=\sup_{x\in[a,b]}x^2$ always exists since $x^2$ is continuous and has the extreme value property on any closed, bounded interval.  Now notice that the sum is the same as 
+
+  \begin{align*}
+    \sum_{n=1}^\infty (-1)^n \frac{x^2+n}{n^2} &= 
+    \sum_{n=1}^\infty (-1)^n \frac{x^2+n}{n^2} + 
+    \sum_{n=1}^\infty (-1)^n \frac{n}{n^2} \\\\
+    &= x^2\sum_{n=1}^\infty (-1)^n \frac{1}{n^2} +
+    \sum_{n=1}^\infty (-1)^n \frac{1}{n}
+  \end{align*}
+
+  The two series at the end clearly converge, since they are both alternating series which satisfy the Alternating Series Test.  That is to say both $\frac{1}{n}$ and $\frac{1}{n^2}$ each are nonnegative decreasing sequences and go to 0 as $n\to \infty$. Therefore they each Cauchy converge, so we let $N_1,N_2\in \mathbb N$ to be integers such that for all $p,q\geq N_1$ we have 
+
+  \begin{align*}
+    \left|\sum_{n=p}^q (-1)^n \frac{1}{n^2} \right| < \varepsilon/M 
+  \end{align*}
+
+  and for all $p,q\geq N_2$ we have 
+
+  \begin{align*}
+    \left|\sum_{n=p}^q (-1)^n \frac{1}{n} \right| < \varepsilon 
+  \end{align*}
+
+  Now set $N=\max\{N_1,N_2\}$ so that for any $p,q\geq N$ the above hold simultaneously.  Then 
+
+  \begin{align*}
+    \left|\sum_{n=p}^q (-1)^n \frac{x^2+n}{n^2} \right| &= \left| x^2\sum_{n=p}^q (-1)^n \frac{1}{n^2} +
+    \sum_{n=p}^q (-1)^n \frac{1}{n}\right| \\\\
+    &\leq \left| x^2\sum_{n=p}^q (-1)^n \frac{1}{n^2}\right| +
+    \left| \sum_{n=p}^q (-1)^n \frac{1}{n}\right| \\\\
+    & = x^2 \left| \sum_{n=p}^q (-1)^n \frac{1}{n^2}\right| +
+    \left| \sum_{n=p}^q (-1)^n \frac{1}{n}\right| \\\\
+    & < M (\varepsilon/M)+\varepsilon = 2\varepsilon
+  \end{align*}
+
+  Hence the series satisfies the Cauchy criterion for uniform convergence.
+
+  Next we show that the series does not converge absolutely anywhere on $[a,b]$.  For this we merely observe that 
+
+  \begin{align*}
+    \sum_{n=1}^\infty \left|(-1)^n\frac{x^2+n}{n^2}\right| \geq \sum_{n=1}^\infty \left|\frac{n}{n^2}\right| \\\\
+     = \sum_{n=1}^\infty \frac{1}{n}
+  \end{align*}
+
+  Since this last is the harmonic series, which diverges, then by the comparison test the series $\sum_{n=1}^\infty \left|(-1)^n\frac{x^2+n}{n^2}\right|$ diverges.
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 4. Let $f_n\to f$ pointwise and $f'_n\to g$ uniformly on $[a,b]$.  Assume each $f'_n$ is continuous, so that $\int_a^x f_n'\ d\alpha=f_n(x)-f_n(a)$ for all $x\in[a,b]$.  Use this to prove $g(x)=f'(x)$.}
+
+  \vspace{1cm}
+
+  First notice that  
+
+  \begin{align*}
+    f'(x) &= \lim_{t\to x}\frac{f(t)-f(x)}{t-x} \\\\
+    &= \lim_{t\to x}\frac{\lim_{n\to \infty}f_n(t)-\lim_{n\to\infty} f_n(x)}{t-x} \\\\
+    &= \lim_{t\to x}\lim_{n\to \infty}\frac{f_n(t)-f_n(x)}{t-x} \\\\
+    &= \lim_{t\to x}\lim_{n\to \infty}\frac{\int_x^t f'_n \ d\alpha }{t-x} \\\\
+    &= \lim_{t\to x}\frac{\lim_{n\to \infty}\int_x^t f'_n \ d\alpha }{t-x} 
+  \end{align*}
+
+  Since each $f_n$ is continuous, it is integrable.  Because the convergence is uniform and each $f'_n$ is continuous, by theorem 7.16 we have that 
+
+  \begin{align*}
+    \lim_{t\to x}\frac{\lim_{n\to \infty}\int_x^t f'_n \ d\alpha }{t-x} &= \lim_{t\to x}\frac{\int_x^t \lim_{n\to \infty}f'_n \ d\alpha }{t-x}\\\\
+    &= \lim_{t\to x}\frac{\int_x^t g \ d\alpha }{t-x}\\\\
+    &= \lim_{t\to x}\frac{\int_x^t g \ d\alpha - \int_x^x g\ d\alpha }{t-x}
+  \end{align*}
+
+  Now since each $f'_n$ is continuous and $f'_n\xrightarrow{u} g$, then $g$ must be continuous.  But now we notice that the above is in fact the definition of $\frac{d}{dt}\int_x^t g\ d\alpha$ and therefore by the Fundamental Theorem of Calculus, this is $g(x)$.  Putting all of these together, $f'=g$.
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 5.  Rudin page 166 problem 7. For $n=1,2,\dots$ and $x$ real, put 
+  
+  \begin{align*}
+    f_n(x) = \frac{x}{1+nx^2}.
+  \end{align*}
+
+  Show that $\{f_n\}$ converges uniformly to a function $f$, and that the equation 
+
+  \begin{align*}
+    f'(x)=\lim_{n\to \infty}f'_n(x)
+  \end{align*}
+
+  is correct if $x\ne 0$ but false if $x=0$.
+  
+  }
+
+  \vspace{1cm}
+
+  First note that for any fixed $x$ we have $\lim_{n\to \infty}\frac{x}{1+nx^2} = 0$ pointwise.  Hence we claim that $f_n\to 0$ uniformly.  So let $\varepsilon\in\mathbb R^+$.  Then set $N'$ to be the next integer larger than $\frac{1}{4\varepsilon^2}$, and set $N''$ the next integer larger than $\frac 1 {2\varepsilon}$, and finally set $N=\max\{N',N''\}$.  Then for any $n\geq N$ we note that the extrema of $\frac{x}{1+nx^2}$, for variable $x$, are found when we set to zero
+
+  \begin{align*}
+    f_n'(x)=\frac{1\cdot(1+nx^2)-x(2nx)}{(1+nx^2)^2}
+  \end{align*}
+
+  This then implies extrema where $1-nx^2=0$ so that $x=\pm\sqrt{1/n}$ with extremal value 
+
+  \begin{align*}
+    \left|\frac{\pm\sqrt{1/n}}{1+n\sqrt{1/n}^2}\right|&=\frac{\sqrt{1/n}}{2}=\frac{1}{2\sqrt n} \\\\
+    &< \frac{1}{2\sqrt{\frac{1}{4\varepsilon^2}}} \\\\
+    &= \varepsilon
+  \end{align*}
+
+  As $x\to \pm \infty$ we have that $f_n(x)\to 1/n \leq 1/N < \varepsilon$.  Since $f_n$ is continous everywhere then $|f_n|$ does not take values beyond $\varepsilon$. Hence $f_n\xrightarrow{u} 0$.
+
+  For the final part, notice that 
+
+  \begin{align*}
+    f'(x)&=0 \\\\
+    f'_n(x)&=\frac{1-nx^2}{(1+nx^2)^2}
+  \end{align*}
+
+  Now if $x=0$ then $f_n'(0)=\frac{1}{1}=1$ and therefore $f'(x)\ne \lim_{n\to \infty}f_n'(x)$.  On the other hand for any fixed $x\ne 0$ we have $\lim_{n\to \infty}\frac{1-nx^2}{(1+nx^2)} = 0$ and therefore $f'(x)=0=\lim_{n\to \infty}f_n'(x)$.
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 6. Let $g_n(x) = \frac{xn+x^2}{2n}$ and set $g(x)=\displaystyle\lim_{n\to \infty}g_n(x)$.
+  
+  (a.) Compute $g(x)$ by algebraically taking the limit as $n\to \infty$ and then find $g'(x)$.}
+
+  \vspace{1cm}
+
+  \begin{align*}
+    \lim_{n\to\infty} \frac{nx+x^2}{2n} = x/2 = g(x)
+  \end{align*}
+
+  for each fixed $x$.  Therefore $g'(x)=1/2$.
+
+  \vspace{1cm}
+
+  {\Large \color{Sepia} (b.) Compute $g'_n(x)$ for each $n\in\mathbb N$ and show the sequence of derivatives converges uniformly on every interval $[-M,M]$.  Conclude $\displaystyle g'(x)=\lim_{n\to \infty}g'_n(x)$.  }
+
+  \vspace{1cm}
+
+  \begin{align*}
+    g_n'(x) = \frac{1}{2n}(n+2x)
+  \end{align*}
+
+  so that $\lim_{n\to \infty}g_n'(x) = 1/2$ for each $x$, pointwise.  To show that the convergence is uniform on any interval $[-M,M]$, set $N$ to be the next integer greater than $M/\varepsilon$.  Then 
+
+  \begin{align*}
+    \left| \frac{1}{2n}(n+2x)-\frac 1 2 \right| = \left| \frac{x}{n}\right| < \frac{M}{N} < \varepsilon
+  \end{align*}
+
+  So the convergence is uniform.
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 7. Rudin page 166 problem 8.  If 
+  
+  \begin{align*}
+      I(x)=\begin{cases} 0 & \text{ if } x \le 0 \\ 
+      1 & \text{ if } x > 0
+      \end{cases}
+  \end{align*}
+
+  and if $\{x_n\}$ is a sequence of distinct points of $(a,b)$, and if $\sum |c_n|$ converges, prove the series 
+
+  \begin{align*}
+    f(x) = \sum_{n=1}^\infty c_n I(x-x_n) \qquad (a\leq x\leq b)
+  \end{align*}
+
+  converges uniformly and that $f$ is continuous for every $x\ne x_n$.
+  
+  }
+
+  \vspace{1cm}
+
+  We note that every for every $n$ and for every $x$ the term of the series $
+  |c_nI(x-x_n)|\leq |c_n|$, and moreover we are told that $\sum |c_n|$ converges.  Therefore by the Weierstrass theorem $f(x)=\sum c_n I(x-x_n)$ converges uniformly.  
+
+  Now let $a\le x'\le b$ such that for every $n$ we have $x'\ne x_n$.  Since we have that the convergence is uniform, we can then use theorem 7.11 to infer 
+
+  \begin{align*}
+    \lim_{t\to x'}f(x) &= \lim_{t\to x'}\lim_{m\to \infty}\sum_{n=1}^m c_nI(x-x_n) \\\\
+    &= \lim_{n\to\infty}\sum_{n=1}^m\lim_{t\to x'}c_nI(x-x_n) \\\\
+    &= \lim_{n\to\infty}\sum_{n=1}^mc_n I(x'-x_n)\\\\
+    &= f(x')
+  \end{align*}
+
+  The third equation is due to the fact that $x\ne x_n$ for any $n$ and therefore $I(x-x_n)$ is continuous for each $n$.
+
+  \vspace{1cm}
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 8. Rudin page 166 problem 9.  Let $\{f_n\}$ be a sequence of continuous functions which converges uniformly to a function $f$ on a set $E$.  Prove that 
+  
+  \begin{align*}
+    \lim_{n\to \infty} f_n(x_n)=f(x)
+  \end{align*}
+
+  for every sequence of points $x_n\in E$ such that $x_n\to x$ and $x\in E$.  Is the converse of this true?
+  }
+
+  \vspace{1cm}
+
+  Since the convergence is uniform and each $f_n$ is continuous then $f$ is continuous on $E$.  So let $\varepsilon\in \mathbb R^+$ and set $N_1\in\mathbb N$ such that if $n\geq N_1$ then 
+
+  \begin{align*}
+    |f_n(x)-f(x)|<\varepsilon
+  \end{align*}
+
+  for all $x\in E$.  In particular, for every choice of $n$ 
+  
+  \begin{align*}
+    |f_n(x_n)-f(x_n)|<\varepsilon
+  \end{align*}
+  
+  where $\varepsilon$ does not depend on $n$.  Let $\{x_n\}$ be any sequence in $E$ such that $x_n\to x'$. Also set $\delta\in\mathbb R^+$ such that if $|x-x'|<\delta$ then $|f(x)-f(x')|<\varepsilon$, and set $N_2$ such that if $n\geq N_2$ then 
+
+  \begin{align*}
+    |x_n-x'|<\delta
+  \end{align*}
+
+  Finally set $N=\max\{N_1,N_2\}$ and let $n\geq N$.  Note that because $n\geq N$ then $|x_n-x'|<\delta$ and therefore $|f(x_n)-f(x')|<\varepsilon$.  Then 
+
+  \begin{align*}
+    |f_n(x_n)-f(x')| &= |f_n(x_n)-f(x_n)+f(x_n)-f(x')| \\\\
+    &\le |f_n(x_n)-f(x_n)|+|f(x_n)-f(x')| \\\\
+    &< \varepsilon+\varepsilon = 2\varepsilon
+  \end{align*}
+
+  So $\lim_{n\to \infty} f_n(x_n)=f(x')$ as desired.
+
+  \vspace{1cm}
+
+  The converse is not true, which we can see in the example of problem 1.  Here, if you pick any $x'\in (0,\infty)$ and then pick any sequence $\{x_n\}$ such that $x_n\to x'$, then 
+  
+  \begin{align*}
+    \lim_{n\to \infty}f_n(x_n) &= \lim_{n\to \infty} \frac{nx_n}{1+(x_n)^2} \\\\
+    &= \frac{nx'}{1+(x')^2}
+  \end{align*}
+
+  We've already noted that each $f_n$ is continuous on $E=(0,\infty)$ and yet $f_n\not\xrightarrow{u} f$.
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 9. Use the Weierstrass $M$-test to prove that if a powerseries $\displaystyle \sum_{n=0}^\infty a_nx^n$ converges absolutely at the point $x_0$ then it converges uniformly on $[-c,c]$ where $c=|x_0|$.}
+
+  \vspace{1cm}
+
+  Note that for each $n$ we have $|a_n x^n|=|a_n||x|^n \leq |a_n|c^n = M_n$.  Since we are given that $\sum_{n=0}^\infty |a_nx^n|$ converges, then by the comparison test $\sum_{n=0}^\infty M_n$ converges.  So by the Weierstrass $M$-test, $\sum_{n=0}^\infty a_nx^n$ converges absolutely on $[-c,c]$.
+
+  \pagebreak
+
+
+
+
+\end{document}

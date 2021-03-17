@@ -1,0 +1,270 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{wasysym}
+\usepackage{graphicx}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+
+\DeclareMathAlphabet{\mymathbb}{U}{BOONDOX-ds}{m}{n}
+
+\begin{document}
+  \begin{center} \Large
+    MA-652 Advanced Calculus\\
+    Homework 6, Mar. 11 \\
+    Adam Frank
+  \end{center}
+
+  \vspace{1cm}
+  
+  {\Large \color{Sepia} Problem 1. Rudin page 165, Problem 1. Prove that every uniformly convergent sequence of bounded functions is uniformly bounded.}
+
+  \vspace{1cm} 
+
+  Let $\{f_n\}$ be a sequence of bounded functions and $f_n\xrightarrow[]{u}f$.  Let $M_n$ be such that $|f_n(x)|\le M_n$ for each $n\in\mathbb N$ and every $x\in E$.  Then let $N\in\mathbb N$ be such that for each $n\geq N$ we have 
+
+  \begin{align*}
+    |f_n(x)-f(x)|<1
+  \end{align*}
+
+  Let us then take the supremum over all $x\in E$: 
+
+  \begin{align*}
+    A_n=\sup_{x\in E}|f_n(x)-f(x)| \leq 1
+  \end{align*}
+
+  Notice that this in particular implies that $f$ is bounded since $|f(x)|\leq |f_N(x)|+A_N \le M_N+A_N$.  Let us call the bound on $f$ the number $M_f$. 
+  
+  Next we define  
+
+  \begin{align*}
+    A = \sup_{n\geq N}A_n \leq 1
+  \end{align*}
+
+  Then it follows that for all $x\in E$ and $n\geq N$, we have $|f_n(x)-f(x)|\leq A\leq 1$.  In particular this implies that $|f_n(x)|\leq |f(x)|+1\le 
+  M_f+1$.  Now set $B=\max\{M_1,\dots,M_N,M_f+1\}$ and then it follows that for all $x\in E$ and for all $n\in\mathbb N$ we have $|f_n(x)|\leq B$ and therefore the sequence is uniformly bounded.
+
+\pagebreak
+  
+  {\Large \color{Sepia} Problem 2. Rudin page 165, Problem 2. If $\{f_n\}$ and $\{g_n\}$ converge uniformly on $E$, prove that $\{f_n+g_n\}$ converges uniformly on $E$.  If, in addition, $\{f_n\}$ and $\{g_n\}$ are sequences of bounded functions, prove that $\{f_ng_n\}$ converges uniformly on $E$.}
+
+  \vspace{1cm} 
+
+  Let $\varepsilon\in\mathbb R^+$ and set $N_1$ such that for all $n\geq N_1$ we have $|f_n(x)-f(x)|<\varepsilon/2$ and set $N_2$ such that for all $n\geq N_2$ we have $|g_n(x)-g(x)|<\varepsilon/2$ for every $x\in E$.  Then 
+
+  \begin{align*}
+    |f_n(x)+g_n(x)-[f(x)+g(x)]| &\leq |f_n(x)-f(x)|+|g_n(x)-g(x)| \\\\
+    &< \varepsilon/2+\varepsilon/2 = \varepsilon
+  \end{align*}
+
+  Therefore $f_n+g_n\xrightarrow[]{u} f+g$. 
+
+  Now suppose that both are sequences of bounded functions.  From problem 1 we have that $\{f_n\},\{g_n\}$ are each uniformly bounded, so let $|f_n(x)|\le M_f$ and $|g_n(x)|\le M_g$. We also saw in problem 1 that both $f$ and $g$ must themselves be bounded, so let us call their bounds $M'_f$ and $M'_g$.  Now set $N_1$ such that if $n\geq N_1$ we have
+
+  \begin{align*}
+    |f_n(x)-f(x)|<\varepsilon/M_g
+  \end{align*}
+
+  and set $N_2$ such that if $n\geq N_2$ we have 
+
+  \begin{align*}
+    |g_n(x)-g(x)|<\varepsilon/M'_f
+  \end{align*}
+
+  and set $N=\max\{N_1,N_2\}$ and then if $n\geq N$ we have 
+
+  \begin{align*}
+    |f_n(x)g_n(x)-f(x)g(x)| &= |f_n(x)g_n(x)-f(x)g_n(x)+f(x)g_n(x) - f(x) g(x)| \\\\
+    & \leq |f_n(x)g_n(x)-f(x)g_n(x)|+|f(x)g_n(x) - f(x) g(x)| \\\\
+    &= |g_n(x)||f_n(x)-f(x)| + |f(x)||g_n(x)-g(x)| \\\\
+    &< M_g(\varepsilon/M_g)+M'_f(\varepsilon/M'_f) = 2\varepsilon
+  \end{align*}
+
+  Therefore $f_n+g_n\xrightarrow{u} f+g$.
+
+\pagebreak
+  
+  {\Large \color{Sepia} Problem 3. Rudin page 165, Problem 3. Construct sequences $\{f_n,g_n\}$ which converge uniformly on some set $E$, but such that $\{f_ng_n\}$ converges uniformly on $E$.} 
+
+  \vspace{1cm} 
+
+  On $E=(0,1)$ take $f_n(x)=\frac 1 x$, which trivially converges because every $|f_n(x)-f(x)|=0<\varepsilon$ for any $\varepsilon\in\mathbb R^+$.  Next we take $g_n(x) = \frac{x}{xn+1}$ which pointwise converges to 0 for any $x\in E$.  It also uniformly converges to 0, which we demonstrate by first maximizing the function.  
+
+  \begin{align*}
+    g_n'(x) = \frac{(xn+1)-x(n)}{(xn+1)^2} = \frac{1}{(xn+1)^2}=0
+  \end{align*}
+
+  holds nowhere, and therefore this function has no local optima.  Since this derivative is positive on $(0,1)$ then the function is increasing, and therefore $g_n(x) < g_n(1) = \frac{1}{(n+1)^2}$.  Since we may choose $N$ large enough that $\frac{1}{(n+1)^2}<\varepsilon$ then $g_n\xrightarrow[]{u}0$.  
+
+  On the other hand, $f_ng_n(x) = \frac 1 x \cdot \frac{x}{xn+1} = \frac{1}{xn+1}$.  Clearly this point-wise converges to 0.  But if we set $\varepsilon = \frac 1 2$ then there is no $N$ such that $\frac{1}{xN+1}<\frac 1 2$.  This is because the inequation is equivalent to 
+
+  \begin{align*}
+    2 < xN+1 \quad \Leftrightarrow \quad \frac{1}{N} < x
+  \end{align*}
+
+  But there is always an $x$ small enough that the above is not true.  Therefore the convergence of $f_ng_n$ is not uniform.
+
+\pagebreak
+  
+  {\Large \color{Sepia} Problem 4. Rudin page 167, Problem 11. Suppose $\{f_n\},\{g_n\}$ are defined on $E$, and 
+
+  (a) $\sum f_n$ has uniformly bounded partial sums;
+
+  (b) $g_n\to 0$ uniformly on $E$; 
+
+  (c) $g_1(x) \ge g_2(x)\ge \cdots$ for every $x\in E$.
+
+  Prove that $\sum f_ng_n$ converges uniformly on $E$.  {\it Hint:} Compare with theorem 3.42.}
+
+  \vspace{1cm} 
+
+  Set $A_n = \sum_{k=0}^n f_k(x)$ for each $n\ge 0$ and put $A_{-1}=0$.  Then if $0\le p\le q$ we have 
+
+  \begin{align*}
+    \sum_{n=p}^q f_n(x)g_n(x) &= \sum_{n=p}^q (A_n-A_{n-1})g_n(x) \\\\
+    &= \sum_{n=p}^q A_ng_n(x)-\sum_{n=p-1}^{q-1}A_ng_{n+1}(x) \\\\
+    &= \sum_{n=p}^{q-1} A_n(g_n(x)-b_{n+1}(x)) + A_qg_q(x)-A_{p-1}g_p(x)
+  \end{align*}
+
+  With this in hand we can now choose $M$ such that for each partial sum $|A_n|\leq M$ for all $n$.  If $\varepsilon\in\mathbb R^+$ then set $N$ such that for all $n\geq N$ we have $|g_n(x)|<\frac{\varepsilon}{2M}$ for all $x\in E$.  Then if $N\le p\le q$ we have
+
+  \begin{align*}
+    \left|\sum_{n=p}^q f_n(x)g_n(x) \right| &= \left| \sum_{n=p}^{q-1} A_n(g_n(x)-b_{n+1}(x)) + A_qg_q(x)-A_{p-1}g_p(x) \right| \\\\
+    &\le \left|\sum_{n=p}^{q-1}M(g_n(x)-g_{n+1}(x))+Mg_q(x)+Mg_p\right| 
+  \end{align*}
+
+  We note that the above inequality is true because $g_n(x)-g_{n+1}(x)\geq 0$ and because $g_q(x),g_p(x)\ge 0$.  Then the above is equal to 
+
+  \begin{align*}
+    &= M \left|\sum_{n=p}^{q-1}(g_n(x)-g_{n+1}(x))+g_q(x)+g_p\right| \\\\
+    &= 2Mg_p(x) <2M\left(\frac{\varepsilon}{2M}\right)=\varepsilon
+  \end{align*}
+
+  Since the above is true for all $x\in E$ then $\sum f_ng_n$ converges uniformly on $E$.
+
+\pagebreak
+  
+  {\Large \color{Sepia} Problem 5. Rudin page 168, Problem 15. Suppose $f$ is a real continuous function on $\mathbb R$, $f_n(t)= f(nt)$ for $n=1,2,\dots$ and $\{f_n\}$ is equicontinuous on $[0,1]$.  What conclusion can you draw about $f$?}
+
+  \vspace{1cm} 
+
+  We can show that $\{f\}\cup \{f_n\}$ is equicontinuous on $[0,1]$.  
+
+  {\it Proof:} Let $\varepsilon\in\mathbb R^+$ and set $\delta\in\mathbb R^+$ such that for all $n\ge N$ if $|x-y|<\delta$ then 
+
+  \begin{align*}
+    |f_n(x)-f_n(y)|<\varepsilon
+  \end{align*}
+  
+  for every $x,y\in[0,1]$.  
+
+  Now notice that if $x,y\in [0,1]$ and if $|x-y|<N\delta$, then $|x/N-y/N|<\delta$.  Moreover if $n\ge N$ then $|x/n-y/n|\le |x/N-y/N|<\delta$ and therefore 
+
+  \begin{align*}
+    |f(x)-f(y)|&=|f(n(x/n))-f(n(y/n))| \\\\
+    &= |f_n(x/n)-f_n(y/n)| \\\\ 
+    & <\varepsilon
+  \end{align*}
+
+  Hence for every $\varepsilon\in\mathbb R^+$, if $|x-y|<\delta<n\delta$ then $|f_n(x)-f_n(y)|<\varepsilon$ and also $|f(x)-f(y)|<\varepsilon$.  So $\{f\}\cup\{f_n\}$ is equicontinuous on $[0,1]$.  
+
+\pagebreak
+  
+  {\Large \color{Sepia} Problem 6. Rudin page 168, Problem 16. Suppose $\{f_n\}$ is an equicontinuous sequence of functions on a compact set $K$, and $\{f_n\}$ converges pointwise on $K$.  Prove that $\{f_n\}$ converges uniformly on $K$.}
+
+  \vspace{1cm} 
+
+  Let $\varepsilon\in\mathbb R^+$ and set $\delta$ such that if $|x-y|<\delta$ for $x,y\in K$ then $|f_n(x)-f_n(y)|<\varepsilon$ for each $n\in\mathbb N$.  For each $x\in K$ define $N_\delta(x)$ to be the neighborhood of $x$ of radius $\delta$.  Since $K$ is compact there must be a finite collection $x_1,\dots,x_N$ such that $N_\delta(x_1),\dots,N_\delta(x_N)$  is an open cover for $K$.  
+
+  We now consider the Cauchy criterion for uniform convergence, so fix any $x\in K$ and find any $x_i$ such that $x\in N_\delta(x_i)$ for $i=1,\dots,N$.  Now since $\{f_n\}$ is converges at $x_i$ then we use the Cauchy criterion.  Let $N'\in\mathbb N$ such that if $p,q\ge N'$ then $|f_p(x_i)-f_q(x_i)|<\varepsilon$.  Then for any such $p,q$ we have 
+
+  \begin{align*}
+    |f_p(x)-f_q(x)| &= |f_p(x)-f_p(x_i)+f_p(x_i)-f_q(x_i)+f_q(x_i)-f_q(x)| \\\\
+    &\le |f_p(x)-f_p(x_i)|+|f_p(x_i)-f_q(x_i)|+|f_q(x_i)-f_q(x)| \\\\
+    &< 3\varepsilon
+  \end{align*}
+
+\pagebreak
+  
+  {\Large \color{Sepia} Problem 7. Rudin page 168, Problem 18. Let $\{f_n\}$ be a uniformly bounded sequence of functions which are Riemann-integrable on $[a,b]$, and put 
+
+  \begin{align*}
+      F_n(x) = \int_a^x f_n(t)\ dt \qquad (a\le x\le b)
+  \end{align*}
+
+  Prove that there exists a subsequence $\{F_{n_k}\}$ which converges uniformly on $[a,b]$.  }
+
+  \vspace{1cm} 
+
+  To apply theorem 7.25 we have from the Fundamental Theorem of Calculus that each $F_n$ is continuous.  If we let $M$ be such that $|f_n(x)|\le M$ then $|F_n(x)| \le \left|\int_a^x M \ dt \right| =M(x-a)$.  Therefore $F_n(x)$ is pointwise bounded.  So it suffices to show that $\{F_n\}$ is equicontinuous.  
+
+  Now for each $\varepsilon\in\mathbb R^+$ set $\delta=\varepsilon$.  Then if $|x-y|<\delta$ we have 
+
+  \begin{align*}
+    \left|F_n(x)-F_n(y)\right| &= \left|\int_a^x f_n(t)\ dt-\int_a^y f_n(t)\ dt\right| \\\\
+    &= \left|\int_x^y f_n(t)\ dt \right| \\\\
+    &\le \left|\int_x^y M\ dt \right| \\\\
+    &= M|y-x| < M\varepsilon
+  \end{align*}
+
+  which proves equicontinuity.  
+
+  Therefore by part (b) of theorem 7.25 we have that there is a subsequence of $\{F_n\}$ which converges uniformly on $[a,b]$.
+
+\pagebreak
+  
+{\Large \color{Sepia} Problem 8. Rudin page 169, Problem 20. If $f$ is continuous on $[0,1]$ and if 
+
+\begin{align*}
+    \int_0^1 f(x) x^n \ dx = 0 \qquad (n=0,1,\dots)
+\end{align*}
+
+prove that $f(x)=0$ on $[0,1]$.  {\it Hint:} The integral of the product of $f$ with any polynomial is 0.  Use the Weierstrass theorem to show that $\int_0^1 f^2(x) \ dx = 0$.
+
+}
+
+\vspace{1cm} 
+
+We first note that if $P=\sum_{i=0}^n a_ix^i$ is any polynomial, then 
+
+\begin{align*}
+  \int_0^1 P\cdot f \ dx = \sum_{i=0}^n a_i\int_0^1 x^i f \ dx = \sum 0 = 0
+\end{align*}
+
+Now since $f$ is continuous we let $P_n\xrightarrow[]{u} f$ as stated in the Stone-Weierstrass theorem.  Then consider $\lim_{n\to \infty}\int_0^1 P_nf \ dx$.  Due to theorem 
+
+ \pagebreak
+ {\Large \color{Sepia} Problem 9. Rudin page 169, Problem 21. Let $K$ be the unit circle in the complex plane (i.e. the set of all $z$ with $|z|=1$) and let $\mathcal A$ be the algebra of all functions of the form 
+ 
+ \begin{align*}
+    f(e^{i\theta})=\sum_{n=0}^N c_n e^{in\theta} \qquad (\theta \text{ real})
+ \end{align*}
+ 
+ 
+ 
+ }
+
+ \vspace{1cm} 
+
+
+  \pagebreak
+  {\Large \color{Sepia} Problem 10. Rudin page 169, Problem 22. Assume $f\in\mathscr R(\alpha)$ on $[a,b]$ and prove that there are polynomials $P_n$ such that 
+  
+  \begin{align*}
+    \lim_{n\to \infty}\int_a^b |f-P_n|^2 \ d\alpha = 0
+  \end{align*}
+  
+  }
+
+  \vspace{1cm} 
+
+
+   \pagebreak
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,278 @@
+\documentclass[11pt]{article}
+
+\usepackage{epsfig}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{paralist}
+%\usepackage{enumitem}
+\usepackage{array}
+\usepackage{enumerate}
+\usepackage{wasysym}
+
+\pagestyle{headings} \setlength{\textwidth}{7.5in}
+\setlength{\textheight}{10.0in} \setlength{\topmargin}{-.5in}
+%\setlength{\headheight}{0in}
+%\setlength{\headsep}{0in}
+%\setlength{\topskip}{0in}
+%\setlength{\voffset}{0in} \setlength{\oddsidemargin}{-.5in} \setlength{\evensidemargin}{0in}
+%\setlength{\unitlength}{.5in}
+
+
+\newcommand{\st}{\rule[-0.25in]{0in}{0.5in}}
+\newcommand{\stt}{\rule[-0.5in]{0in}{1in}}
+\newcommand{\yn}{\makebox[1in]{\st\ YES} \makebox[1in]{\st\ NO}}
+\newcommand{\bl}{\framebox[1in]{\st \hfill}}
+\newcommand{\bll}{\framebox[2in]{\st \hfill}}
+\newcommand{\blll}{\framebox[3.5in]{\st \hfill}}
+\newcommand{\U}{\vspace{0.8in}}
+\newcommand{\V}{\vspace{1in}}
+\newcommand{\W}{\vspace{1.5in}}
+\newcommand{\R}{\rule{0in}{0.25in}\hrulefill\rule{0in}{0.25in}}
+\newcommand{\DS}{\displaystyle}
+\setlength{\textwidth}{7in} \setlength{\textheight}{10in}
+\setlength{\evensidemargin}{-.5in} \setlength{\oddsidemargin}{-0.5in}
+\setlength{\topmargin}{-1in} \setlength{\parindent}{24pt}
+\def\noin{\noindent}
+\def\ds{\displaystyle}
+\newcommand{\mysec}[1]{\centerline{\normalfont\Large\bfseries #1} \bigskip}
+\newenvironment{changemargin}[2]{%
+\begin{list}{}{%
+\setlength{\topsep}{0pt}%
+\setlength{\leftmargin}{#1}%
+\setlength{\rightmargin}{#2}%
+\setlength{\listparindent}{\parindent}%
+\setlength{\itemindent}{\parindent}%
+\setlength{\parsep}{\parskip}%
+}%
+\item[]}{\end{list}}
+
+\begin{document}
+\thispagestyle{empty}
+%
+%
+
+%\hspace{5.25in} \textbf{Version A}\\[-26pt]
+
+\large
+\noin \textbf{MA 638 - Section 8.1 Homework}\\
+
+
+\normalsize
+
+1. (The postage stamp problem)  Let $a$ and $b$ be two relatively prime positive integers.  Prove that every sufficiently large positive integer $N$ can be written as a linear combination $ax+by$ of $a$ and $b$ where $x$ and $y$ are both nonnegative.  (i.e.  there exists an integer $N_0$ such that for all $N\ge N_0$ the equation $ax+by=N$ can be solved with both $x$ and $y$ nonnegative integers.)  Prove in fact that the integer $ab-a-b$ cannot be written as a positive linear combination of $a$ and $b$, but that every integer greater than $ab-a-b$ is a positive linear combination of $a$ and $b$.  (so every ``postage'' greater than $ab-a-b$ can be obtained using only stamps in denominations $a$ and $b$.)
+
+{\it Proof:} To see that $ab-a-b$ cannot be written as a nonnegative linear combination of $a$ and $b$ suppose for contradiction that it can.  So let $ab-a-b = am+bn$ where $m,n\in\mathbb Z^{\geq 0}$. First note that, since $(a,b)=1$ this implies that in the multiplicative group of integers mod $a$, i.e. $\mathbb Z_a^*$, the element $b$ has a multiplicative inverse.  Likewise in $\mathbb Z_b^*$ the element $a$ has a multiplicative inverse. This implies 
+
+\begin{align*}
+    ab-a-b \pmod a &= am + bn \pmod a \quad \Rightarrow \\
+    -b \pmod a &= bn \pmod a \quad \Rightarrow \\
+    -1 \pmod a &= n\pmod a \\\\
+    &\text{and}\\\\
+    ab-a-b \pmod b &= am+bn \pmod b \quad \Rightarrow \\
+    -a \pmod b &= am \pmod b \quad \Rightarrow \\
+    -1 \pmod b &= m \pmod b.
+\end{align*}
+
+From this we can infer that $n = -1+ap$ and $m=-1+bq$ for some integers $p,q$.  Since $a$ and $b$ are each positive integers and $m,n$ each nonnegative, then we must have that both $p$ and $q$ are positive.  
+
+Next we observe that, from the above,
+
+\begin{align*}
+    ab-a-b &= a(-1+bq)+b(-1+ap) \quad \Rightarrow \\
+    ab &= abq + abp \quad \Rightarrow \\
+    1 &= p+q.
+\end{align*}
+
+But now $p$ and $q$ cannot both be positive, a contradiction.  \lightning \ Hence $ab-a-b$ cannot be written as a nonnegative linear combination of $a,b$.  
+
+Next we show that for any positive integer $k$, the number $n=ab-a-b+k$ can be written as a positive linear combination of $a$ and $b$.  First note that from Bezout's lemma there exist $x_0,y_0$ such that 
+
+\begin{align*}
+    ax_0+by_0=1.
+\end{align*}
+
+Because of this we have
+
+\begin{align*}
+    nax_0 + nby_0=n
+\end{align*}
+
+and so $x_1=nx_0$ and $y_1=ny_0$ are integer solutions to 
+
+\begin{align*}
+    ax_1+by_1= n
+\end{align*}
+
+Moreover, for every integer $z$ we have
+
+\begin{align*}
+    a\left(x_1 + z\frac{b}{(a,b)}\right)+b\left(y_1 - z\frac{a}{(a,b)}\right) = ax_1+by_1+zab-zab = n. 
+\end{align*}
+
+Since this holds for every integer, we can choose $z$ to be the least integer such that $x_1+zb\geq 0$.  Note that the minimality of $z$ also requires that $x_1 + zb \leq b-1$.  Therefore 
+
+\begin{align*}
+    n = a(x_1+zb)+b(y_1-za).
+\end{align*}
+
+Further note that 
+
+\begin{align*}
+    (a-1)(b-1) = ab-a-b+1 \le ab-a-b+k=n.
+\end{align*}
+
+Hence 
+
+\begin{align*}
+    (a-1)(b-1) &\le a(x_1+zb)+b(y_1-za) \quad \Rightarrow \\\\
+    b(y_1-za) &\ge (a-1)(b-1)-a(x_1+zb) \\
+    &\ge (a-1)(b-1)-a(b-1) \\
+    &= -(b-1).
+\end{align*}
+
+But this implies $y_1-za \ge -\frac{b-1}{b}$ and since for all positive integers $b$ we must have $\frac{b-1}{b}<1$.  Therefore $y_1-za>-1$ and since $y_1-za$ is an integer we must have $y_1-za\geq 0$.  
+
+Since we have shown that $n=a(x_0+zb)+b(y_0-za)$ this therefore shows that $n$ is a nonnegative linear combination of $a$ and $b$.  Since $n$ was selected arbitrarily from all integers $n\geq ab-a-b+1$, therefore all such numbers are nonnegative linear combinations of $a$ and $b$.  $\Box$
+
+2.  Find a generator for the ideal $(85,1 + 13i) \subseteq \mathbb Z[i]$, i.e.  the gcd for 85 and $1 + 13i$, by the Euclidean Algorithm.  Do the same for the ideal $(47-13i,53 + 56i)$.
+
+{\it Calculuation of $(85,1+13i)$:}  Since 85 has a greater norm than $1+13i$ we compute 
+
+\begin{align*}
+    \frac{85}{1+13i}\cdot \frac{1-13i}{1-13i} = \frac 1 2 - \frac{13}{2}i
+\end{align*}
+
+and arbitrarily choose to round the first one down, and the second we round up.  We therefore set $p=0,q=-6$.  We are therefore calling the quotient $0-6i$ and the remainder we compute as 
+
+\begin{align*}
+    (1+13i)\left(\frac 1 2 - \frac 1 2 i\right) = 7+6i.
+\end{align*}
+
+Therefore this iteration of the Euclidean algorithm gives us 
+
+\begin{align*}
+    \overbrace{85}^{b}=\overbrace{(1+13i)}^{a}\overbrace{(-6i)}^{q_1} + \overbrace{(7+6i)}^{r_1}
+\end{align*}
+
+We next compute the quotient and remainder for the pair $1+13i$ and $7+6i$.  Then 
+
+\begin{align*}
+    \frac{1+13i}{7+6i}\cdot \frac{7-6i}{7-6i} = 1+i.
+\end{align*}
+
+We therefore set $p=1,q=1$.  We are therefore calling the quotient $1+i$ and the remainder we compute as 
+
+\begin{align*}
+    (7+6i)(0) = 0.
+\end{align*}
+
+Therefore this iteration of the Euclidean algorithm gives us 
+
+\begin{align*}
+    \overbrace{1+13i}^{a}=\overbrace{(7+6i)}^{r_1}\overbrace{(1+i)}^{q_2} + \overbrace{(0)}^{r_2}.
+\end{align*}
+
+Since the remainder is zero the algorithm now terminates, and we conclude that a greatest common divisor is $7+6i$.  Therefore the ideal $(85,1+13i)$ is the same as $(7+6i)$.
+
+{\it Calculation of $(47-13i, 53+56i)$:} 
+
+Since the norm of $53+56i$ is larger, we compute 
+
+\begin{align*}
+    \frac{53+56i}{47-13i}\cdot \frac{47+13i}{47+13i} = \frac{43}{58} + \frac{81}{58}i
+\end{align*}
+
+We therefore set $p=1,q=1$.  We are therefore calling the quotient $1+ii$ and the remainder we compute as 
+
+\begin{align*}
+    (47-13i)\left(-\frac{15}{58} + \frac{23}{58}i\right) = -7+22i
+\end{align*}
+
+Therefore this iteration of the Euclidean algorithm gives us 
+
+\begin{align*}
+    \overbrace{53+56i}^{b}=\overbrace{(47-13i)}^{a}\overbrace{(1+i)}^{q_1} + \overbrace{(-7+22i)}^{r_1}
+\end{align*}
+
+We next compute the quotient and remainder for the pair $47-13i$ and $-7+22i$.  Then 
+
+\begin{align*}
+    \frac{47-13i}{-7+22i}\cdot \frac{-7-22i}{-7-22i} = -\frac{15}{13}-\frac{23}{13}i.
+\end{align*}
+
+We therefore set $p=-1,q=-2$.  We are therefore calling the quotient $-1-2i$ and the remainder we compute as 
+
+\begin{align*}
+    (-7+22i)\left(-\frac 2 {13} +\frac{3}{13}\right) = -4-5i.
+\end{align*}
+
+Therefore this iteration of the Euclidean algorithm gives us 
+
+\begin{align*}
+    \overbrace{47-13i}^{a}=\overbrace{(-7+22i)}^{r_1}\overbrace{(-1-2i)}^{q_2} + \overbrace{(-4-5i)}^{r_2}.
+\end{align*}
+
+We next compute the quotient and remainder for the pair $-7+22i$ and $-4-5i$.  Then 
+
+\begin{align*}
+    \frac{-7+22i}{-4-5i}\cdot \frac{-4-5i}{-4-5i} = -2-3i.
+\end{align*}
+
+We therefore set $p=-2,q=-3$.  We are therefore calling the quotient $-2-3i$ and the remainder we compute as 
+
+\begin{align*}
+    (-7-22i)\left(0\right) = 0.
+\end{align*}
+
+Therefore this iteration of the Euclidean algorithm gives us 
+
+\begin{align*}
+    \overbrace{-7+22i}^{r_1}=\overbrace{(-4-5i)}^{r_2}\overbrace{(-2-3i)}^{q_3} + \overbrace{(0)}^{r_3}.
+\end{align*}
+
+Since the remainder is zero we conclude that a greatest common divisor of $47-13i$ and $53+56i$ is $-4-5i$.  Hence the ideal $(47-13i, 53+56i)$ is the same as $(-4-5i)$.  
+
+3.  Prove the quadratic integer ring $\mathbb Z[\sqrt 2]$ is a Euclidean domain with respect to the norm given by the absolute value of the field norm $N$ given in the last example of section 7.1 from the textbook (i.e. the standard norm).
+
+{\it Proof:} Let $\alpha=a+b\sqrt 2, \beta = c+d\sqrt 2$.  We use the norm $N(a+b\sqrt 2) = |a^2 - 2b^2|$.  Next define 
+
+\begin{align*}
+    r &= \frac{ac-2bd}{c^2-2d^2} \\
+    s &= \frac{ad+bc}{c^2-2d^2}.
+\end{align*}
+
+Note that it is impossible for $c^2-2d^2=0$ since this would imply $\left(\frac{c}{d}\right)^2 = 2$.  This in turn would imply that $\sqrt 2$ is a rational number, which we know it is not.  So $r$ and $s$ are each rational numbers and 
+
+\begin{align*}
+    \alpha = \beta(r+s\sqrt{2}).
+\end{align*}
+
+Next define $p$ to be the integer nearest to $r$ and define $q$ to be the integer nearest to $s$.  Set $\theta = (r-p)+(s-q)\sqrt 2$ and set $\gamma = \beta \theta$.  Since $\beta$ and $\theta$ each have integer coefficients then $\gamma$ must also have integer coefficients.  Moreover  
+
+\begin{align*}
+    \gamma &= \beta(r+s\sqrt 2)-\beta(p+q\sqrt 2) = \alpha - \beta(p+q\sqrt 2) \quad \Rightarrow \\\\
+    \alpha &= \beta(p+q\sqrt 2) +\gamma 
+\end{align*}
+
+so that if we show $N(\beta)>N(\gamma)$ then $p+q\sqrt 2$ is our quotient and $\gamma$ is our remainder satisfying the properties of a Euclidean norm.  But notice that by the triangle inequality 
+
+\begin{align*}
+    N(\theta)=|(r-p)^2-2(s-q)^2| \leq |r-p|^2+2|s-q|^2
+\end{align*}
+
+and from the construction of $p$ and $q$ we have that $|r-p|\leq \frac 1 2$ and $|s-q|\leq \frac 1 2$.  Therefore 
+
+\begin{align*}
+    N(\theta) \leq \frac 1 4 + 2\cdot \frac 1 4 = \frac 3 4.
+\end{align*}
+
+Since the norm is multiplicative then 
+
+\begin{align*}
+    N(\gamma)=N(\beta\theta)=N(\beta)N(\theta)=\frac 3 4 N(\beta) < N(\beta).
+\end{align*}
+
+This shows that $N$ is an appropriate norm to make $\mathbb Z[\sqrt 2]$ a Euclidean domain.  $\Box$
+\end{document}

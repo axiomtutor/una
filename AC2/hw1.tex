@@ -103,7 +103,7 @@
 
   \pagebreak
 
-  {\Large \color{Sepia} Problem 3. Rudin page 114 problem 1. If $f$ is defined on $\mathbb R$ and $\forall x,y \in \mathbb R$ we have $|f(x)-f(x)|\leq (x-y)^2$, then prove that $f$ is constant.}
+  {\Large \color{Sepia} Problem 3. Rudin page 114 problem 1. If $f$ is defined on $\mathbb R$ and $\forall x,y \in \mathbb R$ we have $|f(x)-f(y)|\leq (x-y)^2$, then prove that $f$ is constant.}
 
   \vspace{1cm}
 
@@ -118,7 +118,7 @@
   for each $\varepsilon\in\mathbb R^+$, whenever $|t-x|<\delta$ for some corresponding $\delta$.  Choose $\delta = \varepsilon$ in fact.  Then if $|t-x| < \delta$ we have
 
   \begin{align*}
-    \left|\frac{f(t)-f(x)}{t-x}\right|<\frac{(t-x)^2}{\delta} < \frac{\delta^2}{\delta} = \varepsilon
+    \left|\frac{f(t)-f(x)}{t-x}\right|\leq \frac{(t-x)^2}{|t-x|} =|t-x| < \delta = \varepsilon
   \end{align*}
 
   \pagebreak
@@ -163,13 +163,13 @@
 
   \pagebreak
 
-  {\Large \color{Sepia} Problem 6. Rudin page 114 problem 5. Suppose $f$ is defined and differentiable for every $x>0$, and $\displaystyle\lim_{x\to \infty}f'(x) = 0$.  Let $g(x)=f(x+1)-f(x)$.  Prove that $\lim_{x\to \infty}g(x)=0$.}
+  {\Large \color{Sepia} Problem 6. Rudin page 114 problem 5. Suppose $f$ is defined and differentiable for every $x>0$, and $\displaystyle\lim_{x\to \infty}f'(x) = 0$.  Let $g(x)=f(x+1)-f(x)$.  Prove that $\displaystyle \lim_{x\to \infty}g(x)=0$.}
 
   \vspace{1cm}
 
-  Let $M\in\mathbb R$ be such that $|f'(a)|<\varepsilon$ for all $a>M$.  We will show that, for this value of $M$, it follows that $|g(x)|<\varepsilon$ for all $x>M$.
+  Set $\varepsilon\in\mathbb R^+$.  Let $M\in\mathbb R$ be such that $|f'(a)|<\varepsilon$ for all $a>M$.  We will show that, for this value of $M$, it follows that $|g(x)|<\varepsilon$ for all $x>M$.
 
-  Now for any such $x>M$ we have that $x+1>M$.  So on the interval $(x,x+1)$ we have that $\frac{f(x+1)-f(x)}{x+1-x} = f(x+1)-f(x) = f'(c)$ for some $c\in (x,x+1)$.  Therefore $|f(x+1)-f(x)| = |f'(c)|<\varepsilon$.  Since $x$ was chosen arbitrarily in $(M,\infty)$, we have shown
+  Now for any such $x>M$ we have that $x+1>M$.  So on the interval $(x,x+1)$ we have that $\frac{f(x+1)-f(x)}{x+1-x} = f(x+1)-f(x) = g(x) = f'(c)$ for some $c\in (x,x+1)$.  Therefore $|g(x)|=|f(x+1)-f(x)| = |f'(c)|<\varepsilon$.  Since $x$ was chosen arbitrarily in $(M,\infty)$, we have shown
 
   \begin{align*}
     \lim_{x\to \infty}g(x)=0
@@ -336,7 +336,7 @@
 
   Now that we have proved the chain of inequalities in the hint, we have that $|f(x)|\leq A(x_0-a)M_0$.  We argue that $A(x_0-a)<1$ for some choice of $x_0$.  But since $A$ is constant then a choice of $x_0$ sufficiently close to $a$ clearly exists.  Therefore on this interval $|f(x)|\leq A(x_0-a)M_0\leq M_0$.  But also we have that $A(x_0-a)M_0$ is an upper bound on $|f(x)|$ for all $a < x < x_0$ so that $M_0\leq A(x_0-a)M_0$ and hence $A(x_0-a)M_0=M_0$.  Given that we have already established $A(x_0-a)<1$ this can only be true if $M_0=0$, and this immediately implies that $f=0$ on $[a,x_0]$.
 
-  Now given that this holds, we repeat the argument above, this time on the interval $[x_0,b]$.  We will again find that if $2x_0 \leq b$ then on $[x_0,2x_0]$ we have that $f=0$.  Proceeding likewise, we continue until $nx_0>b$ for some $n\in\mathbb N$.  But in this case, we repeat the proof but with $x_0$ replaced by $b$.  Here again we find that $f=0$ on $[(n-1)x_0,b]$.
+  Now given that this holds, we repeat the argument above, this time on the interval $[x_0,b]$.  We will again find that if $2x_0 \leq b$ then on $[x_0,2x_0]$ we have that $f=0$.  Proceeding likewise, we continue until $nx_0>b$ for some $n\in\mathbb N$.  But in this case, we repeat the proof but with $x_0$ replaced by $b-nx_0$.  Here again we find that $f=0$ on $[(n-1)x_0,b]$.
 
   The above then shows that on $[a,x_0]\cup[x_0,x_1]\cup\dots\cup[x_{n-1},b]=[a,b]$ we have $f=0$.
 
@@ -374,13 +374,35 @@
 
   \vspace{1cm}
 
-  Suppose $f_1, f_2$ are two solutions so that $(f_1(x)-f_2(x))' = \phi(x,f_1(x))-\phi(x,f_2(x))$.  Then
+  Suppose $f_1, f_2$ are two solutions, and define $h(x)=f_1(x)-f_2(x)$.  So if I can show that $h(x)$ is the zero function, this implies that $f_1=f_2$. We have that  $h'(x) = (f_1(x)-f_2(x))' = \phi(x,f_1(x))-\phi(x,f_2(x))$.  Then
 
   \begin{align*}
-    |(f_1-f_2)'(x)| = |\phi(x,f_1(x))-\phi(x,f_2(x))| \leq A|f_1(x)-f_2(x)|
+    |h'(x)| = |(f_1-f_2)'(x)| = |\phi(x,f_1(x))-\phi(x,f_2(x))| \leq A|f_1(x)-f_2(x)| = A|h(x)|
   \end{align*}
 
-  and so by the previous exercise, $f_1-f_2=0$ and so $f_1=f_2$.  This shows that there is at most one solution.
+  and so by the previous exercise, $h=f_1-f_2=0$ and so $f_1=f_2$.  This shows that there is at most one solution.
+
+  \vspace{1cm}
+
+  To find all solutions to the differential equaiton
+
+  \begin{align*}
+    y'=y^{1/2}\qquad y(0)=0
+  \end{align*}
+
+  we first set $f$ to be some solution to this equation, and assume that it is not zero.  Then $f' = f^{1/2}$ and also $f'' = \frac{1}{2}f^{-1/2}f'=\frac 1 2 (f^{-1/2}f^{1/2})=1/2$.  This then shows that $f' = \frac x 2 + C$ and therefore
+
+  \begin{align*}
+    f = \frac{x^2}{4}+Cx+D
+  \end{align*}
+
+  And since $f(0)=0=\frac{0^2}{4}+C(0)+D = D$ then we can further state that every function of the form
+
+  \begin{align*}
+    f(x) = \frac{x^2}{4}+Cx
+  \end{align*}
+
+  is a solution.
 
   \pagebreak
 

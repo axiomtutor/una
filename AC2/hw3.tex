@@ -1,0 +1,887 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{wasysym}
+\usepackage{graphicx}
+\usepackage{mathrsfs}
+
+\DeclareMathAlphabet{\mymathbb}{U}{BOONDOX-ds}{m}{n}
+
+\begin{document}
+  \begin{center} \Large
+    MA-652 Advanced Calculus\\
+    Homework 3, Jan. 26 \\
+    Adam Frank
+  \end{center}
+
+  \vspace{1cm}
+
+  {\Large \color{Sepia} Problem 1. Let $f(x)=2x+1$ over the interval $[1,3]$ and let $P$ be the partition consisting of the points $\{1,\frac 3 2, 2, 3 \}$.
+
+  (a.) Compute $L(P,f),U(P,f)$, and $U(P,f)-L(P,f)$.}
+
+  \vspace{1cm}
+
+  Using the notation common in the text, where $m_i$ refers to the infimum over a given interval in the partition, and $M_i$ refers to the supremum,
+
+  \begin{align*}
+    \Delta x_1 = \frac 1 2, \ \Delta x_2 = \frac 1 2, \ \Delta x_3 = 1\\\\
+    m_1 = 3, \ m_2 = 4, \ m_3 = 5\\\\
+    M_1 = 4, \ M_2 = 5, \ M_3 = 7
+  \end{align*}
+
+  Therefore
+
+  \begin{align*}
+    L(P,f)&=(3)\frac 1 2 + (4) \frac 1 2 + (5)\cdot 1 = \frac{17}{2}\\\\
+    U(P,f)&=(4)\frac 1 2 + (5)\frac 1 2 + 7\cdot 1 = \frac{23}{2}\\\\
+    U(P,f)-L(P,f)&=\frac{6}{2}=3
+  \end{align*}
+
+
+
+  \vspace{1cm}
+
+  {\Large \color{Sepia} (b.) What happens to $U(P,f)-L(P,f)$ when the point $\frac 5 2$ is added to the partition?}
+
+  \vspace{1cm}
+
+  The computations on the first two intervals are unchanged.  $\Delta x_3$ is replaced by $\Delta x_3=\frac 1 2$, $m_3=5$, and $M_3 = 6$.  Also we now have $\Delta x_4 = \frac 1 2$, $m_4=6$, and $M_4=7$.  So if we re-use the previous computation, the new difference is
+
+  \begin{align*}
+    U(P,f)-L(P,f)-\overbrace{[(7)\cdot 1-(5)\cdot 1]}^{\text{remove $(M_3-m_3)\Delta x_3$}} + \overbrace{[6-5]\frac 1 2 + [7-6]\frac 1 2}^{\text{insert new $(M_3-m_3)\Delta x_3 +(M_4-m_4)\Delta x_4$}} \\\\
+    = 3-2+1 = 2
+  \end{align*}
+
+  \vspace{1cm}
+
+  {\Large \color{Sepia} (c.) Find a partition $P'$ of $[1,3]$ for which $U(P',f)-L(P',f)<2$.}
+
+  \vspace{1cm}
+
+  Using $P'=\{1,1.25,1.5,2,2.5,3\}$ if we call the partition from art (b.), $P^*=\{1,1.5,2,2.5,3\}$ then
+
+  \begin{align*}
+    U(P',f)-L(P',f) = \\
+    U(P^*,f)-L(P^*,f)-(4-3)\frac 1 2+\left([3.5-3][.25]+[4-3.5][.25]\right) = \\
+    2 -\frac 1 2 + \frac 1 8 +\frac 1 8 = 2-\frac 1 4 = 1.75
+  \end{align*}
+
+  \pagebreak
+
+
+  {\Large \color{Sepia} Problem 2. Show that the function $f(x)=k$ where $k\in\mathbb R$ is integrable and find $\int_a^b f\ d\alpha$. }
+
+  \vspace{1cm}
+
+  We can show this directly since, if $P=\{x_0,\dots,x_n\}$ is any partition,
+
+  \begin{align*}
+    L(P,f)=\sum_{i=1}^n \inf(f)\Delta \alpha(x_i) = \sum_{k=1}^n k\Delta \alpha(x_i) = k\sum_{i=1}^n \Delta \alpha(x_i) \\
+    = k\cdot (\alpha(x_n)-\alpha(x_1)) = k\cdot (\alpha(b)-\alpha(a))
+  \end{align*}
+
+  The above depends on the fact that $\sum \Delta \alpha(x_i) = \alpha(x_n)-\alpha(x_0)$.  This holds because the sum is telescoping, and the middle terms cancel leaving only the first and last term.
+
+  Since the above is true for each partition $P$ then $\underline \int_{a}^b f\ d\alpha = k\cdot (\alpha(b)-\alpha(a))$.  By the same argument we also have $U(P,f)=k(\alpha(b)-\alpha(a))$ and therefore $\overline \int_a^b f\ d\alpha$.  Therefore
+
+  \begin{align*}
+    \underline \int_a^b f\ d\alpha = \overline \int_a^b f \ d\alpha = \int_a^b f \ d\alpha
+  \end{align*}
+
+  \pagebreak
+  {\Large \color{Sepia} Problem 3. Rudin page 138 problem 1. Suppose $\alpha$ increases on $[a,b]$, $a\leq x_0\leq b$, $\alpha$ is continuous at $x_0$, $f(x_0)=1$, and $f(x)=0$ if $x\ne x_0$.  Prove that $f\in\mathscr R(\alpha)$ and that $\int f \ d\alpha=0$.  }
+
+  \vspace{1cm}
+
+  First we show that $L(P,f,\alpha)=0$ for any partition $P$ of $[a,b]$.  If $P=\{y_0,\dots,y_n\}$ and if $0 < i \leq n$ then the infimum on $\displaystyle m_i=\inf_{y_{i-1}\leq y \leq y_i}f(y) = 0$.  Therefore each term of $L(P,f,\alpha)=\displaystyle\sum_{i=1}^n m_i\Delta\alpha_i$ is 0 and therefore $L(P,f,\alpha)=0$.  Hence $\underline\int_a^b f \ d\alpha = \sup\{0\}=0$.
+
+  Next we show that for any $\varepsilon\in\mathbb R^+$ we have $\overline\int_a^b f \ d\alpha < \varepsilon$.  In particular we do this by showing that for each $\varepsilon$ there exists a partition $P$ such that $U(P,f,\alpha)<\varepsilon$.  Now since $\alpha$ is continuous at $x_0$ there exists a $\delta\in\mathbb R^+$ such that if $|y-x_0|<\delta$ then $|\alpha(y)-\alpha(x_0)|<\varepsilon/2$.  Set
+
+  \begin{align*}
+    y_1 &= \max\{a, x_0-\delta\}\\
+    y_2 &= \min\{x_0+\delta, b\}
+  \end{align*}
+
+  so that for all $y_1<y<y_2$ we have that $|y-x_0|<\delta$ and therefore $|\alpha(y)-\alpha(x_0)|<\varepsilon$.  In particular note that this implies, since $\alpha$ is monotonically increasing,
+
+  \begin{align*}
+    \alpha(y_2)-\alpha(y_1) = |\alpha(y_2)-\alpha(y_1)| &\leq |\alpha(y_2)-\alpha(x_0)|+|\alpha(y_1)-\alpha(x_0)| \\\\
+    &< \varepsilon/2 +\varepsilon/2 = \varepsilon
+  \end{align*}
+
+  Now form the partition $P=\{y_0=a,y_1,y_2,y_3=b\}$ so that the suprema are $M_1=0,M_2=1,M_3=0$.  Hence
+
+  \begin{align*}
+    U(P,f,\alpha) = 0+\Delta\alpha_2+0=\alpha(y_2)-\alpha(y_1)<\varepsilon
+  \end{align*}
+
+  Since $\overline\int_a^b f \ d\alpha \leq U(P,f,\alpha)<\varepsilon$, this shows that $\overline\int_a^b f \ d\alpha =0$.  We now have that
+
+  \begin{align*}
+    \underline\int_a^b f\ d\alpha = \overline \int_a^b f \ d\alpha =0
+  \end{align*}
+
+  which shows both $f\in\mathscr R(\alpha)$ and $\int f \ d\alpha = 0$.
+
+  \pagebreak
+  {\Large \color{Sepia} Problem 4. Rudin page 138 problem 2. Suppose $f\geq 0$, $f$ is continuous on $[a,b]$, and $\int_a^b f(x)\ dx = 0$.  Prove that $f(x)=0$ for all $x\in [a,b]$.}
+
+  \vspace{1cm}
+
+  Suppose for contradiction that $f(x_0)>0$ for some $x_0\in[a,b]$.  Since $f$ is continuous then let $\delta\in\mathbb R^+$ be such that if $|x-x_0|<\delta$ then $|f(x)-f(x_0)| < f(x_0)/2$.  Now set
+
+  \begin{align*}
+    y_1 &= \max\{a, x_0-\delta/2\}\\
+    y_2 &= \min\{b, x_0+\delta/2\}
+  \end{align*}
+
+  It follows that on the interval $[y_1,y_2]$ the least value that $f(x)$ can take is $f(x_0)/2$ and therefore $\displaystyle f(x_0)/2\leq \inf_{y_1<y<y_2} f(y)=m_2$.  If we then call $P=\{y_0=a,y_1,y_2,y_3=b\}$ then we have that
+
+  \begin{align*}
+    \int_a^b f \ d\alpha = \underline \int_a^b f\ d\alpha \geq L(P,f) = \sum_{i=1}^3 m_i \Delta y_i
+  \end{align*}
+
+  Now since $f\geq 0$ it follows that $m_i\geq 0$ for each $i=1,2,3$, and therefore each term of $L(P,f)$ is non-negative.  Hence
+
+  \begin{align*}
+    \sum_{i=1}^3 m_i\Delta y_i \geq m_2\Delta y_2 = m_2\Delta y_2 >0
+  \end{align*}
+
+  where the final inequality follows because both $\frac{f(x_0)}{2}$ and $\Delta y_2$ are strictly positive.  But this implies $\int_a^b f\ d\alpha>0$ which contradicts that $\int_a^b f\ dx = 0$.
+
+  \pagebreak
+  {\Large \color{Sepia} Problem 5. Let $f\in\mathscr R(\alpha,[a,b])$ and $c\in \mathbb R$.  Prove that if $a<c<b$ then $f\in \mathscr R(\alpha,[a,c])\cap \mathscr R(\alpha,[c,b])$ and $\int_a^b f\ d\alpha = \int_a^c f\ d\alpha+\int_c^b f\ d\alpha$. }
+
+  \vspace{1cm}
+
+  We start by showing that $\int_a^c f\ d\alpha$ exists.  For each $\varepsilon$ we are already gauranteed from the assumptions that there exists a partition $P$ of $[a,b]$ such that $U(P,f,\alpha)-L(P,f,\alpha)<\varepsilon$.  We further refine $P$ with $c$, that is to say, set $P'=P\cup \{c\}$ and then
+
+  \begin{align*}
+    U(P',f,\alpha)-L(P',f,\alpha) \leq U(P,f,\alpha)-L(P,f,\alpha) < \varepsilon
+  \end{align*}
+
+  Let $P'=\{x_0=a,\dots,x_j=c,\dots,x_n=b\}$, so that in particular $c$ has index $j$ in $P'$.  Since every term of $\displaystyle U(P',f,\alpha)-L(P',f,\alpha) = \sum_{i=1}^n(M_i-m_i)\Delta \alpha_i$ is non-negative then $\displaystyle \sum_{i=1}^{j}(M_i-m_i)\Delta\alpha_i \leq U(P',f,\alpha)-L(P',f,\alpha)<\varepsilon$.  This then shows that for $\varepsilon$ there corresponds the partition $ P'_1 = \{x_0=a, x_1, \dots, x_{j}=c\}$ such that
+
+  \begin{align*}
+    U( P'_1, f, \alpha)-L(P'_1, f, \alpha) < \varepsilon
+  \end{align*}
+
+  which shows $f\in\mathscr R(\alpha,[a,c])$.  Similarly we define $P'_2 = \{x_j=c,x_{j+1},\dots,x_n\}$.  It follows that
+
+  \begin{align*}
+    U(P'_2,f,\alpha)-L(P'_2,f,\alpha) <\varepsilon
+  \end{align*}
+
+  and therefore $f\in \mathscr R(\alpha,[c,b])$.
+
+  Now to show that $\int_a^bf\ d\alpha = \int_a^c f \ d\alpha + \int_c^b f\ d\alpha$ we will show
+
+  \begin{align*}
+    \left| \int_a^b f\ d\alpha - \left(\int_a^c f\ d\alpha + \int_c^b f\ d\alpha\right)\right|<\varepsilon
+  \end{align*}
+
+  Using the notation above, we have
+
+  \begin{align*}
+    L(P',f,\alpha,[a,b])\leq \int_a^b f \ d\alpha \leq U(P',f,\alpha,[a,b]) \\\\
+    L(P'_1,f,\alpha,[a,c])\leq \int_a^c f \ d\alpha \leq U(P'_1,f,\alpha,[a,c]) \\\\
+    L(P'_2,f,\alpha,[c,b])\leq \int_c^b f \ d\alpha \leq U(P'_2,f,\alpha,[c,b]) \\\\
+  \end{align*}
+
+  and therefore
+
+  \begin{align*}
+    &L(P',f,\alpha,[a,b])-(U(P'_1,f,\alpha,[a,c])+U(P'_2,f,\alpha,[c,b])) \\
+    \leq \ &\int_a^b f \ d\alpha - \left(\int_a^c f \ d\alpha +\int_c^b f \ d\alpha\right) \\
+    \leq \ & U(P',f,\alpha,[a,b])-(L(P'_1,f,\alpha,[a,c])+L(P'_2,f,\alpha,[c,b]))
+  \end{align*}
+
+  But from the earlier work, we already have that
+
+  \begin{align*}
+    &U(P',f,\alpha,[a,b])-(L(P'_1,f,\alpha,[a,c])+L(P'_2,f,\alpha,[c,b])) \\\\
+    = \ &U(P',f,\alpha,[a,b])-L(P',f,\alpha,[a,b]) < \varepsilon
+  \end{align*}
+
+  and therefore also
+
+  \begin{align*}
+    -\varepsilon < &L(P',f,\alpha,[a,b])-U(P',f,\alpha,[a,b]) \\\\
+    &= L(P',f,\alpha,[a,b])-(U(P'_1,f,\alpha,[a,c])+U(P'_2,f,\alpha,[c,b]))
+  \end{align*}
+
+  Hence we have
+
+  \begin{align*}
+    -\varepsilon < \int_a^b f \ d\alpha - \left(\int_a^c f \ d\alpha +\int_c^b f \ d\alpha\right)<\varepsilon
+  \end{align*}
+
+  which entails $\int_a^b f \ d\alpha - \left(\int_a^c f \ d\alpha + \int_c^b f \ d\alpha\right)=0$.  Therefore
+
+  \begin{align*}
+    \int_a^b f \ d\alpha = \int_a^c f \ d\alpha + \int_c^b f \ d\alpha
+  \end{align*}
+
+  \pagebreak
+  {\Large \color{Sepia} Problem 6. Prove that if $f\in\mathscr R(\alpha_1,[a,b])\cap \mathscr R(\alpha_2,[a,b])$ then $f\in \mathscr R(\alpha_1+\alpha_2,[a,b])$ and $\int_a^bf\ d(\alpha_1+\alpha_2) = \int_a^bf\ d\alpha_1+\int_a^b f\ d\alpha_2$. }
+
+  \vspace{1cm}
+
+  First notice that if $P=\{x_0=a,\dots,x_n=b\}$ is any partition then
+
+  \begin{align*}
+    U(P,f,\alpha_1+\alpha_2)&=\sum_{i=1}^n M_i\Delta(\alpha_1+\alpha_2)_i \\\\
+    &= \sum_{i=1}^nM_i\left((\alpha_1(x_{i})+\alpha_2(x_{i}))-(\alpha_1(x_{i-1})+\alpha_2(x_{i-1})\right)\\\\
+    &= \sum_{i=1}^n M_i\left((\alpha_1(x_{i})-\alpha_1(x_{i-1})+(\alpha_2(x_{i})-\alpha_2(x_{i-1}))\right) \\\\
+    &= \sum_{i=1}^n M_i\Delta(\alpha_1)_i+\sum_{i=1}^nM_i\Delta(\alpha_2)_i \\\\
+    &= U(P,f,\alpha_1)+U(P,f,\alpha_2)
+  \end{align*}
+
+  The same argument, with $m_i$ replacing $M_i$, shows that $L(P,f,\alpha_1+\alpha_2)=L(P,f,\alpha_1)+L(P,f,\alpha_2)$.
+
+  Now let $\varepsilon\in\mathbb R^+$.  Let $P_1,P_2$ be any partitions of $[a,b]$ such that
+
+  \begin{align*}
+    U(P_1,f,\alpha_1) - L(P_1,f,\alpha_1) < \varepsilon/2\\
+    U(P_2,f,\alpha_2) - L(P_2,f,\alpha_2) < \varepsilon/2
+  \end{align*}
+
+  Then set $P=P_1\cup P_2 = \{x_0=a,\dots,x_n=b\}$ so that
+
+  \begin{align*}
+    U(P,f,\alpha_1) - L(P,f,\alpha_1) < \varepsilon/2\\
+    U(P,f,\alpha_2) - L(P,f,\alpha_2) < \varepsilon/2
+  \end{align*}
+
+  Then summing the above,
+
+  \begin{align*}
+    U(P,f,\alpha_1)+U(P,f,\alpha_2)-L(P,f,\alpha_1)-L(P,f,\alpha_2) &< \varepsilon \quad \Rightarrow \\\\
+    U(P,f,\alpha_1+\alpha_2)-L(P,f,\alpha_1+\alpha_2) &< \varepsilon
+  \end{align*}
+
+  The second inequation above follows from the first, using the facts that we demonstrated at the start.  Hence we have that $f\in\mathscr R(\alpha_1+\alpha_2,[a,b])$.
+
+  Next we show
+
+  \begin{align*}
+    \left|\int_a^b f\ d(\alpha_1+\alpha_2) - \left(\int_a^b f \ d\alpha_1+\int_a^b f \ d\alpha_2\right)\right| <\varepsilon
+  \end{align*}
+
+  We have the following inequations,
+
+  \begin{align*}
+    &L(P, f, \alpha_1+\alpha_2) &&\leq &&\int_a^b f \ d(\alpha_1+\alpha_2) &&\leq &&U(P,f,\alpha_1+\alpha_2)\\
+    &L(P, f, \alpha_1) &&\leq &&\int_a^b f \ d\alpha_1 &&\leq &&U(P,f,\alpha_1)\\
+    &L(P, f, \alpha_2) &&\leq &&\int_a^b f \ d\alpha_2 &&\leq &&U(P,f,\alpha_2)
+  \end{align*}
+
+  Therefore by subtracting the last two from the first,
+
+  \begin{align*}
+    &L(P, f, \alpha_1+\alpha_2)-(U(P, f, \alpha_1)+U(P, f, \alpha_2))\\
+    \leq \ &\int_a^b f\ d(\alpha_1+\alpha_2) - \left(\int_a^b f \ d\alpha_1+\int_a^b f \ d\alpha_2\right)\\
+    \leq \ & U(P, f, \alpha_1+\alpha_2)-(L(P, f, \alpha_1)+L(P, f, \alpha_2))
+  \end{align*}
+
+  Now using the principle we showed at the start, the above is the same as
+
+  \begin{align*}
+    &L(P, f, \alpha_1+\alpha_2)-U(P, f, \alpha_1+ \alpha_2)\\
+    \leq \ &\int_a^b f\ d(\alpha_1+\alpha_2) - \left(\int_a^b f \ d\alpha_1+\int_a^b f \ d\alpha_2\right)\\
+    \leq \ & U(P, f, \alpha_1+\alpha_2)-L(P, f, \alpha_1+\alpha_2)
+  \end{align*}
+
+  Since we already have
+
+  \begin{align*}
+    U(P, f, \alpha_1+\alpha_2)-&L(P, f, \alpha_1+\alpha_2) < \varepsilon\\
+    &\text{and so}\\
+    -\varepsilon < L(P, f, \alpha_1+\alpha_2)-&U(P, f, \alpha_1+\alpha_2)
+  \end{align*}
+
+  then we can infer
+
+  \begin{align*}
+    -\varepsilon <  \int_a^b f\ d(\alpha_1+\alpha_2) - \left(\int_a^b f \ d\alpha_1+\int_a^b f \ d\alpha_2\right) < \varepsilon
+  \end{align*}
+
+  Hence
+
+  \begin{align*}
+    \int_a^b f\ d(\alpha_1+\alpha_2) = \int_a^b f \ d\alpha_1+\int_a^b f \ d\alpha_2
+  \end{align*}
+
+  \pagebreak
+  {\Large \color{Sepia} Problem 7. Prove that if $f\in\mathscr R(\alpha_1,[a,b])$ and $c\in \mathbb R^+$ then $f\in \mathscr R(c\alpha,[a,b])$ and $\int_a^bf\ d(c\alpha) = c\int_a^bf\ d\alpha$. }
+
+  \vspace{1cm}
+
+  First note that for any partition $P=\{x_0=a,\dots,x_n=b\}$ we have that
+
+  \begin{align*}
+    U(P,f,c\alpha)&=\sum_{i=1}^n M_i \Delta(c\alpha)_i \\\\
+    &= \sum_{i=1}^n M_i (c\alpha(x_i)-c\alpha(x_{i-1})) \\\\
+    &= c\sum_{i=1}^n M_i (\alpha(x_i)-\alpha(x_{i-1})) \\\\
+    &= cU(P,f,\alpha)
+  \end{align*}
+
+  Therefore
+
+  \begin{align*}
+    \overline \int_a^b f \ d(c\alpha) &=\inf\{U(P,f,c\alpha)|P \text{ is a partition of } [a,b]\} \\\\ &= \inf\{cU(P,f,\alpha)|P \text{ is a partition of } [a,b]\} \\\\
+    &= c\inf\{U(P,f,\alpha)|P \text{ is a partition of } [a,b]\} \\\\
+    &= c\int_a^b f\ d\alpha
+  \end{align*}
+
+  The third equation above is due to the fact that $c\in\mathbb R^+$.
+
+  By the same logic as above $\underline \int_a^b f \ d(c\alpha) = c\int_a^b f \ d\alpha$ and therefore
+
+  \begin{align*}
+    \int_a^b f \ d(c\alpha)=\overline \int_a^b f \ d(c\alpha)=\underline \int_a^b f \ d(c\alpha)=c\int_a^b f \ d\alpha
+  \end{align*}
+
+  \pagebreak
+  {\Large \color{Sepia} Problem 8. Rudin page 138 problem 3. Define three functions $\beta_1,\beta_2,\beta_3$ as follows.  $\beta_j(x)=0$ if $x<0$, $\beta_j(x)=1$ if $x>0$ for $j=1,2,3$.  And $\beta_1(0)=0, \beta_2(0)=1,\beta_3(0)=\frac 1 2$.  Let $f$ be a bounded function on $[-1,1]$.
+
+  (a) Prove that $f\in\mathscr R(\beta_1)$ if and only if $f(0+)=f(0)$ and that then
+
+  \begin{align*}
+    \int_{-1}^1 f\ d\beta_1 = f(0)
+  \end{align*}
+
+  }
+
+  \vspace{1cm}
+
+  Suppose that $f\in\mathscr R(\alpha)$ and let $P'$ be a partition $P'=\{x_0=-1,x_1,\dots,x_n=1\}$ such that
+
+  \begin{align*}
+    U(P',f,\beta_1)-L(P',f,\beta_1)<\varepsilon
+  \end{align*}
+
+  Now refine $P'$ with $0$, that is to say, set $P=P'\cup\{0\}$.  Then
+
+  \begin{align*}
+    U(P,f,\beta_1)-L(P,f,\beta_1)\leq U(P',f,\beta_1)-L(P',f,\beta_1)<\varepsilon
+  \end{align*}
+
+  If we say that $0$ has index $j$ in $P$, then $P=\{x_0=-1,\dots,x_j=0,\dots,x_n=1\}$.  Therefore, for each $i < j+1$ we have $\Delta(\beta_1)_i = 0-0=0$ and also for each $i>j+1$ we have $\Delta(\beta_1)_i = 1-1 = 0$.  Moreover, $\Delta(\beta_1)_{j+1}=1-0=1$.  Therefore
+
+  \begin{align*}
+    U(P,f,\beta_1)&=0+M_{j+1}+0=M_{j+1}\\
+    L(P,f,\beta_1)&=0+m_{j+1}+0=m_{j+1}\\\\
+    U(P,f,\beta_1)-L(P,f,\beta_1) &= M_{j+1}-m_{j+1}<\varepsilon
+  \end{align*}
+
+  First note that since $f$ is bounded then $f(0+)$ exists.  Now since $f(0),f(0+) \in [m_{j+1},M_{j+1}]$ then $|f(0)-f(0+)|\leq M_{j+1}-m_{j+1} = U(P,f,\beta_1)-L(P,f,\beta_1)< \varepsilon$.  Since $\varepsilon\in\mathbb R^+$ was arbitrary then this implies $|f(0)-f(0+)|=0$ and so $f(0)=f(0+)$.  
+
+  \vspace{1cm}
+
+  From here we can show that $\int_{-1}^1 f \ d\beta_1 = f(0)$ by observing that
+
+  \begin{align*}
+    L(P,f,\beta_1)=m_{j+1}&\leq \int_{-1}^1 f \ d\beta_1 \leq M_{j+1}=U(P,f,\beta_1)\\
+    m_{j+1}&\leq f(0)\leq M_{j+1}
+  \end{align*}
+
+  Subtracting these equations,
+
+  \begin{align*}
+    0\leq \int_{-1}^1 f \ d\beta_1 - f(0)\leq 0
+  \end{align*}
+
+  so that therefore $\int_{-1}^1 f \ d\beta_1-f(0)=0$ and hence
+
+  \begin{align*}
+    \int_{-1}^1 f \ d\beta_1=f(0)
+  \end{align*}
+
+  \vspace{1cm}
+
+  Now for the converse, suppose $f(0+)=f(0)$ and let $\varepsilon\in\mathbb R^+$.  Let $\delta\in\mathbb R^+$ be such that if $x\in(0,\delta)$ then $|f(x)-f(0)|<\varepsilon$.  Now set $P=\{x_0=-1,x_1=0,x_2=\delta,x_3=1\}$.  Then
+
+  \begin{align*}
+    \Delta(\beta_1)_1 &= 0-0=0 \\
+    \Delta(\beta_1)_2 &= 1-0=1 \\
+    \Delta(\beta_1)_3 &= 1-1=0
+  \end{align*}
+
+  Also notice that
+
+  \begin{align*}
+    m_2&=\displaystyle\inf_{[0,\delta]}f\geq f(0)-\varepsilon\\
+    M_2&=\displaystyle\sup_{[0,\delta]}f\leq f(0)+\varepsilon\\
+  \end{align*}
+
+  therefore
+
+  \begin{align*}
+    M_2-m_2 \leq 2\varepsilon
+  \end{align*}
+
+  Now we can calculate
+
+  \begin{align*}
+    U(P,f,\beta_1)-L(P,f,\beta_1) = M_2-m_2\leq 2\varepsilon
+  \end{align*}
+
+  and since $\varepsilon$ was arbitrary, this implies $U(P,f,\beta_1)-L(P,f,\beta_1)$ goes to 0, hence $f\in\mathscr R(\beta_1)$.
+
+  \vspace{1cm}
+
+  Finally, notice that the above entails that if $f(0+)=f(0)$ then $\int_{-1}^1 f\ d\beta_1 = f(0)$.  For if $f(0+)=f(0)$ then by the above, $f\in\mathscr R(\beta_1)$ and then by the first part of this proof it follows that $\int_{-1}^1 f\ d\beta_1=f(0)$.
+
+  \vspace{1cm}
+
+  {\Large \color{Sepia} (b.) State and prove a similar result for $\beta_2$.}
+
+  \vspace{1cm}
+
+  {\it Claim:}  $f\in\mathscr R(\beta_2)$ if and only if $f(0-)=f(0)$.  In that case $\int_{-1}^1 f \ d\beta_2 = f(0)$.
+
+  \vspace{1cm}
+
+  {\it Proof:} Suppose that $f\in\mathscr R(\beta_2)$ and let $P'$ be a partition $P'=\{x_0=a,x_1,\dots,x_n=b\}$ such that
+
+  \begin{align*}
+    U(P',f,\beta_2)-L(P',f,\beta_2)<\varepsilon
+  \end{align*}
+
+  Now refine $P'$ with $0$, that is to say, set $P=P'\cup\{0\}$.  Then
+
+  \begin{align*}
+    U(P,f,\beta_2)-L(P,f,\beta_2)\leq U(P',f,\beta_2)-L(P',f,\beta_2)<\varepsilon
+  \end{align*}
+
+  If we say that $0$ has index $j$ in $P$, then $P=\{x_0,\dots,x_j=0,\dots,x_n\}$.  Therefore, for each $i < j$ we have $\Delta(\beta_2)_i = 0-0=0$ and also for each $i>j$ we have $\Delta(\beta_2)_i = 1-1 = 0$.  Moreover, $\Delta(\beta_2)_{j}=1-0=1$.  Therefore
+
+  \begin{align*}
+    U(P,f,\beta_2)&=0+M_{j}+0=M_{j}\\
+    L(P,f,\beta_2)&=0+m_{j}+0=m_{j}\\\\
+    U(P,f,\beta_2)-L(P,f,\beta_2) &= M_{j}-m_{j}<\varepsilon
+  \end{align*}
+
+  Now since $f(0),f(0+) \in [x_{j-1},0]$ then $|f(0)-f(0+)|\leq M_{j}-m_j = U(P,f,\beta_1)-L(P,f,\beta_1)< \varepsilon$.  Since $\varepsilon\in\mathbb R^+$ was arbitrary then this implies $|f(0)-f(0+)|=0$ and so $f(0)=f(0+)$.  
+
+  \vspace{1cm}
+
+  From here we can show that $\int_{-1}^1 f \ d\beta_2 = f(0)$ by observing that
+
+  \begin{align*}
+    L(P,f,\beta_2)=m_{j}&\leq \int_{-1}^1 f \ d\beta_2 \leq M_{j}=U(P,f,\beta_2)\\
+    m_{j}&\leq f(0)\leq M_{j}
+  \end{align*}
+
+  Subtracting these equations,
+
+  \begin{align*}
+    0\leq \int_{-1}^1 f \ d\beta_2 - f(0)\leq 0
+  \end{align*}
+
+  so that therefore $\int_{-1}^1 f \ d\beta_2-f(0)=0$ and hence
+
+  \begin{align*}
+    \int_{-1}^1 f \ d\beta_2=f(0)
+  \end{align*}
+
+  \vspace{1cm}
+
+  Now for the converse, suppose $f(0-)=f(0)$ and let $\varepsilon\in\mathbb R^+$.  Let $\delta\in\mathbb R^+$ be such that if $x\in(-\delta,0)$ then $|f(x)-f(0)|<\varepsilon$.  Now set $P=\{x_0=-1,x_1=-\delta,x_2=0,x_3=1\}$.  Then
+
+  \begin{align*}
+    \Delta(\beta_2)_1 &= 0-0=0 \\
+    \Delta(\beta_2)_2 &= 1-0=1 \\
+    \Delta(\beta_2)_3 &= 1-1=0
+  \end{align*}
+
+  Also notice that
+
+  \begin{align*}
+    m_2&=\displaystyle\inf_{[-\delta,0]}f\geq f(0)-\varepsilon\\
+    M_2&=\displaystyle\sup_{[-\delta,0]}f\leq f(0)+\varepsilon\\
+  \end{align*}
+
+  therefore
+
+  \begin{align*}
+    M_2-m_2 \leq 2\varepsilon
+  \end{align*}
+
+  Now we can calculate
+
+  \begin{align*}
+    U(P,f,\beta_2)-L(P,f,\beta_2) = M_2-m_1\leq 2\varepsilon
+  \end{align*}
+
+  and since $\varepsilon$ was arbitrary, this implies $U(P,f,\beta_2)-L(P,f,\beta_2)$ goes to 0, hence $f\in\mathscr R(\beta_2)$.
+
+  \vspace{1cm}
+
+  Finally, notice that the above entails that if $f(0-)=f(0)$ then $\int_{-1}^1 f\ d\beta_2 = f(0)$.  For if $f(0-)=f(0)$ then by the above, $f\in\mathscr R(\beta_2)$ and then by the first part of this proof it follows that $\int_{-1}^1 f\ d\beta_2=f(0)$.
+
+  \vspace{1cm}
+
+  {\Large \color{Sepia} (c.) Prove that $f\in\mathscr R(\beta_3)$ if and only if $f$ is continuous at 0.  }
+
+  \vspace{1cm}
+
+  Suppose that $f\in\mathscr R(\beta_3)$ and let $P'$ be a partition $P'=\{x_0=-1,x_1,\dots,x_n=1\}$ such that
+
+  \begin{align*}
+    U(P',f,\beta_3)-L(P',f,\beta_3)<\varepsilon
+  \end{align*}
+
+  Now refine $P'$ with $0$, that is to say, set $P=P'\cup\{0\}$.  Then
+
+  \begin{align*}
+    U(P,f,\beta_3)-L(P,f,\beta_3)\leq U(P',f,\beta_3)-L(P',f,\beta_2)<\varepsilon
+  \end{align*}
+
+  If we say that $0$ has index $j$ in $P$, then $P=\{x_0,\dots,x_j=0,\dots,x_n\}$.  Therefore, for each $i < j$ we have $\Delta(\beta_3)_i = 0-0=0$ and also for each $i>j+1$ we have $\Delta(\beta_3)_i = 1-1 = 0$.  Moreover, $\Delta(\beta_3)_{j}=1/2-0=1/2$ and $\Delta(\beta_3)_{j+1}=1-1/2=1/2$.  Therefore
+
+  \begin{align*}
+    U(P,f,\beta_3)&=0+\frac{1}{2}\cdot M_{j}+\frac 1 2 M_{j+1}+0=\frac{M_j+M_{j+1}}{2}\\
+    L(P,f,\beta_3)&=0+\frac 1 2 \cdot m_{j}+\frac 1 2 \cdot m_{j+1}+0=\frac{m_{j}+m_{j+1}}{2}\\\\
+    U(P,f,\beta_3)-L(P,f,\beta_2) &= \frac{M_{j}+M_{j+1}-m_{j}-m_{j+1}}{2} \\\\
+    &= \frac{M_j-m_j}{2}+\frac{M_{j+1}m_{j+1}}{2}<\varepsilon
+  \end{align*}
+
+  Now since $\frac{M_j-m_j}{2}\geq 0$ then we have $\frac{M_{j+1}-m_{j+1}}{2}<\varepsilon$ and therefore $\displaystyle \lim_{x\to 0^+}f(x)=f(0)$.  Conversely since $\frac{M_{j+1}-m_{j+1}}{2}\geq 0$ then $\frac{M_{j}-m_{j}}{2} < \varepsilon$ and so $\displaystyle\lim_{x\to 0^-}f(x)=f(0)$.  Hence $f$ is continuous at 0.
+
+  \vspace{1cm}
+
+  Now for the converse, suppose $f$ is continuous at 0.  For a given $\varepsilon\in\mathbb R^+$ set $\delta\in\mathbb R^+$ such that if $|x|<\delta$ then we have $|f(x)-f(0)|<\varepsilon$.  Now define the partition $P=\{x_0=-1,x_1=-\delta, x_2=0,x_3=\delta,x_4=1\}$.  Then
+
+  \begin{align*}
+    \Delta(\beta_3)=0, \quad \Delta(\beta_3)=1/2, \quad \Delta(\beta_3)=1/2,\quad \Delta(\beta_3)=0
+  \end{align*}
+
+  Also notice that both $m_2, m_3 \geq f(0)-\varepsilon$ and also $M_2,M_3\leq f(0)+\varepsilon$.  Therefore $M_2-m_2, M_3-m_3 \leq 2\varepsilon$. Therefore
+
+  \begin{align*}
+    U(P,f,\beta_3)-L(P,f,\beta_3)=\frac{M_2}{2}-\frac{m_2}{2}+\frac{M_3}{2}-\frac{m_2}{2} \leq \frac{2\varepsilon}{2}+\frac{2\varepsilon}{2}=2\varepsilon
+  \end{align*}
+
+  So $U(P,f,\beta_3)-L(P,f,\beta_3)$ goes to 0 and hence $f\in\mathscr R(\beta_3)$.
+
+  \vspace{1cm}
+
+  {\Large \color{Sepia} (d.) If $f$ is continuous at 0 prove that
+
+  \begin{align*}
+    \int f \ d\beta_1 = \int f\ d\beta_2 = \int f\ d\beta_3 = f(0)
+  \end{align*}}
+
+  \vspace{1cm}
+
+  Since $f$ is continuous then we have that $\int f \ d\beta_3= f(0)$ as we showed in (c.).  But also continuity at 0 implies $f(0+)=f(0)$ and hence by part (a.) we have $\int f\ d\beta_2 = f(0)$.  And since $f(0-)=f(0)$ then $\int f \ d\beta_1 = f(0)$.  Therefore
+
+  \begin{align*}
+    \int f \ d\beta_1 = \int f\ d\beta_2 = \int f\ d\beta_3 = f(0)
+  \end{align*}
+
+  \pagebreak
+  {\Large \color{Sepia} Problem 9. Rudin page 138 problem 5. Suppose $f$ is a bounded real function on $[a,b]$ and $f^2\in\mathscr R(\alpha)$ on $[a,b]$.  Does it follow that $f\in\mathscr R(\alpha)$?  Does the answer change if we assume $f^3\in\mathscr R(\alpha)$?}
+
+  \vspace{1cm}
+
+  $f$ may not be integrable even if $f^2$ is. Take ${\bf 1}_{\mathbb Q}$ to be the Dirichlet function. Then set $f(x)=2{\bf 1}_{\mathbb Q}(x)-1$, and then we have that $f$ is not integrable. If it were then we would have $\int_0^1 f \ d\alpha = 2\int_{0}^1{\bf 1}_{\mathbb Q}\ d\alpha -1$ and therefore $\int_{0}^1 {\bf 1}_{\mathbb Q} \ d\alpha = \frac{\int_{0}^1 f \ d\alpha + 1}{2}$ exists, which we know it does not. On the other hand $f^2(x)=1$, the constant function 1, which is integrable.
+
+  For the second part we use the theorem that compositions of continuous with integrable functions is always integrable (theorem 6.11 in the text).  Set $g(x)=[f(x)]^3$ and $\phi(x)=\sqrt[3]x$.  These satisfy the conditions of the theorem since $g\in\mathscr R(\alpha)$ on $[a,b]$, and $g^3$ is bounded since $g$ is.  Moreover $\phi$ is continuous everywhere. Then $\phi\circ g = f \in\mathscr R(\alpha)$ on $[a,b]$.
+
+  \pagebreak
+  {\Large \color{Sepia} Problem 10. Rudin page 138 problem 8. Suppose $f\in\mathscr R(\alpha)$ on $[a,b]$ for every $b>a$ where $a$ is fixed.  Define
+
+  \begin{align*}
+    \int_a^\infty f(x) \ dx = \lim_{b\to \infty}\int_a^b f(x)\ dx
+  \end{align*}
+
+  if this limit exists (and is finite).  In that case, we say that the integral on the left {\it converges}.  If it also converges after $f$ has been replaced by $|f|$, it is said to {\it converge absolutely}.
+
+  Assume that $f(x)\geq 0$ and that $f$ decreases monotonically on $[1,\infty)$.  Prove that
+
+  \begin{align*}
+    \int_1^\infty f(x) \ dx
+  \end{align*}
+
+  converges if and only if
+
+  \begin{align*}
+    \sum_{n=1}^\infty f(n)
+  \end{align*}
+
+
+  converges.  (This is the so-called ``integral test''.)
+
+  }
+
+  \vspace{1cm}
+
+  For each $N\in\mathbb N$ we set $P_N=\{x_0=1,x_1=2,\dots,x_N=N+1\}$.  Notice that on each $[x_{n-1},x_n]$ we have that $m_n=f(x_n)=f(n+1)$ since $f$ is decreasing.  Likewise $M_n=f(x_{n-1})=f(n)$ for the same reason.  And of course $\Delta x_n=1$.  Therefore 
+
+  \begin{align*}
+    U(P_N,f)&=\sum_{n=1}^N m_n\Delta x_n=\sum_{n=1}^N f(n+1) =\sum_{n=2}^{N+1} f(n)\geq \int_1^N f \ dx\\\\
+    L(P_n,f)&=\sum_{n=1}^N f(n) \leq \int_1^N f \ dx
+  \end{align*}
+
+  Now suppose $\int_1^\infty f \ dx$ converges. Since $f\geq 0$ then by the monotone convergence theorem we only need to show that the partial sums $\displaystyle \sum_{n=1}^N f(n)$ are bounded above.  But since $f\geq 0$ then  $\int_1^N f \ dx \leq \int_1^\infty f \ dx$ and therefore 
+
+  \begin{align*}
+    \sum_{n=1}^N f(n)\leq \int_1^N f\ dx \leq \int_1^\infty f\ dx 
+  \end{align*}
+  
+  where the right-hand side is a finite real number.  Hence $\displaystyle\sum_{n=1}^\infty f(n)$ converges.  
+
+  Now suppose $\displaystyle\sum_{n=1}^{\infty}f(n)$ converges.  Therefore $\displaystyle\sum_{n=1}^{\infty}f(n)$ converges, and so for each $N $
+
+  \begin{align*}
+    \sum_{n=2}^\infty f(n) \geq \sum_{n=2}^{N+1} f(n) \geq \int_1^N f \ dx
+  \end{align*}
+
+  for each $N$, hence $\int_1^N f \ dx$ is bounded above for each $N$.  Again because $f\geq 0$ this is a monotonically increasing sequence and so by the monotone convergence theorem, the sequence converges.  Hence $\int_1^\infty f \ dx$ converges.  
+
+  \pagebreak
+
+  {\Large \color{Sepia} Problem 11. Prove the Cauchy-Schwarz inequality: If $f,g\in\mathscr R(\alpha,[a,b])$ and $f,g\geq 0$ then \linebreak $\int fg\ d\alpha \leq \left(\int f^2\ d\alpha\right)^{\frac 1 2}\left(\int g^2\ d\alpha\right)^{\frac 1 2}$. }
+
+  \vspace{1cm}
+
+  Put $A=\int_a^b f^2 \ d\alpha, B=\int_a^b g^2\ d\alpha, C=\int_a^b fg \ d\alpha$.  Then
+
+  \begin{align*}
+    \int_a^b (Bf-Cg)^2\ d\alpha &= \int_a^b B^2f^2\ d\alpha -2 \int_a^b BCfg\ d\alpha + \int_a^b C^2g^2 \\\\
+    &= B^2 \int_a^b f^2 \ d\alpha -2BC\int_a^b fg\ d\alpha + C^2\int_a^b g^2 \ d\alpha \\\\
+    &=B^2A - 2BC^2 + C^2B \\\\
+    &= B(BA - C^2)
+  \end{align*}
+
+  Now since $(Bf-Cg)^2\geq 0$ then we must have $B(BA^2-C^2)\geq 0$.  Now if $B=0$ then $f^2=0$ and therefore $f=0$.  So assume $B\ne 0$ and therefore $BA^2 - C^2 \geq 0$ so that
+
+  \begin{align*}
+    \left(\int_a^b g^2 \ d\alpha\right) \left(\int_a^bf^2 \ d\alpha\right)-\left(\int_a^b fg \ d\alpha\right)^2 \geq 0 \quad \Rightarrow \\\\
+    \int_a^b fg\ d\alpha \leq \left(\int_a^b f^2\ d\alpha\right)^{1/2}\left(\int_a^b g^2\ d\alpha\right)^{1/2}
+  \end{align*}
+
+  \pagebreak
+  {\Large \color{Sepia} Problem 12. Rudin page 139 problem 11. Let $\alpha$ be a fixed increasing function on $[a,b]$.  For $u\in\mathscr R(\alpha)$, define
+
+  \begin{align*}
+    ||u||_2 = \left\{\int_a^b |u|^2\ d\alpha\right\}^{1/2}
+  \end{align*}
+
+  Suppose $f,g,h\in\mathscr R(\alpha)$ and prove the triangle inequality
+
+  \begin{align*}
+    ||f-h||_2\leq ||f-g||_2+||g-h||_2
+  \end{align*}
+
+  as a consequence of the Schwarz inequality.
+
+  }
+
+  \vspace{1cm}
+
+  We start by proving the more ``direct" triangle inequality $||f+g||_2\leq ||f||_2+||g||_2$.
+
+  \begin{align*}
+    ||f+g||_2^2 &= \int_a^b |f+g|^2 \ d\alpha \\\\
+    &\leq \int_a^b (|f|+|g|)^2\ d\alpha \\\\
+    &= \int_a^b |f|^2\ d\alpha + \int_a^b 2|fg|\ d\alpha + \int_a^b |g|^2\ d\alpha \\\\
+    &\leq ||f||_2^2+2\left\{\int_a^b f^2 \ d\alpha\right\}^{1/2}\left\{\int_a^b g^2 \ d\alpha\right\}^{1/2}+||g||_2^2 \\\\
+    &= ||f||_2^2 + 2||f||_2||g||_2 + ||g_2||^2 \\\\
+    &= (||f||_2+||g||_2)^2
+  \end{align*}
+
+  Square-rooting both sides, we obtain $||f+g||_2\leq ||f||_2+||g||_2$.  With this in hand we can infer the desired inequality as follows.
+
+  \begin{align*}
+    ||f-h||_2=||f-g+g-h||_2\leq ||f-g||_2+||g-h||_2
+  \end{align*}
+
+  \pagebreak
+  {\Large \color{Sepia} Problem 13. Rudin page 139 problem 10abc. Let $p,q\in \mathbb R^+$ such that
+
+  \begin{align*}
+    \frac 1 p + \frac 1 q = 1
+  \end{align*}
+
+  Prove the following.
+
+  (a) If $u,v\geq 0$ then
+
+  \begin{align*}
+    uv\leq \frac{u^p}{p} + \frac{v^q}{q}
+  \end{align*}
+
+  Equality holds if and only if $u^p=v^q$.
+
+  }
+
+  \vspace{1cm}
+
+  Consider the function $f(u)=\frac{u^p}{p}+\frac{v^q}{q}-uv$ with $q$ fixed, which has derivative $f'(u)=u^{p-1}-v$.  If $f$ has extrema then they are located where
+
+  \begin{align*}
+    0=u^{p-1}-v \quad \Rightarrow \quad u = v^{1/(p-1)}
+  \end{align*}
+
+  To show that this point is indeed a minimum, we note that since $\frac 1 p + \frac 1 q = 1$ then $1 +\frac p q = p$ and therefore $p-1=\frac p q$ and this is a positive quantity.  Hence $f'(u)=u^{p-1}-v$ is a strictly increasing function on $[0,\infty)$.  Therefore if $x\in[0,v^{1/(p-1)})$ then $f(x)>f(v^{1/(p-1)})$, and on the other hand if $x\in (v^{1/(p-1)},\infty]$ then $f(v^{1/(p-1)})<f(x)$.  Now we compute
+
+  \begin{align*}
+    f(v^{1/(p-1)}) = \frac{(v^{1/(p-1)})^p}{p}+\frac{v^q}{q}-(v^{1/(p-1)})v
+  \end{align*}
+
+  Since we have already established that $\frac p q=p-1$ then we have that $\frac{1}{p-1}=\frac q p$.  Hence the above equals
+
+  \begin{align*}
+    f(v^{1/(p-1)})=\frac{v^q}{p}+\frac{v^q}{q} - v^{1+1/(p-1)} &= v^q \left(\frac 1 p +\frac 1 q\right) - v^{p/(p-1)}\\\\
+    &= v^q -v^q = 0
+  \end{align*}
+
+  From this it follows that for any $u\in[0,\infty)$ we have
+
+  \begin{align*}
+    f(v^{1/(p-1)}) = 0 \leq \frac{u^p}{p}+\frac{v^q}{q}-uv
+  \end{align*}
+
+  and therefore, as desired, we have $uv\leq \frac{u^p}{p}+\frac{v^q}{q}$.
+
+  \vspace{1cm}
+
+  Now if $u^p=v^q$ then $u=v^{q/p}=v^{1/(p-1)}$.  Therefore $f(u)=0=\frac{u^p}{p}+\frac{v^q}{q}$. Conversely, if $u^p\ne v^{q}$ then it follows that $u\ne v^{1/(p-1)}$.  Since $f$ has a unique minimum at $v^{1/(p-1)}$ then we must have
+
+  \begin{align*}
+    0 \ne f(u) = \frac{u^p}{p}+\frac{v^q}{q}-uv
+  \end{align*}
+
+  which entails $uv\ne \frac{u^p}{p}+\frac{v^q}{q}$.
+
+  \vspace{1cm}
+
+  {\Large \color{Sepia} (b.) If $f,g \in \mathscr R(\alpha), f\geq 0,g\geq 0$ and
+
+  \begin{align*}
+    \int_a^b f^p\ d\alpha = 1 = \int_a^b g^q \ d\alpha
+  \end{align*}
+
+  then
+
+  \begin{align*}
+    \int_a^b fg \ d\alpha \leq 1
+  \end{align*}
+
+  }
+
+  \vspace{1cm}
+
+  From part (a.) setting $u=f(x)$ and $v=g(x)$ then
+
+  \begin{align*}
+    \int_a^b fg \ d\alpha &\leq \int_a^b \left(\frac{f^p}{p}+\frac{g^q}{q}\right) \ d\alpha \\\\
+    &= \frac 1 p \int_a^b f^p \ d\alpha + \frac 1 q \int_a^b g^q \ d\alpha \\\\
+    &= \frac 1 p +\frac 1 q = 1
+  \end{align*}
+
+  \vspace{1cm}
+
+  {\Large \color{Sepia} (c.) If $f,g$ are complex functions in $\mathscr R(\alpha)$ then
+
+  \begin{align*}
+    \left|\int_a^b fg\ d\alpha\right| \leq \left\{\int_a^b|f|^p\ d\alpha\right\}^{1/p}\left\{\int_a^b|g|^q\ d\alpha\right\}^{1/q}
+  \end{align*}
+
+  This is Holder's inequality, a generalization of the Schwarz inequality.
+  }
+
+  \vspace{1cm}
+
+  Define $||f||_p=\left(\int_a^b|f|^p\ d\alpha\right)^{1/p}$ and set $\hat f = \frac{|f|}{||f||_p}, \hat g = \frac{|g|}{||g||_p}$.  Then
+
+  \begin{align*}
+    \int_a^b \hat f \hat g \ d\alpha = \frac{1}{||f||_p||g||_p}\int_a^b |fg| \ d\alpha \leq 1
+  \end{align*}
+
+  Therefore
+
+  \begin{align*}
+    \left|\int_a^b f g \ d\alpha \right| &\leq \int_a^b |fg| \ d\alpha \\\\
+    &\leq ||f||_p||g||_g \\\\
+    &= \left\{\int_a^b|f|^p\ d\alpha\right\}^{1/p}\left\{\int_a^b|g|^q\ d\alpha\right\}^{1/q}
+  \end{align*}
+
+  \pagebreak
+  {\Large \color{Sepia} Problem 14. Rudin page 139 problem 12. With the notation of Exercise 11, suppose $f\in\mathscr R(\alpha)$ and $\varepsilon >0$.  Prove that there exists a continuous function $g$ on $[a,b]$ such that $||f-g||_2<\varepsilon$.
+
+  {\it Hint:} Let $P=\{x_0,\dots,x_n\}$ be a suitable partition of $[a,b]$, define
+
+  \begin{align*}
+    g(t)=\frac{x_i-t}{\Delta x_i}f(x_{i-1})+\frac{t-x_{i-1}}{\Delta x_i}f(x_i)
+  \end{align*}
+
+  if $x_{i-1}\leq t \leq x_i$.
+
+  }
+
+  \vspace{1cm}
+
+  Let $\varepsilon\in\mathbb R^+$ and set $P=\{x_0=a,\dots,x_n\}$ a partition such that
+
+  \begin{align*}
+    U(P,f,\alpha)-L(P,f,\alpha)<\varepsilon
+  \end{align*}
+
+  Now define $g$ as in the hint.  Clearly $g(t)$ is continuous at each point $x_{i-1}<t<x_i$ for each $i=1, \dots, n$, since it is a linear function of $t$.  So to show that $g$ is continuous on $[a,b]$ we only need to see that $g$ is continuous at each $x_i$ for $i=0,\dots,n$.  For any $i=1,\dots,n-1$ we can see that
+
+  \begin{align*}
+    \lim_{t\to x_i^-}g(t) &= \frac{x_i-x_i}{\Delta x_i}f(x_{i-1})+\frac{x_i-x_{i-1}}{\Delta x_i}f(x_i)=f(x_i) \\\\
+    \lim_{t\to x_i^+}g(t) &= \frac{x_{i+1}-x_i}{\Delta x_{i+1}}f(x_{i})+\frac{x_i-x_{i}}{\Delta x_{i+1}}f(x_{i+1})=f(x_i) \\\\
+    g(x_i)&=\frac{x_i-x_i}{\Delta x_i}f(x_{i-1})+\frac{x_i-x_{i-1}}{\Delta x_i}f(x_i)=f(x_i)
+  \end{align*}
+
+  so that $g$ is continuous at all of these points.  When $i=0$ we consider only $g(x_i)=\displaystyle\lim_{t\to x_i^+}g(t)$ by the same calculation as above.  Therefore $g$ is continuous at $x_0$.  When $i=n$ we consider only $g(x_i)=\displaystyle\lim_{t\to x_i^-}g(t)$ and therefore $g$ is continuous at $x_n$.
+
+  Since $g$ is continuous then $g\in\mathscr R(\alpha,[a,b])$.  Therefore $|f-g|^2\in\mathscr R(\alpha,[a,b])$.
+
+  Now to show that $||f-g||_2<\varepsilon$ we need to show
+
+  \begin{align*}
+    \int_a^b |f-g|^2 \ d\alpha < \varepsilon
+  \end{align*}
+
+  and it will suffice if we show that $U(Q,|f-g|^2,\alpha)<\varepsilon$ for some partition $Q$.  Define $M=\sup f,m=\inf f$ where the supremum and infimum are taken over $[a,b]$. We choose a partition $Q$ such that $U(Q,f,\alpha)-L(Q,f,\alpha)<\varepsilon/(M-m)$.  From this it follows that 
+
+  \begin{align*}
+    \sum_{i=1}^n(M_i-m_i)\Delta\alpha_i &< \frac{\varepsilon}{M-m} \quad \Rightarrow \\\\
+    \sum_{i=1}^n(M-m)(M_i-m_i)\Delta\alpha_i &< \varepsilon
+  \end{align*}
+
+  We then observe that $\displaystyle\sum_{i=1}^n(M_i-m_i)^2 \Delta \alpha_i \leq \sum_{i=1}^n(M-m)(M_i-m_i)\Delta\alpha_i$. Moreover for each $i=1, \dots, n$, we can see that on the interval $[x_{i-1},x_i]$ both $g(x_{i-1})=f(x_{i-1})$ and $g(x_i)=f(x_i)$.  Further we can see that for each $t\in [x_{i-1},x_i]$ the value $g(t)$ is between $g(x_{i-1})=f(x_{i-1})$ and $g(x_i)=f(x_i)$.  So we have that $m_i\leq g(t) \leq M_i$ and therefore
+
+  \begin{align*}
+    |f(t)-g(t)|\leq M_{i}-m_i 
+  \end{align*}
+
+  and therefore 
+
+  \begin{align*}
+    |f(t)-g(t)|^2 \leq (M_i-m_i)^2
+  \end{align*}
+
+  which then implies that
+  
+  \begin{align*}
+    U(Q,|f-g|^2, \alpha) &= \sum_{i=1}^{n}\left(\sup_{i}|f-g|^2\right)\Delta\alpha_i \\\\
+    &\leq \sum_{i=1}^{n}(M_i-m_i)^2\Delta\alpha_i < \varepsilon
+  \end{align*}
+
+  Therefore 
+
+  \begin{align*}
+    ||f-g||_2=\int_a^b|f-g|^2\ d\alpha \leq U(Q,|f-g|^2, \alpha) < \varepsilon
+  \end{align*}
+
+
+\end{document}
