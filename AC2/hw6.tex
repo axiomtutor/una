@@ -148,25 +148,7 @@
 
   \vspace{1cm} 
 
-  We can show that $\{f\}\cup \{f_n\}$ is equicontinuous on $[0,1]$.  
-
-  {\it Proof:} Let $\varepsilon\in\mathbb R^+$ and set $\delta\in\mathbb R^+$ such that for all $n\ge N$ if $|x-y|<\delta$ then 
-
-  \begin{align*}
-    |f_n(x)-f_n(y)|<\varepsilon
-  \end{align*}
-  
-  for every $x,y\in[0,1]$.  
-
-  Now notice that if $x,y\in [0,1]$ and if $|x-y|<N\delta$, then $|x/N-y/N|<\delta$.  Moreover if $n\ge N$ then $|x/n-y/n|\le |x/N-y/N|<\delta$ and therefore 
-
-  \begin{align*}
-    |f(x)-f(y)|&=|f(n(x/n))-f(n(y/n))| \\\\
-    &= |f_n(x/n)-f_n(y/n)| \\\\ 
-    & <\varepsilon
-  \end{align*}
-
-  Hence for every $\varepsilon\in\mathbb R^+$, if $|x-y|<\delta<n\delta$ then $|f_n(x)-f_n(y)|<\varepsilon$ and also $|f(x)-f(y)|<\varepsilon$.  So $\{f\}\cup\{f_n\}$ is equicontinuous on $[0,1]$.  
+  We can show that $f$ is in fact constant.  For contradiction, suppose that $f$ is not constant and in particular that $f(x)\ne f(y)$ for some $x\ne y$.  
 
 \pagebreak
   
@@ -240,7 +222,7 @@ Now since $f$ is continuous we let $P_n\xrightarrow[]{u} f$ as stated in the Sto
 The limit above is now the point-wise limit and therefore $\lim_{n\to \infty}P_nf = f^2$.  Hence $\int_0^1 f^2\ dx = 0$.  By problem 9 of homework 3, this implies $f=0$.  
 
  \pagebreak
- {\Large \color{Sepia} Problem 9. Rudin page 169, Problem 21. Let $K$ be the unit circle in the complex plane (i.e. the set of all $z$ with $|z|=1$) and let $\mathcal A$ be the algebra of all functions of the form 
+ {\Large \color{Sepia} Problem 9. Rudin page 169, Problem 21. Let $K$ be the unit circle in the complex plane (i.e. the set of all $z$ with $|z|=1$) and let $\mathscr A$ be the algebra of all functions of the form 
  
  \begin{align*}
     f(e^{i\theta})=\sum_{n=0}^N c_n e^{in\theta} \qquad (\theta \text{ real})
@@ -249,7 +231,7 @@ The limit above is now the point-wise limit and therefore $\lim_{n\to \infty}P_n
  Then $\mathscr A$ separate points on $K$ and $\mathscr A$ vanishes at no point of $K$, but nevertheless there are continuous functions on $K$ which are not in the uniform closure of $\mathscr A$.  {\it Hint:} For every $f\in\mathscr A$ 
 
  \begin{align*}
-   \int_0^{2\pi} f(e^{i\theta})e^{i\theta}\ d\theta
+   \int_0^{2\pi} f(e^{i\theta})e^{i\theta}\ d\theta = 0
  \end{align*}
 
  and this is also true for every $f$ in the closure of $\mathscr A$.
@@ -257,6 +239,36 @@ The limit above is now the point-wise limit and therefore $\lim_{n\to \infty}P_n
  }
 
  \vspace{1cm} 
+
+ Since $f(z) = 0+z+0z^2+\dots\in \mathscr A$, then if $z_1\ne z_2\in K$ then we have that $f(z_1)=z_1\ne z_2 = f(z_2)$.  Hence $\mathscr A$ separates points.  
+
+ Also note that $f(z)=1+0z+\dots\in \mathscr A$ and therefore for any point $z\in K$ we have $f(z)=1\ne 0$ and therefore $\mathscr A$ vanishes at no point in $K$.  
+
+Next we show that if $f=\sum_{n=0}^N c_n e^{in\theta}\in\mathscr A$ then $\int_0^{2\pi}f(e^{i\theta})e^{i\theta} \ d\theta=0$.  This is because 
+
+\begin{align*}
+  \int_0^{2\pi} \left(\sum_{n=0}^N c_ne^{in\theta}\right)e^{i\theta} \ d \theta &= \sum_{n=0}^N \left(c_n \int_0^{2\pi}e^{(n+1)i\theta} \ d\theta\right) \\\\
+  &=\sum_{n=0}^Nc_n\left(\frac{e^{(n+1)i\theta}}{(n+1)i}\Bigg|_{0}^{2\pi} \right) \\\\
+  &= \sum_{n=0}^N \frac{c_n}{(n+1)i}(1-1) \\\\
+  &= 0
+\end{align*}
+
+Moreover if $f$ is in the uniform closure of $\mathscr A$ then there is some $\{f_n\}\subseteq \mathscr A$ such that $f_n\xrightarrow[]{u} f$.  Then due to theorem 7.16
+
+\begin{align*}
+  \int_0^{2\pi} f \ d\theta &= \int_0^{2\pi} \lim_{n\to\infty} f_n \ d\theta \\\\
+  &= \lim_{n\to\infty} \int_0^{2\pi} f_n \ d\theta \\\\
+  &= \lim_{n\to \infty} 0 = 0
+\end{align*}
+
+
+Next consider the function $f(z)= \frac 1 z = e^{-i\theta}$ which is continuous on $K$.  Yet 
+
+\begin{align*}
+  \int_0^{2\pi} e^{-i\theta}e^{i\theta} \ d\theta = \int_0^{2\pi} 1 \ d\theta = 2\pi
+\end{align*}
+
+Hence $e^{-i\theta}\not\in \mathscr A$.
 
 
   \pagebreak
@@ -269,6 +281,18 @@ The limit above is now the point-wise limit and therefore $\lim_{n\to \infty}P_n
   }
 
   \vspace{1cm} 
+
+  Let $\varepsilon\in\mathbb R^+$.  From homework 3 problem 12 we know that there is a continuous function $g$ such that $||f-g||_2 < \varepsilon$.  Because $g$ is continuous, due to the Stone-Weierstrass theorem, there is a sequence of polynomials $P_n$ such that $P_n\xrightarrow[]{u}g$.  So let $N$ be such that for every $n\ge N$ we have $|g(x)-P_n(x)|<\varepsilon$ for every $x\in [a,b]$.  Then if $n\ge N$, due to problem 12 from homework 3,
+
+  \begin{align*}
+    \int_a^b|f-P_n|^2 \ d\alpha &= ||f-P_n||_2 \\\\
+    &\leq ||f-g||_2 + ||g-P_n||_2 \\\\
+    &< \varepsilon + \int_a^b|g-P_n|^2 \ d\alpha \\\\
+    & \leq \varepsilon + \int_a^b \varepsilon^2\ d\alpha \\\\
+    &= \varepsilon + \varepsilon^2(\alpha(b)-\alpha(a))
+  \end{align*}
+
+  Since $\varepsilon$ may be chosen arbitrarily small, this shows $\lim_{n\to\infty}\int_a^b |f-P_n|^2 \ d\alpha = 0$.  
 
 
    \pagebreak
