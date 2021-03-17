@@ -231,7 +231,13 @@ We first note that if $P=\sum_{i=0}^n a_ix^i$ is any polynomial, then
   \int_0^1 P\cdot f \ dx = \sum_{i=0}^n a_i\int_0^1 x^i f \ dx = \sum 0 = 0
 \end{align*}
 
-Now since $f$ is continuous we let $P_n\xrightarrow[]{u} f$ as stated in the Stone-Weierstrass theorem.  Then consider $\lim_{n\to \infty}\int_0^1 P_nf \ dx$.  Due to theorem 
+Now since $f$ is continuous we let $P_n\xrightarrow[]{u} f$ as stated in the Stone-Weierstrass theorem.  Then consider $\lim_{n\to \infty}\int_0^1 P_nf \ dx$.  Due to theorem 7.16 we can infer 
+
+\begin{align*}
+  0=\lim_{n\to \infty}\int_0^1 P_nf \ dx &= \int_0^1 \lim_{n\to \infty}P_nf \ dx 
+\end{align*}
+
+The limit above is now the point-wise limit and therefore $\lim_{n\to \infty}P_nf = f^2$.  Hence $\int_0^1 f^2\ dx = 0$.  By problem 9 of homework 3, this implies $f=0$.  
 
  \pagebreak
  {\Large \color{Sepia} Problem 9. Rudin page 169, Problem 21. Let $K$ be the unit circle in the complex plane (i.e. the set of all $z$ with $|z|=1$) and let $\mathcal A$ be the algebra of all functions of the form 
@@ -240,7 +246,13 @@ Now since $f$ is continuous we let $P_n\xrightarrow[]{u} f$ as stated in the Sto
     f(e^{i\theta})=\sum_{n=0}^N c_n e^{in\theta} \qquad (\theta \text{ real})
  \end{align*}
  
- 
+ Then $\mathscr A$ separate points on $K$ and $\mathscr A$ vanishes at no point of $K$, but nevertheless there are continuous functions on $K$ which are not in the uniform closure of $\mathscr A$.  {\it Hint:} For every $f\in\mathscr A$ 
+
+ \begin{align*}
+   \int_0^{2\pi} f(e^{i\theta})e^{i\theta}\ d\theta
+ \end{align*}
+
+ and this is also true for every $f$ in the closure of $\mathscr A$.
  
  }
 
